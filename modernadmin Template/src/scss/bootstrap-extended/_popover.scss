@@ -1,0 +1,22 @@
+.popover{
+	&.popover-top, &.bs-tether-element-attached-top{
+		&:after, &:before{
+			margin-left: -10px;
+		}
+	}
+	&.popover-right, &.bs-tether-element-attached-right{
+		&:after, &:before{
+			margin-top: -10px;
+		}
+	}
+	&.popover-bottom, &.bs-tether-element-attached-bottom{
+		&:after, &:before{
+			margin-left: -10px;
+		}
+	}
+	&.popover-left, &.bs-tether-element-attached-left{
+		&:after, &:before{
+			margin-top: -10px;
+		}
+	}
+}

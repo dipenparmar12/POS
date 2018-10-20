@@ -1,0 +1,192 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../assets/scss/variables/variables";
+@import "../../../../assets/scss/variables/components-variables";
+
+.noUi-background{
+    background: darken($content-bg,3%);
+}
+.noUi-target{
+    background-color: darken($body-bg,5%);
+    border:none;
+    box-shadow:none;
+    border-radius: 1rem;
+    &.noUi-connect{
+        box-shadow: none;
+    }
+}
+
+.noUi-horizontal{
+    height: 10px;
+
+    padding-right: 17px;
+    .noUi-handle{
+        width: 20px;
+        height: 20px;
+        top: -5px;
+
+        left: -1px;
+    }
+
+    .noUi-origin  {
+        left: 17px;
+        right: -17px;
+    }
+
+    &.slider-xl{
+        height: 14px;
+        .noUi-handle{
+            width: 28px;
+            height: 28px;
+            top: -7px;
+        }
+    }
+
+    &.slider-lg{
+        height: 12px;
+        .noUi-handle{
+            width: 24px;
+            height: 24px;
+            top: -6px;
+        }
+    }
+
+    &.slider-sm{
+        height: 6px;
+        .noUi-handle{
+            top: -7px;
+        }
+    }
+
+    &.slider-xs{
+        height: 3px;
+        .noUi-handle{
+            top: -8px;
+        }
+    }
+}
+
+.noUi-handle{
+    box-shadow: none;
+    border:none;
+
+    &:after, &:before {
+        display: none;
+    }
+    border-radius: 50%;
+    background: #FFF;
+    border:5px solid $primary;
+
+}
+
+.circle-filled{
+    .noUi-handle{
+        &:after, &:before {
+            display: none;
+        }
+        background: $primary;
+        border-radius: 50%;
+    }
+}
+
+.square{
+    .noUi-handle{
+        background: $primary;
+        border-radius: 3px;
+
+        &:before{
+            display: block;
+            width: 2px;
+            height: 10px;
+            left: 2px;
+            top:0px;
+        }
+
+        &:after{
+            display: block;
+            width: 2px;
+            height: 10px;
+            left: 7px;
+            top:0px;
+        }
+    }
+
+    &.slider-xl{
+        .noUi-handle{
+            &:before{
+                left: 5px;
+                top: 4px;
+            }
+
+            &:after{
+                left: 10px;
+                top: 4px;
+            }
+        }
+    }
+
+    &.slider-lg{
+        .noUi-handle{
+            &:before{
+                left: 3px;
+                top: 2px;
+            }
+
+            &:after{
+                left: 8px;
+                top:2px;
+            }
+        }
+    }
+}
+
+.noUi-connect{
+    background:$primary;
+    box-shadow: none;
+}
+
+
+.noUi-vertical {
+    display: inline-block;
+    width: 8px;
+    height: 150px;
+
+    .noUi-handle{
+        width: 20px;
+        height: 20px;
+        top: -5px;
+
+        left: -6px;
+    }
+
+    &.square{
+        .noUi-handle{
+            background: $primary;
+            border-radius: 3px;
+
+            &:before{
+                display: block;
+                width: 12px;
+                height: 2px;
+                left: -1px;
+                top:2px;
+            }
+
+            &:after{
+                display: block;
+                width: 12px;
+                height: 2px;
+                left: -1px;
+                top:7px;
+            }
+        }
+    }
+
+}

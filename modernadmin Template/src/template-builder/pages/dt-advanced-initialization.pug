@@ -1,0 +1,47 @@
+//- =========================================================================================
+	File Name:dt-advanced-initialization.pug
+	Description: Advanced initialisation of DataTables
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Advanced DataTable"
+	- var pageSubTitle = "Advanced initialisation of DataTables"
+	- var description  = "The configuration options offered by DataTables extend much further than the options shown in the basic initialisation of this documentation. Through combinations of the options available and the use of callbacks, DataTables is completely customisable and will fit into exactly what you need for your table display."
+	- var activeMenu   = "dt-advanced-initialization"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"Advanced DataTable"}])
+
+//- Include page content in page block
+append content
+	include ../contents/dt-advanced-initialization.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+
+//- Add custom page specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.buttons.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/buttons.flash.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/jszip.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/pdfmake.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/vfs_fonts.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/buttons.html5.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/buttons.print.min.js', type='text/javascript')
+
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables/datatable-advanced.js', type='text/javascript')

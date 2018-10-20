@@ -1,0 +1,43 @@
+//- =========================================================================================
+	File Name: google-line-charts.pug
+	Description: google line chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "google Line Chart"
+	- var pageSubTitle = "google line chart examples"
+	- var description  = "A line chart or line graph is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments."
+	- var activeMenu   = "google-line-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Google Charts"}, {name:"line Chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/google-line-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='https://www.google.com/jsapi', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/google/line/line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/line/line-interval.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/line/area.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/line/area-interval.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/line/area-stacked.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/line/area-stepped.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/line/area-stacked-stepped.js', type='text/javascript')

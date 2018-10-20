@@ -1,0 +1,77 @@
+- var menuFlipped        = false			
+- var boxedLayout        = false			
+- var isContentMenu      = false			
+- var navbarFixed        = true			
+- var contentLayout      = "2-columns"	
+- var pageClass			 = ''
+- var logoType           = 'dark'		
+- var menuOpen           = "click"			
+- var navbarHideOnScroll = false
+- var footerHideOnScroll = false
+- var blankPage          = false
+- var bodyCustom         = ''
+- var starterKit         = false
+
+
+include includes/mixins
+
+
+
+block templateConfig
+block pageConfig
+block navbarConfig
+block verticalMenuConfig
+block horizontalMenuConfig
+block footerConfig
+
+
+doctype html
+html(lang="en" class="loading" data-textdirection=useDirection)
+	head
+		block meta
+			include includes/head.pug
+		block styles
+			if starterKit == false
+				include includes/styles.pug
+			else
+				include includes/sk-styles.pug
+	body(class=templateCustom+ ' ' +contentLayout+ ' ' +pageClass+ ' ' +bodyCustom, class=(menuFlipped == true ? 'menu-flipped' : ''), class=(menuCollapsed == true ? 'menu-collapsed' : 'menu-expanded'), class=(boxedLayout == true ? 'container boxed-layout' : ''), class=(blankPage == true ? 'blank-page' : ''), class=(navbarFixed == true ? 'fixed-navbar' : ''), class=(blankPage == true ? 'blank-page' : '') , data-open=menuOpen, data-menu=dataMenu, data-col=contentLayout)
+
+
+		
+		if blankPage != true
+
+			
+			= '\n'
+			block header
+			= '\n'
+			
+
+		// ////////////////////////////////////////////////////////////////////////////
+		
+
+		
+		+pageLayouts(contentLayout, sidebarSticky, sidebarFixed, isContentMenu)
+
+		
+
+		// ////////////////////////////////////////////////////////////////////////////
+		= '\n'
+
+
+		if blankPage != true
+
+			if starterKit == false
+				//- block customizer
+				//- 	include includes/customizer.pug
+
+			= '\n'
+			block footer
+			= '\n'
+			
+
+		block scripts
+			if starterKit == false
+				include includes/scripts.pug
+			else
+				include includes/sk-scripts.pug

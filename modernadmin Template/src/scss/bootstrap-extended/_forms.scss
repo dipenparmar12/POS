@@ -1,0 +1,216 @@
+form{
+    label{
+        color: darken($content-bg, 70%);
+    }
+    .form-group{
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control{
+        border: 1px solid darken($content-bg, 12%);
+        color: darken($content-bg, 60%);
+
+        &::-webkit-input-placeholder {
+           color: darken($content-bg, 20%);
+        }
+
+        &:-moz-placeholder { /* Firefox 18- */
+           color: darken($content-bg, 20%);
+        }
+
+        &::-moz-placeholder {  /* Firefox 19+ */
+           color: darken($content-bg, 20%);
+        }
+
+        &:-ms-input-placeholder {
+           color: darken($content-bg, 20%);
+        }
+    }
+    .form-section{
+        color: $menu-dark-bg;
+        line-height: 3rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $menu-dark-bg;
+
+        i{
+            font-size: 20px;
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+    }
+
+    /* .form-body{
+        overflow: hidden;
+    } */
+
+    .form-actions{
+        border-top: 1px solid darken($content-bg, 10%);
+        padding: 20px 0;
+        margin-top: 20px;
+
+        &.filled{
+            background-color: $content-bg;
+        }
+        &.center{
+            text-align: center;
+        }
+        &.right{
+            text-align: right;
+        }
+
+        &.top{
+            border-top: 0;
+            border-bottom: 1px solid darken($content-bg, 10%);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            .buttons-group{
+                float: left !important;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &.form-horizontal{
+        .form-group{
+            @include media-breakpoint-up(sm) {
+                .label-control{
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &.row-separator{
+        .form-group{
+            margin: 0;
+            border-bottom: 1px solid darken($content-bg, 3%);
+            .label-control{
+                padding-top: 1.5rem;
+            }
+            > div{
+                padding: 1.2rem;
+                padding-right: 0;
+            }
+            &.last{
+                border-bottom: 0;
+            }
+        }
+    }
+
+    &.form-bordered{
+        .form-group{
+            margin: 0;
+            border-bottom: 1px solid darken($content-bg, 3%);
+            .label-control{
+                padding-top: 1.5rem;
+            }
+            > div{
+                padding: 1.2rem;
+                padding-right: 0;
+                border-left: 1px solid darken($content-bg, 3%);
+            }
+            &.last{
+                border-bottom: 0;
+            }
+        }
+    }
+
+    &.striped-rows{
+        .form-group{
+            margin: 0;
+
+            .label-control{
+                padding-top: 1.5rem;
+            }
+
+            > div{
+                padding: 1.2rem;
+                padding-right: 0;
+            }
+
+            &:nth-child(even){
+                background-color: $content-bg;
+            }
+        }
+    }
+
+    &.striped-labels{
+        .form-group{
+            margin: 0;
+
+            .label-control{
+                padding-top: 1.5rem;
+            }
+
+            > div{
+                padding: 1.2rem;
+                padding-right: 0;
+                background-color: white;
+            }
+
+            &:nth-child(even){
+                background-color: $content-bg;
+            }
+        }
+    }
+
+    .custom-control-indicator{
+        width: 1.1rem;
+        height: 1.075rem;
+        line-height: 1.05rem;
+        top: 0.15rem;
+        left: 0;
+        + .custom-control-description{
+            margin-left: 1rem;
+        }
+    }
+}
+
+select.form-control {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+
+/*Bootstrap Enhance */
+.custom-checkbox {
+    margin-bottom: 0;
+    .custom-control-input{
+        &:disabled:checked {
+            ~ .custom-control-label::before {
+                background-color: rgba(30, 159, 242,0.5);
+            }
+        }
+    }
+}
+.custom-checkbox input:disabled:checked ~ .custom-control-indicator{
+  opacity: 0.5;
+}
+.custom-checkbox input:disabled ~ .custom-control-indicator{
+  cursor: not-allowed;
+}
+.custom-control-input > input:focus ~ .custom-control-indicator{
+  padding: 0.51rem;
+}
+.custom-control-indicator{
+  width: 1.1rem;
+  height: 1.075rem;
+  line-height: 1.05rem;
+  top: 0.15rem;
+  + .custom-control-description{
+    margin-left: 1rem;
+  }
+}
+.form-control{
+    &:disabled,
+    &[readonly]{
+        background-color: #ECEFF1;
+    }
+}
+.input-group-addon {
+    background-color: #ECEFF1;
+    border-color: #BABFC7;
+}    

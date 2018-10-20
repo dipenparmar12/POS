@@ -1,0 +1,59 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../assets/scss/variables/variables";
+@import "../../../../assets/scss/variables/components-variables";
+
+
+.right-checkbox, .right-radio {
+  input[type="checkbox"],
+  .custom-control-indicator,
+  input[type="radio"]{
+		left: auto;
+    top: auto;
+    position: absolute;
+  }
+  input[type="checkbox"],
+  .custom-control-label::before,
+  .custom-control-label::after,
+  input[type="radio"]{
+    left: auto;
+		right: 2%;
+  }
+}
+
+.radio.right-radio label{padding-left: 0;}
+
+
+/* iCheck */
+.skin, .icheck_square{
+  [class*="icheckbox_"],
+  [class*="iradio_"] {
+    margin-right: 0.6rem;
+  }
+}
+.skin{
+  [class*="icheckbox_line"],
+  [class*="iradio_line"] {
+    margin-bottom: 0.6rem;
+  }
+}
+.state{
+  &[class*="icheckbox_"]:hover,
+  &[class*="iradio_"]:hover {
+    cursor: default;
+  }
+}
+
+/* Image Checkbox selected*/
+ input[type="checkbox"]:checked + img.img-thumbnail{
+  background-color: $primary;
+  color:#996;
+  border-color: $primary;
+}

@@ -1,0 +1,191 @@
+<!-- Auto Complete section start -->
+<section id="date-picker">
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Examples</h4>
+                    <a class="heading-elements-toggle"><i class="ft-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-refresh"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-expand"></i></a></li>
+                            <li><a data-action="close"><i class="ft-remove"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <fieldset class="form-group">
+                            <label>Default Functionality</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-default" />
+                            </div>
+                            <small>The Auto complete widgets provides suggestions while you type into the field. Here the suggestions are tags for people names, give "a" (for Aaron or Abel) a try.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Accent Folding</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-accent-folding" />
+                            </div>
+                            <small>The auto complete field uses a custom source option which will match results that have accented characters even when the text field doesn't contain accented characters. However if the you type in accented characters in the text field it is smart enough not to show results that aren't accented.
+
+                            Try typing "Jo" to see "John" and "Jörn", then type "Jö" to see only "Jörn".</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Categories</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-category" />
+                            </div>
+                            <small>A categorized search result. Try typing "a" or "n".</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Combobox</label>
+                            <select class="ac-combobox">
+                                <option value="">Select one...</option>
+                                <option value="ActionScript">ActionScript</option>
+                                <option value="AppleScript">AppleScript</option>
+                                <option value="Asp">Asp</option>
+                                <option value="BASIC">BASIC</option>
+                                <option value="C">C</option>
+                                <option value="C++">C++</option>
+                                <option value="Clojure">Clojure</option>
+                                <option value="COBOL">COBOL</option>
+                                <option value="ColdFusion">ColdFusion</option>
+                                <option value="Erlang">Erlang</option>
+                                <option value="Fortran">Fortran</option>
+                                <option value="Groovy">Groovy</option>
+                                <option value="Haskell">Haskell</option>
+                                <option value="Java">Java</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Lisp">Lisp</option>
+                                <option value="Perl">Perl</option>
+                                <option value="PHP">PHP</option>
+                                <option value="Python">Python</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Scala">Scala</option>
+                                <option value="Scheme">Scheme</option>
+                            </select>
+                            <small>A custom widget built by composition of Auto complete and Button. You can either type something into the field to get filtered suggestions based on your input, or use the button to get the full list of selections.
+
+                            The input is read from an existing select-element for progressive enhancement, passed to Auto complete with a customized source-option.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Custom Data & Display</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-project" />
+                                <input type="hidden" class="ac-project-id">
+                                <p id="ac-project-description"></p>
+                            </div>
+                            <small>You can use your own custom data formats and displays by simply overriding the default focus and select actions. Try typing "j" to get a list of projects or just press the down arrow.</small>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Examples</h4>
+                    <a class="heading-elements-toggle"><i class="ft-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-refresh"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-expand"></i></a></li>
+                            <li><a data-action="close"><i class="ft-remove"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+
+                        <fieldset class="form-group">
+                            <label>Multiple Values</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-multiple-values" />
+                            </div>
+                            <small>Usage: Type something, eg. "a" to see suggestions for tagging with people names. Select a value, then continue typing to add more.</small>
+
+                            <small>This is an example showing how to use the source-option along with some events to enable auto completing multiple values into a single field.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Remote Datasource</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-remote-datasource" />
+                            </div>
+                            <small>The Auto complete widgets provides suggestions while you type into the field. Here the suggestions are bird names, displayed when at least two characters are entered into the field.</small>
+
+                            <small>The datasource is a server-side script which returns JSON data, specified via a simple URL for the source-option. In addition, the minLength-option is set to 2 to avoid queries that would return too many results and the select-event is used to display some feedback.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Remote With Caching</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-remote-caching" />
+                            </div>
+                            <small>Usage: Enter at least two characters to get bird name suggestions. Select a value to continue adding more names.</small>
+
+                            <small>This is an example showing how to use the source-option along with some events to enable auto completing multiple values into a single field.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Multiple, Remote</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-multiple-remote" />
+                            </div>
+                            <small>Usage: Enter at least two characters to get bird name suggestions. Select a value to continue adding more names.</small>
+
+                            <small>This is an example showing how to use the source-option along with some events to enable auto completing multiple values into a single field.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>XML Data Parsed Once</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control ac-xml-data-parse" />
+                            </div>
+                            <small>Usage: Enter at least two characters to get bird name suggestions. Select a value to continue adding more names.</small>
+
+                            <small>This is an example showing how to use the source-option along with some events to enable auto completing multiple values into a single field.</small>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Auto Complete section end -->

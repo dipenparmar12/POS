@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: horizontal-nav-flipped.pug
+	Description: Horizontal flipped navigation option change the navigation position to right side.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Flipped Navigation"
+	- var pageSubTitle = "Horizontal flipped navigation"
+	- var description  = "Horizontal flipped navigation option change the navigation position to right side."
+	- var activeMenu   = "horizontal-nav-flipped"
+
+
+
+append horizontalMenuConfig
+	- var menuFlipped = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navbars"}, {name:"Flipped Navigation"}])
+
+//- Include page content in page block
+append content
+	include ../contents/horizontal-nav-flipped.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript', src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

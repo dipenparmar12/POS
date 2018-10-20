@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: color-palette-yellow.pug
+	Description:  Bootstrap 4 Yellow Color Palette
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Yellow Color"
+	- var pageSubTitle = "Yellow Color Options"
+	- var description  = "Yellow Color Palette with background & border color."
+	- var activeMenu  = "color-palette-yellow"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Color System"}, {name:"Yellow Palette"}])
+
+//- Include page content in page block
+append content
+	include ../contents/color-palette-yellow.html

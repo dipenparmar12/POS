@@ -1,0 +1,26 @@
+//- =========================================================================================
+	File Name: component-buttons-basic.pug
+	Description: Use Bootstrap’s custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Buttons"
+	- var pageSubTitle = "Bootstrap’s custom button styles can be used for actions in forms, dialogs, and more"
+	- var description  = "Buttons include support for a handful of contextual variations, sizes, states, and more. Group a series of buttons together on a single line with the button group."
+	- var activeMenu = "component-buttons-basic"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Buttons"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-buttons-basic.html

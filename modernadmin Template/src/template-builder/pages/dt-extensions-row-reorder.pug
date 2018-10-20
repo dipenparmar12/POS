@@ -1,0 +1,54 @@
+//- =========================================================================================
+	File Name:dt-extensions-row-reorder.pug
+	Description: Rows in a DataTable to be reordered
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==============================================================================	============-//
+extends template
+
+block pageVars
+	- var pageTitle    = "RowReorder Datatable"
+	- var pageSubTitle = "Rows in a DataTable to be reordered"
+	- var description  = "RowReorder adds the ability for rows in a DataTable to be reordered through user interaction with the table (click and drag / touch and drag). Integration with Editor's multi-row editing feature is also available to update rows immediately"
+	- var activeMenu   = "dt-extensions-row-reorder"
+
+
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"RowReorder Datatable"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/dt-extensions-row-reorder.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/responsive.dataTables.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables-extensions/datatable-rowreorder.js',type='text/javascript')

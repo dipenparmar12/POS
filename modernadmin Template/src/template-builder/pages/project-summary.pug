@@ -1,0 +1,54 @@
+//- =========================================================================================
+	File Name: project-summary.pug
+	Description: Project summary page.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Project Summary"
+	- var pageSubTitle = "Overall project summary."
+	//- var description  = "Egal's Eye View Of Project Status"
+	- var activeMenu   = "project-summary"
+
+
+
+append pageConfig
+	- var contentLayout = 'content-detached-right-sidebar'
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Project"}, {name:"Project Summary"}])
+
+
+
+//- Include project content in page block
+append content
+	include ../contents/project-summary.html
+
+//- Include project sidebar block
+append sidebar
+	include ../contents/project-summary-sidebar.html
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/project.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/pages/project-summary-task.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/pages/project-summary-bug.js', type='text/javascript')

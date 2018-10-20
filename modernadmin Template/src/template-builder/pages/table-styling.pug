@@ -1,0 +1,27 @@
+//- =========================================================================================
+	File Name: tables-styling.pug
+	Description: Table with diffent styling
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Tables styling"
+	- var pageSubTitle = "Table with different styling"
+	- var description  = "Table styling classes help you to style table row background & border color, header and footer background color and table formatting purpose."
+	- var activeMenu   = "table-styling"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Tables"}, {name:"Table Styling"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/table-styling.html

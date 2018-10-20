@@ -1,0 +1,33 @@
+//- =========================================================================
+	File Name: component-tooltips.pug
+	Description: The Bootstrap tooltip plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Tooltip"
+	- var pageSubTitle = "The tooltip is a common graphical user interface element."
+	- var description = "Tooltips are an updated version, which don’t rely on images, use CSS3 for animations, and data-attributes for local title storage."
+	- var activeMenu  = "component-tooltips"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Tooltip"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-tooltips.html
+
+append pagejs
+	//- Template JS for tooltip
+	script(src=app_assets_path + '/js/scripts/tooltip/tooltip.js', type='text/javascript')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-tooltip.css')

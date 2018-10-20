@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: jquery-ui-date-pickers.pug
+	Description: jQuery UI date pickers
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "jQuery UI date pickers"
+	- var pageSubTitle = "jQuery UI date pickers examples"
+	- var description = "The datepicker is tied to a standard form input field. Focus on the input (click, or use the tab key) to open an interactive calendar in a small overlay. Choose a date, click elsewhere on the page (blur the input), or hit the Esc key to close. If a date is chosen, feedback is shown as the input's value."
+	- var activeMenu = "jquery-ui-date-pickers"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"jQuery UI"}, {name:"Date Pickers"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/jquery-ui-date-pickers.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/jquery-ui.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/ui/jqueryui.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/ui/jquery-ui/date-pickers.js', type='text/javascript')

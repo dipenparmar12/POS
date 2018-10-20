@@ -1,0 +1,19 @@
+// BEGIN VENDOR CSS
+link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/vendors.css')
+block vendorcss
+// END VENDOR CSS
+
+// BEGIN MODERN CSS
+link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/app.css')
+link(rel='stylesheet', type='text/css', href=assets_path + '/css/style'+rtl+'.css')
+if (useDirection == 'rtl')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/custom'+rtl+'.css')
+// END MODERN CSS
+
+// BEGIN Page Level CSS
+block pagecss
+// END Page Level CSS
+
+// BEGIN Custom CSS
+link(rel='stylesheet', type='text/css', href=assets_path + '/css/style'+rtl+'.css')
+// END Custom CSS

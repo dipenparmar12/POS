@@ -1,0 +1,68 @@
+[class*="bs-callout"]{
+    p{
+        letter-spacing: 0.6px;
+    }
+    .media{
+        border-radius: 0.25rem !important;
+    }
+    &.callout-bordered{
+        border: 1px solid #ddd;
+    }
+    &.callout-border-left{
+        border-left: 5px solid;
+    }
+    &.callout-border-right{
+        border-right: 5px solid;
+    }
+    .callout-arrow-left{
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: -11%;
+            border-left: 8px solid;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left-color: inherit;
+            margin-top: -8px;
+        }
+    }
+    .callout-arrow-right{
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: -11%;
+            border-left:0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left-color: inherit;
+            border-right: 8px solid;
+            border-right-color: inherit;
+            margin-top: -8px;
+        }
+    }
+    &.callout-round{
+        border-radius: 5rem !important;
+        .media-left{
+            border-top-left-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+        }
+        .media-right{
+            border-top-right-radius: 5rem;
+            border-bottom-right-radius: 5rem;
+        }
+    }
+    &.callout-square{
+        .media, .callout-arrow-left, .callout-arrow-right{
+            border-radius: 0 !important;
+        }
+        border-radius: 0 !important;
+    }
+}

@@ -1,0 +1,199 @@
+// ================================================================================================
+//     File Name: content.scss
+//     Description: Page content level SCSS for different screen size, layout and device.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Authuseror URL: http://www.themeforest.net//pixinvent
+// ================================================================================================
+
+// Contest margin left for expanded & collapsed stats width & margin left 
+// ================================================================================================
+html {
+    font-size: 14px;
+    height: 100%;
+    body {
+        height: 100%;
+        // padding-top: 0;
+        &.fixed-navbar{
+            padding-top: $navbar-height;
+        }
+        background-color: $content-bg;
+        direction: $body-direction;
+        a{
+            color:$info;
+            &:hover{
+                color: darken($info,10);
+            }
+        }        
+        .content {
+            padding: 0;
+            position:relative;
+            transition: 300ms ease all;
+            backface-visibility: hidden;
+            min-height: calc(100% - 32px);
+            &.app-content{
+                overflow: hidden;
+            }
+            .content-wrapper {
+                padding: 2.2rem;
+                .content-header-title{
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    color: $gray-800;
+                    
+                }
+                .content-header-right{
+                    // margin-top: 6px;
+                }
+            }
+        }
+        // Line awesome font size
+        .la{
+            font-size: 1.4rem;
+        }
+        //Remove left margin for 1 column layout
+        &[data-col="1-column"] {
+            &:not(.vertical-content-menu) {
+                .content,
+                .footer {
+                    margin-left: 0px !important;
+                }
+            }
+            &.horizontal-layout {
+                .content,
+                .footer {
+                    margin: 0 auto !important;
+                }
+            }
+            &.vertical-content-menu {
+                .content-body {
+                    margin-left: 0px !important;
+                }
+            }
+        }
+        &.boxed-layout {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &.bg-full-screen-image {
+            background: url(../../app-assets/images/backgrounds/bg-2.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        .pace {
+            .pace-progress {
+                background: $danger;
+            }
+        }
+
+    }
+}
+
+/*
+* Blank page
+*/
+
+.blank-page {
+    .content-wrapper {
+        padding: 0 !important;
+        .flexbox-container {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+    }
+}
+.app-content.center-layout{
+    overflow: hidden;
+}
+
+// Reduce the content padding for mobile screen
+@include media-breakpoint-down(sm) {
+    html {
+        body {
+            .content {
+                .content-wrapper {
+                    padding: 1rem;
+                }
+            }
+            footer {
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+/*
+* Col 3 layout for detached and general type
+*/
+
+@include media-breakpoint-up(lg) {
+    body {
+        // Normal sidebar
+        .content-right {
+            width: calc(100% - #{$sidebar-width});
+            float: right;
+        }
+        .content-left {
+            width: calc(100% - #{$sidebar-width});
+            float: left;
+        }
+        // Detached sidebar
+        .content-detached {
+            width: 100%;
+            &.content-right {
+                float: right;
+                margin-left: -$sidebar-width;
+                .content-body {
+                    margin-left: $sidebar-width+20;
+                }
+            }
+            &.content-left {
+                float: left;
+                margin-right: -$sidebar-width;
+                .content-body {
+                    margin-right: $sidebar-width+20;
+                }
+            }
+        }
+    }
+    .sidebar-right.sidebar-sticky {
+        float: right !important;
+        margin-left: -$sidebar-width;
+        width: $sidebar-width !important;
+    }
+    //left sticky sidebar
+    [data-col="content-left-sidebar"] {
+        .sticky-wrapper {
+            float: left;
+        }
+    }
+    .vertical-content-menu {
+        .content {
+            // Detached sidebar
+            .sidebar-left {
+                margin-left: ($content-menu-expanded-width + 28);
+            }
+            .content-detached {
+                &.content-right {
+                    float: right;
+                    width: calc(100% - #{$sidebar-width});
+                    margin-left: -$sidebar-width;
+                    .content-body {
+                        margin-left: ($sidebar-width - 5);
+                    }
+                }
+                &.content-left {
+                    float: left;
+                    width: 100%;
+                    margin-right: -$sidebar-width;
+                    .content-body {
+                        margin-right: $sidebar-width+20;
+                    }
+                }
+            }
+        }
+    }
+}

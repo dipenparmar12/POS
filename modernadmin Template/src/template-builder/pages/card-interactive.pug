@@ -1,0 +1,50 @@
+//- =========================================================================================
+	File Name: card-interactive.pug
+	Description: Advance interactive charts
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Advance Interactive Cards"
+	- var pageSubTitle = "Extended default cards"
+	- var description = "Exteding default bootstrap card functionality. "
+	- var activeMenu  = "card-interactive"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Advance Interactive Cards"}])
+
+//- Include page content in page block
+append content
+	include ../contents/card-interactive.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/morris.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/rickshaw.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//- Chartjs
+	script(src=app_assets_path + '/vendors/js/charts/chart.min.js', type='text/javascript')
+	//- Interactive Maps
+	script(src=app_assets_path + '/vendors/js/charts/d3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/rickshaw.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Advance cards JS
+	script(src=app_assets_path + '/js/scripts/cards/card-interactive.js', type='text/javascript')

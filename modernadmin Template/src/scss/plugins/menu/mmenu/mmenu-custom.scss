@@ -1,0 +1,180 @@
+//	=========================================================================================
+//	File Name: mmenu-custom.scss
+// 	Custom styles for Multi level menu components.
+// 	----------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+//	==========================================================================================
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+
+// Core variables and mixins overrides
+@import "../../../core/variables/variables";
+@import "../../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../../assets/scss/variables/variables";
+@import "../../../../../assets/scss/variables/components-variables";
+
+
+@import "_imp/import";
+
+@import "_imp/menu";
+@import "_imp/panels";
+@import "_imp/vertical";
+@import "_imp/buttons";
+@import "_imp/navbars";
+@import "_imp/listviews";
+@import "_imp/inset_lists";
+@import "_imp/dividers";
+@import "_imp/spacers";
+
+
+
+@import "addons/jquery.mmenu.navbars";
+@import "addons/jquery.mmenu.searchfield";
+
+//Themes support
+//@import "extensions/themes/jquery.mmenu.themes";
+
+
+
+@include mm_colors;
+
+
+// Import mmenu default and addon css
+
+$mm_menuWidth: 1.0;
+$mm_menuMinWidth: $mm-expanded-width;
+$mm_menuMaxWidth: $mm-collapsed-width;
+
+
+// ANIMATIONS
+$mm_transitionDuration: 0.5s;
+$mm_transitionFunction: ease;
+
+
+
+// Hide menu untill mm-menu class add
+.vertical-mmenu{
+	.main-menu:not(.mm-menu) {
+	   display: none;
+	}
+	.mm-navbar.mm-navbar-top{
+		border:none;
+		.mm-search{
+			padding: ($mm_padding+2) $mm_padding 0 $mm_padding;
+		}
+	}
+	.mm-listview {
+		> li {
+			> span	{
+					padding: 0;
+				    font-family: $headings-font-family;
+				    font-size: 1rem;
+				    text-transform: uppercase;
+				    text-indent:0;
+			}
+			&:hover{
+				.mm-arrow:after, 
+				.mm-next:after {
+					border-color:rgb(255,255,255);
+				}
+			}
+			&:not(.mm-divider):after {
+				left: 0px;
+			}
+		}
+
+		li{
+			&.has-sub {
+				a:not(.mm-next):after{
+					display: none !important;
+				}
+			}
+		}
+	}
+
+	.mm-panels {
+		top: $navbar-height;
+		//Scrollbar fix
+		> .mm-panel{
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: -17px;
+		    overflow-y: scroll;
+		}
+	} 
+	
+	.main-menu:not(.menu-native-scroll) {
+		.mm-panels {
+			//Scrollbar fix
+			> .mm-panel{
+			    position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: -17px;
+			    overflow-y: scroll;
+			}
+		}
+	}
+
+	.main-menu.menu-native-scroll {
+
+		overflow-y: hidden;
+
+		.mm-panels {
+			//Scrollbar fix
+			> .mm-panel{
+			    position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0px;
+			    overflow-y: auto;
+			}
+		}
+	}
+
+
+	//Mmenu general light dark border
+	.menu-light.mm-menu {
+
+		.mm-listview {
+		> li{
+			&:after,
+			.mm-next,
+			.mm-next:before
+			 	{
+			    	border-color: #E2E2E2;
+				}
+			}
+		}
+	}
+
+	.menu-dark.mm-menu {
+		.mm-navbar{
+			border-color: #34424C;
+		}
+		.mm-listview {
+			> li{
+				&:after,
+				.mm-next,
+				.mm-next:before
+				{
+			    	border-color: #34424C;
+				}
+			}
+		}
+	}
+
+}

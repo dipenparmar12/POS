@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: timeline-horizontal.pug
+	Description: Horizontal responsive timeline.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Horizontal Timeline"
+	- var pageSubTitle = "Horizontal responsive timeline."
+	- var description  = "An easy to customize, responsive horizontal timeline."
+	- var activeMenu   = "timeline-horizontal"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Gallery"}, {name:"Timeline Horizontal"}])
+
+//- Include page content in page block
+append content
+	include ../contents/timeline-horizontal.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	//- iCheck css
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+	//- Photo-swipe for gallery
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/timeline.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//-Horizontal Timeline js
+	script(src=app_assets_path + '/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')

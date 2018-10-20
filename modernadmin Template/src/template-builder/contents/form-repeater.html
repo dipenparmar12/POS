@@ -1,0 +1,218 @@
+<!-- Form repeater section start -->
+<section id="form-repeater">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="repeat-form">Repeating Forms</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <div class="repeater-default">
+                            <div data-repeater-list="car">
+                                <div data-repeater-item>
+                                    <form class="form row">
+                                        <div class="form-group mb-1 col-sm-12 col-md-2">
+                                            <label for="email-addr">Email address</label>
+                                            <br>
+                                            <input type="email" class="form-control" id="email-addr" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group mb-1 col-sm-12 col-md-2">
+                                            <label for="pass">Password</label>
+                                            <br>
+                                            <input type="password" class="form-control" id="pass" placeholder="Password">
+                                        </div>
+                                        <div class="form-group mb-1 col-sm-12 col-md-2">
+                                            <label for="bio" class="cursor-pointer">Bio</label>
+                                            <br>
+                                            <textarea class="form-control" id="bio" rows="2"></textarea>
+                                        </div>
+                                        <div class="skin skin-flat form-group mb-1 col-sm-12 col-md-2">
+                                            <label for="tel-input">Gender</label>
+                                            <br>
+                                            <input class="form-control" type="tel" value="1-(555)-555-5555" id="tel-input">
+                                        </div>
+                                        <div class="form-group mb-1 col-sm-12 col-md-2">
+                                            <label for="profession">Profession</label>
+                                            <br>
+                                            <select class="form-control" id="profession">
+                                              <option>Select Option</option>
+                                              <option>Option 1</option>
+                                              <option>Option 2</option>
+                                              <option>Option 3</option>
+                                              <option>Option 4</option>
+                                              <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-12 col-md-2 text-center mt-2">
+                                            <button type="button" class="btn btn-danger" data-repeater-delete> <i class="ft-x"></i> Delete</button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="form-group overflow-hidden">
+                                <div class="col-12">
+                                    <button data-repeater-create class="btn btn-primary">
+                                        <i class="ft-plus"></i> Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Form repeater section end -->
+
+<!-- Form control repeater section start -->
+<section id="form-control-repeater">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="file-repeater">Project Info</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+
+                        <form class="form row">
+                            <div class="form-group col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="Name" name="name">
+                            </div>
+                            <div class="form-group col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="Company" name="company">
+                            </div>
+                            <div class="form-group col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="E-mail" name="email">
+                            </div>
+                            <div class="form-group col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="Phone" name="phone">
+                            </div>
+
+                            <div class="form-group col-md-6 mb-2">
+                                <select name="interested" class="form-control">
+                                    <option value="none" selected="" disabled="">Interested in</option>
+                                    <option value="design">design</option>
+                                    <option value="development">development</option>
+                                    <option value="illustration">illustration</option>
+                                    <option value="branding">branding</option>
+                                    <option value="video">video</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 mb-2">
+                                <select name="budget" class="form-control">
+                                    <option value="0" selected="" disabled="">Budget</option>
+                                    <option value="less than 5000$">less than 5000$</option>
+                                    <option value="5000$ - 10000$">5000$ - 10000$</option>
+                                    <option value="10000$ - 20000$">10000$ - 20000$</option>
+                                    <option value="more than 20000$">more than 20000$</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-12 mb-2 file-repeater">
+                                <div data-repeater-list="repeater-list">
+                                    <div data-repeater-item>
+                                        <div class="row mb-1">
+                                            <div class="col-9 col-xl-10">
+                                                <label class="file center-block">
+                                                    <input type="file" id="file">
+                                                    <span class="file-custom"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-2 col-xl-1">
+                                                <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1"><i class="ft-x"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" data-repeater-create class="btn btn-primary">
+                                    <i class="ft-plus"></i> Add new file
+                                </button>
+                            </div>
+                            <div class="form-group col-12 mb-2">
+                                <textarea rows="5" class="form-control" name="comment" placeholder="About Project"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="tel-repeater">User Profile</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+
+                        <form class="row">
+                            <div class="form-group col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="Name" name="name">
+                            </div>
+                            <div class="form-group col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="Company" name="company">
+                            </div>
+                            <div class="form-group col-12 mb-2">
+                                <input type="text" class="form-control" placeholder="E-mail" name="email">
+                            </div>
+                            <div class="form-group col-12 mb-2 contact-repeater">
+
+                                <div data-repeater-list="repeater-group">
+                                    <div class="input-group mb-1" data-repeater-item>
+                                        <input type="tel" placeholder="Telephone" class="form-control" id="example-tel-input">
+                                        <span class="input-group-append" id="button-addon2">
+                                            <button class="btn btn-danger" type="button" data-repeater-delete><i class="ft-x"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <button type="button" data-repeater-create class="btn btn-primary">
+                                    <i class="ft-plus"></i> Add new telephone number
+                                </button>
+                            </div>
+                            <div class="form-group col-12 mb-2">
+                                <input type="text" class="form-control" placeholder="Occupation" name="occupation">
+                            </div>
+                            <div class="form-group col-12 mb-2">
+                                <textarea rows="5" class="form-control" name="bio" placeholder="Bio"></textarea>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Form control repeater section end -->

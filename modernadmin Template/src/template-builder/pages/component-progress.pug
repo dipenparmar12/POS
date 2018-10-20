@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: component-progress.pug
+	Description: Stylize the HTML5 progress element with a few extra classes and some crafty browser-specific CSS.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Progress"
+	- var pageSubTitle = "Stylize the HTML5 progress element."
+	- var description = "Progress bars supports stacked bars, animated backgrounds, and text labels."
+	- var activeMenu  = "component-progress"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Progress"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-progress.html

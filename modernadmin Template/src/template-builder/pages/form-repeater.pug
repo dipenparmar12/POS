@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: form-repeater.pug
+	Description: Form Repeater
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Form Repeater"
+	- var pageSubTitle = "Create a repeatable group of input elements"
+	- var description = "Repeater creates an interface to add and remove a repeatable group of input elements. It uses the first 'data-repeater-item' as a template for added items. It rewrites your name attributes to avoid collisions within the same form."
+	- var activeMenu = "form-repeater"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Repeater"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-repeater.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/forms/repeater/jquery.repeater.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/forms/form-repeater.js', type='text/javascript')

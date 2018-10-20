@@ -1,0 +1,45 @@
+//- =========================================================================================
+	File Name: echarts-line-area-charts.pug
+	Description: Line & Area echarts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Echarts - Line & Area Chart"
+	- var pageSubTitle = "Line & Area Chart Examples"
+	- var description = "A line chart or line graph is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments."
+	- var activeMenu   = "echarts-line-area-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Echarts"}, {name:"Line & Area Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/echarts-line-area-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/basic-area.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/basic-line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/irregular-line-time-axis.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/irregular-line-two-value-axis.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/line-multilevel-control.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/stacked-area.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/line-area/stacked-line.js', type='text/javascript')

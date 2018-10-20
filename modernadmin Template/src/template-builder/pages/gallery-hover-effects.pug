@@ -1,0 +1,50 @@
+//- =========================================================================================
+	File Name: gallery-hover-effects.pug
+	Description: gallery with image hover effects.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Gallery Hover Effects"
+	- var pageSubTitle = "Gallery grid with hover effects"
+	- var description  = "An inspirational collection of 30 subtle hover effects."
+	- var activeMenu   = "gallery-hover-effects"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Gallery"}, {name:"Gallery Hover Effects"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/gallery-hover-effects.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/gallery.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

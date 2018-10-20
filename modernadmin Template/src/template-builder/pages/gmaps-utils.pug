@@ -1,0 +1,41 @@
+//- =========================================================================================
+	File Name: gmaps-utils.pug
+	Description: Gmaps utils examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "gmaps - Utils"
+	- var pageSubTitle = "Utils examples"
+	- var description = "gmaps utils examples include context menu, geofences, custom controls, fusion table layers, KML & geoRSS layers, map types, overlay map types, street view panoramas, interacting with ui and working with json."
+	- var activeMenu   = "gmaps-utils"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"gmaps"}, {name:"Utils"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/gmaps-utils.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyBDkKetQwosod2SZ7ZGCpxuJdxY3kxo5Po', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/gmaps.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/gmaps/utils.js', type='text/javascript')

@@ -1,0 +1,325 @@
+/*=========================================================================================
+	File Name: navigations.scss
+	Description: Common mixin for menus, contain dark and light version scss.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Import first main menu mixin
+@import "../mixins/main-menu-mixin";
+
+// Main menu base
+//==============
+.main-menu {
+    z-index:1000;
+    position: absolute;
+    display: table-cell;
+
+    &.menu-light{
+        @include menu-theme($menu-light-color, $menu-light-bg);
+        border-right: 1px solid #E4E7ED;
+    }
+
+    &.menu-dark{
+        @include menu-theme($menu-dark-color, $menu-dark-bg);
+    }
+
+    &.menu-fixed{
+        position: fixed;
+        height: 100%; /* fallback if needed */
+        top: $navbar-height; 
+        height: calc(100% - #{$navbar-height});
+        .main-menu-footer{
+            position:fixed;
+        }
+    }
+
+    &.menu-shadow{
+        box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+    &.menu-border{
+        border-right: 1px solid #E4E7ED;
+    }
+        
+
+    // Native Scrollbar (.menu-native-scroll)
+    &.menu-native-scroll {
+        .main-menu-content {
+            overflow-y: scroll;
+        }
+    }
+    // Bordered Navigation (.menu-border)
+    &.menu-bordered.menu-light {
+        .navigation {
+            >li {
+                border-top: 1px solid #E4E7ED;
+            }
+        }
+    }
+    &.menu-bordered.menu-dark {
+        .navigation {
+            >li {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+    .main-menu-content{
+        height: 100%;
+        position: relative;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        &.navigation-main{
+            overflow-x: hidden; 
+        }
+    }
+
+    a {
+        outline: none;
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+// Main Navigation
+.navigation {
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    font-family: $font-family-monospace;
+    font-weight: 400;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    .navigation-header {
+        font-family: $font-family-monospace;
+        font-weight: $headings-font-weight;
+        line-height: $headings-line-height;
+        padding: 12px 22px;
+        font-size: 1rem;
+    }
+    li {
+        position: relative;
+        white-space: nowrap;
+        a {
+            display: block;
+            /* white-space: nowrap; */
+            text-overflow: ellipsis;
+            overflow: hidden;
+            // border-left: 4px solid transparent;
+        }
+        .is-hidden {
+            /* transition: all 250ms ease-in;
+            transform: scale(0);
+            opacity: 0; */
+        }
+        .is-shown {
+            /* transition: all 250ms ease-in;
+            transform: scale(1);
+            opacity: 1; */
+        }
+        &.disabled {
+            a {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+// For compact menu popout
+.menu-popout{
+    li {
+        &.disabled {
+            a {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+
+.dropdown-notification {
+    .notification-text {
+        margin-bottom: 0.5rem;
+    }
+    .notification-tag {
+        position: relative;
+        top: -28px;
+        right: 20px;
+    }
+}
+
+// Navigation Header
+//=====================
+.main-menu-header {
+    .user-content {
+        padding: 20px;
+        .media {
+            overflow: inherit;
+        }
+        .media-body {
+            vertical-align: bottom;
+            opacity: 1;
+            width: 150px;
+            white-space: nowrap;
+            transition: all .3s ease .15s;
+        }
+    }
+}
+
+// Navigation Footer
+//=====================
+.main-menu-footer {
+    position: relative;
+    overflow: hidden;
+    bottom: 0;
+    display: block;
+    z-index: 1000;
+    color: lighten($menu-footer-color-bg, 60%);
+    background-color: darken($menu-footer-color-bg, 10%);
+    &.footer-open {
+        max-height: 500px;
+        transition: max-height 0.2s ease-in-out;
+    }
+    &.footer-close {
+        max-height: $menu-footer-height;
+        transition: max-height 0.2s ease-in-out;
+    }
+    a {
+        color: lighten($menu-footer-color-bg, 50%);
+        &:hover,
+        &:focus {
+            color: $menu-footer-color;
+        }
+    }
+    .header {
+        height: 19px;
+        border-bottom: 1px solid darken($menu-footer-color-bg, 5%);
+    }
+    .toggle {
+        transform: rotate(0deg);
+        transition: -webkit-transform 0.2s ease-in-out;
+    }
+    .content {
+        padding: 0;
+        .actions {
+            >a {
+                display: block;
+                float: left;
+                width: (100% / 3);
+                padding: 1rem 0;
+                color: lighten($menu-footer-color-bg, 50%);
+                text-align: center;
+                border-top: 1px solid darken($menu-footer-color-bg, 5%);
+                border-left: 1px solid darken($menu-footer-color-bg, 5%);
+                >span {
+                    font-size: 1.35rem;
+                }
+                &:hover,
+                &:focus {
+                    color: $menu-footer-color;
+                }
+            }
+        }
+    }
+}
+
+body.vertical-layout {
+    &.vertical-menu.menu-expanded {
+        .main-menu-footer {
+            .content {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// Right side icon (.menu-icon-right)
+.vertical-layout.menu-expanded, .vertical-overlay-menu {
+    .menu-icon-right {
+        ul.navigation {
+            li {
+                >a:after {
+                    left: 8px;
+                    right: initial !important;
+                }
+                >a {
+                    >i {
+                        float:right !important;
+                        margin: 0px -12px  0px 0px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Horizontal navigation right side icon
+.horizontal-layout {
+    .navbar-icon-right {
+        ul.nav {
+            >li {
+                >a:after {
+                    float: left;
+                    position: relative;
+                    top: 27px;
+                    left: -16px;
+                }
+                >a {
+                    >i {
+                        float: right;
+                        margin: 0px 4px 0 8px;
+                    }
+                }
+            }
+        }
+    }
+    //For horizontal fixed navbar
+    .navbar-fixed {
+        z-index: 999 !important;
+    }
+}
+
+// Media queries for small screen devices
+// =========================================
+@include media-breakpoint-down(sm) {
+    // menu hide/open animation
+    .menu-hide .main-menu,
+    .menu-open .main-menu {
+        transition: transform .25s, top .35s, height .35s;
+    }
+    .main-menu {
+        transform: translate3d(-240px, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000;
+    }
+    .menu-open .main-menu {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// Custom scss for overlay menu in small screen for horizontal layout
+@include media-breakpoint-down(md) {
+    .horizontal-layout.vertical-overlay-menu {
+        .main-menu-content {
+            padding: 0;
+            .mega-dropdown-menu {
+                margin: 0;
+                width: 100%;
+                >li {
+                    padding: 0;
+                }
+            }
+        }
+        .navbar {
+            .navbar-container {
+                margin-left: 0px;
+            }
+        }
+    }
+}

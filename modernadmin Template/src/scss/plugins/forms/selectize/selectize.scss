@@ -1,0 +1,259 @@
+// Core variables and mixins
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+
+// Core variables and mixins overrides
+@import "../../../core/variables/variables";
+@import "../../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../../assets/scss/variables/variables";
+@import "../../../../../assets/scss/variables/components-variables";
+
+// Contact selector like Email apps starts
+.selectize-control{
+	.selectize-input {
+		font-size: 1rem;
+		border-color: #D9D9D9 !important;
+		input{
+			font-size: 1rem;
+		}
+		&:focus, &.focus{
+			border-color: #CCCCCC !important;
+			outline: 0;
+		}
+		& > div {
+			.email{
+				opacity: 0.8;
+				&:before {
+					content: '<';
+				}
+				&:after {
+					content: '>';
+				}
+			}
+			.name + .email {
+				margin-left: 5px;
+			}
+		}
+	}
+	&.selectize-rtl-select{
+		.selectize-input, .selectize-dropdown-content{
+			text-align: right;
+		}
+	}
+	.selectize-dropdown{
+		font-size: 1rem;
+		.caption {
+			font-size: 12px;
+			display: block;
+			color: #a0a0a0;
+		}
+		.label{
+			font-size: 75%;
+			display: table-row;
+			font-weight: 600;
+			line-height: 1.25;
+			color: #495c68;
+		}
+		.active{
+			background-color: #E0E0E0 !important;
+			color: #424242 !important;
+		}
+		[data-selectable]{
+			padding: 10px 8px;
+		}
+	}
+	// Contact selector like Email apps Ends
+	// Integrate third-party data (GitHub) Starts
+	&.repositories{
+		&::before {
+			-moz-transition: opacity 0.2s;
+			-webkit-transition: opacity 0.2s;
+			transition: opacity 0.2s;
+			content: ' ';
+			z-index: 2;
+			position: absolute;
+			display: block;
+			top: 12px;
+			right: 34px;
+			width: 16px;
+			height: 16px;
+			background: url(../../../../images/icons/spinner.gif);
+			background-size: 16px 16px;
+			opacity: 0;
+		}
+		&.loading::before {
+			opacity: 0.4;
+		}
+		.selectize-dropdown{
+			div {
+				border-bottom: 1px solid rgba(0,0,0,0.05);
+			}
+			.by {
+				font-size: 11px;
+				opacity: 0.8;
+				&::before {
+					content: 'by ';
+				}
+			}
+			.name {
+				font-weight: bold;
+				margin-right: 5px;
+			}
+			.title {
+				display: block;
+			}
+			.description {
+				font-size: 12px;
+				display: block;
+				color: #a0a0a0;
+				white-space: nowrap;
+				width: 100%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			.meta {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				font-size: 10px;
+				[class^="icon-"]{
+					font-size: 0.8rem;
+					&:before{
+						margin-right: 8px;
+					}
+				}
+				li {
+					margin: 0;
+					padding: 0;
+					display: inline;
+					margin-right: 10px;
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	// Integrate third-party data (GitHub) Ends
+	// Movies API starts
+	&.movies{
+		&::before {
+			-moz-transition: opacity 0.2s;
+			-webkit-transition: opacity 0.2s;
+			transition: opacity 0.2s;
+			content: ' ';
+			z-index: 2;
+			position: absolute;
+			display: block;
+			top: 12px;
+			right: 34px;
+			width: 16px;
+			height: 16px;
+			background: url(../../../../images/icons/spinner.gif);
+			background-size: 16px 16px;
+			opacity: 0;
+		}
+		&.loading::before {
+			opacity: 0.4;
+		}
+		.selectize-dropdown{
+			[data-selectable] {
+				border-bottom: 1px solid rgba(0,0,0,0.05);
+				height: 60px;
+				position: relative;
+				-webkit-box-sizing: content-box;
+				box-sizing: content-box;
+				padding: 10px 10px 10px 60px;
+				&:last-child {
+					border-bottom: 0 none;
+				}
+			}
+			.by {
+				font-size: 11px;
+				opacity: 0.8;
+				::before {
+					content: 'by ';
+				}
+			}
+			.name {
+				font-weight: bold;
+				margin-right: 5px;
+			}
+			.description {
+				font-size: 12px;
+				color: #a0a0a0;
+			}
+			.actors,
+			.description,
+			.title {
+				display: block;
+				white-space: nowrap;
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.actors {
+				font-size: 10px;
+				color: #a0a0a0;
+				span {
+					color: #606060;
+				}
+			}
+			img {
+				height: 60px;
+				left: 10px;
+				position: absolute;
+				border-radius: 3px;
+				background: rgba(0,0,0,0.04);
+			}
+			.meta {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				font-size: 10px;
+				li {
+					margin: 0;
+					padding: 0;
+					display: inline;
+					margin-right: 10px;
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	&.multi{
+		.selectize-input{
+			&.has-items{
+				padding-left: 8px !important;
+				&.disabled{
+					[data-value]{
+						color: $white;
+					}
+				}
+			}
+			[data-value]{
+				background-image: none !important;
+				padding: 3px 6px;
+				background-color: $info !important;
+				border-color: darken($info,10%) !important;
+				margin-right: 7px;
+				font-size: 1rem;
+				line-height: 1.5rem;
+			}
+		}
+	}
+	&.plugin-remove_button{
+		[data-value]{
+			.remove{
+				border-left-color: darken($info,10%) !important;
+			}
+		}
+	}
+}

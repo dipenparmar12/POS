@@ -1,0 +1,31 @@
+//- =========================================================================================
+	File Name: layout-1-column.pug
+	Description: The full width 1 column layout with only content section.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent  
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "1 Column"
+	- var pageSubTitle = "1 column layout starter page"
+	- var description  = "The full width 1 column layout with only content section."
+	- var activeMenu   = "1-column"
+
+
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var headerType = 'back-sk-header'
+	- var starterKit    = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Starter Kit"}, {name:"1 Column"}])
+
+//- Include page content in page block
+append content
+	include ../../contents/starter-kit/starter-page-content.html

@@ -1,0 +1,31 @@
+//- =========================================================================================
+	File Name: layout-boxed.pug
+	Description: The boxed layout has a padding around the main wrapper as well as a background applied to it.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent 
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Boxed Layout"
+	- var pageSubTitle = "Boxed layout with collapsed navigation"
+	- var description  = "The boxed layout has a padding around the main wrapper as well as a background applied to it."
+	- var activeMenu   = "boxed"
+
+
+
+append pageConfig
+	- var headerType = 'sk-header'
+	- var boxedLayout = true
+	- var starterKit    = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Starters Kit"}, {name:"Boxed Layout"}])
+
+//- Include page content in page block
+append content
+	include ../../contents/starter-kit/starter-page-content.html

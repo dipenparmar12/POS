@@ -1,0 +1,54 @@
+//- =========================================================================================
+	File Name: vector-maps-mapael-advance.pug
+	Description: jQuery Mapael Advance Vector Maps.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Mapael Advance Vector Maps"
+	- var pageSubTitle = "jQuery mapael advance vector maps examples"
+	- var description = "jQuery-Mapael - jQuery plugin based on raphael.js that allows you to display dynamic vector maps."
+	- var activeMenu   = "vector-maps-mapael-advance"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Maps"}, {url:"#",name:"Vector Maps"}, {url:"#",name:"jQuery Mapael"}, {name:"Mapael Advance Vector Maps"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/vector-maps-mapael-advance.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/mapael.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/raphael-min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/mapael/jquery.mapael.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/mapael/maps/france_departments.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/mapael/maps/world_countries.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/mapael/maps/usa_states.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/mapael/advance/afterInit-extend.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/mapael/advance/display-information.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/mapael/advance/links-between-plotted-cities.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/mapael/advance/multiple-legends-plotted-cities.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/mapael/advance/zoom-on-click.js', type='text/javascript')

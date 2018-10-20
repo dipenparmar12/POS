@@ -1,0 +1,76 @@
+// ================================================================================================
+//   File Name: pallette-gradient.scss
+//   Description: gradient color system styles
+//   ----------------------------------------------------------------------------------------------
+//   Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 1.0
+//   Author: PIXINVENT
+//   Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+
+@function color-function($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  // @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}
+
+// Color palettes
+@import "palette-variables";
+// Overrides user variable
+@import "../../../../assets/scss/colors/palette-variables";
+
+@import "../../bootstrap/mixins/_gradients";
+@import "../../bootstrap/mixins/gradients";
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .bg-gradient-x-#{$color_name}{
+        @if (color-function($color_name, "darken-2") != null) {
+          @include gradient-x(map-get(($color),'darken-2'), map-get(($color), 'lighten-2'));
+        }
+      }
+      .bg-gradient-y-#{$color_name}{
+        @if (color-function($color_name, "darken-2") != null) {
+          @include gradient-y(map-get(($color),'darken-2'), map-get(($color), 'lighten-2'));
+        }
+      }
+      .bg-gradient-directional-#{$color_name}{
+        @if (color-function($color_name, "darken-2") != null) {
+          @include gradient-directional(map-get(($color),'darken-2'), map-get(($color), 'lighten-2'));
+        }
+      }
+      .bg-gradient-x2-#{$color_name}{
+        @if (color-function($color_name, "darken-2") != null) {
+          @include gradient-x-three-colors(map-get(($color),'lighten-2'), $color_value, 50%, map-get(($color), 'lighten-3'));
+        }
+      }
+      .bg-gradient-y2-#{$color_name}{
+        @if (color-function($color_name, "darken-2") != null) {
+          @include gradient-y-three-colors(map-get(($color),'lighten-2'), $color_value, 50%, map-get(($color), 'lighten-3'));
+        }
+      }
+      .bg-gradient-radial-#{$color_name}{
+        @if (color-function($color_name, "darken-2") != null) {
+          @include gradient-radial(map-get(($color),'darken-2'), map-get(($color), 'lighten-2'));
+        }
+      }
+      .bg-gradient-striped-#{$color_name}{
+        @if (color-function($color_name, "lighten-3") != null) {
+          @include gradient-striped(map-get(($color),'lighten-3'));
+        }
+      }
+      .bg-gradient-x-#{$color_name}, .bg-gradient-y-#{$color_name}, .bg-gradient-directional-#{$color_name}, .bg-gradient-radial-#{$color_name}, .bg-gradient-striped-#{$color_name}, .bg-gradient-x2-#{$color_name}, .bg-gradient-y2-#{$color_name} {
+        .card-header, .card-footer{
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: flot-line-charts.pug
+	Description: Flot line chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Flot Line Chart"
+	- var pageSubTitle = "Flot line charts examples"
+	- var description = "A line chart or line graph is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments."
+	- var activeMenu   = "flot-line-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Flot Charts"}, {name:"Flot Line Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/flot-line-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.resize.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.time.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.selection.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.symbol.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/flot/line/line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/line/realtime.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/line/series-types.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/line/symbols.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/line/tracking.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/line/visitors.js', type='text/javascript')

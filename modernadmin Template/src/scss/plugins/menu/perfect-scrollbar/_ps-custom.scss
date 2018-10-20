@@ -1,0 +1,151 @@
+@import 'main';
+
+// Colors
+$ps-border-radius: 3px !default;
+
+$ps-rail-default-opacity: 0.3 !default;
+$ps-rail-container-hover-opacity: 0.4 !default;
+$ps-rail-hover-opacity: 0.5 !default;
+
+//light
+$ps-bar-bg-light: transperant !default;
+$ps-bar-container-hover-bg-light: rgba(255, 255, 255, 0.5) !default;
+$ps-bar-hover-bg-light: rgba(255, 255, 255, 0.8) !default;
+$ps-rail-hover-bg-light: rgba(255, 255, 255, 0.2) !default;
+
+//dark
+$ps-bar-bg-dark: transperant !default;
+$ps-bar-container-hover-bg-dark: rgba(0, 0, 0, 0.2) !default;
+$ps-bar-hover-bg-dark: rgba(0, 0, 0, 0.4) !default;
+$ps-rail-hover-bg-dark: rgba(0, 0, 0, 0.1) !default;
+
+// Sizes
+$ps-scrollbar-width : 6px;
+$ps-scrollbar-x-rail-bottom: 3px !default;
+$ps-scrollbar-x-rail-height: 8px !default;
+$ps-scrollbar-x-bottom: 0 !default;
+$ps-scrollbar-x-height: 8px !default;
+
+$ps-scrollbar-y-rail-right: 3px !default;
+$ps-scrollbar-y-rail-width: 8px !default;
+$ps-scrollbar-y-right: 0 !default;
+$ps-scrollbar-y-width: 8px !default;
+
+
+
+.ps-theme-dark {
+  @include ps-container(map-merge($ps-theme-default, (
+    border-radius: $ps-border-radius,
+	rail-default-opacity: $ps-rail-default-opacity,
+	rail-container-hover-opacity: $ps-rail-container-hover-opacity,
+	rail-hover-opacity: $ps-rail-hover-opacity,
+	bar-bg: $ps-bar-bg-dark,
+	bar-container-hover-bg: $ps-bar-container-hover-bg-dark,
+	bar-hover-bg: $ps-bar-hover-bg-dark,
+	rail-hover-bg: $ps-rail-hover-bg-dark,
+	scrollbar-y-rail-right: 0,
+	scrollbar-y-rail-width: $ps-scrollbar-width,
+	scrollbar-y-right: 0,
+	scrollbar-y-width: $ps-scrollbar-width,
+  )));
+}
+
+.ps-theme-light {
+  @include ps-container(map-merge($ps-theme-default, (
+    border-radius: $ps-border-radius,
+	rail-default-opacity: $ps-rail-default-opacity,
+	rail-container-hover-opacity: $ps-rail-container-hover-opacity,
+	rail-hover-opacity: $ps-rail-hover-opacity,
+	bar-bg: $ps-bar-bg-light,
+	bar-container-hover-bg: $ps-bar-container-hover-bg-light,
+	bar-hover-bg: $ps-bar-hover-bg-light,
+	rail-hover-bg: $ps-rail-hover-bg-light,
+	scrollbar-y-rail-right: 0,
+	scrollbar-y-rail-width: $ps-scrollbar-width,
+	scrollbar-y-right: 0,
+	scrollbar-y-width: $ps-scrollbar-width,
+  )));
+}
+
+.menu-collapsed{
+	.ps-theme-dark {
+		 @include ps-container(map-merge($ps-theme-default, (
+		 	border-radius: $ps-border-radius,
+			rail-default-opacity: $ps-rail-default-opacity,
+			rail-container-hover-opacity: 0,
+			rail-hover-opacity: $ps-rail-hover-opacity,
+			bar-bg: $ps-bar-bg,
+			bar-container-hover-bg: #55595c !important,
+			bar-hover-bg: $ps-bar-hover-bg,
+			rail-hover-bg: $ps-rail-hover-bg,
+			scrollbar-y-rail-right: 0,
+			scrollbar-y-rail-width: $ps-scrollbar-width,
+			scrollbar-y-right: 0,
+			scrollbar-y-width: $ps-scrollbar-width,
+		)));
+	}
+	ul.ps-theme-dark {
+		@include ps-container(map-merge($ps-theme-default, (
+		    border-radius: $ps-border-radius,
+			rail-default-opacity: $ps-rail-default-opacity,
+			rail-container-hover-opacity: $ps-rail-container-hover-opacity,
+			rail-hover-opacity: $ps-rail-hover-opacity,
+			bar-bg: $ps-bar-bg-dark,
+			bar-container-hover-bg: $ps-bar-container-hover-bg-dark,
+			bar-hover-bg: $ps-bar-hover-bg-dark,
+			rail-hover-bg: $ps-rail-hover-bg-dark,
+			scrollbar-y-rail-right: 0,
+			scrollbar-y-rail-width: $ps-scrollbar-width,
+			scrollbar-y-right: 0,
+			scrollbar-y-width: $ps-scrollbar-width,
+		)));
+	}
+}
+
+.vertical-menu-modern.menu-collapsed{
+	.ps-theme-dark {
+		@include ps-container(map-merge($ps-theme-default, (
+			border-radius: $ps-border-radius,
+			rail-default-opacity: $ps-rail-default-opacity,
+			rail-container-hover-opacity: $ps-rail-container-hover-opacity,
+			rail-hover-opacity: $ps-rail-hover-opacity,
+			bar-bg: $ps-bar-bg-dark,
+			bar-container-hover-bg: $ps-bar-container-hover-bg-dark,
+			bar-hover-bg: $ps-bar-hover-bg-dark,
+			rail-hover-bg: $ps-rail-hover-bg-dark,
+			scrollbar-y-rail-right: 0,
+			scrollbar-y-rail-width: $ps-scrollbar-width,
+			scrollbar-y-right: 0,
+			scrollbar-y-width: $ps-scrollbar-width,
+		)));
+	}
+	ul.ps-theme-dark {
+		@include ps-container(map-merge($ps-theme-default, (
+		    border-radius: $ps-border-radius,
+			rail-default-opacity: $ps-rail-default-opacity,
+			rail-container-hover-opacity: $ps-rail-container-hover-opacity,
+			rail-hover-opacity: $ps-rail-hover-opacity,
+			bar-bg: $ps-bar-bg-dark,
+			bar-container-hover-bg: $ps-bar-container-hover-bg-dark,
+			bar-hover-bg: $ps-bar-hover-bg-dark,
+			rail-hover-bg: $ps-rail-hover-bg-dark,
+			scrollbar-y-rail-right: 0,
+			scrollbar-y-rail-width: $ps-scrollbar-width,
+			scrollbar-y-right: 0,
+			scrollbar-y-width: $ps-scrollbar-width,
+		)));
+	}
+}
+
+/* to make scrollbars always visible */
+.always-visible.ps-container > .ps-scrollbar-x-rail,
+.always-visible.ps-container > .ps-scrollbar-y-rail {
+	opacity: $ps-rail-container-hover-opacity;
+}
+
+.large-margin.ps-container > .ps-scrollbar-x-rail {
+	margin: 0 25%;
+}
+.large-margin.ps-container > .ps-scrollbar-y-rail {
+	margin: 100px 0;
+}

@@ -1,0 +1,61 @@
+//- =========================================================================================
+	File Name: email-application.pug
+	Description: Email application page layout.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Email Application"
+	- var pageSubTitle = "Email application."
+	//- var description  = ""
+	- var activeMenu   = "email-application"
+
+append pageConfig
+	- var contentLayout = 'content-left-sidebar'
+	- var pageClass = 'email-application'	
+
+append horizontalMenuConfig
+	- var horizontalMenuType = "navbar-static"
+
+append verticalMenuConfig
+	- var menuType = "menu-fixed"
+	
+append footerConfig
+	- var footerType = 'fixed-bottom'
+	- var footerColor = 'footer-light'
+	- var footerBorder = true
+
+block page-header
+
+//- Include email content in page block
+append content
+	include ../contents/email-application.html
+
+//- Include email sidebar block
+append sidebar
+	include ../contents/email-application-sidebar.html
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss	
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/simple-line-icons/style.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/email-application.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs	
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs	
+	script(src=app_assets_path + '/js/scripts/pages/email-application.js', type='text/javascript')

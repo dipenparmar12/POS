@@ -1,0 +1,30 @@
+//- =========================================================================
+	File Name: component-spinners.pug
+	Description: This Page contains Icon spinners and Progress bars.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Spinners"
+	- var pageSubTitle = "Icon Spinners"
+	- var description  = "Spinners contains Icon spinners with different styles."
+	- var activeMenu  = "component-spinners"
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Spinners"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-spinners.html
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/plugins/loaders/loaders.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-loader.css')
+	

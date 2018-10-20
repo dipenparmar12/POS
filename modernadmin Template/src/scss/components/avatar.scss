@@ -1,0 +1,157 @@
+// =========================================================================================
+//   File Name: avatar.scss
+//   Description: Avatar images.
+//   ----------------------------------------------------------------------------------------
+//   Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 1.0
+//   Author: PIXINVENT
+//   Author URL: http://www.themeforest.net/user/pixinvent
+// ==========================================================================================
+
+// Component: Avatar
+// ========================================================================
+
+.avatar {
+  position: relative;
+  display: inline-block;
+  width: $avatar-size;
+  white-space: nowrap;
+  border-radius: 1000px;
+  vertical-align: bottom;
+
+  i {
+    position: absolute;
+    right: -7px;
+    bottom: 2px;
+    width: $avatar-status-size;
+    height: $avatar-status-size;
+    border-radius: 100%;
+  }
+  span.text-circle{
+    text-align: center;
+    vertical-align: middle;  
+    color: $white;
+    font-size: 1.2rem;  
+    background: $gray-100;
+    display: table-cell;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 0 none;
+    border-radius: 1000px;
+  }
+  .badge-up {
+    top: -8px;
+    right: -11px;
+  }
+}
+
+
+// Status Modifier
+// ========================================================================
+
+.avatar-online {
+  i {
+    background-color: $avatar-online-color;
+  }
+}
+
+.avatar-off {
+  i {
+    background-color: $avatar-off-color;
+  }
+}
+
+.avatar-busy {
+  i {
+    background-color: $avatar-busy-color;
+  }
+}
+
+.avatar-away {
+  i {
+    background-color: $avatar-away-color;
+  }
+}
+
+// Size Modifier
+// ========================================================================
+
+.avatar-100 {
+  width: $avatar-size-100;
+  span.text-circle{
+    width: $avatar-size-100;
+    height: $avatar-size-100;
+  }
+  i {
+    height: $avatar-status-size-100;
+    width: $avatar-status-size-100;
+  }
+}
+
+.avatar-50 {
+  width: $avatar-size-50;
+  span.text-circle{
+    width: $avatar-size-50;
+    height: $avatar-size-50;
+  }
+  i {
+    height: $avatar-status-size-50;
+    width: $avatar-status-size-50;
+  }
+}
+
+.avatar-lg {
+  width: $avatar-size-lg;
+  span.text-circle{
+    width: $avatar-size-lg;
+    height: $avatar-size-lg;
+  }
+  i {
+    right:0;
+    bottom:0;
+    height: $avatar-status-size-lg;
+    width: $avatar-status-size-lg;
+  }
+}
+
+.avatar-md {
+  width: $avatar-size-md;
+  span.text-circle{
+    width: $avatar-size-md;
+    height: $avatar-size-md;
+  }
+  i {
+    right:0;
+    bottom:0;
+    height: $avatar-status-size-md;
+    width: $avatar-status-size-md;
+  }
+}
+
+.avatar-sm {
+  width: $avatar-size-sm;
+  span.text-circle{
+    width: $avatar-size-sm;
+    height: $avatar-size-sm;
+  }
+  i {
+    height: $avatar-status-size-sm;
+    width: $avatar-status-size-sm;
+  }
+}
+
+.avatar-xs {
+  width: $avatar-size-xs;
+  span.text-circle{
+    width: $avatar-size-xs;
+    height: $avatar-size-xs;
+  }
+  i {
+    height: $avatar-status-size-xs;
+    width: $avatar-status-size-xs;
+  }
+}

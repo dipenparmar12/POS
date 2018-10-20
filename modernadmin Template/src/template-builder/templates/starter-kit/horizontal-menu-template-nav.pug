@@ -1,0 +1,88 @@
+//- ===============================================================================================
+	File Name: horizontal-menu-template.pug
+	Description: A template file for generating template with classic horizontal menu with semi light layout.
+	----------------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	================================================================================================ -//
+
+extends ../../base
+
+//- Template customization
+//------------------------
+
+block templateConfig
+	- var templateCustom = "horizontal-layout horizontal-menu"
+	- var dataMenu = "horizontal-menu"
+
+//- Page level customization
+//------------------------
+block pageConfig
+	- var navbarFixed = false
+	- var menuOpen = "hover"	
+	- var logoType = 'light'
+
+block navbarConfig
+	- var navbarPosition = "navbar-static-top"
+	- var navbarColor = "navbar-light"
+	- var navbarBrandCenter = true
+	- var navbarBorder = false
+
+block horizontalMenuConfig
+	- var horizontalMenuType = "navbar-fixed"
+	- var horizontalMenuColor = "navbar-dark"
+	- var menuWithoutDDArrow = true
+	- var menuShadow = true
+
+block footerConfig
+	- var footerType = "footer-static"
+	- var footerColor = "footer-light"
+	- var footerShadow = true
+
+//- Template includes
+//-------------------
+
+block header
+	if(headerType == 'back-sk-header')
+		include ../../templates/sections/header/back-sk-header
+	else
+		include ../../templates/sections/header/sk-header
+
+block page-header
+	if blankPage != true
+		include ../../pages/page-headers/breadcrumbs-with-stats
+
+block main-menu
+	include ../sections/menu/starter-kit/horizontal-menu
+
+block footer
+	include ../sections/footer/footer
+
+//- Template specific dependency
+//------------------------------
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss	
+	link(rel='stylesheet', type='text/css', href='../../../app-assets/css'+rtl+'/core/menu/menu-types/horizontal-menu.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+	script(type='text/javascript', src='../../../app-assets/vendors/js/ui/jquery.sticky.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+block pagejs
+	script(type='text/javascript' ,src='../../../app-assets/js/scripts/ui/breadcrumbs-with-stats.js')

@@ -1,0 +1,50 @@
+//- =========================================================================================
+	File Name: echarts-advance-charts.pug
+	Description: Advance echarts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Echarts - Advance Charts"
+	- var pageSubTitle = "Advance Chart Examples"
+	- var description = "Examples of all other advance echarts like tornado, timeline, multiple series rainbow, time data, candlestick multi level control, event river, tree map, word cloud and dynamic data."
+	- var activeMenu   = "echarts-advance-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Echarts"}, {name:"Advance Charts"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/echarts-advance-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/tornado.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/timeline.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/timeline-options.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/time-data.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/candlestick-multi-level-control.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/dynamic-data.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/event-river.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/eventRiver2-data.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/multiple-series-rainbow.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/treemap.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/advance/word-cloud.js', type='text/javascript')

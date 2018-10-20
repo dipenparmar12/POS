@@ -1,0 +1,54 @@
+//- =========================================================================================
+	File Name: register-with-bg.pug
+	Description: User Register page with background color option.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Register with Background Color"
+	- var pageSubTitle = "User Register page with background"
+	- var description  = "User Register page with background color option."
+	- var activeMenu   = "register-with-bg"
+
+
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var blankPage = true //- OPTIONS: true, false
+	- var navbarFixed = false
+	- var bodyCustom = 'bg-cyan bg-lighten-2' // Use any color palette class
+
+//- Include page content in page block
+append content
+	include ../contents/register-with-bg.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/login-register.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/forms/form-login-register.js', type='text/javascript')

@@ -1,0 +1,56 @@
+//- =========================================================================================
+	File Name: c3-axis-chart.pug
+	Description: C3 axis chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "C3 Axis Chart"
+	- var pageSubTitle = "c3 axis chart examples"
+	- var description  = "A reference line drawn on a graph (you can measure from it to find values)."
+	- var activeMenu   = "c3-axis-chart"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"C3 Charts"}, {name:"Axis Chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/c3-axis-chart.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/c3.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/d3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/c3.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/charts/c3-chart.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/category-axis.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/rotated-axis.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/tick-culling.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/tick-fitting.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/timezone.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/y-axis.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/axis/y-axis-range.js', type='text/javascript')

@@ -1,0 +1,28 @@
+//- =========================================================================================
+	File Name: form-layout-striped-labels.pug
+	Description: Bootstrap 4 striped labels forms with examples
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Striped Label Forms"
+	- var pageSubTitle = "Striped Label Form Layout"
+	- var description = "Add .striped-labels to form tag to add striped labels. In this example .form-horizontal and .form-bordered is used to show the striped labels functionality. You can always add more stuff like form sections, form control borders, tooltips, icons, round form controls, square form controls."
+	- var activeMenu = "form-layout-striped-labels"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Form Layouts"}, {url:"#",name:"Striped Label Forms"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-layout-striped-labels.html

@@ -1,0 +1,90 @@
+//- ===============================================================================================
+	File Name: vertical-content-menu-template.pug
+	Description: A template file for generating template with vertical content menu.
+	----------------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	================================================================================================ -//
+
+extends ../base
+
+//- Template customization
+//------------------------
+block templateConfig
+	- var templateCustom = "vertical-layout vertical-content-menu"
+	- var dataMenu = "vertical-content-menu"
+
+//- Page level customization
+//------------------------
+block pageConfig
+
+block navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarColor = "navbar-light"
+	- var navbarBrandCenter = true
+	- var navbarHideOnScroll = true
+	- var navbarShadow = true
+	- var navbarBorder = true
+
+block verticalMenuConfig
+	- var menuType = "menu-static"
+	- var menuColor = "menu-light"
+	- var menuOpenType = "menu-accordion"
+	- var menuShadow = true	
+	- var isContentMenu = true
+
+block footerConfig
+	- var footerType = "footer-static"
+	- var footerColor = "footer-light"
+	- var footerHideOnScroll = true
+	- var footerBorder = true
+	
+
+//- Template includes
+//-------------------
+
+block header
+	if(headerType == 'sk-header')
+		include ../templates/sections/header/sk-header
+	else if(headerType == 'header-back')
+		include ../templates/sections/header/header-back
+	else if(headerType == 'header-simple')
+		include ../templates/sections/header/header-simple
+	else
+		include sections/header/header
+
+block main-menu
+	include sections/menu/vertical-content-menu
+
+block page-header
+	if blankPage != true
+		include ../pages/page-headers/breadcrumbs-bottom
+
+block footer
+	include sections/footer/footer
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss	
+	link(rel='stylesheet', type='text/css', href='../../../app-assets/css'+rtl+'/core/menu/menu-types/vertical-content-menu.css')
+	link(rel='stylesheet', type='text/css', href='../../../app-assets/css'+rtl+'/core/colors/palette-gradient.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+	script(src='../../../app-assets/vendors/js/ui/headroom.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+block pagejs

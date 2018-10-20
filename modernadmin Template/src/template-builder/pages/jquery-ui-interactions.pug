@@ -1,0 +1,53 @@
+//- =========================================================================================
+	File Name: jquery-ui-interactions.pug
+	Description: jQuery UI interactions
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "jQuery UI interactions"
+	- var pageSubTitle = "jQuery UI interactions examples"
+	- var description = "jQuery UI interactions include draggable, droppable, resizable, selecatable and sortable."
+	- var activeMenu = "jquery-ui-interactions"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"jQuery UI"}, {name:"Interactions"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/jquery-ui-interactions.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/jquery-ui.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/ui/shapes.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/ui/jqueryui.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/ui/jquery-ui/interactions.js', type='text/javascript')

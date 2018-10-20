@@ -1,0 +1,41 @@
+//- =========================================================================
+	File Name: component-pagination.pug
+	Description: Provide pagination links for your site or app with the multi-page pagination component.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Pagination"
+	- var pageSubTitle = "The sequence of numbers assigned to pages"
+	- var description = "Provide pagination links for your site or app with the multi-page pagination component."
+	- var activeMenu  = "component-pagination"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Pagination"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-pagination.html
+
+append vendorcss
+	//- Bootstrap date Paginator CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/pagination/bootstrap-datepaginator.min.css')
+		
+append vendorjs
+	//- Template JS for pagination
+	script(src=app_assets_path + '/vendors/js/pagination/jquery.bootpag.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pagination/jquery.twbsPagination.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pagination/moment.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pagination/datepicker.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pagination/bootstrap-datepaginator.min.js', type='text/javascript')
+
+append pagejs
+	script(src=app_assets_path + '/js/scripts/pagination/pagination.js', type='text/javascript')

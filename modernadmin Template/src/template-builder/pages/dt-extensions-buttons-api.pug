@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name:dt-extensions-buttons-api.pug
+	Description: Buttons API is tightly integrated with DataTables
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Button API"
+	- var pageSubTitle = "Buttons API is tightly integrated with DataTables"
+	- var description  = "The Buttons API is tightly integrated with DataTables own API, building on the same style and interaction. With the API it is possible to manipulate individual buttons and groups of buttons, altering their characteristics and behaviour."
+	- var activeMenu   = "dt-extensions-buttons-api"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"API DataTable"}])
+
+//- Include page content in page block
+append content
+	include ../contents/dt-extensions-buttons-api.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/buttons.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/buttons.bootstrap4.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.buttons.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/buttons.bootstrap4.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.select.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables-extensions/datatable-button/datatable-extensions-api.js', type='text/javascript')

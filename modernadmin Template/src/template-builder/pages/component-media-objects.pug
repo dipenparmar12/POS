@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: component-media-objects.pug
+	Description: The media object is an abstract element used as the basis for building more complex and repetitive components.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Media Objects"
+	- var pageSubTitle = "Bootstrap 4 Media objects"
+	- var description = "The media object is an abstract element used as the basis for building more complex and repetitive components."
+	- var activeMenu  = "component-media-objects"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Media Objects"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-media-objects.html

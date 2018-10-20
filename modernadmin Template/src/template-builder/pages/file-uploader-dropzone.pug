@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: file-uploader-dropzone.pug
+	Description: Dropzone
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Dropzone"
+	- var pageSubTitle = "drag’n’drop file uploader"
+	- var description = "DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews. It’s lightweight, doesn’t depend on any other library (like jQuery) and is highly customizable."
+	- var activeMenu = "file-uploader-dropzone"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"File Uploader"}, {name:"Dropzone"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/file-uploader-dropzone.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/file-uploaders/dropzone.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/dropzone.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/ui/prism.min.js', type='text/javascript')
+
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/file-uploaders/dropzone.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/dropzone.js', type='text/javascript')

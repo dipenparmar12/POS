@@ -1,0 +1,89 @@
+//- ===============================================================================================
+	File Name:   vertical-compact-menu-template.pug
+	Description: A template file for generating template with vertical compact menu.
+	----------------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	================================================================================================ -//
+
+extends ../base
+
+//- Template customization
+//------------------------
+block templateConfig
+	- var templateCustom = "vertical-layout vertical-compact-menu"
+	- var dataMenu = "vertical-compact-menu"
+
+//- Page level customization
+//------------------------
+block pageConfig
+	- var logoType = 'light'
+
+block navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarColor = "navbar-dark bg-cyan"
+	- var navbarBrandCenter = true
+	- var navbarShadow = true	
+
+block verticalMenuConfig
+	- var menuType = "menu-fixed"
+	- var menuColor = "menu-light"
+	- var menuOpenType = "menu-accordion"
+	- var menuShadow = true
+
+block footerConfig
+	- var footerType = "footer-static"
+	- var footerColor = "footer-dark"
+	- var footerBorder = true
+	- var footerShadow = true
+
+//- Template includes
+//-------------------
+
+block header
+	if(headerType == 'sk-header')
+		include ../templates/sections/header/sk-header
+	else if(headerType == 'header-back')
+		include ../templates/sections/header/header-back
+	else if(headerType == 'header-simple')
+		include ../templates/sections/header/header-simple
+	else
+		include sections/header/header
+
+block main-menu
+	include sections/menu/vertical-compact-menu
+
+block page-header
+	if blankPage != true
+		include ../pages/page-headers/breadcrumbs-with-button
+
+block footer
+	include sections/footer/footer
+
+//- Template specific dependency
+//------------------------------
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss
+	link(rel='stylesheet', type='text/css', href='../../../app-assets/css'+rtl+'/core/menu/menu-types/vertical-compact-menu.css')
+	link(rel='stylesheet', type='text/css', href='../../../app-assets/css'+rtl+'/core/colors/palette-gradient.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+block pagejs

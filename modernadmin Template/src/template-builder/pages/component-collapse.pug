@@ -1,0 +1,29 @@
+//- =========================================================================
+	File Name: component-collapse.pug
+	Description: The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Collapse"
+	- var pageSubTitle = "Toggle page content"
+	- var description = "The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript."
+	- var activeMenu  = "component-collapse"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Collapse"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-collapse.html
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/animate/animate.css')

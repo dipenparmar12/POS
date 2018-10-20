@@ -1,0 +1,45 @@
+//- =========================================================================================
+	File Name: error-401.pug
+	Description: Error 401 - Unauthorized Access.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Error 401"
+	- var pageSubTitle = "Unauthorized"
+	- var description  = "Unauthorized Access."
+	- var activeMenu   = "error-401"
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var blankPage = true
+	- var navbarFixed = false
+	- var centerLayout = false
+
+//- Include page content in page block
+append content
+	include ../contents/error-401.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/forms/validation/jqBootstrapValidation.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/error.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/forms/form-login-register.js', type='text/javascript')

@@ -1,0 +1,53 @@
+//- =========================================================================================
+	File Name: vector-maps-jvq.pug
+	Description: jQuery Vector Map.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "jQuery Vector Maps"
+	- var pageSubTitle = "jQuery vector maps examples"
+	- var description = "JQVMap is a jQuery plugin that renders Vector Maps. It uses resizable Scalable Vector Graphics (SVG) for modern browsers like Firefox, Safari, Chrome, Opera and Internet Explorer 9."
+	- var activeMenu   = "vector-maps-jvq"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Maps"}, {url:"#",name:"Vector Maps"}, {name:"jQuery Vector Maps"}])
+
+//- Include page content in page block
+append content
+	include ../contents/vector-maps-jvq.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/jqvmap.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/jquery.vmap.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/continents/jquery.vmap.africa.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/continents/jquery.vmap.asia.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/continents/jquery.vmap.australia.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/continents/jquery.vmap.europe.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/continents/jquery.vmap.north-america.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/continents/jquery.vmap.south-america.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/jquery.vmap.usa.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jqvmap/maps/jquery.vmap.world.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/jqvmap/jqvmap.js', type='text/javascript')
+	script(src=app_assets_path + '/data/jqvmaps/jquery.vmap.sampledata.js', type='text/javascript')

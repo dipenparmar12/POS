@@ -1,0 +1,70 @@
+//- =========================================================================================
+	File Name: layout-content-left-sidebar.pug
+	Description: The content left sidebar layout with navigation, content area and left sidebar.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Content Left Sidebar"
+	- var pageSubTitle = "content layout with left sidebar"
+	- var description  = "The content left sidebar layout with navigation, content area and left sidebar."
+	- var activeMenu   = "layout-content-left-sidebar"
+
+
+
+append pageConfig
+	- var contentLayout = 'content-left-sidebar'
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page Layouts"}, {name:"Content Left Sidebar"}])
+
+//- Include page content in content black
+append content
+	include ../contents/layout-content-left-sidebar.html
+
+append sidebar
+	include ../contents/sidebar-common.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/nouislider.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+	//- Knob
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/offline/themes/offline-theme-slide.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/extensions/noui-slider.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-noui.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//- prism js
+	script(src=app_assets_path + '/vendors/js/ui/prism.min.js', type='text/javascript')
+	//- Rating
+	script(src=app_assets_path + '/vendors/js/extensions/jquery.raty.js', type='text/javascript')
+	//- knob
+	script(src=app_assets_path + '/vendors/js/extensions/jquery.knob.min.js', type='text/javascript')
+	//- No Ui Slider
+	script(src=app_assets_path + '/vendors/js/extensions/wNumb.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/nouislider.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/knob.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/pages/content-sidebar.js', type='text/javascript')

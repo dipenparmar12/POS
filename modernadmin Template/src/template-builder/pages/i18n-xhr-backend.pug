@@ -1,0 +1,41 @@
+//- =========================================================================
+	File Name: i18n-xhr-backend.pug
+	Description: This Page contains Icon spinners and Progress bars.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle     = "i18n XHR Backend"
+	- var pageSubTitle  = "i18n XHR Backend examples"
+	- var description   = "i18next is a very popular internationalization library for browser or any other javascript environment (eg. node.js). i18next is exported in UMD format and can be loaded via commonjs, requirejs (AMD) or will be added to global scope window.i18next."
+	- var activeMenu    = "i18n-xhr-backend"
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Internationalization"}, {name:"XHR Backend"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/i18n-xhr-backend.html
+
+append pagejs
+	script(src=app_assets_path + '/vendors/js/ui/prism.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/i18next.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/i18nextXHRBackend.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/i18nextBrowserLanguageDetector.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/jquery-i18next.min.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/extensions/internationalization/xhr-backend.js', type='text/javascript')
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')

@@ -1,0 +1,53 @@
+//- =========================================================================================
+	File Name: scrumboard.pug
+	Description: Project management methodology
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Scrum Board"
+	- var pageSubTitle = "Project management methodology"
+	- var activeMenu   = "scrumboard"
+	- var description  = "A Scrum board is an integral part of the Scrum methodology. It makes the sprint backlog visible and it helps teams to manage product development from start to finish. "
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"Scrum Board"}])
+
+
+//- Include project content in page block
+append content
+	include ../contents/scrumboard.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/jquery-ui.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/pages/lobilist/lobilist.css')
+	//- ui-datepicker
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/jquery-ui.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pages/lobibox/lobibox.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pages/lobilist/lobilist.js', type='text/javascript')
+	//- ui-datepicker
+	script(src=app_assets_path + '/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/ui/jquery-ui/date-pickers.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/pages/scrumboard.js', type='text/javascript')

@@ -1,0 +1,18 @@
+block breadcrumbs
+  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs top with description"}])
+.content-header-left.col-md-6.col-12
+  h3.content-header-title #{pageTitle}
+  p.text-muted.mb-0 #{pageSubTitle}
+.content-header-right.col-md-6.col-12
+  .btn-group.float-md-right(role='group', aria-label='Button group with nested dropdown')    
+    button#btnGroupDrop1.btn.btn-info.round.dropdown-toggle.dropdown-menu-right.box-shadow-2.px-2(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+      i.ft-settings.icon-left
+      |  Settings
+    .dropdown-menu(aria-labelledby='btnGroupDrop1')
+      a.dropdown-item(href='card-bootstrap.html') Cards
+      a.dropdown-item(href='component-buttons-extended.html') Buttons
+      i.la.la-bar-chart
+
+.content-header-lead.col-12.mt-1
+  p.lead
+    | #{description}

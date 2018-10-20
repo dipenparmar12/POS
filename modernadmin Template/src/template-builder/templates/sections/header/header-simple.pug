@@ -1,0 +1,26 @@
+// fixed-top
+nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow(class=navbarPosition + ' ' + navbarColor, class=(navbarHideOnScroll == true ? 'navbar-hide-on-scroll' : ''), class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarShadow == true ? 'navbar-shadow' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''))
+  .navbar-wrapper
+    .navbar-header
+      ul.nav.navbar-nav.flex-row
+        li.nav-item.mobile-menu.d-md-none.mr-auto
+          a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+              i.ft-menu.font-large-1
+        li.nav-item
+          a.navbar-brand(href='index.html')
+            img(class='brand-logo' alt='modern admin logo' src=(logoType == 'dark' ? '../../../app-assets/images/logo/logo.png' : '../../../app-assets/images/logo/logo.png'))
+            h3.brand-text Modern Admin
+        li.nav-item.d-md-none
+          a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+            i.la.la-ellipsis-v
+    .navbar-container
+      #navbar-mobile.collapse.navbar-collapse.justify-content-end
+        ul.nav.navbar-nav
+          li.nav-item
+            a.nav-link.mr-2.nav-link-label(href='index.html')
+              i.ficon.ft-arrow-left
+          li.dropdown.nav-item
+            a.nav-link.mr-2.nav-link-label(href='#', data-toggle='dropdown')
+              i.ficon.ft-settings
+
+//- include includes/fullscreen-search

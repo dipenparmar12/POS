@@ -1,0 +1,36 @@
+//- =========================================================================================
+	File Name: editor-ckeditor.pug
+	Description: 
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "CKEditor"
+	- var pageSubTitle = "Ready-to-use HTML text editor"
+	- var description  = "CKEditor is designed to simplify web content creation. It's a WYSIWYG editor that brings common word processor features directly to your web pages."
+	- var activeMenu = "editor-ckeditor"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Editors"}, {name:"CKEditor"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/editor-ckeditor.html
+
+append vendorjs
+	//- CKEditor JS
+	script(src=app_assets_path + '/vendors/js/editors/ckeditor/ckeditor.js', type='text/javascript')
+		
+append pagejs
+	//- Template JS for CKEditor
+	script(src=app_assets_path + '/js/scripts/editors/editor-ckeditor.js', type='text/javascript')

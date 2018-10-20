@@ -1,0 +1,43 @@
+//- =========================================================================================
+	File Name: echarts-combination-charts.pug
+	Description: Combination echarts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Echarts - Combination Chart"
+	- var pageSubTitle = "Combination Chart Examples"
+	- var description = "A combination chart is a chart that combines two or more chart types in a single chart."
+	- var activeMenu   = "echarts-combination-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Echarts"}, {name:"Combination Charts"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/echarts-combination-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/echarts/combination/column-line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/combination/column-pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/combination/scatter-line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/combination/scatter-pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/combination/multiple-combination.js', type='text/javascript')

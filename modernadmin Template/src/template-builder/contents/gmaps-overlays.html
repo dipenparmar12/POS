@@ -1,0 +1,121 @@
+<!-- gmaps overlays section start -->
+<section id="gmaps-overlays">
+    <!-- Polylines -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Polylines</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">The path of the polyline is defined by an array of array of two (latitude and longitude).</p>
+                        <div id="polylines" class="height-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlays -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Overlays</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">You must define <strong>latitude</strong>, <strong>longitude</strong> and the <strong>content</strong> of the map overlay.</p>
+
+                        <p class="card-text">Also, you must define a <strong>height</strong> to the <strong>content</strong>.</p>
+
+                        <p class="card-text">Also, you can define a <code>verticalAlign</code>, which can be <code>top</code>, <code>middle</code> or <code>bottom</code>, and <code>horizontalAlign</code>, which can be <code>left</code>, <code>center</code> or <code>right</code>.</p>
+
+                        <div id="overlays" class="height-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Polygons -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Polygons</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">The path of a polygon can be defined as an array of:</p>
+
+                        <ul>
+                            <li><code>google.maps.LatLng</code> objects, or
+                            </li><li>arrays of coordinates, with index 0 and 1 as, respectively, <b>latitude</b> and <b>longitude</b> (as in the example)
+                            </li>
+                        </ul>
+
+                        <p class="card-text">Also, you can add a GeoJSON Polygon or MultiPolygon path using <code>useGeoJSON: true</code>.</p>
+
+                        <div id="polygons" class="height-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GeoJSON Polygons -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">GeoJSON Polygons</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">The GeoJSON Polygon should be surrounded by brackets, according the <a href="http://geojson.org/geojson-spec.html#id7">specification</a>.</p>
+                        <div id="geojson-polygons" class="height-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // gmaps overlays section end -->

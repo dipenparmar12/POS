@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: color-palette-blue-grey.pug
+	Description:  Bootstrap 4 Blue Grey Color Palette
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Blue Grey Color Page"
+	- var pageSubTitle = "Blue Grey Color Options"
+	- var description  = "Blue Grey Color Palette with background & border color."
+	- var activeMenu  = "color-palette-blue-grey"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Color System"}, {name:"Blue Grey Palette"}])
+
+//- Include page content in page block
+append content
+	include ../contents/color-palette-blue-grey.html

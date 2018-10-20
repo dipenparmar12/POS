@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: ex-component-ratings.pug
+	Description: Ratings
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Ratings"
+	- var pageSubTitle = "A Star Rating Plugin"
+	- var description  = "jQuery Raty - A Star Rating Plugin"
+	- var activeMenu   = "ex-component-ratings"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extra Components"}, {name:"Rating"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/ex-component-ratings.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/raty/jquery.raty.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/jquery.raty.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/rating.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/meteocons/style.min.css')

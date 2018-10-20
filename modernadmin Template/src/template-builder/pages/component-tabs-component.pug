@@ -1,0 +1,30 @@
+//- =========================================================================================
+	File Name: component-tabs-component.pug
+	Description: Tabs
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Tabs"
+	- var pageSubTitle = "Bootstrap Navigational Tabs"
+	- var description = "Takes the basic nav from above and adds the .nav-tabs class to generate a tabbed interface. Use them to create tabbable regions and to extend navigational tabs."
+	- var activeMenu  = "component-tabs-component"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Tabs"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-tabs-component.html
+
+append pagejs
+	//- Template JS for tabs
+	script(src=app_assets_path + '/js/scripts/navs/navs.js', type='text/javascript')

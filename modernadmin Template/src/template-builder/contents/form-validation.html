@@ -1,0 +1,623 @@
+<!-- Input Validation start -->
+<section class="input-validation">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Inputs Validation</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+					<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content collapse show">
+					<div class="card-body">
+						<p>Add <code>novalidate</code> attribute to form tag.</p>
+						<form class="form-horizontal" novalidate>
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group">
+										<h5>Basic Text Input <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" name="text" class="form-control" required data-validation-required-message="This field is required">
+										</div>
+										<p>Add <code>required</code> attribute to field for required validation.</p>
+									</div>
+									<div class="form-group">
+										<h5>Email Field <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="email" name="email" class="form-control" required data-validation-required-message="This field is required">
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Repeat Email Field <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="email" name="email2" data-validation-match-match="email"  class="form-control" required>
+											<p>Add <code>data-validation-match-match</code> attribute with the field name as value to match with it.</p>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Password Input Field <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="password" name="password" class="form-control" required data-validation-required-message="This field is required">
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Repeat Password Input Field <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="password" name="password2" data-validation-match-match="password"  class="form-control" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Input with Right Icon <span class="required">*</span></h5>
+										<div class="controls position-relative has-icon-right">
+											<input type="text" class="form-control" placeholder="Addon To Right" data-validation-required-message="This field is required">
+											<div class="form-control-position">
+												<i class="la la-code-fork"></i>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Input addon with Right Icon <span class="required">*</span></h5>
+										<div class="controls">
+											<div class="input-group">
+												<input type="text" class="form-control" placeholder="Addon To Right" data-validation-required-message="This field is required">
+												<div class="input-group-append">
+													<span class="input-group-text" id="basic-addon5"><i class="la la-suitcase"></i></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Maximum Character Length <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" name="maxChar" class="form-control" required data-validation-required-message="This field is required" maxlength="10">
+										</div>
+										<p>Add <code>maxlength</code> attribute for maximum number of characters to accept. Also use <code>data-validation-maxlength-message</code> attribute for maxlength failure message</p>
+									</div>
+									<div class="form-group">
+										<h5>Minimum Character Length <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" name="minChar" class="form-control" required data-validation-required-message="This field is required" minlength="6">
+											<p>Add <code>minlength</code> attribute for minimum number of characters to accept. Also use <code>data-validation-minlength-message</code> attribute for minlength failure message</p>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Only Numbers <span class="required">*</span></h5>
+										<div class="controls">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">$</span>
+												</div>
+												<input type="number" name="onlyNum" class="form-control" required data-validation-required-message="This field is required">
+												<div class="input-group-append">
+													<span class="input-group-text">.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Maximum Number <span class="required">*</span></h5>
+										<small><i>Must be lower than 25</i></small>
+										<div class="controls">
+											<input type="text" name="maxNum" class="form-control" required data-validation-required-message="This field is required" max="25">
+										</div>
+										<p>Add <code>max</code> attribute for maximum  number to accept. Also use <code>data-validation-max-message</code> attribute for max failure message</p>
+									</div>
+									<div class="form-group">
+										<h5>Minimum Number <span class="required">*</span></h5>
+										<small><i>Must be higher than 10</i></small>
+										<div class="controls">
+											<input type="text" name="minNum" class="form-control" required data-validation-required-message="This field is required" min="10">
+										</div>
+										<p>Add <code>min</code> attribute for minimum  number to accept. Also use <code>data-validation-min-message</code> attribute for min failure message</p>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-12">
+									<div class="form-group">
+										<h5>File Input Field <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="file" name="file" class="form-control" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Custom Required Message <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" name="textRange" class="form-control" required data-validation-required-message="This is custom message" placeholder="Custom Message">
+											<p>Add <code>data-validation-required-message</code> attribute for Custom required failure message</p>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Text Input Range <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" name="text" class="form-control" required data-validation-required-message="This field is required" minlength="10" maxlength="20" placeholder="Enter number between 10 &amp; 20">
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Input with Button <span class="required">*</span></h5>
+										<div class="controls">
+											<div class="input-group">
+												<input type="text" class="form-control" placeholder="Button on right" required>
+												<div class="input-group-append">
+													<button class="btn btn-warning" type="button">
+														<i class="la la-pencil"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Touchspin</h5>
+										<div class="controls">
+											<div class="input-group">
+												<input type="text" class="form-control touchspin" required />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>No Characters, Only Numbers <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" name="noChar" class="form-control" required data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="No Characters Allowed, Only Numbers">
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Pattern <span class="required">*</span> <small><i>Must start with 'a' and end with 'z'</i></small></h5>
+										<div class="controls">
+											<input type="text" name="pattern" pattern="a.*z" data-validation-pattern-message="Must start with 'a' and end with 'z'" class="form-control" required>
+											<p>Add <code>pattern</code> attribute to set input pattern. Also use <code>data-validation-pattern-message</code> attribute for pattern failure message</p>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Enter URL <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" class="form-control" placeholder="Add URL" data-validation-regex-regex="((http[s]?|ftp[s]?):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*" data-validation-regex-message="Only Valid URL's">
+											<p>Add <code>data-validation-regex-regex</code> attribute for regular expression. Also use <code>data-validation-regex-message</code> attribute for regex failure message</p>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Enter Email Address <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" class="form-control" placeholder="Email Address" data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})" data-validation-regex-message="Enter Valid Email">
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Enter Date <span class="required">*</span></h5>
+										<div class="controls">
+											<input type="text" class="form-control" placeholder="MM/DD/YYYY" data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})" data-validation-regex-message="Enter Valid Date">
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Basic Select <span class="required">*</span></h5>
+										<div class="controls">
+											<select name="select" id="select" required class="form-control">
+												<option value="">Select Your City</option>
+												<option value="1">Amsterdam</option>
+												<option value="2">Antwerp</option>
+												<option value="3">Athens</option>
+												<option value="4">Barcelona</option>
+												<option value="5">Berlin</option>
+												<option value="6">Birmingham</option>
+												<option value="7">Bradford</option>
+												<option value="8">Bremen</option>
+												<option value="9">Brussels</option>
+												<option value="10">Bucharest</option>
+												<option value="11">Budapest</option>
+												<option value="12">Cologne</option>
+												<option value="13">Copenhagen</option>
+												<option value="14">Dortmund</option>
+												<option value="15">Dresden</option>
+												<option value="16">Dublin</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5>Basic Textarea <span class="required">*</span></h5>
+										<div class="controls">
+											<textarea name="textarea" id="textarea" class="form-control" required placeholder="Basic Textarea"></textarea>
+										</div>
+									</div>
+									<div class="text-right">
+										<button type="submit" class="btn btn-success">Submit <i class="la la-thumbs-o-up position-right"></i></button>
+										<button type="reset" class="btn btn-danger">Reset <i class="la la-refresh position-right"></i></button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Input Validation end -->
+
+
+
+<!-- Checkbox Validation start -->
+<section class="checkbox-validation">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Checkbox Validation</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+					<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content collapse show">
+					<div class="card-body">
+						<form class="form-horizontal" novalidate>
+							<div class="row">
+								<div class="col-xl-6 col-lg-12">
+									<div class="row">
+										<div class="col-sm-6 col-12">
+											<div class="form-group">
+												<h5><strong>Basic Checkbox </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="skin skin-square">
+														<input type="checkbox" value="" id="single_checkbox" required>
+														<label for="single_checkbox">I am unchecked Checkbox</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Checkbox Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" name="basic_checkbox" required id="check_group1">
+															<label for="check_group1">I am unchecked Checkbox</label>
+														</div>
+													</div>
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" name="basic_checkbox" id="check_group2">
+															<label for="check_group2">I am unchecked too</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Inline Checkbox Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="skin skin-square">
+														<input type="checkbox" value="" name="inline_checkbox" required id="check_inline1">
+														<label for="check_inline1">I am unchecked Checkbox</label>
+													</div>
+													<div class="skin skin-square">
+														<input type="checkbox" value="" name="inline_checkbox" id="check_inline2">
+														<label for="check_inline2">I am unchecked too</label>
+													</div>
+													<div class="skin skin-square">
+														<input type="checkbox" value="" name="inline_checkbox" id="check_inline3">
+														<label for="check_inline3">You can check me</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Maximum Checkbox selection</strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" data-validation-maxchecked-maxchecked="2" data-validation-maxchecked-message="Don't be greedy!" name="max_checkbox" required id="check_max1">
+															<label for="check_max1">I am unchecked Checkbox</label>
+														</div>
+													</div>
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" name="max_checkbox" id="check_max2">
+															<label for="check_max2">I am unchecked too</label>
+														</div>
+													</div>
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" name="max_checkbox" id="check_max3">
+															<label for="check_max3">You can check me</label>
+														</div>
+													</div>
+													<p>Select any 2 options</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6 col-12">
+											<div class="form-group">
+												<h5><strong>Minimum Checkbox selection</strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" data-validation-minchecked-minchecked="2" data-validation-minchecked-message="Choose at least two" name="min_checkbox" required id="check_min1">
+															<label for="check_min1">I am unchecked Checkbox</label>
+														</div>
+													</div>
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" name="min_checkbox" id="check_min2">
+															<label for="check_min2">I am unchecked too</label>
+														</div>
+													</div>
+													<div>
+														<div class="skin skin-square">
+															<input type="checkbox" value="" name="min_checkbox" id="check_min3">
+															<label for="check_min3">You can check me</label>
+														</div>
+													</div>
+													<p>Select any 2 options</p>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Radio Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="skin skin-square">
+														<input type="radio" value="1" name="basic_radio" required id="radio1">
+														<label for="radio1">Check Me</label>
+													</div>
+													<div class="skin skin-square">
+														<input type="radio" value="2" name="basic_radio" id="radio2">
+														<label for="radio2">Or Me</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Inline Radio Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="skin skin-square">
+														<input type="radio" value="Yes" name="inline_radio" required id="radio_inline1">
+														<label for="radio_inline1">Check Me</label>
+													</div>
+													<div class="skin skin-square">
+														<input type="radio" value="No" name="inline_radio" id="radio_inline2">
+														<label for="radio_inline2">Or Me</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-12">
+									<div class="row">
+										<div class="col-sm-6 col-12">
+											<div class="form-group">
+												<h5><strong>Styled Checkbox </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" required value="single" name="styled_single_checkbox" class="custom-control-input" id="customCheck">
+														<label class="custom-control-label" for="customCheck">Check this custom checkbox</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Styled Checkbox Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" required value="x" name="styled_checkbox" required class="custom-control-input" id="customCheck1">
+														<label class="custom-control-label" for="customCheck1">I am unchecked Checkbox</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" required value="y" name="styled_checkbox" class="custom-control-input" id="customCheck2">
+														<label class="custom-control-label" for="customCheck2">I am unchecked too</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Inline Styled Checkbox Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" value="x" name="styled_inline_checkbox" required class="custom-control-input" id="customCheck3">
+														<label class="custom-control-label" for="customCheck3">I am unchecked Checkbox</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" value="y" name="styled_inline_checkbox" class="custom-control-input" id="customCheck4">
+														<label class="custom-control-label" for="customCheck4">I am unchecked too</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" value="c" name="styled_inline_checkbox" class="custom-control-input" id="customCheck5">
+														<label class="custom-control-label" for="customCheck5">You can check me</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Maximum Styled Checkbox selection</strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" name="styled_max_checkbox" data-validation-maxchecked-maxchecked="2" data-validation-maxchecked-message="Don't be greedy!" required class="custom-control-input" id="customCheck6">
+														<label class="custom-control-label" for="customCheck6">I am unchecked Checkbox</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" name="styled_max_checkbox" class="custom-control-input" id="customCheck7">
+														<label class="custom-control-label" for="customCheck7">I am unchecked too</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" name="styled_max_checkbox" class="custom-control-input" id="customCheck8">
+														<label class="custom-control-label" for="customCheck8">You can check me</label>
+													</div>
+												</div>
+												<p>Select any 2 options</p>
+											</div>
+										</div>
+										<div class="col-sm-6 col-12">
+											<div class="form-group">
+												<h5><strong>Minimum Styled Checkbox selection</strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" value="1" data-validation-minchecked-minchecked="2" data-validation-minchecked-message="Choose at least two" name="styled_min_checkbox" required class="custom-control-input" id="customCheck9">
+														<label class="custom-control-label" for="customCheck9">I am unchecked Checkbox</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" value="2" name="styled_min_checkbox" class="custom-control-input" id="customCheck10">
+														<label class="custom-control-label" for="customCheck10">I am unchecked too</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" value="3" name="styled_min_checkbox" class="custom-control-input" id="customCheck11">
+														<label class="custom-control-label" for="customCheck11">You can check me</label>
+													</div>
+												</div>
+												<p>Select any 2 options</p>
+											</div>
+											<div class="form-group">
+												<h5><strong>Styled Radio Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-radio">
+														<input type="radio" value="1" name="styled_radio" required id="styled_radio1" class="custom-control-input">
+														<label class="custom-control-label" for="styled_radio1">Check me</label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input type="radio" value="2" name="styled_radio" required id="styled_radio2" class="custom-control-input">
+														<label class="custom-control-label" for="styled_radio2">Or me</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<h5><strong>Inline Styled Radio Group </strong><span class="required">*</span></h5>
+												<div class="controls">
+													<div class="custom-control custom-radio">
+														<input type="radio" value="Yes" name="styled_inline_radio" required id="styled_radio_inline1" class="custom-control-input">
+														<label class="custom-control-label" for="styled_radio_inline1">Check me</label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input type="radio" value="No" name="styled_inline_radio" id="styled_radio_inline2" class="custom-control-input">
+														<label class="custom-control-label" for="styled_radio_inline2">Or me</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="text-right">
+										<button type="submit" class="btn btn-success">Submit <i class="la la-thumbs-o-up position-right"></i></button>
+										<button type="reset" class="btn btn-danger">Reset <i class="la la-refresh position-right"></i></button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Checkbox Validation end -->
+
+
+
+<!-- Switch Validation start -->
+<section class="switch-validation">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Switch Validation</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+					<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-contenet">
+					<div class="card-body">
+						<form class="form-horizontal" novalidate>
+							<div class="row">
+								<div class="col-sm-6 col-12">
+									<div class="form-group">
+										<h5><strong>Single Switch </strong><span class="required">*</span></h5>
+										<div class="controls">
+											<input type="checkbox" name="single_switch" id="single_switch" class="switchBootstrap" required>
+											<span class="ml-1"><label for="single_switch">I am unchecked Switch</label></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5><strong>Switch Group </strong><span class="required">*</span></h5>
+										<div class="controls">
+											<div class="pb-1">
+												<input type="checkbox" class="switchBootstrap" name="basic_switch" required id="switch_group1">
+												<span class="ml-1"><label for="switch_group1">I am unchecked Switch</label></span>
+											</div>
+											<div class="pb-1">
+												<input type="checkbox" class="switchBootstrap" name="basic_switch" id="switch_group2">
+												<span class="ml-1"><label for="switch_group2">I am unchecked too</label></span>
+											</div>
+											<div>
+												<input type="checkbox" class="switchBootstrap" name="basic_switch" id="switch_group3">
+												<span class="ml-1"><label for="switch_group3">You can check me</label></span>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5><strong>Inline Switch Group </strong><span class="required">*</span></h5>
+										<div class="controls">
+											<div class="pb-1">
+												<input type="checkbox" class="switchBootstrap" name="inline_switch" required id="switch_inline1">
+												<span class="ml-1"><label for="switch_inline1">I am unchecked Switch</label></span>
+											</div>
+											<div>
+												<input type="checkbox" class="switchBootstrap" name="inline_switch" id="switch_inline2">
+												<span class="ml-1"><label for="switch_inline2">I am unchecked too</label></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-12">
+									<div class="form-group">
+										<h5><strong>Single Switchery </strong><span class="required">*</span></h5>
+										<div class="controls">
+											<input type="checkbox" name="single_switchery" class="switchery" required>
+											<span class="ml-1">I am unchecked Switchery</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5><strong>Switchery Group </strong><span class="required">*</span></h5>
+										<div class="controls">
+											<div class="pb-1">
+												<input type="checkbox" class="switchery" name="basic_switchery" required id="switchery_group1">
+												<span class="ml-1"><label for="switchery_group1">I am unchecked Switchery</label></span>
+											</div>
+											<div class="pb-1">
+												<input type="checkbox" class="switchery" name="basic_switchery" id="switchery_group2">
+												<span class="ml-1"><label for="switchery_group2">I am unchecked too</label></span>
+											</div>
+											<div>
+												<input type="checkbox" class="switchery" name="basic_switchery" id="switchery_group3">
+												<span class="ml-1"><label for="switchery_group3">You can check me</label></span>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<h5><strong>Inline Switchery Group </strong><span class="required">*</span></h5>
+										<div class="controls">
+											<div class="pb-1">
+												<input type="checkbox" class="switchery" name="inline_switchery" required id="switchery_inline1">
+												<span class="ml-1"><label for="switchery_inline1">I am unchecked Switchery</label></span>
+											</div>
+											<div>
+												<input type="checkbox" class="switchery" name="inline_switchery" id="switchery_inline2">
+												<span class="ml-1"><label for="switchery_inline2">I am unchecked too</label></span>
+											</div>
+										</div>
+									</div>
+									<div class="text-right">
+										<button type="submit" class="btn btn-success">Submit <i class="ft-thumbs-up position-right"></i></button>
+										<button type="reset" class="btn btn-danger">Reset <i class="ft-refresh-cw position-right"></i></button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Switch Validation end -->

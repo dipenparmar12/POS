@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: add-on-drag-drop.pug
+	Description: Drag & Drop Elements
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Drag & Drop Elements"
+	- var pageSubTitle = "Drag and drop so simple it hurts"
+	- var description = "Have you ever wanted a drag and drop library that just works? That doesn't just depend on bloated frameworks, that has great support? That actually understands where to place the elements when they are dropped? That doesn't need you to do a zillion things to get it to work? Dragula is the answer."
+	- var activeMenu = "add-on-drag-drop"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"Drag & Drop"}])
+
+//- Include page content in page block
+append content
+	include ../contents/add-on-drag-drop.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/toggle/switchery.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/dragula.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/forms/toggle/switchery.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/dragula.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/drag-drop.js', type='text/javascript')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/forms/switch.css')

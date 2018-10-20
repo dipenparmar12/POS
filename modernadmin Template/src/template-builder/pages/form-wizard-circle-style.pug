@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: form-wizard-circle-style.pug
+	Description: Form wizard circle style steps examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Circle Style"
+	- var pageSubTitle = "Form Wizard Circle Steps"
+	- var description = "Add .wizard-circle class to form tag to apply circle style wizard steps. This is the default style with circle wizard steps. There are two styles to display wizard tabs horizontal and vertical. You can display numbers or icons as wizard steps. You can also validate form fields on each wizard step."
+	- var activeMenu   = "form-wizard-circle-style"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page"}, {name:"Form Wizard Circle Steps"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-wizard-circle-style.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/jquery.steps.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pickers/dateTime/moment-with-locales.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/pickers/daterange/daterangepicker.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/forms/validation/jquery.validate.min.js', type='text/javascript')
+
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/pickers/daterange/daterangepicker.css')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/forms/wizard.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/pickers/daterange/daterange.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/forms/wizard-steps.js', type='text/javascript')

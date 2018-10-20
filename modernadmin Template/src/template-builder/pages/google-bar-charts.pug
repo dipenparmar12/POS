@@ -1,0 +1,45 @@
+//- =========================================================================================
+	File Name: google-bar-charts.pug
+	Description: google bar chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "google Bar Chart"
+	- var pageSubTitle = "google bar chart examples"
+	- var description  = "A diagram in which the numerical values of variables are represented by the height or length of lines or rectangles of equal width"
+	- var activeMenu   = "google-bar-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Google Charts"}, {name:"Bar Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/google-bar-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='https://www.google.com/jsapi', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/bar.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/bar-stacked.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/bar-intervals.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/column.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/stacked-column.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/combo.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bar/histogram.js', type='text/javascript')

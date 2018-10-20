@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: vector-maps-jvector.pug
+	Description: jVector Map.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "jVector Maps"
+	- var pageSubTitle = "jVector maps examples"
+	- var description = "jVectorMap is a vector-based, cross-browser and cross-platform component for interactive geography-related data visualization on the web. It provides numerious features like smooth zooming and panning, fully-customizable styling, markers, labels and tooltips."
+	- var activeMenu   = "jvector-maps"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Maps"}, {url:"#",name:"Vector Maps"}, {name:"jVector Maps"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/vector-maps-jvector.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jvector/jquery-jvectormap-de-merc.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jvector/jquery-jvectormap-us-lcc.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/jvector/jquery-jvectormap-us-aea.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/jvector/jvector.js', type='text/javascript')
+	script(src=app_assets_path + '/data/jvector/gdp-data.js', type='text/javascript')

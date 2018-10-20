@@ -1,0 +1,41 @@
+//- =========================================================================================
+	File Name:dt-data-sources.pug
+	Description: Sources of the DataTable.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Sources Datatable"
+	- var pageSubTitle = "Printable version of the DataTable"
+	- var description  = "This set of examples shows how the print button type can be used and customised to display a printable version of the DataTable."
+	- var activeMenu   = "dt-data-sources"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"Sources Datatable"}])
+
+//- Include page content in page block
+append content
+	include ../contents/dt-data-sources.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+
+//- Add custom page specific JS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables-extensions/datatables-sources.js', type='text/javascript')

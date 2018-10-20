@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: ex-component-long-press.pug
+	Description: jQuery plugin to ease the writing of accented or rare characters.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Long Press"
+	- var pageSubTitle = "Easily write accented or rare characters"
+	- var description  = "jQuery plugin to ease the writing of accented or rare characters."
+	- var activeMenu   = "ex-component-long-press"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extra Components"}, {name:"Long Press"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/ex-component-long-press.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/long-press.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/long-press/jquery.mousewheel.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/long-press/jquery.longpress.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/long-press/plugins.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/long-press.js', type='text/javascript')

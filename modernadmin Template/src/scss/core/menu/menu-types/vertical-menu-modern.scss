@@ -1,0 +1,382 @@
+/*=========================================================================================
+    File Name: vertical-menu-modern.scss
+    Description: A calssic vertical modern style menu with expand and collops support. It support
+    light & dark version, filpped layout, right side icons, native scroll and borders menu
+    item seperation.
+    ----------------------------------------------------------------------------------------
+    Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+    Version: 1.0
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../variables/variables";
+@import "../../variables/components-variables";
+
+// Overrides user variable
+@import "../../../../../assets/scss/variables/variables";
+@import "../../../../../assets/scss/variables/components-variables";
+
+// Import first main menu mixin
+@import "../../mixins/main-menu-mixin";
+
+//  Vertical menu
+//=========================
+body.vertical-layout{
+    &.vertical-menu-modern {
+        // Flipped menu expanded
+        &.menu-flipped {
+            @include media-breakpoint-up(sm) {
+                .main-menu {
+                    right: 0;
+                }
+            }
+        }
+        .navbar{
+            .navbar-brand{
+                white-space: nowrap;
+            }
+        }
+        .main-menu{
+            transition: .4s cubic-bezier(.25,.8,.25,1);
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            li{
+                a{
+                    span{
+                        animation: .3s cubic-bezier(.25,.8,.25,1) 0s normal forwards 1 fadein;
+                    }
+                }
+            }
+        }
+        //Vertical menu [Expanded]
+        &.menu-expanded {
+            //Navbar expanded
+            .navbar {
+                .navbar-header {
+                    @include menu-navbar-width($menu-expanded-width);
+                }
+                &.navbar-brand-center {
+                    .navbar-header {
+                        @include menu-navbar-width(auto);
+                    }
+                }
+                .navbar-container {
+                    @include main-menu-width($menu-expanded-width);
+                }
+                .navbar-brand{
+                    .brand-text{
+                        animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+                    }
+                }
+            }
+            // Main menu expanded
+            .main-menu {
+                width: $menu-expanded-width;                
+                .navigation {
+                    .navigation-header {
+                        .ft-minus {
+                            display: none;
+                        }
+                    }
+                    > li {
+                        > a {
+                            > i {
+                                margin-right: 12px;
+                                float:left;
+                                &:before {
+                                    font-size: 1.4rem;
+                                }
+                            }
+                            >span{                                
+                                &.badge{
+                                    position:absolute;
+                                    right: 20px;
+                                }
+                            }
+                        }
+                    }
+                    li {
+                        @include vertical-menu-has-sub-arrow(1rem);
+                    }
+                }
+                .main-menu-footer {
+                    width: $menu-expanded-width;
+                }
+            }
+            //Content expanded
+            .content,
+            .footer {
+                @include main-menu-width($menu-expanded-width);
+            }
+            //Brand center content expanded
+            .navbar-brand-center {
+                .content,
+                .footer {
+                    @include main-menu-width(0);
+                }
+            }
+        }
+        //Vertical menu [Collapsed]
+        &.menu-collapsed {
+            //Navbar collapsed
+            .navbar {
+                .navbar-header {
+                    @include menu-navbar-width($menu-collapsed-width);
+                    .modern-nav-toggle{
+                        display: none;
+                    }
+                    &.expanded{
+                        width: $menu-expanded-width;
+                        z-index: 1000;
+                        .modern-nav-toggle{
+                            display: block;
+                        }
+                        .navbar-brand{
+                            .brand-text{
+                                animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+                            }
+                        }
+                    }
+                    .navbar-brand{
+                        .brand-text{
+                            animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadeout;
+                        }
+                    }
+                }
+                &.navbar-brand-center {
+                    .navbar-header {
+                        @include menu-navbar-width(auto);
+                    }
+                }
+                .navbar-brand{
+                    padding: 17px 0px;
+                }
+                .navbar-container {
+                    @include main-menu-width($menu-collapsed-width);
+                }
+            }
+            // Main menu collapsed
+            .main-menu {
+                width: $menu-collapsed-width;                
+                transition: 300ms ease all;
+                backface-visibility: hidden;
+                transform: translate3d(0, 0, 0);                
+                .main-menu-footer {
+                    width: $menu-collapsed-width;
+                }
+                .main-menu-footer,
+                .main-menu-header .media-body .media-heading,
+                .main-menu-header .media-body .text-muted,
+                .main-menu-header .media-right {
+                    display: none;
+                }
+                .main-menu-header .media-body {
+                    opacity: 0;
+                }
+                .user-content {
+                    padding: 20px 10px;
+                }                
+                //Navigation collapsed
+                .navigation {
+                    overflow: visible;
+                    > li.navigation-header {
+                        .ft-minus {
+                            display: block;
+                            font-size: 1.2rem;
+                        }
+                        span {
+                            display: none;
+                        }
+                    }
+                    > li {
+                        >a {
+                            text-overflow: inherit;
+                            > span {
+                                animation: .3s cubic-bezier(.25,.8,.25,1) 0s normal forwards 1 fadeout;
+                                &.badge{
+                                    float: none !important;
+                                }
+                            }
+                            i{
+                                margin-right: 12px;
+                                float:left;
+                                &:before{
+                                    font-size: 1.4rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .mTSWrapper {
+                    overflow: visible;
+                }
+                &.expanded{
+                    width: $menu-expanded-width;
+                    .navigation {
+                        > li.navigation-header {
+                            .ft-minus {
+                                display: none;
+                            }
+                            span{
+                                display: block;
+                            }
+                        }
+                        > li{
+                            > a{
+                                > span{
+                                    animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+                                    &.badge{
+                                        position: absolute;
+                                        right: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        li {
+                            @include vertical-menu-has-sub-arrow(1rem);
+                        }
+                    }
+                }
+            }
+            //Brand center content collapsed
+            .content,
+            .footer {
+                @include main-menu-width($menu-collapsed-width);
+            }
+            .navbar-brand-center {
+                .content,
+                .footer {
+                    @include main-menu-width(0);
+                }
+            }
+            // Flipped menu collapsed
+            &.menu-flipped {
+                //Content collapsed flipped
+                .content {
+                    @include vertical-flipped-menu($menu-collapsed-width);
+                }
+                @include media-breakpoint-up(sm) {
+                    .main-menu {
+                        right: 0;
+                        span.menu-title {
+                            right: $menu-collapsed-width;
+                        }
+                        ul.menu-content {
+                            right: $menu-collapsed-width;
+                            left: inherit;
+                        }
+                    }
+                }
+                //Navbar collapsed flipped
+                .navbar {
+                    .navbar-header {
+                        float: right;
+                    }
+                    .navbar-container {
+                        @include vertical-flipped-menu($menu-collapsed-width);
+                    }
+                }
+                .footer{
+                    @include vertical-flipped-menu($menu-collapsed-width);
+                }
+            }
+        }
+    }
+}
+// Collapsed menu RTL
+[data-textdirection="rtl"] body.vertical-layout{
+    &.vertical-menu-modern.menu-collapsed{
+        .main-menu{
+            .navigation{
+                > li > a{
+                    // padding: 12px 22px !important;
+                    padding: 14px 16px !important;
+
+                }  
+                > li.navigation-header .ft-minus {
+                    padding: 12px 0px;
+                }
+            }
+        }
+    }
+}
+
+// Initially menu & content width for lg and up screen
+@include media-breakpoint-up(lg) {
+    body.vertical-layout {
+        &.vertical-menu-modern {            
+            &.menu-flipped {
+                //Content expanded flipped
+                .content {
+                    @include vertical-flipped-menu($menu-expanded-width);
+                }
+                //Navbar expanded flipped
+                .navbar {
+                    .navbar-header {
+                        float: right;
+                    }
+                    .navbar-container {
+                        @include vertical-flipped-menu($menu-expanded-width);
+                    }
+                }
+                .footer{
+                    @include vertical-flipped-menu($menu-expanded-width);
+                }
+            }
+        }
+    }
+}
+
+// Initially menu & content width for md and down screen
+@include media-breakpoint-down(md) {
+    body.vertical-layout {
+        &.vertical-menu-modern {
+            .main-menu {
+                width: $menu-collapsed-width;
+                .main-menu-footer {
+                    width: $menu-expanded-width;
+                }
+            }
+            .navbar {
+                .navbar-header {
+                    width: $menu-collapsed-width;
+                }
+            }
+            .content,
+            .footer {
+                @include main-menu-width($menu-collapsed-width);
+            }
+        }
+    }
+}
+
+// Initially menu & content width for sm and down screen
+@include media-breakpoint-down(sm) {
+    body.vertical-layout {
+        &.vertical-menu-modern {
+            .content,
+            .footer {
+                @include main-menu-width(0);
+            }
+        }
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+// Import vertical-overlay-menu.scss for small screen support
+@import "vertical-overlay-menu.scss";

@@ -1,0 +1,52 @@
+// ================================================================================================
+// 	File Name: project.scss
+// 	Description: This file content different project page layouts SCSS.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+
+#project-info{
+	overflow:hidden;
+	.project-info-count{
+	    text-align: center;
+	    vertical-align: top;
+	    .project-info-icon{
+		    border: 3px solid #ececec;
+		    border-radius: 50%;
+		    display: block;
+		    margin: 0 auto;
+		    padding: 37px 0;
+		    position: relative;
+		    width: 110px;
+		    height: 110px;
+		}
+		.project-info-text {
+			display: block;
+		    margin-top: 20px;
+		    left: 0;
+		    position: relative;
+		    top: 0;
+		    width: 99.8%;
+		}
+
+		.project-info-sub-icon{
+			position: relative;
+		    border-radius: 65px;
+		    border: 1px solid #adadad;
+		    background: #fff;
+		    bottom: -5px;
+		    left: 34px;
+		    width: 40px;
+		    height: 40px;
+		    span{
+		    	font-size: 1.2rem;
+			    top: 10px;
+			    position: relative;
+		    }
+		}
+	}
+}

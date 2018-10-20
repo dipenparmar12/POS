@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: color-palette-amber.pug
+	Description:  Bootstrap 4 Amber Color Palette
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Amber Color Page"
+	- var pageSubTitle = "Amber Color Options"
+	- var description  = "Amber Color Palette with background & border color."
+	- var activeMenu  = "color-palette-amber"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Color System"}, {name:"Amber Palette"}])
+
+//- Include page content in page block
+append content
+	include ../contents/color-palette-amber.html

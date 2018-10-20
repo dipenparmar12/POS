@@ -1,0 +1,57 @@
+//- =========================================================================================
+	File Name:dt-extensions-select.pug
+	Description: Selection capabilities to a DataTable.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT 
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Select Datatable"
+	- var pageSubTitle = "Selection capabilities to a DataTable"
+	- var description  = "Select adds item selection capabilities to a DataTable. Items can be rows, columns or cells, which can be selected independently, or together. Item selection can be particularly useful in interactive tables where users can perform some action on the table such as editing."
+	- var activeMenu   = "dt-extensions-select"
+
+
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"Select Datatable"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/dt-extensions-select.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/select.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/buttons.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/buttons.bootstrap4.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.select.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.buttons.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/buttons.bootstrap4.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables-extensions/datatable-select.js', type='text/javascript')

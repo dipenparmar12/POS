@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: headers-breadcrumbs-with-stats.pug
+	Description: Page header with page title, breadcrumbs, description and stats.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Breadcrumbs with stats"
+	- var pageSubTitle = "Page header with breadcrumbs & stats"
+	- var description  = "Page header with page title, breadcrumbs, content title and stats."
+	- var activeMenu   = "headers-breadcrumbs-with-stats"
+
+block page-header
+	include page-headers/breadcrumbs-with-stats
+
+//- Include page content in page block
+append content
+	include ../contents/headers-breadcrumbs-with-stats.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/charts/jquery.sparkline.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(type='text/javascript' ,src=app_assets_path + '/js/scripts/ui/breadcrumbs-with-stats.js')

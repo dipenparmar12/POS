@@ -1,0 +1,12 @@
+.content-header-left.col-md-6.col-12.mb-2
+	h3.content-header-title #{pageTitle}
+	.row.breadcrumbs-top
+		block breadcrumbs
+			+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs with stats"}])
+.content-header-right.col-md-6.col-12
+	.media.width-250.float-right
+		media-left.media-middle
+			#sp-bar-total-sales
+		.media-body.media-right.text-right
+			h3.m-0 $5,668
+			span.text-muted Sales

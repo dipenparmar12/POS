@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: form-select2.pug
+	Description: Select2 using dragula js.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "Select2"
+	- var pageSubTitle = "The jQuery replacement for select boxes"
+	- var description  = "Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options."
+	- var activeMenu = "form-select2"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Components"}, {name:"Select2"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-select2.html
+
+append vendorcss
+	//- Select2 CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/selects/select2.min.css')
+
+append vendorjs
+	//- select2 min js
+	script(src=app_assets_path + '/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+
+append pagejs
+	//- Template js
+	script(src=app_assets_path + '/js/scripts/forms/select/form-select2.js', type='text/javascript')

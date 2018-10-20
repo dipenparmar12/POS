@@ -1,0 +1,251 @@
+// ================================================================================================
+//   File Name: pallette.scss
+//   Description: Custom color system styles, includes background, border and text colors
+//   ----------------------------------------------------------------------------------------------
+//   Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 1.0
+//   Author: PIXINVENT
+//   Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+//  ================================================================================================
+//  WARNING: PLEASE DO NOT CHANGE THIS VARIABLE FILE.
+//  THIS FILE WILL GET OVERWRITTEN WITH EACH STACK TEMPLATE RELEASE.
+//  TIP:
+//  We suggest you to use this (assets/scss/colors/palette.scss) file for overriding color variables.
+//  ================================================================================================
+
+
+// usage: color("name_of_color", "type_of_color")
+// to avoid to repeating map-get($colors, ...)
+
+@function color-function($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  // @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}
+
+// Color palettes
+@import "palette-variables";
+// Overrides user variable
+@import "../../../../assets/scss/colors/palette-variables";
+
+ // Color Classes
+ //   Text color: .color .lighten-* / .darken-* / .accent-*
+ //   Background: .bg-color .bg-lighten-* / .bg-darken-* / .bg-accent-*
+ //   border: .border-color .border-lighten-* / .border-darken-* / .border-accent-*
+ //   border-top: .border-top-color .border-top-lighten-* / .border-top-darken-* / .border-top-accent-*
+ //   border-bottom: .border-bottom-color .border-bottom-lighten-* / .border-bottom-darken-* / .border-bottom-accent-*
+ //   border-left: .border-left-color .border-left-lighten-* / .border-left-darken-* / .border-left-accent-*
+ //   border-right: .border-right-color .border-right-lighten-* / .border-right-darken-* / .border-right-accent-*
+
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .#{$color_name} {
+        color: $color_value !important;
+      }
+      .bg-#{$color_name} {
+        background-color: $color_value !important;
+        .card-header, .card-footer{
+          background-color: transparent;
+        }
+        &.bg-glow{
+          box-shadow: 0px 1px 20px 1px rgba($color_value, 0.6);
+        }
+      }
+      .selectboxit{
+        &.selectboxit-btn{
+          &.bg-#{$color_name} {
+            background-color: $color_value !important;
+          }
+        }
+      }
+      .alert-#{$color_name} {
+        border-color: $color_value !important;
+        background-color: lighten($color_value, 14%) !important;
+        color: darken($color_value, 35%) !important;
+        .alert-link{
+          color: darken($color_value, 43%) !important;
+        }
+      }
+      .border-#{$color_name}{
+        border-color: $color_value;
+      }
+      // .bg-#{$color_name}, .border-#{$color_name}{
+      //   &.badge-glow{
+      //     box-shadow: 0px 0px 10px $color_value;
+      //   }
+      // }
+      .overlay-#{$color_name}{
+        @include bg-opacity($color_value, 0.8);
+      }
+      /* .card-outline-#{$color_name}{
+        border-width: 1px;
+        border-style: solid;
+        border-color: $color_value;
+        background-color: transparent;
+        .card-header, .card-footer{
+          background-color: transparent;
+        }
+      } */
+      .btn-#{$color_name}{
+        border-color: color-function($color_name, "darken-2") !important;
+        background-color: $color_value !important;
+        color: #FFFFFF;
+        &:hover{
+          border-color: color-function($color_name, "darken-1") !important;
+          background-color: color-function($color_name, "lighten-1") !important;
+          color: #FFF !important;
+        }
+        &:focus,&:active{
+          border-color: color-function($color_name, "darken-2") !important;
+          background-color: color-function($color_name, "darken-3") !important;
+          color: #FFF !important;
+        }
+        &.btn-glow{
+          box-shadow: 0px 1px 20px 1px rgba($color_value, 0.6);
+        }
+      }
+      .btn-outline-#{$color_name}{
+        border-color: $color_value;
+        background-color: transparent;
+        color: $color_value;
+        &:hover{
+          background-color: $color_value;
+          color: #FFF !important;
+        }
+        &.btn-glow{
+          box-shadow: 0px 1px 20px 1px rgba($color_value, 0.6);
+        }
+      }
+      .progress-#{$color_name}{
+        // @include progress-variant($color_value);
+      }
+      input{
+        &[type="checkbox"].bg-#{$color_name},
+        &[type="radio"].bg-#{$color_name}{
+          +.custom-control-label{
+            &:before{
+              background-color: $color_value !important;
+            }
+          }
+        }
+      }
+      /* .custom-control-label{
+        &:before{
+          background-color: #ddd !important;
+        }
+      } */
+      input:focus ~ .bg-#{$color_name}{
+        box-shadow: 0 0 0 .075rem #fff, 0 0 0 .21rem $color_value !important;
+      }
+      .border-#{$color_name} {
+        border: 1px solid $color_value !important;
+      }
+      .border-top-#{$color_name} {
+        border-top: 1px solid $color_value;
+      }
+      .border-bottom-#{$color_name} {
+        border-bottom: 1px solid $color_value;
+      }
+      .border-left-#{$color_name} {
+        border-left: 1px solid $color_value;
+      }
+      .border-right-#{$color_name} {
+        border-right: 1px solid $color_value;
+      }
+    }
+    @else {
+      .#{$color_name}.#{$color_type} {
+        color: $color_value !important;
+      }
+      .bg-#{$color_name}.bg-#{$color_type} {
+        background-color: $color_value !important;
+        &.bg-glow{
+          box-shadow: 0px 1px 20px 1px rgba($color_value, 0.6);
+        }
+      }
+      .btn-#{$color_name}.btn-#{$color_type}{
+        border-color: color-function($color_name, "darken-2") !important;
+        background-color: $color_value !important;
+        &:hover{
+          border-color: color-function($color_name, "darken-2") !important;
+          background-color: color-function($color_name, "darken-3") !important;
+        }
+        &:focus,&:active{
+          border-color: color-function($color_name, "darken-3") !important;
+          background-color: color-function($color_name, "darken-4") !important;
+        }
+      }
+      .btn-outline-#{$color_name}.btn-outline-#{$color_type}{
+        border-color: $color_value !important;
+        color: $color_value !important;
+        &:hover{
+          background-color: $color_value !important;
+        }
+      }
+      .progress-#{$color_name}.progress-#{$color_type}{
+        // @include progress-variant($color_value);
+      }
+      input:focus ~ .bg-#{$color_name}{
+        box-shadow: 0 0 0 .075rem #fff, 0 0 0 .21rem $color_value !important;
+      }
+      .border-#{$color_name}.border-#{$color_type} {
+        border: 1px solid $color_value !important;
+      }
+      .border-top-#{$color_name}.border-top-#{$color_type} {
+        border-top: 1px solid $color_value !important;
+      }
+      .border-bottom-#{$color_name}.border-bottom-#{$color_type} {
+        border-bottom: 1px solid $color_value !important;
+      }
+      .border-left-#{$color_name}.border-left-#{$color_type} {
+        border-left: 1px solid $color_value !important;
+      }
+      .border-right-#{$color_name}.border-right-#{$color_type} {
+        border-right: 1px solid $color_value !important;
+      }
+      .overlay-#{$color_name}.overlay-#{$color_type}{
+        @include bg-opacity($color_value, 0.8);
+      }
+    }
+  }
+}
+
+// Shade classes
+@each $color, $color_value in $shades {
+  .#{$color} {
+    color: $color_value;
+  }
+  .bg-#{$color} {
+    background-color: $color_value;
+    &.bg-glow{
+      box-shadow: 0px 1px 20px 1px rgba($color_value, 0.6);
+    }
+  }
+  input:focus ~ .bg-#{$color}{  // TODO: Need to check input-type sibling border color issue(form>input-groups)
+    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .21rem $color_value; 
+  }
+  .border-#{$color} {
+    border: 1px solid $color_value;
+  }
+  .border-top-#{$color} {
+    border-top: 1px solid $color_value;
+  }
+  .border-bottom-#{$color} {
+    border-bottom: 1px solid $color_value;
+  }
+  .border-left-#{$color} {
+    border-left: 1px solid $color_value;
+  }
+  .border-right-#{$color} {
+    border-right: 1px solid $color_value;
+  }
+}

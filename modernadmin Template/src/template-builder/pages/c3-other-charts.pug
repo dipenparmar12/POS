@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: c3-other-charts.pug
+	Description: C3 other charts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "C3 Other Charts"
+	- var pageSubTitle = "c3 other charts examples"
+	- var description  = "Examples of other charts like combine chart, timeseries chart, scatter plot chart, sub chart, zoom chart, gauge chart"
+	- var activeMenu   = "c3-other-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"C3 Charts"}, {name:"Other Charts"}])
+
+//- Include page content in page block
+append content
+	include ../contents/c3-other-charts.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/c3.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/d3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/c3.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/charts/c3-chart.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/c3/other/combine.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/other/guage.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/other/scatter-plot.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/other/sub.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/other/timeseries.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/other/zoom.js', type='text/javascript')

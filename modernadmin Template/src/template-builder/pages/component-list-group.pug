@@ -1,0 +1,26 @@
+//- =========================================================================================
+	File Name: component-list-group.pug
+	Description: List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "List Group"
+	- var pageSubTitle = "It's flexible and powerful component"
+	- var description  = "List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content."
+	- var activeMenu = "component-list-group"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"List Group"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-list-group.html

@@ -1,0 +1,36 @@
+// ================================================================================================
+//     File Name: Footer.scss
+//     Description: *  Main footer styles.
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Stick footer to the bottom of the page
+footer{
+	&.footer {
+		padding: 0.8rem;
+	}
+
+	//shadow & border options
+	&.navbar-shadow {
+		box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.1);
+	}
+	&.navbar-border {
+		border-top: 1px solid #E4E7ED;
+	}
+
+	// Footer color options
+	&.footer-transparent{
+		border: none;
+	}
+	&.footer-light{
+		background: $footer-color-light-bg;
+	}
+	&.footer-dark{
+		background: $footer-color-dark-bg;
+		color: #fff;
+	}
+}

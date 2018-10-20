@@ -1,0 +1,43 @@
+//- =========================================================================================
+	File Name: layout-static.pug
+	Description: Static layout page structure have static navbar, navigation and footer.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent 
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Static Layout"
+	- var pageSubTitle = "Static layout with navigation"
+	- var description  = "The static layout page structure have fixed navbar, navigation and footer."
+	- var activeMenu   = "static"
+
+
+
+append pageConfig
+	- var headerType = 'sk-header'
+	- var starterKit  = true
+	- var navbarFixed = false
+
+append navbarConfig
+	- var navbarPosition = "navbar-static-top"
+
+append horizontalMenuConfig
+	- var horizontalMenuType = 'navbar-static'
+
+append verticalMenuConfig
+	- var menuType = 'menu-static'
+
+append footerConfig
+	- var footerType = "footer-static"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Starter Kit"}, {name:"Static Layout"}])
+
+//- include  page content in page block
+append content
+	include ../../contents/starter-kit/starter-page-content.html

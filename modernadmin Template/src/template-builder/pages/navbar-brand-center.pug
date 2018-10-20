@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: navbar-brand-center.pug
+	Description: The navbar brand center navbar option has center aligned brand in navbar.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Navbar Brand Center"
+	- var pageSubTitle = "Navbar center aligned brand"
+	- var description  = "The navbar brand center navbar option has center aligned brand in navbar."
+	- var activeMenu   = "navbar-brand-center"
+
+
+
+append pageConfig
+	- var logoType = 'light'
+
+append navbarConfig
+	- var navbarColor = "navbar-dark"
+	- var navbarBrandCenter = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navbars"}, {name:"Navbar Light"}])
+
+//- Include page content in page block
+append content
+	include ../contents/navbar-brand-center.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript', src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

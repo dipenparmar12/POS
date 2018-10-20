@@ -1,0 +1,44 @@
+//- =========================================================================================
+	File Name: search-page.pug
+	Description: Search result page.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Search Page"
+	- var pageSubTitle = "Search Result"
+	//- var description  = ""
+	- var activeMenu   = "search-page"
+
+
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var logoType = "light"
+	- var headerType = "header-simple"
+
+append navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarColor = "navbar-dark"
+
+append footerConfig
+	- var footerType = "fixed-bottom"
+	- var footerColor = "footer-dark"
+
+block page-header
+
+//- Include page content in page block
+append content
+	include ../contents/search-page.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/search.css')

@@ -1,0 +1,39 @@
+//- =========================================================================================
+	File Name: chartjs-scatter-charts.pug
+	Description: Chartjs scatter chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Chartjs Scatter Chart"
+	- var pageSubTitle = "chartjs scatter chart examples"
+	- var description  = "A scatter plot (also called a scatter graph, scatter chart, scattergram, or scatter diagram) is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data. If the points are color-coded you can increase the number of displayed variables to three. The data is displayed as a collection of points, each having the value of one variable determining the position on the horizontal axis and the value of the other variable determining the position on the vertical axis."
+	- var activeMenu   = "chartjs-scatter-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Chartjs"}, {name:"Scatter Chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/chartjs-scatter-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/chart.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/scatter/scatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/scatter/scatter-logX.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/scatter/scatter-multi-axis.js', type='text/javascript')

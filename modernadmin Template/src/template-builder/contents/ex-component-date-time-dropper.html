@@ -1,0 +1,271 @@
+<!-- Date dropper section start -->
+<section id="date-dropper">
+    <div class="row">
+        <div class="col-12 mt-1 mb-3">
+            <h4>Datedropper</h4>
+            <p>The smallest and powerful jQuery UI datepicker.</p>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-body">
+                        <div class="options">
+                            <h3>Options</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Animate</h5>
+                                        <p>When set to <code>true (default)</code> the dropdown will run an initial state animation when the user clicks the control for the first time and all user changes are animated.</p>
+                                        <input type="text" class="form-control input-lg" id="animate" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Init Animation</h5>
+                                        <p>Animation Style to use when init datedropper. There are three available animation values: <code>fadeIn(default)</code>, <code>bounce</code>, <code>dropDown</code>.</p>
+                                        <input type="text" class="form-control input-lg" id="init_animation" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Format</h5>
+                                        <p>A date format string that dateDropper expects existing values to be in and will write dates out it. <code>Default: m-d-Y</code></p>
+                                        <input type="text" class="form-control input-lg" id="format" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Lang</h5>
+                                        <p>Display Language to use for Month name and Day-of-week. (English by default)</p>
+                                        <input type="text" class="form-control input-lg" id="lang" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Lock</h5>
+                                        <p>Set the initial value to current date or lock the control value to current date: <code>false(default)</code>, <code>from</code>, <code>to</code>.</p>
+                                        <input type="text" class="form-control input-lg" id="lock" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Max Year</h5>
+                                        <p>The highest year value the control will allow. Current year by default.</p>
+                                        <input type="text" class="form-control input-lg" id="maxYear" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Min Year</h5>
+                                        <p>The oldest year the control will allow. <code>Default: 1970</code></p>
+                                        <input type="text" class="form-control input-lg" id="minYear" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Years Range</h5>
+                                        <p>It groups the years based on the value set(multiple). <code>Default: 10</code></p>
+                                        <input type="text" class="form-control input-lg" id="yearsRange" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="styles mt-3">
+                            <h3>Styles</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Primary Color</h5>
+                                        <p>Specify a color value for drop down accent color. <code>Default: #2D95BF</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropPrimaryColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Text Color</h5>
+                                        <p>Specify a color value for drop down text color. <code>Default: #1D2B36</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropTextColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Background Color</h5>
+                                        <p>Specify a color value for drop down background color. <code>Default: #FFFFFF</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropBackgroundColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Border</h5>
+                                        <p>Specify a css proprieties for drop down border style. <code>Default: 1px solid #2D95BF</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropBorder" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Border Radius</h5>
+                                        <p>Specify a integer value for drop down border radius. <code>Default: 8</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropBorderRadius" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Shadow</h5>
+                                        <p>Specify a css proprieties for drop down shadow. <code>Default: 0 0 10px 0 rgba(0, 136, 204, 0.45)</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropShadow" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Width</h5>
+                                        <p>Specify a integer value for drop down width. <code>Default: 124</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropWidth" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Drop Text Weight</h5>
+                                        <p>Specify a integer value for drop down text weight. <code>Default: bold</code></p>
+                                        <input type="text" class="form-control input-lg" id="dropTextWeight" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Date dropper section end -->
+
+<!-- Time dropper section start -->
+<section id="time-dropper">
+    <div class="row">
+        <div class="col-12 mt-1 mb-3">
+            <h4>Timedropper</h4>
+            <p>Timedropper is a jQuery time plugin.</p>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-body">
+                        <div class="options">
+                            <h3>Options</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Auto Switch</h5>
+                                        <p>Automatically change hour-minute or minute-hour on mouseup/touchend. <code>(Default: false)</code></p>
+                                        <input type="text" class="form-control input-lg" id="autoswitch" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Meridians</h5>
+                                        <p>Set time in 12-hour clock in which the 24 hours of the day are divided into two periods. <code>(Default: false)</code>.</p>
+                                        <input type="text" class="form-control input-lg" id="meridians" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Format</h5>
+                                        <p>A time format string that timeDropper expects existing values to be in and will write times out it. <code>(Default: h:mm a)</code></p>
+                                        <input type="text" class="form-control input-lg" id="timeformat" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Mousewheel</h5>
+                                        <p>Enables time change using mousewheel. <code>(Default: false)</code></p>
+                                        <input type="text" class="form-control input-lg" id="mousewheel" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Init Animation</h5>
+                                        <p>Animation Style to use when init timedropper. There are three available animation <code>values: fadeIn(default), dropDown</code>.</p>
+                                        <input type="text" class="form-control input-lg" id="time_init_animation" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Set Current Time</h5>
+                                        <p>Automatically set current time by default. <code>(Default: true)</code>. If set <code>"false"</code>, the input <code>"value"</code> attribute is considered as main time value.</p>
+                                        <input type="text" class="form-control input-lg" id="setCurrentTime" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="styles mt-3">
+                            <h3>Styles</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Primary Color</h5>
+                                        <p>Specify a color value for drop down accent color. <code>Default: #237596</code></p>
+                                        <input type="text" class="form-control input-lg" id="primaryColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Text Color</h5>
+                                        <p>Specify a color value for drop down text color. <code>Default: #1D2B36</code></p>
+                                        <input type="text" class="form-control input-lg" id="textColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Background Color</h5>
+                                        <p>Specify a color value for drop down background color. <code>Default: #FFFFFF</code></p>
+                                        <input type="text" class="form-control input-lg" id="backgroundColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group mb-3">
+                                        <h5>Border Color</h5>
+                                        <p>Specify a color value for drop down border color. <code>Default: #237596</code></p>
+                                        <input type="text" class="form-control input-lg" id="borderColor" placeholder="Date Dropper">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Time dropper section end -->

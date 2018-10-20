@@ -1,0 +1,44 @@
+// fixed-top
+nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow(class=navbarPosition + ' ' + navbarColor, class=(navbarHideOnScroll == true ? 'navbar-hide-on-scroll' : ''), class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarShadow == true ? 'navbar-shadow' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''))
+  .navbar-wrapper
+    .navbar-header
+      ul.nav.navbar-nav.flex-row
+        li.nav-item.mobile-menu.d-md-none.mr-auto
+          a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+              i.ft-menu.font-large-1
+        li.nav-item.mr-auto
+          a.navbar-brand(href='index.html')
+            img(class='brand-logo' alt='modern admin logo' src=(logoType == 'dark' ? '../../../app-assets/images/logo/logo.png' : '../../../app-assets/images/logo/logo.png'))
+            h3.brand-text Modern Admin
+        li.nav-item.d-none.d-md-block.float-right
+          a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+            i.toggle-icon.ft-toggle-right.font-medium-3(class = (logoType == 'dark' ? 'blue-grey darken-3' : 'white' ), data-ticon='ft-toggle-right')
+        li.nav-item.d-md-none
+          a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+            i.la.la-ellipsis-v
+    .navbar-container(class= (centerLayout == true ? 'container center-layout' : 'content'))
+      #navbar-mobile.collapse.navbar-collapse
+        ul.nav.navbar-nav.float-right
+          li.dropdown.dropdown-user.nav-item
+            a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+              span.avatar.avatar-online
+                img(src='../../../app-assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+                i
+              span.user-name John Doe
+            .dropdown-menu.dropdown-menu-right
+              a.dropdown-item(href='#')
+                i.ft-user
+                |  Edit Profile
+              a.dropdown-item(href='#')
+                i.ft-mail
+                |  My Inbox
+              a.dropdown-item(href='#')
+                i.ft-check-square
+                |  Task
+              a.dropdown-item(href='#')
+                i.ft-message-square
+                |  Chats
+              .dropdown-divider
+              a.dropdown-item(href='#')
+                i.ft-power
+                |  Logout

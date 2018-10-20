@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: footer-fixed.pug
+	Description: The Fixed footer options used to make your footer set to be fixed at bottom.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Footer Fixed"
+	- var pageSubTitle = "Fixed color footer"
+	- var description  = "The Fixed footer options used to make your footer set to be fixed at bottom."
+	- var activeMenu   = "footer-fixed"
+
+
+
+append footerConfig
+	- var footerType = "fixed-bottom"
+	- var footerColor = "footer-dark"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Footer"}, {name:"Footer Fixed"}])
+
+//- Include page content in page block
+append content
+	include ../contents/footer-fixed.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

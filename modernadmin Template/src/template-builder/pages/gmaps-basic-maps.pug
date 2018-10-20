@@ -1,0 +1,41 @@
+//-=========================================================================================
+	File Name: gmaps-basic-maps.pug
+	Description: Gmaps maps examples.
+	---------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "gmaps - Basic Maps"
+	- var pageSubTitle = "Basic maps examples"
+	- var description = "Basic maps examples include maps events and markers maps."
+	- var activeMenu   = "gmaps-basic-maps"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"gmaps"}, {name:"Basic Maps"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/gmaps-basic-maps.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyBDkKetQwosod2SZ7ZGCpxuJdxY3kxo5Po', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/gmaps.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/gmaps/maps.js', type='text/javascript')

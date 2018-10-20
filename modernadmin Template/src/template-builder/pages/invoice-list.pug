@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: invoice-list.pug
+	Description: Invoices Lists
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Invoices List"
+	- var pageSubTitle = "Overall invoices list."
+	//- var description  = ""
+	- var activeMenu   = "invoice-list"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Invoice"}, {name:"Invoices List"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/invoice-list.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+	//- iCheck css
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+	//- Icheck JS
+	script(src=app_assets_path + '/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/pages/invoices-list.js', type='text/javascript')

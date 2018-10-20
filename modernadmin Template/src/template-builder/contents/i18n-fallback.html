@@ -1,0 +1,92 @@
+<!-- fallback example section start -->
+<section id="fallback-examples">
+    <!-- Fallback -->
+    <div class="card">
+        <h4 class="card-header">Set Fallback Language</h4>
+        <div class="card-body">
+            <p class="card-text">This example demonstrates how to set fallback language. Language to lookup key if not found on set language, can be a string <code>(en)</code>, an array <code>(['fe', 'en'])</code> or object defining fallbacks and a default <code>( { 'de-CH': ['fr', 'it'], 'zh-HANT': ['zh-HANS', 'en'], 'default': ['en'] } ).</code> In this example Arabic, Dutch or Italian language files don't exist in /data/locales/ folder. When one of these languages is selected, English language specified in fallbackLng option will be loaded.</p>
+            <nav class="header-navbar navbar-expand-sm navbar navbar-with-menu navbar-dark navbar-shadow border-grey border-darken-2">
+                <div class="navbar-wrapper" id="lng-fallback">
+                    <div class="navbar-header">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item mobile-menu d-md-none float-left">
+                                <button class="nav-link menu-toggle hamburger hamburger--arrow js-hamburger is-active"><span class="hamburger-box"></span><span class="hamburger-inner"></span></button>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html" class="navbar-brand nav-link"><img src="../../../app-assets/images/logo/logo-light.png" alt="logo"></a>
+                            </li>
+                            <li class="nav-item d-md-none float-right"><a data-toggle="collapse" data-target="#navbar-mobile1" class="nav-link open-navbar-container"><i class="la la-ellipsis-h pe-2x icon-rotate-right"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-container content">
+                        <div id="navbar-mobile1" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav lng-nav mr-auto">
+                                <li class="nav-item"><a href="#" class="nav-link active" data-lng="en"><i class="flag-icon flag-icon-gb"></i> English</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link" data-lng="ar"><i class="flag-icon flag-icon-ar"></i> Arabic</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link" data-lng="nl"><i class="flag-icon flag-icon-nl"></i> Dutch</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link" data-lng="it"><i class="flag-icon flag-icon-it"></i> Italian</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav lng-dropdown float-right">
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a id="dropdown-active-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link"><i class="flag-icon flag-icon-gb"></i> English<i class="caret"></i></a>
+                                    <div aria-labelledby="dropdown-flag" class="dropdown-menu dropdown-menu-right">
+                                        <a href="#" class="dropdown-item active" data-lng="en"><i class="flag-icon flag-icon-gb"></i> English</a>
+                                        <a href="#" class="dropdown-item" data-lng="ar"><i class="flag-icon flag-icon-ar"></i> Arabic</a>
+                                        <a href="#" class="dropdown-item" data-lng="nl"><i class="flag-icon flag-icon-nl"></i> Dutch</a>
+                                        <a href="#" class="dropdown-item" data-lng="it"><i class="flag-icon flag-icon-it"></i> Italian</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <h5>Example Markup</h5>
+                    <pre class="language-markup">
+                        <code class="language-markup">
+                            &lt;div aria-labelledby="dropdown-flag" class="dropdown-menu dropdown-menu-right"&gt;
+                                &lt;a href="#" class="dropdown-item"&gt;
+                                    &lt;i class="flag-icon flag-icon-gb"&gt;&lt;/i&gt; English
+                                &lt;/a&gt;
+                                &lt;a href="#" class="dropdown-item"&gt;
+                                    &lt;i class="flag-icon flag-icon-ar"&gt;&lt;/i&gt; Arabic
+                                &lt;/a&gt;
+                                &lt;a href="#" class="dropdown-item"&gt;
+                                    &lt;i class="flag-icon flag-icon-nl"&gt;&lt;/i&gt; Dutch
+                                &lt;/a&gt;
+                                &lt;a href="#" class="dropdown-item"&gt;
+                                    &lt;i class="flag-icon flag-icon-it"&gt;&lt;/i&gt; Italian
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+                <div class="col-md-6">
+                    <h5>Js Code For Switching</h5>
+                    <pre class="language-javascript">
+                        <code class="language-javascript">
+                            i18next
+                                .use(window.i18nextXHRBackend)
+                                .init({
+                                    debug: true,
+                                    fallbackLng: 'en',
+                                    backend: {
+                                        loadPath: "../../../app-assets/data/locales/{{lng}}/{{ns}}.json",
+                                    },
+                                    returnObjects: true
+                                },
+                                function (err, t) {
+                                    // Initialize Localization
+                                    jqueryI18next.init(i18next, $);
+                                });
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // fallback example section end -->

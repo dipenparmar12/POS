@@ -1,0 +1,63 @@
+//- =========================================================================================
+	File Name: layout-static.pug
+	Description: Static layout page structure have static navbar, navigation and footer.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Static Layout"
+	- var pageSubTitle = "Static layout with navigation"
+	- var description  = "The static layout page structure have fixed navbar, navigation and footer."
+	- var activeMenu   = "layout-static"
+
+
+
+append pageConfig
+	- var navbarFixed = false
+
+append navbarConfig
+	- var navbarPosition = "navbar-static-top"	
+
+append verticalMenuConfig
+	- var menuType = 'menu-static'
+
+append horizontalMenuConfig
+	- var horizontalMenuType = 'navbar-static'
+
+append footerConfig
+	- var footerType = "footer-static"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page Layouts"}, {name:"Static Layout"}])
+
+//- Include page content in page block
+append content
+	include ../contents/layout-static.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

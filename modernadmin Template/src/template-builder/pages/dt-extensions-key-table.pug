@@ -1,0 +1,54 @@
+//- =========================================================================================
+	File Name:dt-extensions-key-table.pug
+	Description: Excel like cell navigation in DataTables.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Keytable Datatable"
+	- var pageSubTitle = "Excel like cell navigation in DataTables"
+	- var description  = "KeyTable provides Excel like cell navigation on any table. Events (focus, blur, action etc) can be assigned to individual cells, columns, rows or all cells."
+	- var activeMenu   = "dt-extensions-key-table"
+
+
+
+//- Page specific dependency
+//------------------------------
+
+//- Add custom page specific CSS
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"Keytable Datatable"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/dt-extensions-key-table.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/select.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/keyTable.dataTables.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.fixedHeader.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.keyTable.min.js',type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables-extensions/datatable-keytable.js',type='text/javascript')

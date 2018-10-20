@@ -1,0 +1,56 @@
+//- =========================================================================================
+	File Name: layout-content-detached-left-sidebar.pug
+	Description: The content detached left sidebar layout with navigation, content area and
+				 detched left sidebar.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent 
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Detached Left Sidebar"
+	- var pageSubTitle = "Content detached left sidebar"
+	- var description  = "The content detached left sidebar layout with navigation, content area and detched left sidebar."
+	- var activeMenu   = "content-detached-left-sidebar"
+
+
+
+append pageConfig
+	- var headerType = 'sk-header'
+	- var contentLayout = 'content-detached-left-sidebar'
+	- var starterKit    = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Starters Kit"}, {name:"Content detached left sidebar"}])
+
+//- include  page content
+append content
+	include ../../contents/starter-kit/starter-page-content.html
+//- include  page sidebar
+append sidebar
+	include ../../contents/starter-kit/sk-sidebar-common.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

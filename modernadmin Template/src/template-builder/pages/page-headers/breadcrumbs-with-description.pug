@@ -1,0 +1,9 @@
+.content-header-left.col-md-6.col-12
+	h3.content-header-title #{pageTitle}
+	p.text-muted.mb-0 #{pageSubTitle}
+.content-header-right.breadcrumbs-right.col-md-6.col-12
+	block breadcrumbs
+		+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs with description"}])
+.content-header-lead.col-12.mt-2
+	p.lead
+		| #{description}

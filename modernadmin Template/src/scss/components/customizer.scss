@@ -1,0 +1,72 @@
+/*=========================================================================================
+	File Name: customizer.scss
+	Description: CSS used for demo purpose only. Remove this css from your project.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.customizer{
+	width: 400px;
+    right: -400px;
+	padding: 0;
+    background-color: #FFF;
+	z-index: 1051;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    transition: right 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
+    backface-visibility: hidden;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+	&.open{
+		right: 0;
+	}
+
+	.customizer-content{
+		position: relative;
+    	height: 100%;
+	}
+
+	a.customizer-toggle{
+		background: #FFF;
+		color:$primary;
+		display: block;
+		border-radius: 15px 0 0 15px;
+	}
+	a.customizer-close {
+    	color: #000;
+	}
+	.customizer-close{
+		position: absolute;
+	    right: 10px;
+	    top: 10px;
+	    padding: 7px;
+	    width: auto;
+	    z-index: 10;
+	}
+	.customizer-toggle{
+		position: absolute;
+	    top: 35%;
+	    width: 54px;
+	    height: 50px;
+	    left: -54px;
+	    text-align: center;
+	    line-height: 56px;
+	    cursor: pointer;
+	}
+	.color-options{
+		a{
+			white-space:pre;
+		}
+	}
+	.customizer-sidebar-options .active{
+		background-color: $primary;
+		border-color: $primary;
+		color:#FFF;
+	}
+}

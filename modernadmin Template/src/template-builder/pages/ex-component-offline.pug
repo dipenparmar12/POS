@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: ex-component-offline.pug
+	Description: Offline.js is a library to automatically alert your users when they've lost 
+	internet connectivity, like Gmail.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Offline"
+	- var pageSubTitle = "Automatically display online/offline indication"
+	- var description  = "Offline.js is a library to automatically alert your users when they've lost internet connectivity, like Gmail. It captures AJAX requests which were made while the connection was down, and remakes them when it's back up, so your app reacts perfectly. It has a number of beautiful themes and requires no configuration."
+	- var activeMenu   = "ex-component-offline"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extra Components"}, {name:"Offline"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/ex-component-offline.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/offline/themes/offline-theme-slide.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/offline/themes/offline-language-english.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/offline.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/offline.js', type='text/javascript')

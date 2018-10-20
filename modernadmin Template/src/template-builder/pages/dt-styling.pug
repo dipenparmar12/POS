@@ -1,0 +1,43 @@
+//- =========================================================================================
+	File Name:dt-styling.pug
+	Description: Easy to customise core stylesheets
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Styling DataTable"
+	- var pageSubTitle = "Easy to customise core stylesheets"
+	- var description  = "DataTables provides an easy to customise core stylesheet, which has a number of features that you can enable or disable as you required. Additionally there are a number of integration packages which can be used to fit DataTables into a site which uses some of the popular CSS libraries such as Twitter Bootstrap and Foundation. Or of course you can craft your own CSS to fit it into your site perfectly!"
+	- var activeMenu   = "dt-styling"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"Styling DataTable"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/dt-styling.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+
+//- Add custom page specific JS
+append pagejs
+	//- CUstom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables/datatable-styling.js', type='text/javascript')

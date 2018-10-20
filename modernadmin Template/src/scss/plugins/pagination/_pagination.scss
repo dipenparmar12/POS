@@ -1,0 +1,153 @@
+.datepaginator, .datepaginator-sm, .datepaginator-lg{
+	.pagination{
+		li{
+			display: inline-block;
+			a{
+				&.dp-off {
+					background-color: #f5f5f5 !important;
+				}
+				&.dp-today{
+					background-color: $info !important;
+				}
+				&.dp-selected{
+					background-color: $info !important;
+				}
+				position: relative;
+				float: left;
+				padding: 0.5rem 0.75rem;
+				margin-left: -1px;
+				line-height: 1.6;
+				color: $info;
+				text-decoration: none;
+				background-color: #fff;
+				border: none;
+				.dp-divider {
+				    border-left: 2px solid #ddd!important;
+				}
+				#dp-calendar {
+					padding: 0px 5px 0 0!important;
+					margin-right: 3px;
+					position: absolute;
+					right: -5px;
+					top: 0px;
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
+.pagination{
+	&.pagination-separate{
+		li{
+			&:first-child{
+				a{
+					margin-left: 0;
+				}
+			}
+			a{
+				margin-left: 3px;
+			}
+		}
+		&.pagination-sm{
+			li.active{
+				a{
+					padding: 0.5rem 0.7rem;
+				}
+			}
+		}
+	}
+	li{
+		a{
+			&.no-border{
+				padding: 0.5rem 1rem;
+			}
+		}
+	}
+	&.pagination-round{
+		&.pagination-flat{
+			li.active{
+				a{
+					border-width: 1px;
+					border-radius: 2rem;
+					padding: 0.5rem 1rem;
+				}
+			}
+			&.pagination-sm{
+				li.active{
+					a{
+						padding: 0.5rem 0.7rem;
+					}
+				}
+			}
+		}
+		li{
+			a{
+				&.page-link:hover{
+					&.no-border{
+						border-width: 1px;
+						border-radius: 2rem;
+					}
+				}
+			}
+			&:first-child{
+				a{
+					border-top-left-radius: 2rem !important;
+					border-bottom-left-radius: 2rem !important;
+					padding-left: 1.2rem;
+				}
+			}
+			&:last-child{
+				a{
+					border-top-right-radius: 2rem !important;
+					border-bottom-right-radius: 2rem !important;
+					padding-right: 1.2rem;
+				}
+			}
+			&.active{
+				a{
+					&.no-border,&.no-border:hover{
+						border-width: 1px;
+						border-radius: 2rem;
+						padding: 0.5rem 1rem;
+					}
+				}
+			}
+		}
+	}
+	&.pagination-curved{
+		li{
+			a{
+				border-radius:0.25rem;
+			}
+		}
+		&.pagination-sm{
+			li.active{
+				a{
+					padding: 0.5rem 0.7rem;
+				}
+			}
+		}
+	}
+	&.pagination-flat{
+		li{
+			a{
+				border: 0;
+				border-radius:0.25rem;
+			}
+			&.active{
+				a{
+					border-width: 1px;
+					border-radius: 3px;
+					padding: 0.5rem 1rem;
+				}
+			}
+		}
+		&.pagination-sm{
+			li.active{
+				a{
+					padding: 0.5rem 0.7rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,134 @@
+<!-- clndr section start -->
+<section id="clndr-examples">
+    <div class="row">
+        <!-- Default Setup -->
+        <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Default Setup</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">This is the most basic eample with html template and events to be shown on the calendar.</p>
+                    <div id="clndr-default" class="overflow-hidden bg-grey bg-lighten-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adjacent -->
+        <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Adjacent</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">These two options are used to show show and change months <code>showAdjacentMonths</code> and <code>adjacentDaysChangeMonth</code>. Edges of other months should be visible and clicking them should switch the month.</p>
+                    <div id="clndr-adjacent" class="overflow-hidden bg-grey bg-lighten-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <!-- Multiday -->
+        <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Multiday</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">This example demonstrates multi-day events (12th - 17th, 24th - 27th).</p>
+                    <div id="clndr-multiday" class="overflow-hidden bg-grey bg-lighten-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Constraints -->
+        <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Constraints</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">This example demonstrates start and end constraints. (the 4th of this month to the 24th of this month).</p>
+                    <div id="clndr-constraints" class="overflow-hidden bg-grey bg-lighten-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <!-- Six Rows -->
+        <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Six Rows</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">The <code>forceSixRows</code> option, which should make a six-row calendar regardless of the length of each month.</p>
+                    <div id="clndr-six-rows" class="overflow-hidden bg-grey bg-lighten-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selected Date -->
+        <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Selected Date</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">It Should highlight the last date you clicked on.</p>
+                    <div id="clndr-selected-date" class="overflow-hidden bg-grey bg-lighten-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="clndr" class="clearfix">
+        <script type="text/template" id="clndr-template">
+            <div class="clndr-controls">
+                <div class="clndr-previous-button">&lt;</div>
+                <div class="clndr-next-button">&gt;</div>
+                <div class="current-month">
+                    <%= month %>
+                    <%= year %>
+                </div>
+
+            </div>
+            <div class="clndr-grid">
+                <div class="days-of-the-week clearfix">
+                    <% _.each(daysOfTheWeek, function(day) { %>
+                        <div class="header-day">
+                            <%= day %>
+                        </div>
+                    <% }); %>
+                </div>
+                <div class="days">
+                    <% _.each(days, function(day) { %>
+                        <div class="<%= day.classes %>" id="<%= day.id %>"><span class="day-number"><%= day.day %></span></div>
+                    <% }); %>
+                </div>
+            </div>
+            <div class="event-listing">
+                <div class="event-listing-title">Event this month</div>
+                <% _.each(eventsThisMonth, function(event) { %>
+                    <div class="event-item font-small-3">
+                        <div class="event-item-day font-small-2">
+                            <%= event.date %>
+                        </div>
+                        <div class="event-item-name text-bold-600">
+                            <%= event.title %>
+                        </div>
+                        <div class="event-item-location">
+                            <%= event.location %>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </script>
+    </div>
+</section>
+<!-- // clndr example section end -->

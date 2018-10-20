@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name:handson-table-columns-only.pug
+	Description: Handsontable Columns only.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Columns only"
+	- var activeMenu   = "handson-table-columns-only"
+	- var pageSubTitle = "Columns Stretching & Freezing"
+	- var description  = "HandsonTable provides columns Stretching & Freezing options."
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"HandsonTable"}, {name:"Columns only"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/handson-table-columns-only.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/handsontable/handsontable.full.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/handsontable/jsgrid-theme.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/handsontable/jsgrid.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/tables/handsontable.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/handsontable/handsontable.full.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/handsontable/jsgrid.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//-Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/handsontable/handsontable-columns-only.js', type='text/javascript')

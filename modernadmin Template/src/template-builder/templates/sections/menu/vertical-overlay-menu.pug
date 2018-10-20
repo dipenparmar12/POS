@@ -1,0 +1,855 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+- var query_string = "?lng=en"
+
+//- main menu
+.main-menu(class=menuType + ' ' + menuColor + ' ' + menuOpenType, class=(menuNativeScroll == true ? 'menu-native-scroll' : ''), class=(menuIconRight == true ? 'menu-icon-right' : ''), class=(menuDevider == true ? 'menu-bordered' : ''), class=(menuShadow == true ? 'menu-shadow' : ''), class=(menuBorder == true ? 'menu-border' : '') data-scroll-to-active="true")
+
+  //- main menu header
+  //- include includes/menu-header
+  //- / main menu header
+
+  //- main menu content
+  .main-menu-content
+    +verticalMenu([
+
+
+      {url:"index.html",name:"Dashboard",slug:"dashboard",icon:"la la-home", i18n:"nav.dash.main",tag:"3" , tagcustom: "badge badge-info badge-pill float-right mr-2",
+        submenu:[
+          {url:"dashboard-ecommerce.html", name:"eCommerce", slug:"dashboard-ecommerce", i18n:"nav.dash.ecommerce"},
+          {url:"dashboard-crypto.html", name:"Crypto", slug:"dashboard-crypto", i18n:"nav.dash.crypto"},
+          {url:"dashboard-sales.html", name:"Sales", slug:"dashboard-sales", i18n:"nav.dash.sales"},
+        ]
+      },
+
+
+      {url:"#",name:"Templates",slug:"#",icon:"la la-television", i18n:"nav.templates.main",
+        submenu:[
+          {url:"#", name:"Vertical", slug:"", i18n:"nav.templates.vert.main",
+            submenu:[
+              {url:"../vertical-menu-template", name:"Classic Menu", slug:"", i18n:"nav.templates.vert.classic_menu"},
+              {url:"../vertical-modern-menu-template", name:"Modern Menu", slug:""},
+              {url:"../vertical-compact-menu-template", name:"Compact Menu", slug:"", i18n:"nav.templates.vert.compact_menu"},
+              {url:"../vertical-content-menu-template", name:"Content Menu", slug:"", i18n:"nav.templates.vert.content_menu"},
+              {url:"../vertical-overlay-menu-template", name:"Overlay Menu", slug:"", i18n:"nav.templates.vert.overlay_menu"},
+            ]
+          },
+          {url:"#", name:"Horizontal", slug:"", i18n:"nav.templates.horz.main",
+            submenu:[
+              {url:"../horizontal-menu-template", name:"Classic", slug:"", i18n:"nav.templates.horz.classic"},
+              {url:"../horizontal-menu-template-nav", name:"Full Width", slug:"", i18n:"nav.templates.horz.top_icon"},
+            ]
+          },
+        ]
+      },
+
+
+      {navheader:"Layouts",icon:"la la-ellipsis-h", i18n:"nav.category.layouts"},
+
+
+        {url:"#",name:"Page layouts",slug:"page-columns",icon:"la la-columns",tag:"New" , tagcustom: "badge badge-pill badge-danger float-right mr-2", i18n:"nav.page_layouts.main",
+
+          submenu:[
+            {url:"layout-1-column.html", name:"1 column", slug:"layout-1-column", i18n:"nav.page_layouts.1_column"},
+            {url:"layout-2-columns.html", name:"2 columns", slug:"layout-2-columns", i18n:"nav.page_layouts.2_columns"},
+            {url:"#", name:"Content Sidebar", slug:"", i18n:"nav.page_layouts.3_columns.main",
+              submenu:[
+                {url:"layout-content-left-sidebar.html", name:"Left sidebar", slug:"layout-content-left-sidebar", i18n:"nav.page_layouts.3_columns.left_sidebar"},
+                {url:"layout-content-left-sticky-sidebar.html", name:"Left sticky sidebar", slug:"layout-content-left-sticky-sidebar", i18n:"nav.page_layouts.3_columns.left_sticky_sidebar"},
+                {url:"layout-content-right-sidebar.html", name:"Right sidebar", slug:"layout-content-right-sidebar", i18n:"nav.page_layouts.3_columns.right_sidebar"},
+                {url:"layout-content-right-sticky-sidebar.html", name:"Right sticky sidebar", slug:"layout-content-right-sticky-sidebar", i18n:"nav.page_layouts.3_columns.right_sticky_sidebar"}
+              ]
+            },
+            {url:"#", name:"Content Det. Sidebar", slug:"", i18n:"nav.page_layouts.3_columns_detached.main",
+              submenu:[
+                {url:"layout-content-detached-left-sidebar.html", name:"Detached left sidebar", slug:"layout-content-detached-left-sidebar", i18n:"nav.page_layouts.3_columns_detached.detached_left_sidebar"},
+                {url:"layout-content-detached-left-sticky-sidebar.html", name:"Detached sticky left sidebar", slug:"layout-content-detached-left-sticky-sidebar", i18n:"nav.page_layouts.3_columns_detached.detached_sticky_left_sidebar"},
+                {url:"layout-content-detached-right-sidebar.html", name:"Detached right sidebar", slug:"layout-content-detached-right-sidebar", i18n:"nav.page_layouts.3_columns_detached.detached_right_sidebar"},
+                {url:"layout-content-detached-right-sticky-sidebar.html", name:"Detached sticky right sidebar", slug:"layout-content-detached-right-sticky-sidebar", i18n:"nav.page_layouts.3_columns_detached.detached_sticky_right_sidebar"},
+              ]
+            },
+            {divider:"1"},
+            {url:"layout-fixed-navbar.html",name:"Fixed navbar",slug:"layout-fixed-navbar", i18n:"nav.page_layouts.fixed_navbar"},
+            {url:"layout-fixed-navigation.html",name:"Fixed navigation",slug:"layout-fixed-navigation", i18n:"nav.page_layouts.fixed_navigation"},
+            {url:"layout-fixed-navbar-navigation.html",name:"Fixed navbar & navigation",slug:"layout-fixed-navbar-navigation", i18n:"nav.page_layouts.fixed_navbar_navigation"},
+            {url:"layout-fixed-navbar-footer.html",name:"Fixed navbar & footer",slug:"layout-fixed-navbar-footer", i18n:"nav.page_layouts.fixed_navbar_footer"},
+            {divider:"1"},
+            {url:"layout-fixed.html",name:"Fixed layout",slug:"layout-fixed", i18n:"nav.page_layouts.fixed_layout"},
+            {url:"layout-boxed.html",name:"Boxed layout",slug:"layout-boxed", i18n:"nav.page_layouts.boxed_layout"},
+            {url:"layout-static.html",name:"Static layout",slug:"layout-static", i18n:"nav.page_layouts.static_layout"},
+            {divider:"1"},
+            {url:"layout-light.html",name:"Light layout",slug:"layout-light", i18n:"nav.page_layouts.light_layout"},
+            {url:"layout-dark.html",name:"Dark layout",slug:"layout-dark", i18n:"nav.page_layouts.dark_layout"},
+            {url:"layout-semi-dark.html",name:"Semi dark layout",slug:"layout-semi-dark", i18n:"nav.page_layouts.semi_dark_layout"},
+          ]
+        },
+
+
+        {url:"#", name:"Navbars", icon:"la la-navicon", slug:"", i18n:"nav.navbars.main",
+          submenu:[
+            {url:"navbar-light.html", name:"Navbar Light", icon:"", slug:"navbar-light", i18n:"nav.navbars.nav_light"},
+            {url:"navbar-dark.html", name:"Navbar Dark", icon:"", slug:"navbar-dark", i18n:"nav.navbars.nav_dark"},
+            {url:"navbar-semi-dark.html", name:"Navbar Semi Dark", icon:"", slug:"navbar-semi-dark", i18n:"nav.navbars.nav_semi"},
+            {url:"navbar-brand-center.html", name:"Brand Center", icon:"", slug:"navbar-brand-center", i18n:"nav.navbars.nav_brand_center"},
+            {url:"navbar-fixed-top.html", name:"Fixed Top", icon:"", slug:"navbar-fixed-top", i18n:"nav.navbars.nav_fixed_top"},
+            {url:"#", name:"Hide on Scroll", icon:"", slug:"navbar-hide-on-scroll", i18n:"nav.navbars.nav_hide_on_scroll.main",
+              submenu:[
+                {url:"navbar-hide-on-scroll-top.html", name:"Hide on Scroll Top", icon:"", slug:"navbar-hide-on-scroll-top", i18n:"nav.navbars.nav_hide_on_scroll.nav_hide_on_scroll_top"},
+                {url:"navbar-hide-on-scroll-bottom.html", name:"Hide on Scroll Bottom", icon:"", slug:"navbar-hide-on-scroll-bottom", i18n:"nav.navbars.nav_hide_on_scroll.nav_hide_on_scroll_bottom"},
+              ]
+            },
+            {url:"navbar-components.html", name:"Navbar Components", icon:"", slug:"navbar-components", i18n:"nav.navbars.nav_components"},
+            {url:"navbar-styling.html", name:"Navbar Styling", icon:"", slug:"navbar-styling", i18n:"nav.navbars.nav_styling"},
+          ]
+        },
+
+
+        {url:"#", name:"Vertical Nav", icon:"la la-arrows-v", slug:"", i18n:"nav.vertical_nav.main",
+          submenu:[
+            {url:"#", name:"Navigation Types", icon:"", slug:"vertical-navigation-types", i18n:"nav.vertical_nav.vertical_navigation_types.main",
+              submenu:[
+                {url:"../vertical-menu-template", name:"Vertical Menu", slug:"vertical-menu", i18n:"nav.vertical_nav.vertical_navigation_types.vertical_menu"},
+                {url:"../vertical-modern-menu-template", name:"Vertical Modern Menu", slug:"vertical-modern-menu", i18n:"nav.vertical_nav.vertical_navigation_types.vertical_modern-menu"},
+                {url:"../vertical-overlay-menu-template", name:"Vertical Overlay", slug:"vertical-overlay", i18n:"nav.vertical_nav.vertical_navigation_types.vertical_overlay"},
+                {url:"../vertical-compact-menu-template", name:"Vertical Compact", slug:"vertical-compact", i18n:"nav.vertical_nav.vertical_navigation_types.vertical_compact"},
+                {url:"../vertical-content-menu-template", name:"Vertical Content", slug:"vertical-content", i18n:"nav.vertical_nav.vertical_navigation_types.vertical_content"},
+              ]
+            },
+            {url:"vertical-nav-fixed.html", name:"Fixed Navigation", icon:"", slug:"vertical-nav-fixed", i18n:"nav.vertical_nav.vertical_nav_fixed"},
+            {url:"vertical-nav-static.html", name:"Static Navigation", icon:"", slug:"vertical-nav-static", i18n:"nav.vertical_nav.vertical_nav_static"},
+            {url:"vertical-nav-light.html", name:"Navigation Light", icon:"", slug:"vertical-nav-light", i18n:"nav.vertical_nav.vertical_nav_light"},
+            {url:"vertical-nav-dark.html", name:"Navigation Dark", icon:"", slug:"vertical-nav-dark", i18n:"nav.vertical_nav.vertical_nav_dark"},
+            {url:"vertical-nav-accordion.html", name:"Accordion Navigation", icon:"", slug:"vertical-nav-accordion", i18n:"nav.vertical_nav.vertical_nav_accordion"},
+            {url:"vertical-nav-collapsible.html",name:"Collapsible Navigation", icon:"", slug:"vertical-nav-collapsible", i18n:"nav.vertical_nav.vertical_nav_collapsible"},
+            {url:"vertical-nav-flipped.html", name:"Flipped Navigation", icon:"", slug:"vertical-nav-flipped", i18n:"nav.vertical_nav.vertical_nav_flipped"},
+            {url:"vertical-nav-native-scroll.html", name:"Native scroll", icon:"", slug:"vertical-nav-native-scroll", i18n:"nav.vertical_nav.vertical_nav_native_scroll"},
+            {url:"vertical-nav-right-side-icon.html", name:"Right side icons", icon:"", slug:"vertical-nav-right-side-icon", i18n:"nav.vertical_nav.vertical_nav_right_side_icon"},
+            {url:"vertical-nav-bordered.html", name:"Bordered Navigation", icon:"", slug:"vertical-nav-bordered", i18n:"nav.vertical_nav.vertical_nav_bordered"},
+            {url:"vertical-nav-disabled-link.html", name:"Disabled Navigation", icon:"", slug:"vertical-nav-disabled-link", i18n:"nav.vertical_nav.vertical_nav_disabled_link"},
+            {url:"vertical-nav-styling.html", name:"Navigation Styling", icon:"", slug:"vertical-nav-styling", i18n:"nav.vertical_nav.vertical_nav_styling"},
+            {url:"vertical-nav-tags-pills.html", name:"Tags & Pills", icon:"", slug:"vertical-nav-tags-pills", label:"Hey!", labelcustom: "badge badge-glow badge-pill badge-default badge-danger", i18n:"nav.vertical_nav.vertical_nav_tags_pills"},
+          ]
+        },
+
+
+
+        {url:"#", name:"Horizontal Nav", icon:"la la-arrows-h", slug:"", i18n:"nav.horz_nav.main",
+          submenu:[
+            {url:"#", name:"Navigation Types",icon:"", slug:"horizontal-navigation-types", i18n:"nav.horz_nav.horizontal_navigation_types.main",
+              submenu:[
+                {url:"../horizontal-menu-template", name:"Left Icon Navigation", slug:"horizontal-left-icon-navigation", i18n:"nav.horz_nav.horizontal_navigation_types.horizontal_left_icon_navigation"},
+                {url:"../horizontal-menu-template-nav", name:"Top Icon Navigation", slug:"horizontal-menu-template-nav", i18n:"nav.horz_nav.horizontal_navigation_types.horizontal_top_icon_navigation"},
+              ]
+            },
+          ]
+        },
+
+
+
+        {url:"#", name:"Page Headers", icon:"la la-header", slug:"", i18n:"nav.page_headers.main",
+          submenu:[
+            {url:"headers-breadcrumbs-basic.html", name:"Breadcrumbs basic", icon:"", slug:"headers-breadcrumbs-basic", i18n:"nav.page_headers.headers_breadcrumbs_basic"},
+            {url:"headers-breadcrumbs-top.html", name:"Breadcrumbs top", icon:"", slug:"headers-breadcrumbs-top", i18n:"nav.page_headers.headers_breadcrumbs_top"},
+            {url:"headers-breadcrumbs-bottom.html", name:"Breadcrumbs bottom", icon:"", slug:"headers-breadcrumbs-bottom", i18n:"nav.page_headers.headers_breadcrumbs_bottom"},
+            {url:"headers-breadcrumbs-top-with-description.html", name:"Breadcrumbs top with desc", icon:"", slug:"headers-breadcrumbs-top-with-description", i18n:"nav.page_headers.headers_breadcrumbs_top_with_description"},
+            {url:"headers-breadcrumbs-with-button.html", name:"Breadcrumbs with button", icon:"", slug:"headers-breadcrumbs-with-button", i18n:"nav.page_headers.headers_breadcrumbs_with_button"},
+            {url:"headers-breadcrumbs-with-round-button.html", name:"Breadcrumbs with button 2", icon:"", slug:"headers-breadcrumbs-with-round-button", i18n:"nav.page_headers.headers_breadcrumbs_with_round_button"},
+            {url:"headers-breadcrumbs-with-button-group.html", name:"Breadcrumbs with buttons", icon:"", slug:"headers-breadcrumbs-with-button-group", i18n:"nav.page_headers.headers_breadcrumbs_with_button_group"},
+            {url:"headers-breadcrumbs-with-description.html", name:"Breadcrumbs with desc", icon:"", slug:"headers-breadcrumbs-with-description", i18n:"nav.page_headers.headers_breadcrumbs_breadcrumbs_with_description"},
+            {url:"headers-breadcrumbs-with-search.html", name:"Breadcrumbs with search", icon:"", slug:"headers-breadcrumbs-with-search", i18n:"nav.page_headers.headers_breadcrumbs_breadcrumbs_with_search"},
+            {url:"headers-breadcrumbs-with-stats.html", name:"Breadcrumbs with stats", icon:"", slug:"headers-breadcrumbs-with-stats", i18n:"nav.page_headers.headers_breadcrumbs_breadcrumbs_with_stats"},
+          ]
+        },
+
+
+        {url:"#", name:"Footers", icon:"la la-download", slug:"", i18n:"nav.footers.main",
+          submenu:[
+            {url:"footer-light.html", name:"Footer Light",icon:"", slug:"footer-light", i18n:"nav.footers.footer_light"},
+            {url:"footer-dark.html", name:"Footer Dark",icon:"", slug:"footer-dark", i18n:"nav.footers.footer_dark"},
+            {url:"footer-transparent.html", name:"Footer Transparent",icon:"", slug:"footer-transparent", i18n:"nav.footers.footer_transparent"},
+            {url:"footer-fixed.html", name:"Footer Fixed",icon:"", slug:"footer-fixed", i18n:"nav.footers.footer_fixed"},
+            {url:"footer-components.html", name:"Footer Components",icon:"", slug:"footer-components", i18n:"nav.footers.footer_components"},
+          ]
+        },
+
+
+      {navheader:"General",icon:"la la-ellipsis-h", i18n:"nav.category.general"},
+
+
+        {url:"#",name:"Color Palette",slug:"",icon:"la la-paint-brush", i18n:"nav.color_palette.main",
+
+          submenu:[
+            {url:"color-palette-primary.html",name:"Primary palette",slug:"color-palette-primary", i18n:"nav.color_palette.color_palette_primary"},
+            {url:"color-palette-danger.html",name:"Danger palette",slug:"color-palette-danger", i18n:"nav.color_palette.color_palette_danger"},
+            {url:"color-palette-success.html",name:"Success palette",slug:"color-palette-success", i18n:"nav.color_palette.color_palette_success"},
+            {url:"color-palette-warning.html",name:"Warning palette",slug:"color-palette-warning", i18n:"nav.color_palette.color_palette_warning"},
+            {url:"color-palette-info.html",name:"Info palette",slug:"color-palette-info", i18n:"nav.color_palette.color_palette_info"},
+            {divider:"1"},
+            {url:"color-palette-red.html",name:"Red palette",slug:"color-palette-red", i18n:"nav.color_palette.color_palette_red"},
+            {url:"color-palette-pink.html",name:"Pink palette",slug:"color-palette-pink", i18n:"nav.color_palette.color_palette_pink"},
+            {url:"color-palette-purple.html",name:"Purple palette",slug:"color-palette-purple", i18n:"nav.color_palette.color_palette_purple"},
+            {url:"color-palette-blue.html",name:"Blue palette",slug:"color-palette-blue", i18n:"nav.color_palette.color_palette_blue"},
+            {url:"color-palette-cyan.html",name:"Cyan palette",slug:"color-palette-cyan", i18n:"nav.color_palette.color_palette_cyan"},
+            {url:"color-palette-teal.html",name:"Teal palette",slug:"color-palette-teal", i18n:"nav.color_palette.color_palette_teal"},
+            {url:"color-palette-yellow.html",name:"Yellow palette",slug:"color-palette-yellow", i18n:"nav.color_palette.color_palette_yellow"},
+            {url:"color-palette-amber.html",name:"Amber palette",slug:"color-palette-amber", i18n:"nav.color_palette.color_palette_amber"},
+            {url:"color-palette-blue-grey.html",name:"Blue Grey palette",slug:"color-palette-blue-grey", i18n:"nav.color_palette.color_palette_blue_grey"},
+          ]
+        },
+
+
+
+        {url:"#", name:"Starter kit", slug:"", icon:"la la-puzzle-piece", i18n:"nav.starter_kit.main",
+
+          submenu:[
+            {url:sk_path+"layout-1-column.html", name:"1 column", slug:"1-column", i18n:"nav.starter_kit.1_column"},
+            {url:sk_path+"layout-2-columns.html", name:"2 columns", slug:"2-columns", i18n:"nav.starter_kit.2_columns"},
+            {url:"#", name:"Content Det. Sidebar", slug:"", i18n:"nav.starter_kit.3_columns_detached.main",
+              submenu:[
+                {url:sk_path+"layout-content-detached-left-sidebar.html", name:"Detached left sidebar", slug:"content-detached-left-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_left_sidebar"},
+                {url:sk_path+"layout-content-detached-left-sticky-sidebar.html", name:"Detached sticky left sidebar", slug:"content-detached-left-sticky-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_sticky_left_sidebar"},
+                {url:sk_path+"layout-content-detached-right-sidebar.html", name:"Detached right sidebar", slug:"content-detached-right-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_right_sidebar"},
+                {url:sk_path+"layout-content-detached-right-sticky-sidebar.html", name:"Detached sticky right sidebar", slug:"content-detached-right-sticky-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_sticky_right_sidebar"},
+              ]
+            },
+            {divider:"1"},
+            {url:sk_path+"layout-fixed-navbar.html",name:"Fixed navbar",slug:"fixed-navbar", i18n:"nav.starter_kit.fixed_navbar"},
+            {url:sk_path+"layout-fixed-navigation.html",name:"Fixed navigation",slug:"fixed-navigation", i18n:"nav.starter_kit.fixed_navigation"},
+            {url:sk_path+"layout-fixed-navbar-navigation.html",name:"Fixed navbar & navigation",slug:"fixed-navbar-navigation", i18n:"nav.starter_kit.fixed_navbar_navigation"},
+            {url:sk_path+"layout-fixed-navbar-footer.html",name:"Fixed navbar & footer",slug:"fixed-navbar-footer", i18n:"nav.starter_kit.fixed_navbar_footer"},
+            {divider:"1"},
+            {url:sk_path+"layout-fixed.html",name:"Fixed layout",slug:"fixed", i18n:"nav.starter_kit.fixed_layout"},
+            {url:sk_path+"layout-boxed.html",name:"Boxed layout",slug:"boxed", i18n:"nav.starter_kit.boxed_layout"},
+            {url:sk_path+"layout-static.html",name:"Static layout",slug:"static", i18n:"nav.starter_kit.static_layout"},
+            {divider:"1"},
+            {url:sk_path+"layout-light.html",name:"Light layout",slug:"light", i18n:"nav.starter_kit.light_layout"},
+            {url:sk_path+"layout-dark.html",name:"Dark layout",slug:"dark", i18n:"nav.starter_kit.dark_layout"},
+            {url:sk_path+"layout-semi-dark.html",name:"Semi dark layout",slug:"semi-dark", i18n:"nav.starter_kit.semi_dark_layout"},
+          ]
+        },
+
+
+
+        {url:"changelog.html" ,name:"Changelog" ,icon:"la la-copy",slug:"changelog" ,tag:"1.0" , tagcustom: "badge badge-pill badge-warning float-right", i18n:"nav.changelog.main"},
+        {url:"#" ,name:"Disabled Menu" , icon:"la la-eye-slash",slug:"", classlist:"disabled", i18n:"nav.disabled_menu.main"},
+
+        {url:"#",name:"Menu levels",icon:"la la-android",slug:"", i18n:"nav.menu_levels.main",
+
+          submenu:[
+            {url:"#",name:"Second level",slug:"", i18n:"nav.menu_levels.second_level"},
+            {url:"#",name:"Second level child",slug:"", i18n:"nav.menu_levels.second_level_child.main",
+              submenu:[
+                {url:"#",name:"Third level",slug:"", i18n:"nav.menu_levels.second_level_child.third_level"},
+                {url:"#",name:"Third level child",slug:"", i18n:"nav.menu_levels.second_level_child.third_level_child.main",
+                  submenu:[
+                    {url:"#",name:"Fourth level",slug:"", i18n:"nav.menu_levels.second_level_child.third_level_child.fourth_level1"},
+                    {url:"#",name:"Fourth level",slug:"", i18n:"nav.menu_levels.second_level_child.third_level_child.fourth_level2"},
+                  ]
+                },
+              ]
+            },
+          ]
+        },
+
+
+
+      {navheader:"Pages",icon:"la la-ellipsis-h", i18n:"nav.category.pages"},
+
+
+        {url:"email-application.html",name:"Email Application",icon:"la la-envelope",slug:"email-application"},
+
+
+
+        {url:"chat-application.html",name:"Chat Application",icon:"la la-comments",slug:"chat-application"},
+
+
+
+        {url:"#",name:"Project",icon:"la la-briefcase",slug:"project-pages", i18n:"nav.project.main",
+
+          submenu:[
+            {url:"project-summary.html",name:"Project Summary",slug:"project-summary", i18n:"nav.project.project_summary"},
+            {url:"project-tasks.html",name:"Project Task",slug:"project-tasks", i18n:"nav.project.project_tasks"},
+            {url:"project-bugs.html",name:"Project Bugs",slug:"project-bugs", i18n:"nav.project.project_bugs"}
+          ]
+        },
+
+
+
+        {url:"scrumboard.html",name:"Scrumboard",icon:"la la-check-square",slug:"scrumboard", i18n:"nav.scrumboard.main",tag:"Update" , tagcustom: "badge badge-info float-right"},
+
+
+
+        {url:"#",name:"Invoice",icon:"la la-clipboard",slug:"invoice-pages", i18n:"nav.invoice.main",
+
+          submenu:[
+            {url:"invoice-summary.html",name:"Invoice Summary",slug:"invoice-summary", i18n:"nav.invoice.invoice_summary"},
+            {url:"invoice-template.html",name:"Invoice Template",slug:"invoice-template", i18n:"nav.invoice.invoice_template"},
+            {url:"invoice-list.html",name:"Invoice List",slug:"invoice-list", i18n:"nav.invoice.invoice_list"}
+          ]
+        },
+
+
+
+        {url:"#",name:"Timelines",icon:"la la-film",slug:"timeline-pages", i18n:"nav.timelines.main",
+
+          submenu:[
+            {url:"timeline-center.html",name:"Timelines Center",slug:"timeline-center", i18n:"nav.timelines.timeline_center"},
+            {url:"timeline-left.html",name:"Timelines Left",slug:"timeline-left", i18n:"nav.timelines.timeline_left"},
+            {url:"timeline-right.html",name:"Timelines Right",slug:"timeline-right", i18n:"nav.timelines.timeline_right"},
+            {url:"timeline-horizontal.html",name:"Timelines Horizontal",slug:"timeline-horizontal", i18n:"nav.timelines.timeline_horizontal"}
+          ]
+        },
+
+
+
+        {url:"#",name:"Users",icon:"la la-user",slug:"user-pages", i18n:"nav.users.main",
+
+          submenu:[
+            {url:"user-profile.html",name:"Users Profile",slug:"user-profile", i18n:"nav.users.user_profile"},
+            {url:"user-cards.html",name:"Users Cards",slug:"user-cards", i18n:"nav.users.user_cards"},
+            {url:"users-contacts.html",name:"Users List",slug:"users-contacts", i18n:"nav.users.users_contacts"}
+          ]
+        },
+
+
+
+        {url:"#",name:"Gallery",icon:"la la-image",slug:"gallery-pages", i18n:"nav.gallery_pages.main",
+
+          submenu:[
+            {url:"gallery-grid.html",name:"Gallery Grid",slug:"gallery-grid", i18n:"nav.gallery_pages.gallery_grid"},
+            {url:"gallery-grid-with-desc.html",name:"Gallery Grid with Desc",slug:"gallery-grid-with-desc", i18n:"nav.gallery_pages.gallery_grid_with_desc"},
+            {url:"gallery-masonry.html",name:"Masonry Gallery",slug:"gallery-masonry", i18n:"nav.gallery_pages.gallery_masonry"},
+            {url:"gallery-masonry-with-desc.html",name:"Masonry Gallery with Desc",slug:"gallery-masonry-with-desc", i18n:"nav.gallery_pages.gallery_masonry_with_desc"},
+            {url:"gallery-hover-effects.html",name:"Hover Effects",slug:"gallery-hover-effects", i18n:"nav.gallery_pages.gallery_hover_effects"}
+          ]
+        },
+
+
+
+        {url:"#",name:"Search",icon:"la la-search",slug:"search-pages", i18n:"nav.search_pages.main",
+
+          submenu:[
+            {url:"search-page.html",name:"Search Page",slug:"search-page", i18n:"nav.search_pages.search_page"},
+            {url:"search-website.html",name:"Search Website",slug:"search-website", i18n:"nav.search_pages.search_website"},
+            {url:"search-images.html",name:"Search Images",slug:"search-images", i18n:"nav.search_pages.search_images"},
+            {url:"search-videos.html",name:"Search Videos",slug:"search-videos", i18n:"nav.search_pages.search_videos"}
+          ]
+        },
+
+
+
+        {url:"#",name:"Authentication",icon:"la la-unlock",slug:"login-register-pages", i18n:"nav.login_register_pages.main",
+
+          submenu:[
+            {url:"login-simple.html",name:"Login Simple",slug:"login-simple", i18n:"nav.login_register_pages.login_simple"},
+            {url:"login-with-bg.html",name:"Login with Bg",slug:"login-with-bg", i18n:"nav.login_register_pages.login_with_bg"},
+            {url:"login-with-bg-image.html",name:"Login with Bg Image",slug:"login-with-bg-image", i18n:"nav.login_register_pages.login_with_bg_image"},
+            {url:"login-with-navbar.html",name:"Login with Navbar",slug:"login-with-navbar", i18n:"nav.login_register_pages.login_with_navbar"},
+            {url:"login-advanced.html",name:"Login Advanced",slug:"login-advanced", i18n:"nav.login_register_pages.login_advanced"},
+
+            {url:"register-simple.html",name:"Register Simple",slug:"register-simple", i18n:"nav.login_register_pages.register_simple"},
+            {url:"register-with-bg.html",name:"Register with Bg",slug:"register-with-bg", i18n:"nav.login_register_pages.register_with_bg"},
+            {url:"register-with-bg-image.html",name:"Register with Bg Image",slug:"register-with-bg-image", i18n:"nav.login_register_pages.register_with_bg_image"},
+            {url:"register-with-navbar.html",name:"Register with Navbar",slug:"register-with-navbar", i18n:"nav.login_register_pages.register_with_navbar"},
+            {url:"register-advanced.html",name:"Register Advanced",slug:"register-advanced", i18n:"nav.login_register_pages.register_advanced"},
+
+            {url:"unlock-user.html",name:"Unlock User",slug:"unlock-user", i18n:"nav.login_register_pages.unlock_user"},
+            {url:"recover-password.html",name:"recover-password",slug:"recover-password", i18n:"nav.login_register_pages.recover_password"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Error",icon:"la la-warning",slug:"error-pages", i18n:"nav.error_pages.main",
+
+          submenu:[
+            {url:"error-400.html",name:"Error 400",slug:"error-400", i18n:"nav.error_pages.error_400"},
+            {url:"error-400-with-navbar.html",name:"Error 400 with Navbar",slug:"error-400-with-navbar", i18n:"nav.error_pages.error_400_with_navbar"},
+            {url:"error-401.html",name:"Error 401",slug:"error-401", i18n:"nav.error_pages.error_401"},
+            {url:"error-401-with-navbar.html",name:"Error 401 with Navbar",slug:"error-401-with-navbar", i18n:"nav.error_pages.error_401_with_navbar"},
+            {url:"error-403.html",name:"Error 403",slug:"error-403", i18n:"nav.error_pages.error_403"},
+            {url:"error-403-with-navbar.html",name:"Error 403 with Navbar",slug:"error-403-with-navbar", i18n:"nav.error_pages.error_403_with_navbar"},
+            {url:"error-404.html",name:"Error 404",slug:"error-404", i18n:"nav.error_pages.error_404"},
+            {url:"error-404-with-navbar.html",name:"Error 404 with Navbar",slug:"error-404-with-navbar", i18n:"nav.error_pages.error_404_with_navbar"},
+            {url:"error-500.html",name:"Error 500",slug:"error-500", i18n:"nav.error_pages.error_500"},
+            {url:"error-500-with-navbar.html",name:"Error 500 with Navbar",slug:"error-500-with-navbar", i18n:"nav.error_pages.error_500_with_navbar"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Others",icon:"la la-file-text",slug:"other-pages", i18n:"nav.other_pages.main",
+
+          submenu:[
+            {url:"#",name:"Coming Soon",slug:"coming-soon", i18n:"nav.other_pages.coming_soon.main",
+              submenu:[
+                {url:"coming-soon-flat.html", name:"Flat",icon:"", slug:"coming-soon-flat", i18n:"nav.other_pages.coming_soon.coming_soon_flat"},
+                {url:"coming-soon-bg-image.html", name:"Bg image",icon:"", slug:"coming-soon-bg-image", i18n:"nav.other_pages.coming_soon.coming_soon_bg_image"},
+                {url:"coming-soon-bg-video.html", name:"Bg video",icon:"", slug:"coming-soon-bg-video", i18n:"nav.other_pages.coming_soon.coming_soon_bg_video"},
+              ]
+            },
+            {url:"under-maintenance.html",name:"Maintenance",slug:"under-maintenance", i18n:"nav.other_pages.under_maintenance"},
+          ]
+        },
+
+
+
+
+      {navheader:"User Interface",icon:"la la-ellipsis-h", i18n:"nav.category.ui"},
+
+
+        {url:"#", name:"Cards",icon:"", slug:"card-bootstrap",icon:"la la-tablet", i18n:"nav.cards.main",tag:"New" , tagcustom: "badge badge-success float-right mr-2",
+          submenu:[
+            {url:"card-bootstrap.html", name:"Bootstrap",icon:"", slug:"card-bootstrap", i18n:"nav.cards.card_bootstrap"},
+            {url:"card-headings.html", name:"Headings",icon:"", slug:"card-headings", i18n:"nav.cards.card_headings"},
+            {url:"card-options.html", name:"Options",icon:"", slug:"card-options", i18n:"nav.cards.card_options"},
+            {url:"card-actions.html", name:"Action",icon:"", slug:"card-actions", i18n:"nav.cards.card_actions"},
+            {url:"card-draggable.html", name:"Draggable",icon:"", slug:"card-draggable", i18n:"nav.cards.card_draggable"},
+          ]
+        },
+
+        {url:"#", name:"Advance Cards", slug:"card-advance", icon:"la la-fire", i18n:"nav.advance_cards.main",
+          submenu:[
+            {url:"card-statistics.html", name:"Statistics",icon:"", slug:"card-statistics", i18n:"nav.cards.card_statistics"},
+            {url:"card-weather.html", name:"Weather",icon:"", slug:"card-weather", i18n:"nav.cards.card_weather"},
+            {url:"card-charts.html", name:"Charts",icon:"", slug:"card-charts", i18n:"nav.cards.card_charts"},
+            {url:"card-interactive.html", name:"Interactive",icon:"", slug:"card-interactive", i18n:"nav.cards.card_interactive"},
+            {url:"card-maps.html", name:"Maps",icon:"", slug:"card-maps", i18n:"nav.cards.card_maps"},
+            {url:"card-social.html", name:"Social",icon:"", slug:"card-social", i18n:"nav.cards.card_social"},
+            {url:"card-ecommerce.html", name:"E-Commerce",icon:"", slug:"card-ecommerce", i18n:"nav.cards.card_ecommerce"},
+          ]
+        },
+
+        {url:"#", name:"Content", icon:"la la-compass", slug:"", i18n:"nav.content.main",
+          submenu:[
+            {url:"content-grid.html", name:"Grid", icon:"", slug:"content-grid", i18n:"nav.content.content_grid"},
+            {url:"content-typography.html", name:"Typography", icon:"", slug:"content-typography", i18n:"nav.content.content_typography"},
+            {url:"content-text-utilities.html", name:"Text utilities", icon:"", slug:"content-text-utilities", i18n:"nav.content.content_text_utilities"},
+            {url:"content-syntax-highlighter.html", name:"Syntax highlighter", icon:"", slug:"content-syntax-highlighter", i18n:"nav.content.content_syntax_highlighter"},
+            {url:"content-helper-classes.html", name:"Helper classes", icon:"", slug:"content-helper-classes", i18n:"nav.content.content_helper_classes"},
+          ]
+        },
+
+        {url:"#", name:"Components", icon:"la la-server", slug:"", i18n:"nav.components.main",
+          submenu:[
+            {url:"component-alerts.html", name:"Alerts",icon:"", slug:"component-alerts", i18n:"nav.components.component_alerts"},
+            {url:"component-callout.html", name:"Callout",icon:"", slug:"component-callout", i18n:"nav.components.component_callout"},
+            {url:"#", name:"Buttons",icon:"", slug:"components-buttons", i18n:"nav.components.components_buttons.main",
+              submenu:[
+                {url:"component-buttons-basic.html", name:"Basic Buttons",icon:"", slug:"component-buttons-basic", i18n:"nav.components.components_buttons.component_buttons_basic"},
+                {url:"component-buttons-extended.html", name:"Extended Buttons",icon:"", slug:"component-buttons-extended", i18n:"nav.components.components_buttons.component_buttons_extended"},
+              ]
+            },
+            {url:"component-carousel.html", name:"Carousel",icon:"", slug:"component-carousel", i18n:"nav.components.component_carousel"},
+            {url:"component-collapse.html", name:"Collapse",icon:"", slug:"component-collapse", i18n:"nav.components.component_collapse"},
+            {url:"component-dropdowns.html", name:"Dropdowns",icon:"", slug:"component-dropdowns", i18n:"nav.components.component_dropdowns"},
+            {url:"component-list-group.html", name:"List Group",icon:"", slug:"component-list-group", i18n:"nav.components.component_list_group"},
+            {url:"component-modals.html", name:"Modals",icon:"", slug:"component-modals", i18n:"nav.components.component_modals"},
+            {url:"component-pagination.html", name:"Pagination",icon:"", slug:"component-pagination", i18n:"nav.components.component_pagination"},
+            {url:"component-navs-component.html", name:"Navs Component",icon:"", slug:"component-navs-component", i18n:"nav.components.component_navs_component"},
+            {url:"component-tabs-component.html", name:"Tabs Component",icon:"", slug:"component-tabs-component", i18n:"nav.components.component_tabs_component"},
+            {url:"component-pills-component.html", name:"Pills Component",icon:"", slug:"component-pills-component", i18n:"nav.components.component_pills_component"},
+            {url:"component-tooltips.html", name:"Tooltips",icon:"", slug:"component-tooltips", i18n:"nav.components.component_tooltips"},
+            {url:"component-popovers.html", name:"Popovers",icon:"", slug:"component-popovers", i18n:"nav.components.component_popovers"},
+            {url:"component-badges.html", name:"Badges",icon:"", slug:"component-badges", i18n:"nav.components.component_badges"},
+            {url:"component-pill-badges.html", name:"Pill Badges",icon:"", slug:"component-pill-badges"},
+            {url:"component-progress.html", name:"Progress",icon:"", slug:"component-progress", i18n:"nav.components.component_progress"},
+            {url:"component-media-objects.html", name:"Media Objects",icon:"", slug:"component-media-objects", i18n:"nav.components.component_media_objects"},
+            {url:"component-scrollable.html", name:"Scrollable",icon:"", slug:"component-scrollable", i18n:"nav.components.component_scrollable"},
+            {url:"component-spinners.html", name:"Spinners",icon:"", slug:"component-spinners", i18n:"nav.components.component_spinners"},
+          ]
+        },
+
+        {url:"#", name:"Extra Components", icon:"la la-diamond", slug:"", i18n:"nav.extra_components.main",
+          submenu:[
+            {url:"ex-component-sweet-alerts.html", name:"Sweet Alerts", icon:"", slug:"ex-component-sweet-alerts", i18n:"nav.extra_components.ex_component_sweet_alerts"},
+            {url:"ex-component-tree-views.html", name:"Tree Views", icon:"", slug:"ex-component-tree-views", i18n:"nav.extra_components.ex_component_tree_views"},
+            {url:"ex-component-toastr.html", name:"Toastr", icon:"", slug:"ex-component-toastr", i18n:"nav.extra_components.ex_component_toastr"},
+            {url:"ex-component-ratings.html", name:"Ratings", icon:"", slug:"ex-component-ratings", i18n:"nav.extra_components.ex_component_ratings"},
+            {url:"ex-component-noui-slider.html", name:"NoUI Slider", icon:"", slug:"ex-component-noui-slider", i18n:"nav.extra_components.ex_component_noui_slider"},
+            {url:"ex-component-date-time-dropper.html", name:"Date Time Dropper", icon:"", slug:"ex-component-date-time-dropper", i18n:"nav.extra_components.ex_component_date_time_dropper"},
+            {url:"ex-component-lists.html", name:"Lists", icon:"", slug:"ex-component-lists", i18n:"nav.extra_components.ex_component_lists"},
+            {url:"ex-component-toolbar.html", name:"Toolbar", icon:"", slug:"ex-component-toolbar", i18n:"nav.extra_components.ex_component_toolbar"},
+            {url:"ex-component-knob.html", name:"Knob", icon:"", slug:"ex-component-knob", i18n:"nav.extra_components.ex_component_knob"},
+            {url:"ex-component-long-press.html", name:"Long Press", icon:"", slug:"ex-component-long-press", i18n:"nav.extra_components.ex_component_long_press"},
+            {url:"ex-component-offline.html", name:"Offline", icon:"", slug:"ex-component-offline", i18n:"nav.extra_components.ex_component_offline"},
+            {url:"ex-component-zoom.html", name:"Zoom", icon:"", slug:"ex-component-zoom", i18n:"nav.extra_components.ex_component_zoom"},
+          ]
+        },
+
+        {url:"#", name:"Icons", icon:"la la-eye", slug:"", i18n:"nav.icons.main",
+          submenu:[
+            {url:"icons-feather.html", name:"Feather", icon:"", slug:"icons-feather", i18n:"nav.icons.icons_feather"},
+            {url:"icons-line-awesome.html", name:"Line Awesome", icon:"", slug:"icons-line-awesome", i18n:"nav.icons.icons_line_awesome"},
+            {url:"icons-meteocons.html", name:"Meteocons", icon:"", slug:"icons-meteocons", i18n:"nav.icons.icons_meteocons"},
+            {url:"icons-simple-line-icons.html", name:"Simple Line Icons", icon:"", slug:"icons-simple-line-icons", i18n:"nav.icons.icons_linecons"},
+          ]
+        },
+        {url:"animation.html", name:"Animation", icon:"la la-spinner spinner", slug:"animation", i18n:"nav.animation.main"},
+
+
+
+      {navheader:"Forms",icon:"la la-ellipsis-h", i18n:"nav.category.forms"},
+        {url:"#", name:"Form Elements", icon:"la la-terminal", slug:"", i18n:"nav.form_elements.main",
+          submenu:[
+            {url:"form-inputs.html", name:"Form Inputs",icon:"", slug:"form-inputs", i18n:"nav.form_elements.form_inputs"},
+            {url:"form-input-groups.html", name:"Input Groups",icon:"", slug:"form-input-groups", i18n:"nav.form_elements.form_input_groups"},
+            {url:"form-input-grid.html", name:"Input Grid",icon:"", slug:"form-input-grid", i18n:"nav.form_elements.form_input_grid"},
+            {url:"form-extended-inputs.html", name:"Extended Inputs",icon:"", slug:"form-extended-inputs", i18n:"nav.form_elements.form_extended_inputs"},
+            {url:"form-checkboxes-radios.html", name:"Checkboxes & Radios",icon:"", slug:"form-checkboxes-radios", i18n:"nav.form_elements.form_checkboxes_radios"},
+            {url:"form-switch.html", name:"Switch",icon:"", slug:"form-switch", i18n:"nav.form_elements.form_switch"},
+            {url:"#", name:"Select",icon:"", slug:"form-select2", i18n:"nav.form_elements.form_select.main",
+              submenu:[
+                {url:"form-select2.html", name:"Select2",icon:"", slug:"form-select2", i18n:"nav.form_elements.form_select.form_select2"},
+                {url:"form-selectize.html", name:"Selectize",icon:"", slug:"form-selectize", i18n:"nav.form_elements.form_select.form_selectize"},
+                {url:"form-selectivity.html", name:"Selectivity",icon:"", slug:"form-selectivity", i18n:"nav.form_elements.form_select.form_selectivity"},
+                {url:"form-select-box-it.html", name:"Select Box It",icon:"", slug:"form-select-box-it", i18n:"nav.form_elements.form_select.form_select_box_it"},
+              ]
+            },
+            {url:"form-dual-listbox.html", name:"Dual Listbox",icon:"", slug:"form-dual-listbox", i18n:"nav.form_elements.form_dual_listbox"},
+            {url:"form-tags-input.html", name:"Tags Input",icon:"", slug:"form-tags-input", i18n:"nav.form_elements.form_tags_input"},
+            {url:"form-validation.html", name:"Validation",icon:"", slug:"form-validation", i18n:"nav.form_elements.form_validation"},
+          ]
+        },
+        {url:"#", name:"Form Layouts", icon:"la la-file-text", slug:"form-layouts", i18n:"nav.form_layouts.main",
+          submenu:[
+            {url:"form-layout-basic.html", name:"Basic Forms",icon:"", slug:"form-layout-basic", i18n:"nav.form_layouts.form_layout_basic"},
+            {url:"form-layout-horizontal.html", name:"Horizontal Forms",icon:"", slug:"form-layout-horizontal", i18n:"nav.form_layouts.form_layout_horizontal"},
+            {url:"form-layout-hidden-labels.html", name:"Hidden Labels",icon:"", slug:"form-layout-hidden-labels", i18n:"nav.form_layouts.form_layout_hidden_labels"},
+            {url:"form-layout-form-actions.html", name:"Form Actions",icon:"", slug:"form-layout-form-actions", i18n:"nav.form_layouts.form_layout_form_actions"},
+            {url:"form-layout-row-separator.html", name:"Row Separator",icon:"", slug:"form-layout-row-separator", i18n:"nav.form_layouts.form_layout_row_separator"},
+            {url:"form-layout-bordered.html", name:"Bordered",icon:"", slug:"form-layout-bordered", i18n:"nav.form_layouts.form_layout_bordered"},
+            {url:"form-layout-striped-rows.html", name:"Striped Rows",icon:"", slug:"form-layout-striped-rows", i18n:"nav.form_layouts.form_layout_striped_rows"},
+            {url:"form-layout-striped-labels.html", name:"Striped Labels",icon:"", slug:"form-layout-striped-labels", i18n:"nav.form_layouts.form_layout_striped_labels"},
+          ]
+        },
+        {url:"#", name:"Form Wizard", icon:"la la-paste", slug:"", i18n:"nav.form_wizard.main",
+          submenu:[
+            {url:"form-wizard-circle-style.html", name:"Circle Style",icon:"", slug:"form-wizard-circle-style", i18n:"nav.form_wizard.form_wizard_circle_style"},
+            {url:"form-wizard-notification-style.html", name:"Notification Style",icon:"", slug:"form-wizard-notification-style", i18n:"nav.form_wizard.form_wizard_notification_style"}
+          ]
+        },
+        {url:"form-repeater.html", name:"Form Repeater", icon:"la la-repeat", slug:"form-repeater", i18n:"nav.form_repeater.main"},
+
+
+
+      {navheader:"Tables",icon:"la la-ellipsis-h", i18n:"nav.category.tables"},
+
+
+        {url:"#",name:"Bootstrap Tables",icon:"la la-table",slug:"bootstrap-tables", i18n:"nav.bootstrap_tables.main",
+
+          submenu:[
+            {url:"table-basic.html",name:"Basic Tables",slug:"table-basic", i18n:"nav.bootstrap_tables.table_basic"},
+            {url:"table-border.html",name:"Table Border",slug:"table-border", i18n:"nav.bootstrap_tables.table_border"},
+            {url:"table-sizing.html",name:"Table Sizing",slug:"table-sizing", i18n:"nav.bootstrap_tables.table_sizing"},
+            {url:"table-styling.html",name:"Table Styling",slug:"table-styling", i18n:"nav.bootstrap_tables.table_styling"},
+            {url:"table-components.html",name:"Table Components",slug:"table-components", i18n:"nav.bootstrap_tables.table_components"},
+          ]
+        },
+
+
+
+        {url:"#",name:"DataTables",icon:"la la-th",slug:"data-tables", i18n:"nav.data_tables.main",
+
+          submenu:[
+            {url:"dt-basic-initialization.html",name:"Basic Initialisation",slug:"dt-basic-initialization", i18n:"nav.data_tables.dt_basic_initialization"},
+            {url:"dt-advanced-initialization.html",name:"Advanced initialisation",slug:"dt-advanced-initialization", i18n:"nav.data_tables.dt_advanced_initialization"},
+            {url:"dt-styling.html",name:"Styling",slug:"dt-styling", i18n:"nav.data_tables.dt_styling"},
+            {url:"dt-data-sources.html",name:"Data Sources",slug:"dt-data-sources", i18n:"nav.data_tables.dt_data_sources"},
+            {url:"dt-api.html",name:"API",slug:"dt-api", i18n:"nav.data_tables.dt_api"},
+          ]
+        },
+
+
+
+        {url:"#",name:"DataTables Ext.",icon:"la la-th-large",slug:"datatable-extensions", i18n:"nav.datatable_extensions.main",
+
+          submenu:[
+            {url:"dt-extensions-autofill.html",name:"AutoFill",slug:"dt-extensions-autofill", i18n:"nav.datatable_extensions.dt_extensions_autofill"},
+            {url:"#",name:"Buttons",slug:"datatable-buttons", i18n:"nav.datatable_extensions.datatable_buttons.main",
+              submenu:[
+                {url:"dt-extensions-buttons-basic.html",name:"Basic Buttons",slug:"dt-extensions-buttons-basic", i18n:"nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_basic"},
+                {url:"dt-extensions-buttons-html-5-data-export.html",name:"HTML 5 Data Export",slug:"dt-extensions-buttons-html-5-data-export", i18n:"nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_html_5_data_export"},
+                {url:"dt-extensions-buttons-flash-data-export.html",name:"Flash Data Export",slug:"dt-extensions-buttons-flash-data-export", i18n:"nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_flash_data_export"},
+                {url:"dt-extensions-buttons-column-visibility.html",name:"Column Visibility",slug:"dt-extensions-buttons-column-visibility", i18n:"nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_column_visibility"},
+                {url:"dt-extensions-buttons-print.html",name:"Print",slug:"dt-extensions-buttons-print", i18n:"nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_print"},
+                {url:"dt-extensions-buttons-api.html",name:"API",slug:"dt-extensions-buttons-api", i18n:"nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_api"},
+              ]
+            },
+            {url:"dt-extensions-column-reorder.html",name:"Column Reorder",slug:"dt-extensions-column-reorder", i18n:"nav.datatable_extensions.dt_extensions_column_reorder"},
+            {url:"dt-extensions-fixed-columns.html",name:"Fixed Columns",slug:"dt-extensions-fixed-columns", i18n:"nav.datatable_extensions.dt_extensions_fixed_columns"},
+            {url:"dt-extensions-key-table.html",name:"Key Table",slug:"dt-extensions-key-table", i18n:"nav.datatable_extensions.dt_extensions_key_table"},
+            {url:"dt-extensions-row-reorder.html",name:"Row Reorder",slug:"dt-extensions-row-reorder", i18n:"nav.datatable_extensions.dt_extensions_row_reorder"},
+            {url:"dt-extensions-select.html",name:"Select",slug:"dt-extensions-select", i18n:"nav.datatable_extensions.dt_extensions_select"},
+            {url:"dt-extensions-fix-header.html",name:"Fix Header",slug:"dt-extensions-fix-header", i18n:"nav.datatable_extensions.dt_extensions_fix_header"},
+            {url:"dt-extensions-responsive.html",name:"Responsive",slug:"dt-extensions-responsive", i18n:"nav.datatable_extensions.dt_extensions_responsive"},
+            {url:"dt-extensions-column-visibility.html",name:"Column Visibility",slug:"dt-extensions-column-visibility", i18n:"nav.datatable_extensions.dt_extensions_column_visibility"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Handson Table",icon:"la la-th-list",slug:"handson-table", i18n:"nav.handson_table.main",
+
+          submenu:[
+            {url:"handson-table-appearance.html",name:"Appearance",slug:"handson-table-appearance", i18n:"nav.handson_table.handson_table_appearance"},
+            {url:"handson-table-rows-columns.html",name:"Rows Columns",slug:"handson-table-rows-columns", i18n:"nav.handson_table.handson_table_rows_columns"},
+            {url:"handson-table-rows-only.html",name:"Rows Only",slug:"handson-table-rows-only", i18n:"nav.handson_table.handson_table_rows_only"},
+            {url:"handson-table-columns-only.html",name:"Columns Only",slug:"handson-table-columns-only", i18n:"nav.handson_table.handson_table_columns_only"},
+            {url:"handson-table-data-operations.html",name:"Data Operations",slug:"handson-table-data-operations", i18n:"nav.handson_table.handson_table_data_operations"},
+            {url:"handson-table-cell-features.html",name:"Cell Features",slug:"handson-table-cell-features", i18n:"nav.handson_table.handson_table_cell_features"},
+            {url:"handson-table-cell-types.html",name:"Cell Types",slug:"handson-table-cell-types", i18n:"nav.handson_table.handson_table_cell_types"},
+            {url:"handson-table-integrations.html",name:"Integrations",slug:"handson-table-integrations", i18n:"nav.handson_table.handson_table_integrations"},
+            {url:"handson-table-utilities.html",name:"Utilities",slug:"handson-table-utilities", i18n:"nav.handson_table.handson_table_utilities"},
+          ]
+        },
+
+
+
+        {url:"table-jsgrid.html",name:"jsGrid",icon:"la la-table",slug:"table-jsgrid", i18n:"nav.table_jsgrid.main"},
+
+
+
+
+      {navheader:"Add Ons",icon:"la la-ellipsis-h", i18n:"nav.category.addons"},
+
+        {url:"#", name:"Editors", icon:"la la-edit", slug:"", i18n:"nav.editors.main",
+          submenu:[
+            {url:"editor-quill.html", name:"Quill",icon:"", slug:"editor-quill", i18n:"nav.editors.editor_quill"},
+            {url:"editor-ckeditor.html", name:"CKEditor",icon:"", slug:"editor-ckeditor", i18n:"nav.editors.editor_ckeditor"},
+            {url:"editor-summernote.html", name:"Summernote",icon:"", slug:"editor-summernote", i18n:"nav.editors.editor_summernote"},
+            {url:"editor-tinymce.html", name:"TinyMCE",icon:"", slug:"editor-tinymce", i18n:"nav.editors.editor_tinymce"},
+            {url:"#", name:"Code Editor",icon:"", slug:"code-editor-codemirror", i18n:"nav.editors.code_editor_codemirror.main",
+              submenu:[
+                {url:"code-editor-codemirror.html", name:"CodeMirror",icon:"", slug:"code-editor-codemirror", i18n:"nav.editors.code_editor_codemirror.code_editor_codemirror"},
+                {url:"code-editor-ace.html", name:"Ace",icon:"", slug:"code-editor-ace", i18n:"nav.editors.code_editor_codemirror.code_editor_ace"},
+              ]
+            },
+          ]
+        },
+        {url:"#", name:"Pickers", icon:"la la-calendar", slug:"", i18n:"nav.pickers.main",
+          submenu:[
+            {url:"pickers-date-&-time-picker.html", name:"Date & Time Picker",icon:"", slug:"pickers-date-&-time-picker", i18n:"nav.pickers.pickers_date_time_picker"},
+            {url:"pickers-color-picker.html", name:"Color Picker",icon:"", slug:"pickers-color-picker", i18n:"nav.pickers.pickers_color_picker"},
+
+          ]
+        },
+
+        {url:"#",name:"jQuery UI",icon:"la la-code-fork",slug:"jquery-ui", i18n:"nav.jquery_ui.main",
+
+          submenu:[
+            {url:"jquery-ui-interactions.html",name:"Interactions",slug:"jquery-ui-interactions", i18n:"nav.jquery_ui.jquery_ui_interactions"},
+            {url:"jquery-ui-navigations.html",name:"Navigations",slug:"jquery-ui-navigations", i18n:"nav.jquery_ui.jquery_ui_navigations"},
+            {url:"jquery-ui-date-pickers.html",name:"Date Pickers",slug:"jquery-ui-date-pickers", i18n:"nav.jquery_ui.jquery_ui_date_pickers"},
+            {url:"jquery-ui-autocomplete.html",name:"Autocomplete",slug:"jquery-ui-autocomplete", i18n:"nav.jquery_ui.jquery_ui_autocomplete"},
+            {url:"jquery-ui-buttons-select.html",name:"Buttons & Select",slug:"jquery-ui-buttons-select", i18n:"nav.jquery_ui.jquery_ui_buttons_select"},
+            {url:"jquery-ui-slider-spinner.html",name:"Slider & Spinner",slug:"jquery-ui-slider-spinner", i18n:"nav.jquery_ui.jquery_ui_slider_spinner"},
+            {url:"jquery-ui-dialog-tooltip.html",name:"Dialog & Tooltip",slug:"jquery-ui-dialog-tooltip", i18n:"nav.jquery_ui.jquery_ui_dialog_tooltip"},
+          ]
+        },
+
+
+
+        {url:"add-on-block-ui.html",name:"Block UI",icon:"la la-terminal",slug:"add-on-block-ui", i18n:"nav.add_on_block_ui.main"},
+
+
+
+        {url:"add-on-image-cropper.html",name:"Image Cropper",icon:"la la-crop",slug:"add-on-image-cropper", i18n:"nav.add_on_image_cropper.main"},
+
+
+
+        {url:"add-on-drag-drop.html",name:"Drag & Drop",icon:"la la-mouse-pointer",slug:"add-on-drag-drop", i18n:"nav.add_on_drag_drop.main"},
+
+
+
+        {url:"#",name:"File Uploader",icon:"la la-cloud-upload",slug:"file-uploaders", i18n:"nav.file_uploaders.main",
+
+          submenu:[
+            {url:"file-uploader-dropzone.html",name:"Dropzone",slug:"file-uploader-dropzone", i18n:"nav.file_uploaders.file_uploader_dropzone"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Event Calendars",icon:"la la-calendar",slug:"event-calendars", i18n:"nav.event_calendars.main",
+
+          submenu:[
+            {url:"#",name:"Full Calendar",slug:"full-calender", i18n:"nav.event_calendars.full_calender.main",
+              submenu:[
+                {url:"full-calender-basic.html",name:"Basic",slug:"full-calender-basic", i18n:"nav.event_calendars.full_calender.full_calender_basic"},
+                {url:"full-calender-events.html",name:"Events",slug:"full-calender-events", i18n:"nav.event_calendars.full_calender.full_calender_events"},
+                {url:"full-calender-advance.html",name:"Advance",slug:"full-calender-advance", i18n:"nav.event_calendars.full_calender.full_calender_advance"},
+                {url:"full-calender-extra.html",name:"Extra",slug:"full-calender-extra", i18n:"nav.event_calendars.full_calender.full_calender_extra"},
+              ]
+            },
+
+            {url:"calendars-clndr.html",name:"CLNDR",slug:"calendars-clndr",icon:"la la-calendar", i18n:"nav.event_calendars.calendars_clndr"},
+
+          ]
+        },
+
+
+
+
+        {url:"#",name:"Internationalization",icon:"la la-flag-o",slug:"internationalization", i18n:"nav.internationalization.main",
+
+          submenu:[
+            {url:"i18n-resources.html",name:"Resources",slug:"i18n-resources", i18n:"nav.internationalization.i18n_resources"},
+            {url:"i18n-xhr-backend.html",name:"XHR Backend",slug:"i18n-xhr-backend", i18n:"nav.internationalization.i18n_xhr_backend"},
+            {url:"i18n-query-string.html"+query_string,name:"Query String",slug:"i18n-query-string", i18n:"nav.internationalization.i18n_query_string"},
+            {url:"i18n-on-init.html",name:"On Init",slug:"i18n-on-init", i18n:"nav.internationalization.i18n_on_init"},
+            {url:"i18n-after-init.html",name:"After Init",slug:"i18n-after-init", i18n:"nav.internationalization.i18n_after_init"},
+            {url:"i18n-fallback.html",name:"Fallback",slug:"i18n-fallback", i18n:"nav.internationalization.i18n_fallback"},
+          ]
+        },
+
+
+
+
+      {navheader:"Charts & Maps",icon:"la la-ellipsis-h", i18n:"nav.category.charts_maps"},
+
+
+        {url:"#",name:"google Charts",icon:"la la-bar-chart",slug:"google-visualization", i18n:"nav.google_charts.main",
+
+          submenu:[
+            {url:"google-bar-charts.html",name:"Bar charts",slug:"google-bar-charts", i18n:"nav.google_charts.google_bar_charts"},
+            {url:"google-line-charts.html",name:"Line charts",slug:"google-line-charts", i18n:"nav.google_charts.google_line_charts"},
+            {url:"google-pie-charts.html",name:"Pie charts",slug:"google-pie-charts", i18n:"nav.google_charts.google_pie_charts"},
+            {url:"google-scatter-charts.html",name:"Scatter charts",slug:"google-scatter-charts", i18n:"nav.google_charts.google_scatter_charts"},
+            {url:"google-bubble-charts.html",name:"Bubble charts",slug:"google-bubble-charts", i18n:"nav.google_charts.google_bubble_charts"},
+            {url:"google-other-charts.html",name:"Other charts",slug:"google-other-charts", i18n:"nav.google_charts.google_other_charts"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Echarts",icon:"la la-file-photo-o",slug:"echarts", i18n:"nav.echarts.main",
+
+          submenu:[
+            {url:"echarts-line-area-charts.html",name:"Line & Area charts",slug:"echarts-line-area-charts", i18n:"nav.echarts.echarts_line_area_charts"},
+            {url:"echarts-bar-column-charts.html",name:"Bar & Column charts",slug:"echarts-bar-column-charts", i18n:"nav.echarts.echarts_bar_column_charts"},
+            {url:"echarts-pie-doughnut-charts.html",name:"Pie & Doughnut charts",slug:"echarts-pie-doughnut-charts", i18n:"nav.echarts.echarts_pie_doughnut_charts"},
+            {url:"echarts-scatter-charts.html",name:"Scatter charts",slug:"echarts-scatter-charts", i18n:"nav.echarts.echarts_scatter_charts"},
+            {url:"echarts-radar-chord-charts.html",name:"Radar & Chord charts",slug:"echarts-radar-chord-charts", i18n:"nav.echarts.echarts_radar_chord_charts"},
+            {url:"echarts-funnel-gauges-charts.html",name:"Funnel & Gauges charts",slug:"echarts-funnel-gauges-charts", i18n:"nav.echarts.echarts_funnel_gauges_charts"},
+            {url:"echarts-combination-charts.html",name:"Combination charts",slug:"echarts-combination-charts", i18n:"nav.echarts.echarts_combination_charts"},
+            {url:"echarts-advance-charts.html",name:"Advance charts",slug:"echarts-advance-charts", i18n:"nav.echarts.echarts_advance_charts"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Chartjs",icon:"la la-area-chart",slug:"chartjs", i18n:"nav.chartjs.main",
+
+          submenu:[
+            {url:"chartjs-line-charts.html",name:"Line charts",slug:"chartjs-line-charts", i18n:"nav.chartjs.chartjs_line_charts"},
+            {url:"chartjs-bar-charts.html",name:"Bar charts",slug:"chartjs-bar-charts", i18n:"nav.chartjs.chartjs_bar_charts"},
+            {url:"chartjs-pie-doughnut-charts.html",name:"Pie & Doughnut charts",slug:"chartjs-pie-doughnut-charts", i18n:"nav.chartjs.chartjs_pie_doughnut_charts"},
+            {url:"chartjs-scatter-charts.html",name:"Scatter charts",slug:"chartjs-scatter-charts", i18n:"nav.chartjs.chartjs_scatter_charts"},
+            {url:"chartjs-polar-radar-charts.html",name:"Polar & Radar charts",slug:"chartjs-polar-radar-charts", i18n:"nav.chartjs.chartjs_polar_radar_charts"},
+            {url:"chartjs-advance-charts.html",name:"Advance charts",slug:"chartjs-advance-charts", i18n:"nav.chartjs.chartjs_advance_charts"},
+          ]
+        },
+
+
+
+        {url:"#",name:"D3 Charts",icon:"la la-line-chart",slug:"d3-charts", i18n:"nav.d3_charts.main",
+
+          submenu:[
+            {url:"d3-line-chart.html",name:"Line Chart",slug:"d3-line-chart", i18n:"nav.d3_charts.d3_line_chart"},
+            {url:"d3-bar-chart.html",name:"Bar Chart",slug:"d3-bar-chart", i18n:"nav.d3_charts.d3_bar_chart"},
+            {url:"d3-pie-chart.html",name:"Pie Chart",slug:"d3-pie-chart", i18n:"nav.d3_charts.d3_pie_chart"},
+            {url:"d3-circle-diagrams.html",name:"Circle Diagrams",slug:"d3-circle-diagrams", i18n:"nav.d3_charts.d3_circle_diagrams"},
+            {url:"d3-tree-chart.html",name:"Tree Chart",slug:"d3-tree-chart", i18n:"nav.d3_charts.d3_tree_chart"},
+            {url:"d3-other-charts.html",name:"Other Charts",slug:"d3-other-charts", i18n:"nav.d3_charts.d3_other_charts"},
+          ]
+        },
+
+
+
+        {url:"#",name:"C3 Charts",icon:"la la-indent",slug:"c3-charts", i18n:"nav.c3_charts.main",
+
+          submenu:[
+            {url:"c3-line-chart.html",name:"Line Chart",slug:"c3-line-chart", i18n:"nav.c3_charts.c3_line_chart"},
+            {url:"c3-bar-pie-chart.html",name:"Bar & Pie Chart",slug:"c3-bar-pie-chart", i18n:"nav.c3_charts.c3_bar_pie_chart"},
+            {url:"c3-axis-chart.html",name:"Axis Chart",slug:"c3-axis-chart", i18n:"nav.c3_charts.c3_axis_chart"},
+            {url:"c3-data-chart.html",name:"Data Chart",slug:"c3-data-chart", i18n:"nav.c3_charts.c3_data_chart"},
+            {url:"c3-grid-chart.html",name:"Grid Chart",slug:"c3-grid-chart", i18n:"nav.c3_charts.c3_grid_chart"},
+            {url:"c3-transform-chart.html",name:"Transform Chart",slug:"c3-transform-chart", i18n:"nav.c3_charts.c3_transform_chart"},
+            {url:"c3-other-charts.html",name:"Other Charts",slug:"c3-other-charts", i18n:"nav.c3_charts.c3_other_charts"},
+          ]
+        },
+
+
+
+        {url:"#",name:"Chartist",icon:"la la-pie-chart",slug:"chartist", i18n:"nav.chartist.main",
+
+          submenu:[
+            {url:"chartist-line-charts.html",name:"Line charts",slug:"chartist-line-charts", i18n:"nav.chartist.chartist_line_charts"},
+            {url:"chartist-bar-charts.html",name:"Bar charts",slug:"chartist-bar-charts", i18n:"nav.chartist.chartist_bar_charts"},
+            {url:"chartist-pie-charts.html",name:"Pie charts",slug:"chartist-pie-charts", i18n:"nav.chartist.chartist_pie_charts"},
+          ]
+        },
+
+
+        {url:"morris-charts.html",name:"Morris Charts",icon:"la la-share-alt",slug:"morris-charts", i18n:"nav.morris_charts.main"},
+
+
+
+        {url:"#",name:"Flot Charts",icon:"la la-bolt",slug:"flot-charts", i18n:"nav.flot_charts.main",
+
+          submenu:[
+            {url:"flot-line-charts.html",name:"Line charts",slug:"flot-line-charts", i18n:"nav.flot_charts.flot_line_charts"},
+            {url:"flot-bar-charts.html",name:"Bar charts",slug:"flot-bar-charts", i18n:"nav.flot_charts.flot_bar_charts"},
+            {url:"flot-pie-charts.html",name:"Pie charts",slug:"flot-pie-charts", i18n:"nav.flot_charts.flot_pie_charts"},
+          ]
+        },
+
+
+
+        {url:"rickshaw-charts.html",name:"Rickshaw Charts",icon:"la la-bullseye",slug:"rickshaw-charts", i18n:"nav.rickshaw_charts.main"},
+
+
+
+        {url:"#",name:"Maps",icon:"la la-map",slug:"maps", i18n:"nav.maps.main",
+
+          submenu:[
+            {url:"#",name:"google Maps",slug:"google-maps", i18n:"nav.maps.google_maps.main",
+              submenu:[
+                {url:"gmaps-basic-maps.html",name:"Maps",slug:"gmaps-basic-maps", i18n:"nav.maps.google_maps.gmaps_basic_maps"},
+                {url:"gmaps-services.html",name:"Services",slug:"gmaps-services", i18n:"nav.maps.google_maps.gmaps_services"},
+                {url:"gmaps-overlays.html",name:"Overlays",slug:"gmaps-overlays", i18n:"nav.maps.google_maps.gmaps_overlays"},
+                {url:"gmaps-routes.html",name:"Routes",slug:"gmaps-routes", i18n:"nav.maps.google_maps.gmaps_routes"},
+                {url:"gmaps-utils.html",name:"Utils",slug:"gmaps-utils", i18n:"nav.maps.google_maps.gmaps_utils"}
+              ]
+            },
+            {url:"#",name:"Vector Maps",slug:"vector-maps", i18n:"nav.maps.vector_maps.main",
+              submenu:[
+                {url:"#",name:"jQuery Mapael",slug:"jquery-mapael", i18n:"nav.maps.vector_maps.jquery_mapael.main",
+                  submenu:[
+                    {url:"vector-maps-mapael-basic.html",name:"Basic Maps",slug:"vector-maps-mapael-basic", i18n:"nav.maps.vector_maps.jquery_mapael.vector_maps_mapael_basic"},
+                    {url:"vector-maps-mapael-advance.html",name:"Advance Maps",slug:"vector-maps-mapael-advance", i18n:"nav.maps.vector_maps.jquery_mapael.vector_maps_mapael_advance"}
+                  ]
+                },
+                {url:"vector-maps-jvector.html",name:"jVector Map",slug:"jvector-maps", i18n:"nav.maps.vector_maps.jvector_maps"},
+                {url:"vector-maps-jvq.html",name:"JQV Map",slug:"vector-maps-jvq", i18n:"nav.maps.vector_maps.vector_maps_jvq"}
+              ]
+            }
+          ]
+        },
+
+
+
+
+
+      {navheader:"Support",icon:"la la-ellipsis-h", i18n:"nav.category.support"},
+        {url:"http://support.pixinvent.com/",name:"Raise Support",slug:"support-raise-support",icon:"la la-support", i18n:"nav.support_raise_support.main"},
+        {url:"https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation",name:"Documentation",slug:"documentation",icon:"la la-text-height", i18n:"nav.support_documentation.main"},
+
+    ])
+
+  //- /main menu content
+
+  //- main menu footer
+  //- include includes/menu-footer
+  //- main menu footer
+//- / main menu

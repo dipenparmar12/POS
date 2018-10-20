@@ -1,0 +1,10 @@
+.content-header-left.col-md-6.col-12.mb-2
+	h3.content-header-title #{pageTitle}
+	.row.breadcrumbs-top
+		block breadcrumbs
+			+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs with search"}])
+.content-header-right.col-md-6.col-12
+	fieldset.form-group.relative.has-icon-left.col-md-5.col-12.float-right.p-0
+		input#iconLeft.form-control.round(type='text', placeholder='Search...')
+		.form-control-position
+			i.la.la-search

@@ -1,0 +1,60 @@
+// ================================================================================================
+// 	File Name: users.scss
+// 	Description: Page content different types of users page layouts SCSS.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+
+// Core variables and mixins overrides
+@import "../bootstrap/functions";
+@import "../core/variables/variables";
+@import "../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../assets/scss/variables/variables";
+@import "../../../assets/scss/variables/components-variables";
+.profile-card-with-stats {
+    .btn-float {
+        padding: 8px 14px 4px 14px;
+    }
+}
+
+.profile-card-with-cover {
+    .card-profile-image {
+        position: absolute;
+        top: 130px;
+        width: 100%;
+        text-align: center;
+        img.img-border {
+            border: 5px solid #fff;
+        }
+    }
+    .profile-card-with-cover-content {
+        padding-top: 4rem;
+    }
+}
+
+#user-profile {
+    .profile-with-cover {
+        .profil-cover-details {
+            position: absolute;
+            margin-top: 210px;
+            .profile-image {
+                img.img-border {
+                    border: 5px solid #fff;
+                }
+            }
+            .card-title {
+                color: $white;
+                text-shadow: 1px 1px 4px $gray-800;
+            }
+        }
+    }
+    .navbar-profile {
+        margin-left: 130px;
+    }
+}

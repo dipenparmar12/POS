@@ -1,0 +1,458 @@
+<!--       Static demo	    -->
+<section id="static-demo">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Static demo</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content">
+					<div class="card-body">
+						<p>Four options are available: top, right, bottom, and left aligned.</p>
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-6 mb-1 text-center">
+								<h5 class="text-center">Basic Top Tooltip</h5>
+									<div class="tooltip top show" role="tooltip" style="display: block; position: relative; margin: 0; padding: 0; z-index: 100;">
+										<div class="tooltip-arrow" style="bottom: -5px; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #000;"></div>
+										<div class="tooltip-inner" style="max-width: none;">
+											<i style="bottom: -5px; left: 50%;margin-left: -5px;border-width: 5px 5px 0;border-top-color: #000;position: absolute;border-style: solid;"></i>
+											Tooltip on Top</div>
+									</div>
+								<p class="text-center mt-1">Add <code>.top</code> class for top tooltip along with <code>.tooltip</code> class.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-6 mb-1 text-center">
+								<h5 class="text-center">Basic Right Tooltip</h5>
+									<div class="tooltip right show" role="tooltip" style="display: block; position: relative; margin: 0; padding: 0; z-index: 100;">
+										<div class="tooltip-arrow" style="left: -5px;top: 50%;border-width: 5px 5px 5px 0;border-right-color: #000;"></div>
+										<div class="tooltip-inner" style="max-width: none;">
+											<i style="left: -5px; top: 50%;margin-top: -5px;border-width: 5px 5px 5px 0;border-right-color: #000;position: absolute;border-style: solid;"></i>
+											Tooltip on Right</div>
+									</div>
+								<p class="text-center mt-1">Add <code>.right</code> class for right tooltip along with <code>.tooltip</code> class.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-6 mb-1 text-center">
+								<h5 class="text-center">Basic Bottom Tooltip</h5>
+									<div class="tooltip bottom show" role="tooltip" style="display: block; position: relative; margin: 0; padding: 0; z-index: 100;">
+										<div class="tooltip-arrow" style="top: -5px;left: 50%;margin-left: -5px;border-width: 0 5px 5px;border-bottom-color: #000;"></div>
+										<div class="tooltip-inner" style="max-width: none;">
+											<i style="top: -5px; left: 50%;margin-left: -5px;border-width:0 5px 5px;border-bottom-color: #000;position: absolute;border-style: solid;"></i>
+											Tooltip on Bottom</div>
+									</div>
+								<p class="text-center mt-1">Add <code>.bottom</code> class for bottom tooltip along with <code>.tooltip</code> class.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-6 mb-1 text-center">
+								<h5 class="text-center">Basic Left Tooltip</h5>
+									<div class="tooltip left show" role="tooltip" style="display: block; position: relative; margin: 0; padding: 0; z-index: 100;">
+										<div class="tooltip-arrow" style="right: -5px;top: 50%;border-width: 5px 0 5px 5px;border-left-color: #000;"></div>
+										<div class="tooltip-inner" style="max-width: none;">
+											<i style="right: -5px; top: 50%;margin-top: -5px;border-width: 5px 0 5px 5px;border-left-color: #000;position: absolute;border-style: solid;"></i>
+											Tooltip on Left</div>
+									</div>
+								<p class="text-center mt-1">Add <code>.left</code> class for left tooltip along with <code>.tooltip</code> class.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->
+
+<!--       Tooltip Positions	  -->
+<section id="tooltip-positions">
+	<div class="row ">
+		<div class="col-12">		
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Tooltip Positions</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content">
+					<div class="card-body">
+						<p>Four options are available: top, right, bottom, and left aligned.</p>
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Basic Top Tooltip</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+											Tooltip on top
+										</button>
+									</div>
+								<p class="text-center mt-1">Add <code>data-toggle="tooltip"</code> &amp; <code>data-placement="top"</code> to add top tooltip.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Basic Right Tooltip</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+											Tooltip on right
+										</button>
+									</div>
+								<p class="text-center mt-1">Add <code>data-toggle="tooltip"</code> &amp; <code>data-placement="right"</code> to add right tooltip.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Basic Bottom Tooltip</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+											Tooltip on bottom
+										</button>
+									</div>
+								<p class="text-center mt-1">Add <code>data-toggle="tooltip"</code> &amp; <code>data-placement="bottom"</code> to add bottom tooltip.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Basic Left Tooltip</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+											Tooltip on left
+										</button>
+									</div>
+								<p class="text-center mt-1">Add <code>data-toggle="tooltip"</code> &amp; <code>data-placement="left"</code> to add left tooltip.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->
+
+<!--       Tooltip Events	  -->
+<section id="tooltip-events">
+	<div class="row ">
+		<div class="col-12">		
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Tooltip Events</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Show Event</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-success" id="show-tooltip">
+											Show Event Tooltip
+										</button>
+									</div>
+								<p class="text-center mt-1">This event fires immediately when the <code>show</code> instance method is called.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Shown Event</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-success" id="shown-tooltip">
+											Shown Event Tooltip
+										</button>
+									</div>
+								<p class="text-center mt-1">This event is fired when the tooltip has been made visible to the user (will wait for CSS transitions to complete).</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Hide Event</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-success" id="hide-tooltip">
+											Hide Event Tooltip
+										</button>
+									</div>
+								<p class="text-center mt-1">This event is fired immediately when the <code>hide</code> instance method has been called.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Hidden Event</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-success" id="hidden-tooltip">
+											Hidden Event Tooltip
+										</button>
+									</div>
+								<p class="text-center mt-1">This event is fired when the tooltip has finished being hidden from the user (will wait for CSS transitions to complete).</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->
+
+<!--       Tooltip Methods	  -->
+<section id="tooltip-methods">
+	<div class="row ">
+		<div class="col-12">		
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Tooltip Methods</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content">
+					<div class="card-body">
+						<p>This is considered a “manual” triggering of the tooltip. Tooltips with zero-length titles are never displayed.</p>
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Show</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-danger" id="show-method" data-popup="tooltip" data-original-title="Show Method Tooltip" data-trigger="manual">
+											Show Method <i class="la la-play-circle ml-1"></i>
+										</button>
+									</div>
+								<p class="text-center mt-1">Reveals an element’s tooltip. Returns to the caller before the tooltip has actually been shown.(i.e. before the <code>shown.bs.tooltip</code> event occurs)</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Hide</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-danger" id="hide-method" data-popup="tooltip" data-original-title="Hide Method Tooltip" data-trigger="manual">
+											Hide Method <i class="la la-play-circle ml-1"></i>
+										</button>
+									</div>
+								<p class="text-center mt-1">Hides an element’s tooltip. Returns to the caller before the tooltip has actually been hidden (i.e. before the <code>hidden.bs.tooltip</code> event occurs).</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Toggle</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-danger" id="toggle-method" data-popup="tooltip" data-original-title="Toggle Method Tooltip" data-trigger="manual">
+											Toggle Method <i class="la la-play-circle ml-1"></i>
+										</button>
+									</div>
+								<p class="text-center mt-1">Toggles an element’s tooltip. Returns to the caller before the tooltip has actually been shown or hidden (i.e. before the <code>shown.bs.tooltip</code> or <code>hidden.bs.tooltip</code> event occurs).</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Dispose</h5>
+								<div class="text-center">
+										<div class="btn-group">
+											<button type="button" class="btn btn-danger" data-toggle="tooltip" data-original-title="Dispose Method Tooltip" data-trigger="click" id="dispose-method">
+												Dispose
+											</button>
+											<button type="button" class="btn btn-danger" id="dispose">
+												<i class="la la-play-circle"></i>
+											</button>
+										</div>
+									</div>
+								<p class="text-center mt-1">Hides and destroys an element’s tooltip. Tooltips that use delegation cannot be individually destroyed on descendant trigger elements.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->
+
+<!--       Tooltip Triggers	  -->
+<section id="tooltip-triggers">
+	<div class="row ">
+		<div class="col-12">		
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Tooltip Triggers</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content">
+					<div class="card-body">
+						<p>Tooltip is triggered using - click | hover | focus | manual options. You may pass multiple triggers; separate them with a space. "manual" cannot be combined with any other trigger.</p>
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Click</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-info" data-toggle="tooltip" data-original-title="Click Triggered" data-trigger="click">
+											On Click Trigger
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-trigger="click"</code> for click trigger.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Focus</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-info" data-toggle="tooltip" data-original-title="Focus Triggered" data-trigger="focus">
+											On Focus Trigger
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-trigger="focus"</code> for focus trigger.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Hover</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-info" data-toggle="tooltip" data-original-title="Hover Triggered">
+											On Hover Trigger
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-trigger="hover"</code> for hover trigger. This is a default trigger.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Manual</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-info manual" data-toggle="tooltip" data-original-title="Manual Triggered" data-trigger="manual" >
+											On Manual Trigger
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-trigger="manual"</code> for manual trigger. You can do show/hide using js</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->
+
+<!--       Tooltip Options	  -->
+<section id="tooltip-options">
+	<div class="row ">
+		<div class="col-12">		
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Tooltip Options</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-content">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Disabled Animaition</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-warning" data-toggle="tooltip" data-original-title="Without Fade Animation" data-animation="false">
+											No animation
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-animation="false"</code> to remove fade animation. Default is true.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Delay Show/Hide</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-warning delay" data-toggle="tooltip" data-original-title="Click Triggered" data-delay="500">
+											Delay Tooltip
+										</button>
+									</div>
+								<p class="text-center mt-1">Delay showing and hiding the tooltip (<code>ms</code>) - does not apply to manual trigger type.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Supports HTML</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-warning" data-toggle="tooltip" data-original-title="<b>This</b> is <i>HTML</i> <u>tooltip</u>" data-html="true">
+											HTML Tooltip
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-html="true"</code> for HTML supported trigger.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Tooltip Template</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-warning template" data-toggle="tooltip" data-original-title="Check console for default template structure" data-trigger="click">
+											Tooltip Template
+										</button>
+									</div>
+								<p class="text-center mt-1">Base HTML to use when creating the tooltip. The tooltip's title will be injected into the <code>.tooltip-inner</code>. <code>.tooltip-arrow</code> will become the tooltip's arrow.The outermost wrapper element should have the <code>.tooltip</code> class.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->
+
+<!--       Tooltip Colot Options	  -->
+<section id="tooltip-color-options">
+	<div class="row ">
+		<div class="col-12">		
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Tooltip Color Options</h4>
+					<a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+	        		<div class="heading-elements">
+						<ul class="list-inline mb-0">
+							<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+							<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+							<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+							<li><a data-action="close"><i class="ft-x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-collapse">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Custom Tooltip Backround Color</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-primary" data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Custom Background Color" data-bg-color="pink">
+											Custom Bg
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-popup="tooltip-custom"</code> for Custom tooltip. You can change tooltip color using <code>data-bg-color</code> attribute.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Custom Tooltip Text Color</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-primary" data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Custom Background Color" data-text-color="info">
+											Custom Text
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-popup="tooltip-custom"</code> for Custom tooltip. You can change tooltip text color using <code>data-text-color</code> attribute.</p>
+							</div>
+							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-1 text-center">
+								<h5 class="text-center">Custom Tooltip Background &amp; Text Color</h5>
+								<div class="text-center">
+										<button type="button" class="btn btn-primary" data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Custom Bg &amp; Text Color</span>" data-html="true" data-text-color="black" data-bg-color="red" data-placement="top">
+											Custom bg &amp; Text
+										</button>
+									</div>
+								<p class="text-center mt-1">Use <code>data-popup="tooltip-custom"</code> for Custom bordered colored tooltip. You can change tooltip background and text color using <code>data-bg-color</code> and <code>data-text-color</code> attributes.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Ends -->

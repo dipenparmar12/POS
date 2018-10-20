@@ -1,0 +1,43 @@
+//- =========================================================================================
+	File Name:dt-api.pug
+	Description: Real power of DataTables.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "API DataTable"
+	- var pageSubTitle = "Real power of DataTables"
+	- var description  = "The real power of DataTables can be exploited through the use of the API that it presents. The DataTables API is designed to be simple, consistent and easy to use. The examples in this section show how the API may be used."
+	- var activeMenu   = "dt-api"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"API DataTable"}])
+
+//- Include page content in page block
+append content
+	include ../contents/dt-api.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/responsive.dataTables.min.css')
+
+//- Add vendor specific js
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+
+//- Add custom page specific CSS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables/datatable-api.js', type='text/javascript')

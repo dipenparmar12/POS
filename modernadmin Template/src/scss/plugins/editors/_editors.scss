@@ -1,0 +1,91 @@
+/* ------------------------------------------------------------------------------
+*
+*  # Editor CSS
+*
+*  Summernote, Code Mirror & ACE Editors
+*
+*
+* ---------------------------------------------------------------------------- */
+/* CKEditor Starts */
+#cke_ckeditor-inline {
+    max-width: 68%;
+}
+/* CKEditor Ends */
+
+/* Summernote Style Starts */
+.note-editor.note-frame{
+	border-radius: 0.3rem;
+}
+.note-popover.popover{
+	display:none;
+}
+.note-toolbar{
+	&.panel-heading {
+		color: #333;
+		background-color: #f9f9f9;
+		border-bottom: 1px solid #ddd;
+		padding: 0.25rem 1rem 0.55rem !important;
+	}
+	button.note-btn{
+		background-color: transparent;
+		border: 1px solid #ccc;
+		padding: 0.5rem 1rem;
+
+	}
+	.dropdown-toggle::after{
+		display: none;
+	}
+}
+
+/* Summernote Style Ends */
+
+.content {
+	overflow: visible;
+	position: relative;
+	width: auto;
+	margin-left: 0;
+	min-height: auto;
+	padding: inherit;
+}
+
+/* TinyMCE */
+.mce-tinymce-inline{
+	max-width: 80% !important;
+}
+.mce-container-body{
+    overflow: auto;
+}
+
+/* Code Mirror */
+.CodeMirror {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	.CodeMirror-selected{ background-color: skyblue !important; }
+	.CodeMirror-selectedtext { color: white; }
+	.styled-background { background-color: #ff7; }
+	.cm-matchhighlight {background-color: lightgreen}
+	.CodeMirror-selection-highlight-scrollbar {background-color: green}
+}
+#codemirror-tabs + .CodeMirror .cm-tab {
+	background: url(../../app-assets/images/icons/img.png);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+iframe#preview {
+	height: 300px;
+	border: 1px solid black;
+	width: 100%;
+}
+
+/* Ace Editor */
+.ace_editor {
+	position: relative;
+	overflow: hidden;
+	height: 320px;
+}
+
+/* Quill Editor */
+.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor, .ql-toolbar{
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+}

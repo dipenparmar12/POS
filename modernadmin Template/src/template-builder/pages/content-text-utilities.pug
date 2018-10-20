@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: content-text-utilities.pug
+	Description: The full width 2 columns layout with content & navigation section.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Text Utilities"
+	- var pageSubTitle = "Text styling & alignment"
+	- var description  = "Text utilities provides options for text alignment, text transformation, font weight, italics, colors, backgrounds etc..."
+	- var activeMenu   = "content-text-utilities"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Content"}, {name:"Text Utilities"}])
+
+//- Include page content in page block
+append content
+	include ../contents/content-text-utilities.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/ui/prism.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

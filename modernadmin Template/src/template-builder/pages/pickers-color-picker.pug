@@ -1,0 +1,47 @@
+//- =========================================================================================
+	File Name: pickers-color-picker.pug
+	Description: Add color picker to field or to any other element.It can be used as a component, alpha picker and more.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "Color picker"
+	- var pageSubTitle = "Fancy and customizable color picker"
+	- var description  = "Add color picker to field or to any other element. It can be used as a component, alpha picker and more."
+	- var activeMenu = "pickers-color-picker"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Pickers"}, {name:"Color"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/pickers-color-picker.html
+
+append vendorcss
+	//- Minicolors CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/pickers/miniColors/jquery.minicolors.css')
+	//- Spectrum CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/pickers/spectrum/spectrum.css')
+
+append vendorjs
+	//- Minicolors JS
+	script(src=app_assets_path + '/vendors/js/pickers/miniColors/jquery.minicolors.min.js', type='text/javascript')
+	//- Spectrum JS
+	script(src=app_assets_path + '/vendors/js/pickers/spectrum/spectrum.js', type='text/javascript')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/pickers/colorpicker/colorpicker.css')
+
+append pagejs
+	//- Template JS for Color Picker
+	script(src=app_assets_path + '/js/scripts/pickers/colorpicker/picker-color.js', type='text/javascript')

@@ -1,0 +1,47 @@
+//- =========================================================================================
+	File Name: echarts-pie-doughnut-charts.pug
+	Description: Pie & Doughnut echarts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Echarts - Pie & Doughnut Chart"
+	- var pageSubTitle = "Pie & Doughnut Chart Examples"
+	- var description = "A pie chart (or a doughnut chart) is a circular statistical graphic, which is divided into slices to illustrate numerical proportion. In a pie chart, the arc length of each slice (and consequently its central angle and area), is proportional to the quantity it represents."
+	- var activeMenu   = "echarts-pie-doughnut-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Echarts"}, {name:"Pie & Doughnut Charts"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/echarts-pie-doughnut-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/basic-pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/doughnut.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/doughnut-infographic.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/lasagna.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/nested-pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/nightingale-rose.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/nightingale-rose-labels.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/multiple-doughnut.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/pie-doughnut/timeline.js', type='text/javascript')

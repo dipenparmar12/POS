@@ -1,0 +1,18 @@
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../assets/scss/variables/variables";
+@import "../../../assets/scss/variables/components-variables";
+
+.ct-area-circle{
+	fill: $success;
+	stroke-width: 5;
+	stroke: $white;
+}

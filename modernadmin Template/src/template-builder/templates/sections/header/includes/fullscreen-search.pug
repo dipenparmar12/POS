@@ -1,0 +1,128 @@
+#fullscreen-search.fullscreen-search
+  form.fullscreen-search-form
+    input.fullscreen-search-input(type='search', placeholder='Search...')
+    button.fullscreen-search-submit(type='submit') Search
+  .fullscreen-search-content
+    .fullscreen-search-options
+      .row
+        .col-sm-12
+          fieldset
+            label.custom-control.custom-checkbox.d-inline
+              input.custom-control-input(type='checkbox')
+              span.custom-control-indicator
+              span.custom-control-description.m-0 All
+            label.custom-control.custom-checkbox.d-inline
+              input.custom-control-input(type='checkbox')
+              span.custom-control-indicator
+              span.custom-control-description.m-0 People
+            label.custom-control.custom-checkbox.d-inline
+              input.custom-control-input(type='checkbox')
+              span.custom-control-indicator
+              span.custom-control-description.m-0 Project
+            label.custom-control.custom-checkbox.d-inline
+              input.custom-control-input(type='checkbox')
+              span.custom-control-indicator
+              span.custom-control-description.m-0 Task
+    .fullscreen-search-result.mt-2
+      .row
+        .col-lg-4
+          h3 People
+          .media
+            a.media-left(href='#')
+              img.media-object.rounded-circle(src='../../../app-assets/images/portrait/small/avatar-s-2.png', alt='Generic placeholder image')
+            .media-body
+              h5.media-heading
+                a(href='#') Karmen Dartez
+              p.mb-0
+                span.badge.badge-pill.mr-1.badge-danger JavaScript
+                span.badge.badge-pill.mr-1.badge-primary HTML
+              p
+                span.font-weight-bold Sr. Developer - 
+                a(href='mailto:john@example.com') karmen@example.com
+          .media
+            a.media-left(href='#')
+              img.media-object.rounded-circle(src='../../../app-assets/images/portrait/small/avatar-s-3.png', alt='Generic placeholder image')
+            .media-body
+              h5.media-heading
+                a(href='#') Scot Loh
+              p.mb-0
+                span.badge.badge-pill.mr-1.badge-danger PhotoShop
+                span.badge.badge-pill.mr-1.badge-warning UX
+              p
+                span.font-weight-bold Sr. UI/UX Desugner - 
+                a(href='mailto:john@example.com') scot@example.com
+          .media
+            a.media-left(href='#')
+              img.media-object.rounded-circle(src='../../../app-assets/images/portrait/small/avatar-s-5.png', alt='Generic placeholder image')
+            .media-body
+              h5.media-heading
+                a(href='#') Kim Willmore
+              p.mb-0
+                span.badge.badge-pill.mr-1.badge-warning CSS
+                span.badge.badge-pill.mr-1.badge-danger HTML
+              p
+                span.font-weight-bold UI Developer - 
+                a(href='mailto:john@example.com') kim@example.com
+        .col-lg-4
+          h3 Project
+          .media
+            .media-body
+              h5.media-heading
+                a(href='#') WordPress Template Support
+              progress.progress.progress-xs.progress-success.mb-0(value='25', max='100') 25%
+              p.mb-0 Collicitudin vel metus scelerisque ante  commodo.
+              p
+                span.badge.badge-pill.badge-success In Progress
+                span.badge.badge-default.badge-default.float-sm-right 25% Completed
+          .media
+            .media-body
+              h5.media-heading
+                a(href='#') Application UI/UX
+              progress.progress.progress-xs.progress-info.mb-0(value='100', max='100') 100%
+              p.mb-0 Cetus scelerisque ante sollicitudin commodo.
+              p
+                span.badge.badge-pill.badge-info Completed
+                span.badge.badge-default.badge-default.float-sm-right 100% Completed
+          .media
+            .media-body
+              h5.media-heading
+                a(href='#') SEO Project
+              progress.progress.progress-xs.progress-warning.mb-0(value='65', max='100') 65%
+              p.mb-0 Notifications scelerisque ante sollicitudin commodo.
+              p
+                span.badge.badge-pill.badge-warning Delayed
+                span.badge.badge-default.badge-default.float-sm-right 65% Completed
+        .col-lg-4
+          h3 Task
+          .media
+            .media-body
+              h5.media-heading
+                a(href='#') Create the new layout for menu
+              p.mb-0 Pcelerisque ulla vel metus  ante sollicitudin commodo.
+              p
+                span.badge.badge-pill.badge-danger Open
+                span.badge.badge-default.badge-default.badge-default.badge-icon.float-sm-right
+                  i.la.la-calendar
+                  |  22 January, 16
+          .media
+            .media-body
+              h5.media-heading
+                a(href='#') Addition features on footer
+              p.mb-0 Tuaiulla vel metus scelerisque ante sollicitudin commodo.
+              p
+                span.badge.badge-pill.badge-warning On hold
+                span.badge.badge-default.badge-default.badge-default.badge-icon.float-sm-right
+                  i.la.la-calendar
+                  |  24 January, 16
+          .media
+            .media-body
+              h5.media-heading
+                a(href='#') Remove TODO comments
+              p.mb-0 Mulullametu vel  scelerisque ante sollicitudin commodo.
+              p
+                span.badge.badge-pill.badge-info Resolved
+                span.badge.badge-default.badge-default.badge-default.badge-icon.float-sm-right
+                  i.la.la-calendar
+                  |  25 January, 16
+  span.fullscreen-search-close
+.fullscreen-search-overlay

@@ -1,0 +1,47 @@
+//- =========================================================================================
+	File Name: headers-breadcrumbs-with-round-button.pug
+	Description: Page header with page title, breadcrumbs, description and round buttons.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Breadcrumbs with round buttons"
+	- var pageSubTitle = "Page header with round buttons"
+	- var description  = "Page header with page title, breadcrumbs, content title and round buttons."
+	- var activeMenu   = "headers-breadcrumbs-with-round-button"
+
+block page-header
+	include page-headers/breadcrumbs-with-round-button
+
+//- Include page content in page block
+append content
+	include ../contents/headers-breadcrumbs-with-round-button.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

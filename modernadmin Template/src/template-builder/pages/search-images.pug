@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: search-images.pug
+	Description: Images search result page.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Search Images"
+	- var pageSubTitle = "Search Images Result"
+	//- var description  = ""
+	- var activeMenu   = "search-images"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"inde.html",name:"Home"},{url:"#",name:"Search"}, {name:"Search Images"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/search-images.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/search.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/gallery.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/gallery/photo-swipe/photoswipe-script.js', type='text/javascript')

@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: c3-data-chart.pug
+	Description: C3 data chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "C3 Data Chart"
+	- var pageSubTitle = "c3 data chart examples"
+	- var description  = "Examples of data charts like columns oriented data, row oriented data, data from url, data color, data order, category data."
+	- var activeMenu   = "c3-data-chart"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"C3 Charts"}, {name:"Data Chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/c3-data-chart.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/c3.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/d3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/c3.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/charts/c3-chart.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/c3/data/category-data.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/data/column-oriented.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/data/data-color.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/data/data-from-url.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/data/data-order.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/c3/data/row-oriented.js', type='text/javascript')

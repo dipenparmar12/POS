@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: vertical-nav-right-side-icon.pug
+	Description: The right side icons navigation option change top level navigation menu item icon position to right side.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Right side icons"
+	- var pageSubTitle = "Vertical navigation with right side icons"
+	- var description  = "The right side icons navigation option change top level navigation menu item  icon position to right side."
+	- var activeMenu   = "vertical-nav-right-side-icon"
+
+append verticalMenuConfig
+	- var menuIconRight = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navigation"}, {name:"Right side icons"}])
+
+//- Include page content in page block
+append content
+	include ../contents/vertical-nav-right-side-icon.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

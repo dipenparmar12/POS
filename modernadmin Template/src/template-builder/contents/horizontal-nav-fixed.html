@@ -1,0 +1,228 @@
+<!-- Description -->
+<section id="description" class="card">
+    <div class="card-header">
+        <h4 class="card-title">Description</h4>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>Default horizontal navigation type is static navigation. Horizontal fixed navigation menu set to be fix on scroll of container section.</p>
+                <div class="alert bg-success alert-icon-left mb-2" role="alert">
+                  <span class="alert-icon"><i class="la la-pencil-square"></i></span>
+                  <strong>Experience it!</strong>
+                  <p>Please check horizontal layout template fixed navigation example to experience it live.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Description -->
+<!-- CSS Classes -->
+<section id="css-classes" class="card">
+    <div class="card-header">
+        <h4 class="card-title">CSS Classes</h4>
+        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                <li><a data-action="close"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>This table contains all classes related to the horizontal fixed navigation option.</p>
+                <p>All these options can be set via following classes:</p>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Classes</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>.navbar-fixed</code></th>
+                                <td>To create horizontal fixed navigation, you need to add <code>.navbar-fixed</code> class in navigation <code>&lt;div&gt;</code> tag. Refer HTML markup line no 12.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ CSS Classes -->
+<!-- HTML Markup -->
+<section id="html-markup" class="card">
+    <div class="card-header">
+        <h4 class="card-title">HTML Markup</h4>
+        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                <li><a data-action="close"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>This section contains HTML Markup to create horizontal fixed navigation. It define where to add css classes to make horizontal fixed navigation.</p>
+                <ul>
+                    <li><span class="text-bold-600">Line no 12:</span> Contain the <code>.navbar-fixed</code> class to set horizontal navigation fixed.</li>
+                </ul>
+                <pre data-line="12" class="language-markup">
+                <code class="language-markup">
+                    &lt;!DOCTYPE html&gt;
+                      &lt;html lang="en"&gt;
+                        &lt;head&gt;&lt;/head&gt;
+                        &lt;body data-menu="vertical-menu" class="vertical-layout vertical-menu 2-column menu-expanded"&gt;
+
+                          &lt;!-- fixed-top--&gt;
+                          &lt;nav role="navigation" class="header-navbar navbar-expand-sm navbar navbar-with-menu fixed-top navbar-dark navbar-shadow navbar-border"&gt;
+                              ...
+                          &lt;/nav&gt;
+
+                          &lt;!-- BEGIN Horizontal Navigation--&gt;
+                          &lt;div role="navigation" data-menu="menu-wrapper" class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-light navbar-fixed""&gt;
+                              ...
+                          &lt;/div&gt;
+                          &lt;!-- END Horizontal Navigation--&gt;
+
+                          &lt;!-- BEGIN Content--&gt;
+                          &lt;div class="content stack-content container-fluid"&gt;
+                              &lt;div class="content-wrapper"&gt;
+                                  &lt;!-- content header--&gt;
+                                  &lt;div class="content-header row"&gt;
+                                      ...
+                                  &lt;/div&gt;
+                                  &lt;!-- content header--&gt;
+
+                                  &lt;!-- content body--&gt;
+                                  &lt;div class="content-body"&gt;
+                                      ...
+                                  &lt;/div&gt;
+                                  &lt;!-- content body--&gt;
+
+                              &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;!-- END Content--&gt;
+
+                          &lt;!-- START FOOTER DARK--&gt;
+                          &lt;footer class="footer footer-dark"&gt;
+                              ...
+                          &lt;/footer&gt;
+                          &lt;!-- START FOOTER DARK--&gt;
+
+                        &lt;/body&gt;
+                      &lt;/html&gt;
+                </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ HTML Markup -->
+<!-- PUG Code -->
+<section id="pug-configuration" class="card">
+    <div class="card-header">
+        <h4 class="card-title">PUG Configuration</h4>
+        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                <li><a data-action="close"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>Modern Admin use PUG as template engine to generate pages and whole template quickly using node js, for getting start with PUG usage & template generating process please refer template documentation.</p>
+                <h5 class="card-title mt-2">PUG Variables</h5>
+                <p>This table contains required PUG variables to generate horizontal fixed navigation.</p>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Block</th>
+                                <th>Variable</th>
+                                <th>Datatype</th>
+                                <th>Value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>horizontalMenuConfig</code></th>
+                                <td><code>menuType</code></td>
+                                <td><code>string</code></td>
+                                <td><code>'navbar-fixed'</code></td>
+                                <td><code>horizontalMenuConfig</code> block has a <code>menuType</code> variable, it contains navigation specific classes in that you need to set <code>'navbar-fixed'</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert bg-info alert-icon-left mb-2" role="alert">
+                  <span class="alert-icon"><i class="la la-info"></i></span>
+                  Modern Admin Template <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation" target="_blank" class="white"><u>documentation</u></a> has full list of all blocks, datatype, variables and their description table. Please review it for more configuration options.
+                </div>
+                <h5 class="card-title mt-2">PUG Code</h5>
+                <p>Use following PUG code to generate page or template having horizontal fixed navigation.</p>
+                <ul>
+                    <li><span class="text-bold-600">Line no 20-21:</span> Set horizontal fixed navigation class to <code>menuType</code> variable value as <code>'navbar-fixed'</code> in <code>horizontalMenuConfig</code> block.</li>
+                    <li><span class="text-bold-600">Line no 27-28:</span> <code>content</code> block has content section html file included <code>include ../contents/horizontal-fixed-navigation.html</code>, which can be customizable on page level.</li>
+                </ul>
+                <p>If you want to use horizontal fixed navigation options on page level you need to define it on page it self. This template has one example pug file for <code>vertical-fixed-navigation.pug</code>, however you can use it on template level but it will generate whole template have horizontal fixed navigation.</p>
+                <pre data-line="20-21, 27-28" data-line-offset="11" class="language-pug">
+              <code class="language-pug">
+              block pageVars
+                - var pageTitle    = "Fixed Navigation"
+                - var pageSubTitle = "Horizontal fixed navigation menu"
+                - var description  = "The fixed horizontal navigation options used to make your navigation set to be fixed."
+                - var activeMenu   = "horizontal-nav-fixed"
+
+              extends template
+
+              append horizontalMenuConfig
+                - var horizontalMenuType = "navbar-fixed"
+
+              append breadcrumbs
+                +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navbars"}, {name:"Fixed Navigation"}])
+
+              //- Include page content in page block
+              append content
+                include ../contents/horizontal-nav-fixed.html
+
+              //- Vendor CSS
+              //------------------------------
+              //- Add Vendor specific CSS
+              append vendorcss
+
+              //- Page CSS
+              //------------------------------
+              //- Add custom page specific CSS
+              append pagecss
+
+              //- Vendor JS
+              //------------------------------
+              //- Add vendor specific JS
+              append vendorjs
+
+              //- Page JS
+              //------------------------------
+              //- Add custom page specific JS
+              append pagejs
+              </code>
+              </pre>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ PUG Code -->

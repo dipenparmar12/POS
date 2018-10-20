@@ -1,0 +1,45 @@
+/*=========================================================================================
+  File Name: progress.scss
+  Description: Extended bootstrap progress bar scss.
+  ----------------------------------------------------------------------------------------
+  Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+  Version: 1.0
+  Author: PIXINVENT
+  Author URL: http://www.themeforest.net/user/pixinvent
+  ----------------------------------------------------------------------------------------
+
+  Modifiers:       `progress-lg`
+                   `progress-md`
+                   `progress-sm`
+                   `progress-xs`
+
+==========================================================================================*/
+
+// Size Modifier
+// ========================================================================
+
+.progress{
+  margin-bottom: 3rem;
+  &:last-child{
+    margin-bottom: 1rem;
+  }
+  &.progress-xl{
+    height: $progress-size-xl !important;
+  }
+  &.progress-lg{
+    height: $progress-size-lg !important;
+  }
+  &.progress-md{
+    height: $progress-size-md !important;
+  }
+  &.progress-sm{
+    height: $progress-size-sm !important;
+  }
+  &.progress-xs{
+    height: $progress-size-xs !important;
+  }
+
+  &.box-shadow{
+    box-shadow: 0px 10px 15px 0px rgba($gray-600, 0.3)
+  }
+}

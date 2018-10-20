@@ -1,0 +1,42 @@
+//- =========================================================================================
+	File Name: dashboard-crypto.pug
+	Description: Crypto Dashboard
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Crypto Dashboard"
+	- var activeMenu  = "dashboard-crypto"
+
+block page-header
+
+//- Include page content in page block
+append content
+	include ../contents/dashboard-crypto.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/cryptocoins/cryptocoins.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/chart.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+append pagejs
+	//- //- Crypto Dashboard JS
+	script(src=app_assets_path + '/js/scripts/pages/dashboard-crypto.js', type='text/javascript')

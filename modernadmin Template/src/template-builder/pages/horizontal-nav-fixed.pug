@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: horizontal-nav-fixed.pug
+	Description: The fixed horizontal navigation options used to make your navigation set to be fixed.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Fixed Navigation"
+	- var pageSubTitle = "Horizontal fixed navigation menu"
+	- var description  = "The fixed horizontal navigation options used to make your navigation set to be fixed."
+	- var activeMenu   = "horizontal-nav-fixed"
+
+
+
+append horizontalMenuConfig
+	- var horizontalMenuType = "navbar-fixed"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navbars"}, {name:"Fixed Navigation"}])
+
+//- Include page content in page block
+append content
+	include ../contents/horizontal-nav-fixed.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript', src=app_assets_path + '/vendors/js/ui/prism.min.js')
+	script(type='text/javascript', src=app_assets_path + '/vendors/js/ui/jquery.sticky.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

@@ -1,0 +1,355 @@
+// The dropdown menu
+.dropdown{
+    &.dropdown-demo{
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.25rem;
+    }
+    .dropdown-menu {        
+        border: 1px solid #E4E5EC;        
+        border-radius: $border-radius-lg;
+        transform-origin: top;
+        animation-fill-mode: forwards;
+        transform: scale(1, 0);
+        transition: all 0.2s linear;
+        margin: -0.1rem 0 0;
+        box-shadow: 0px 5px 75px 2px rgba(64, 70, 74, 0.2);
+        min-width: 11rem;
+         .dropdown-header{
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            color:$gray-300;
+         }
+        .dropdown-item{
+            padding: 10px 20px;
+            width: 100%;
+            &:active, &.active{
+                a{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .dropdown-divider{
+        border: 1px solid #E4E5EC;
+    }
+    i{
+        margin-right:0.5rem;
+    }
+}
+.dropdown{
+    .dropdown-menu {        
+        border: 1px solid #E4E5EC;        
+        border-radius: $border-radius-lg;
+        transform-origin: top;
+        animation-fill-mode: forwards;
+        transform: scale(1, 0);
+        transition: all 0.2s linear;
+        margin: -0.1rem 0 0;
+        box-shadow: 0px 5px 75px 2px rgba(64, 70, 74, 0.2) !important;
+        min-width: 11rem;
+         .dropdown-header{
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            color:$gray-300;
+         }
+        .dropdown-item{
+            padding: 10px 20px;
+            width: 100%;
+            &:active, &.active{
+                a{
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+.nav-item{
+    i{
+        margin-right:0.5rem;
+    }
+}
+
+.show {
+    > .dropdown-menu {
+        transform: scale(1, 1);
+        opacity:1;
+        display: block;
+    }   
+}
+
+.dropdown-toggle {
+  // changed icon caret  
+
+  &::after {
+    font-size: 0.8rem;
+    font-family: 'LineAwesome';
+    content: "\f110" !important;
+    border:none !important;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    padding: 0 2px 0 6px;
+    margin: 0 0.3em 0 0;
+    vertical-align: 0;
+  }
+  // hide default arrow to show custom icon DD
+  &.nav-hide-arrow{
+    &::after {
+        display: none;
+    }
+  }
+
+  // Prevent the focus on the dropdown toggle when closing dropdowns
+  &:focus {
+    outline: 0;
+  }
+}
+// Horizontal layout navigation menu dropdown arrow
+.navbar-horizontal{
+    .dropdown-menu .dropdown-submenu > a:after, .dropdown-menu .dropdown-submenu > button:after{
+        font-size: 0.85rem;
+        right: 12px;
+    }
+    .dropdown-toggle::after {
+        top: 14px !important;
+  }
+}
+// Button with dropdown arrow
+
+// Add extra class to `.dropdown-menu` to flip the alignment of the dropdown menu with the parent.
+.dropdown-menu-right {
+  // left: auto !important;
+  right: 0;
+}
+
+// Multileval Dropdown Menu
+// -------------------------
+.dropdown-menu{
+    box-shadow: none;
+    .dropdown-submenu{
+        position:relative;
+        &:hover {
+            .dropdown-menu{
+                display:block
+            }
+        }
+        > .dropdown-menu{
+            top:0;
+            left:100%;
+            margin-top:-6px;
+            margin-left:-1px;
+            &.open-left{ 
+                left: auto;
+                right: 100%;
+            }
+        }
+        > a:after, > button:after{
+            font-family: 'LineAwesome';
+            content: "\f112" !important;
+            right: 15px;
+            font-size: 1rem;
+            float: right;
+            border: none;
+            position: absolute;
+        }
+        :hover{
+            >a:after, >button:after{
+                border-left-color:#555;
+            }
+        }
+        .pull-left{
+            float:none;
+            >.dropdown-menu{
+                left:-100%;
+                margin-left:10px;
+            }
+        }
+    }
+}
+
+// Highlight header
+.dropdown-header {
+    text-transform: uppercase;
+    &.highlight{
+        color: #2b2d2f;
+        text-decoration: none;
+        background-color: #f5f5f5;
+    }
+}
+
+// Color theme active & hover
+.btn-secondary ~ .dropdown-menu{
+    .dropdown-item.active{
+        background-color: darken(#ffffff, 20%);
+    }
+}
+.btn-primary ~ .dropdown-menu{
+    .dropdown-item.active{
+        background-color: $primary;
+    }
+}
+.btn-success ~ .dropdown-menu{
+    
+    .dropdown-item.active{
+        background-color: $success;
+    }
+}
+.btn-danger ~ .dropdown-menu{
+    
+    .dropdown-item.active{
+        background-color: $danger;
+    }
+}
+.btn-info ~ .dropdown-menu{
+    
+    .dropdown-item.active{
+        background-color: $info;
+    }
+}
+.btn-warning ~ .dropdown-menu{
+    
+    .dropdown-item.active{
+        background-color: $warning;
+    }
+}
+
+// Arrow
+.dropdown-menu{
+    &.arrow {
+        margin-top: 12px;
+        &:after, &:before {
+            position: absolute;
+            left: 10px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            content: '';
+            border: 7px solid transparent;
+            border-top-width: 0;
+        }
+        &:before{
+            top: -7px;
+            border-bottom-color: lighten(#000000, 70%);
+        }
+        &:after{
+            top: -6px;
+            border-bottom-color: #fff;
+        }
+    }
+    .arrow-left{
+        margin-left: 7px !important;
+        &:after, &:before {
+            position: absolute;
+            top: 10px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            content: '';
+            border: 7px solid transparent;
+            border-left-width: 0;
+        }
+        &:before{
+            left: -8px;
+            border-right-color: lighten(#000000, 70%);
+        }
+        &:after{
+            left: -7px;
+            border-right-color: #fff;
+        }
+    }
+    .arrow-right{
+        margin-right: 7px !important;
+        &:after, &:before {
+            position: absolute;
+            top: 10px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            content: '';
+            border: 7px solid transparent;
+            border-right-width: 0;
+        }
+        &:before{
+            right: -7px;
+            border-left-color: lighten(#000000, 70%);
+        }
+        &:after{
+            right: -6px;
+            border-left-color: #fff;
+        }
+    }
+}
+
+.dropup {
+    .dropdown-toggle {
+        // changed icon dropup caret
+        &::after {
+            content: "\f113" !important;
+        }
+    }
+    .dropdown-menu {
+        top: auto;
+        // bottom: 100%;
+        &.arrow{
+            margin-bottom: 12px;
+            &:after, &:before {
+                top: auto;
+                border-top-width: 7px;
+                border-bottom-width: 0;
+            }
+            &:before {
+                bottom: -8px;
+                border-top-color: lighten(#000000, 70%);
+            }
+            &:after{
+                bottom: -6px;
+                border-top-color: #fff;
+            }
+        }
+    }
+    .dropdown-submenu {
+        .dropdown-menu {
+            bottom: auto;
+            top: 0;
+        }
+    }
+}
+
+// Sizes
+
+.dropdown-menu-xl a,
+.dropdown-menu-xl button {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+  font-size: 1.2rem;
+  line-height: 1.43;
+}
+.dropdown-menu-lg a,
+.dropdown-menu-lg button {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+.dropdown-menu-sm a,
+.dropdown-menu-sm button {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  font-size: 0.86rem;
+  line-height: 1.67;
+}
+
+.dropdown-item{
+    &.buttons-columnVisibility.active{
+        color: $black;
+    }
+}
+.drilldown-menu{
+    .dropdown-item{
+        &.active,&:active{
+            &.hover,&:hover{
+                color: #fff;
+            }
+        }
+    }
+}

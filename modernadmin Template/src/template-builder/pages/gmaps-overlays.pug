@@ -1,0 +1,41 @@
+//- =========================================================================================
+	File Name: gmaps-overlays.pug
+	Description: Gmaps overlays examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "gmaps - Overlays"
+	- var pageSubTitle = "Overlay Examples"
+	- var description = "gmaps overlays examples include polylines, overlays, polygons, geoJson Polygons maps."
+	- var activeMenu   = "gmaps-overlays"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"gmaps"}, {name:"Overlays"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/gmaps-overlays.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyBDkKetQwosod2SZ7ZGCpxuJdxY3kxo5Po', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/gmaps.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/gmaps/overlays.js', type='text/javascript')

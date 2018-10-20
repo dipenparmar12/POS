@@ -1,0 +1,23 @@
+.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+  h3.content-header-title.mb-0.d-inline-block #{pageTitle}
+  .row.breadcrumbs-top.d-inline-block
+    block breadcrumbs
+      +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs top with description"}])
+.content-header-right.col-md-6.col-12
+  .dropdown.float-md-right
+    button#dropdownBreadcrumbButton.btn.btn-danger.dropdown-toggle.round.btn-glow.px-2(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+      | Actions
+    .dropdown-menu(aria-labelledby='dropdownBreadcrumbButton')
+        a.dropdown-item(href='#')
+          i.la.la-calendar-check-o
+          |  Calender
+        a.dropdown-item(href='#')
+          i.la.la-cart-plus
+          |  Cart
+        a.dropdown-item(href='#')
+          i.la.la-life-ring
+          |  Support
+        .dropdown-divider
+        a.dropdown-item(href='#')
+          i.la.la-cog
+          |  Settings

@@ -1,0 +1,26 @@
+//- =========================================================================================
+	File Name: component-buttons-extended.pug
+	Description: Buttons with built-in loading indicators, effectively bridging the gap between action and feedback.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Buttons Extended"
+	- var pageSubTitle  = "Buttons with built-in loading indicators"
+	- var description  = "Extended buttons effectively bridging the gap between action and buttons."
+	- var activeMenu = "component-buttons-extended"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Buttons Extended"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-buttons-extended.html

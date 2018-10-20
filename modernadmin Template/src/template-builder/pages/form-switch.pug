@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: form-switch.pug
+	Description: Form Fields checkboxes and radios.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Switch"
+	- var pageSubTitle = "Turn checkboxes and radio buttons in switches"
+	- var description  = "Bootstrap switch and switchery are best switches with many options."
+	- var activeMenu = "form-switch"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Form Components"}, {name:"Switch"}])
+
+//- Include page content in page block
+append content
+	include ../contents/form-switch.html
+
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/toggle/bootstrap-switch.min.css')
+	//- Switchery CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/toggle/switchery.min.css')
+
+append vendorjs
+	//- Bootstrap Switch JS
+	script(src=app_assets_path + '/vendors/js/forms/toggle/bootstrap-switch.min.js', type='text/javascript')
+	//- Bootstrap checkbox JS
+	script(src=app_assets_path + '/vendors/js/forms/toggle/bootstrap-checkbox.min.js', type='text/javascript')
+	//- Switchery JS
+	script(src=app_assets_path + '/vendors/js/forms/toggle/switchery.min.js', type='text/javascript')
+
+append pagejs
+	//- Template JS for checkboxes and radios
+	script(src=app_assets_path + '/js/scripts/forms/switch.js', type='text/javascript')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/forms/switch.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/simple-line-icons/style.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-switch.css')

@@ -1,0 +1,270 @@
+<!-- Date Picker section start -->
+<section id="date-picker">
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Examples</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <fieldset class="form-group">
+                            <label>Default Functionality</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control datepicker-default" />
+                            </div>
+                            <small>Choose a date, click elsewhere on the page (blur the input), or hit the Esc key to close. If a date is chosen, feedback is shown as the input's value.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Animations</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control datepicker-animation" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control dp-animation">
+                                        <option>Select Animation</option>
+                                        <option value="show">Show (default)</option>
+                                        <option value="slideDown">Slide down</option>
+                                        <option value="fadeIn">Fade in</option>
+                                        <option value="blind">Blind (UI Effect)</option>
+                                        <option value="bounce">Bounce (UI Effect)</option>
+                                        <option value="clip">Clip (UI Effect)</option>
+                                        <option value="drop">Drop (UI Effect)</option>
+                                        <option value="fold">Fold (UI Effect)</option>
+                                        <option value="slide">Slide (UI Effect)</option>
+                                        <option value="">None</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <small>Use different animations when opening or closing the datepicker. Choose an animation from the dropdown, then click on the input to see its effect. You can use one of the three standard animations or any of the UI Effects.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Dates In Other Months</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-other-month" />
+                            </div>
+                            <small>The datepicker can show dates that come from other than the main month being displayed. These other dates can also be made selectable.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Display Button Bar</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-button-bar" />
+                            </div>
+                            <small>Display a button for selecting Today's date and a Done button for closing the calendar with the boolean showButtonPanel option. Each button is enabled by default when the bar is displayed, but can be turned off with additional options. Button text is customizable.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Display Month & Year Menu</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-month-year" />
+                            </div>
+                            <small>Show month and year dropdowns in place of the static month/year header to facilitate navigation through large time frames. Add the boolean <code>changeMonth</code> and <code>changeYear</code> options.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Display Multiple Months</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-multiple-months" />
+                            </div>
+                            <small>Set the <code>numberOfMonths</code> option to an integer of 2 or more to show multiple months in a single datepicker.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Display Inline</label>
+                            <div class="dp-inline"></div>
+                            <small>Display the datepicker embedded in the page instead of in an overlay. Simply call .datepicker() on a div instead of an input.</small>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Examples</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+
+                        <fieldset class="form-group">
+                            <label>Constrain Input</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-constrain-input" />
+                            </div>
+                            <small>When <code>true</code>, entry in the input field is constrained to those characters allowed by the current <code>dateFormat</code> option.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Year Range</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-year-range" />
+                            </div>
+                            <small>The range of years displayed in the year drop-down: either relative to today's year ("-nn:+nn"), relative to the currently selected year ("c-nn:c+nn"), absolute ("nnnn:nnnn"), or combinations of these formats ("nnnn:-nn"). Note that this option only affects what appears in the drop-down, to restrict which dates may be selected use the minDate and/or maxDate options.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Step Months</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-step-months" />
+                            </div>
+                            <small>Set how many months to move when clicking the previous/next links. Currently its set to step 3 months. Default is 1.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Formate Date</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control dp-format-date" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control date-formats">
+                                        <option value="mm/dd/yy">Default - mm/dd/yy</option>
+                                        <option value="yy-mm-dd">ISO 8601 - yy-mm-dd</option>
+                                        <option value="d M, y">Short - d M, y</option>
+                                        <option value="d MM, y">Medium - d MM, y</option>
+                                        <option value="DD, d MM, yy">Full - DD, d MM, yy</option>
+                                        <option value="&apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy">With text - 'day' d 'of' MM 'in the year' yy</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <small>Display date feedback in a variety of ways. Choose a date format from the dropdown, then click on the input and select a date to see it in that format.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Icon Trigger</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-icon-trigger" />
+                            </div>
+                            <small>Click the icon next to the input field to show the datepicker. Set the datepicker to open on focus (default behavior), on icon click, or both.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Populate Alternate Field</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control dp-for-alternate" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control dp-alternate" />
+                                </div>
+                            </div>
+                            <small>Populate an alternate field with its own date format whenever a date is selected using the <code>altField</code> and <code>altFormat</code> options. This feature could be used to present a human-friendly date for user selection, while passing a more computer-friendly date through for further processing.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Restrict Date Range</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-date-range" />
+                            </div>
+                            <small>Restrict the range of selectable dates with the minDate and maxDate options. Set the beginning and end dates as actual dates (new Date(2009, 1 - 1, 26)), as a numeric offset from today (-20), or as a string of periods and units ('+1M +10D'). For the last, use 'D' for days, 'W' for weeks, 'M' for months, or 'Y' for years.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Show Week Of The Year</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control dp-week-year" />
+                            </div>
+                            <small>The datepicker can show the week of the year. The default calculation follows the ISO 8601 definition: the week starts on Monday, the first week of the year contains the first Thursday of the year. This means that some days from one year may be placed into weeks 'belonging' to another year.</small>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Select A Date Range</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>From</h4>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control dp-date-range-from" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>To</h4>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ft-calendar"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control dp-date-range-to" />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Date Picker section end -->

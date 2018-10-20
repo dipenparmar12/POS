@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: google-bubble-charts.pug
+	Description: google bubble chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "google Bubble Chart"
+	- var pageSubTitle = "google bubble chart examples"
+	- var description  = "A bubble chart is used to visualize a data set with two to four dimensions. The first two dimensions are visualized as coordinates, the third as color and the fourth as size."
+	- var activeMenu   = "google-bubble-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Google Charts"}, {name:"Bubble Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/google-bubble-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='https://www.google.com/jsapi', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/google/bubble/bubble.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/bubble/bubble-color.js', type='text/javascript')

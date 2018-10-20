@@ -1,0 +1,291 @@
+.group-area {
+    margin-bottom: 3rem;
+}
+
+// Used many times
+.block {
+    display: block;
+    width: 100%;
+}
+
+select[multiple='multiple'] {
+    overflow: hidden;
+}
+
+
+/* Input with icon */
+
+//TODO: 2 .has-icon-left need to merge and remove it.
+.has-icon-left {
+    .form-control {
+        padding-left: 2.5rem;
+    }
+}
+
+.form-control-position {
+    position: absolute;
+    // top: 4px;
+    top: 1px;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 3.2rem;
+    // line-height: 2.5rem;
+    text-align: center;
+}
+
+select.form-control:not([size]):not([multiple]),
+input.form-control {
+    // XtraLarge
+    &.input-xl {
+        @include input-field-size(3.75rem, $input-padding-y-xl, $input-padding-x-xl + 0.5, $font-size-xl, $line-height-xl, $input-border-radius-xl);
+    }
+    &.form-group-xl {
+        .form-control {
+            @include input-field-size(3.75rem, $input-padding-y-xl, $input-padding-x-xl, $font-size-xl, $line-height-xl, $input-border-radius-xl);
+        }
+        .form-control-static {
+            height: $input-height-xl;
+            padding: $input-padding-y-xl $input-padding-x-xl;
+            font-size: $font-size-xl;
+            line-height: $line-height-xl;
+        }
+    }
+    // Large
+    &.input-lg {
+        @include input-field-size(3rem, $input-padding-y-lg - 0.25, $input-padding-x-lg - 0.5, $font-size-lg, $line-height-lg, $input-border-radius-lg);
+    }
+    &.form-group-lg {
+        .form-control {
+            height: 3rem;
+            padding: $input-padding-y-lg $input-padding-x-lg;
+            font-size: $font-size-lg;
+            line-height: $line-height-lg;
+            border-radius: $input-border-radius-lg;
+        }
+        select.form-control {
+            height: $input-height-lg;
+            line-height: $input-height-lg;
+        }
+        textarea.form-control,
+        select[multiple].form-control {
+            height: auto;
+        }
+        .form-control-static {
+            height: $input-height-lg;
+            min-height: ($line-height-base + $font-size-lg);
+            padding: ($input-padding-y-lg + 1) $input-padding-x-lg;
+            font-size: $font-size-lg;
+            line-height: $line-height-lg;
+        }
+    }
+    // Small
+    &.input-sm {
+        @include input-field-size(2rem, $input-padding-y-sm + 0.45, $input-padding-x-sm + 0.2, $font-size-sm + 0.10, $line-height-sm, $border-radius-sm);
+    }
+    &.form-group-sm {
+        .form-control {
+            /* font-size: $font-size-sm;
+                line-height: $line-height-sm; */
+            @include input-field-size($input-height-sm, $input-padding-y-sm, $input-padding-x-sm, $font-size-sm, $line-height-sm, $input-border-radius-sm);
+        }
+        .form-control-static {
+            font-size: $font-size-sm;
+            line-height: $line-height-sm;
+        }
+    }
+    // XSmall
+    &.input-xs {
+        @include input-field-size($input-height-xs, $input-padding-y-xs - 0.1, $input-padding-x-xs + 0.25, $font-size-xs, $line-height-xs, $border-radius-xs);
+    }
+    &.form-group-xs {
+        .form-control {
+            @include input-field-size($input-height-xs, $input-padding-y-xs, $input-padding-x-xs, $font-size-xs, $line-height-xs, $border-radius-xs);
+        }
+        .form-control-static {
+            height: $input-height-xs;
+            padding: $input-padding-y-xs $input-padding-x-xs;
+            font-size: $font-size-xs;
+            line-height: $line-height-xs;
+        }
+    }
+    /*--------------------------
+        Sizing
+        --------------------------*/
+    // XLarge
+    &.input-xl + .form-control-position,
+    &.form-group-xl > .form-control-position {
+        width: $input-height-xl;
+        height: $input-height-xl;
+        line-height: $input-height-xl;
+        top: 4px;
+    }
+    // Large
+    &.input-lg + .form-control-position,
+    &.form-group-lg > .form-control-position {
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        top: 4px;
+    }
+    // Small
+    &.input-sm + .form-control-position,
+    &.form-group-sm > .form-control-position {
+        width: $input-height-sm;
+        height: $input-height-sm;
+        line-height: $input-height-sm;
+        top: 2px;
+    }
+    // XSmall
+    &.input-xs + .form-control-position,
+    &.form-group-xs > .form-control-position {
+        width: $input-height-xs;
+        height: $input-height-xs;
+        line-height: $input-height-xs;
+        top: 0;
+    }
+}
+
+
+/*---------------------------------
+Input Icon
+---------------------------------*/
+
+.position-relative {
+    .form-control {
+        padding-right: $input-height;
+        &.input-xl {
+            padding-right: $input-height-xl;
+        }
+        &.input-lg {
+            padding-right: $input-height-lg;
+        }
+        &.input-sm {
+            padding-right: $input-height-sm;
+        }
+        &.input-xs {
+            padding-right: $input-height-xs;
+        }
+    }
+}
+
+
+/* Input Icon left */
+
+.has-icon-left {
+    .form-control {
+        padding-right: $input-padding-x;
+        padding-left: $input-height;
+        &.input-xl {
+            padding-right: $input-padding-y-xl;
+            padding-left: $input-height-xl;
+        }
+        &.input-lg {
+            padding-right: $input-padding-x-lg;
+            padding-left: $input-height-lg;
+        }
+        &.input-sm {
+            padding-right: $input-padding-x-sm;
+            padding-left: 1.7rem;
+        }
+        &.input-xs {
+            padding-right: $input-padding-x-xs;
+            padding-left: $input-height-xs;
+        }
+    }
+    .form-control-position {
+        right: auto;
+        left: inherit;
+    }
+}
+
+input[type="color"] {
+    height: $input-height;
+}
+
+input[type="date"].form-control,
+input[type="time"].form-control,
+input[type="datetime-local"].form-control,
+input[type="month"].form-control {
+    line-height: $line-height-base;
+}
+
+.font-size-large {
+    font-size: $font-size-lg;
+}
+
+.font-size-base {
+    font-size: $font-size-base;
+}
+
+.font-size-small {
+    font-size: $font-size-sm;
+}
+
+.font-size-xsmall {
+    font-size: $font-size-xs;
+}
+
+
+.form-group-style {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    overflow: hidden;
+    label {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .form-control {
+        border: none;
+        padding-left: 0;
+        margin-top: -4px;
+        background: none;
+    }
+    &.focus {
+        background-color: #f0f0f0;
+        label {
+            opacity: 0.5;
+        }
+    }
+    label.filled {
+        opacity: 0.5;
+    }
+}
+
+.input-group-xs {
+    .form-control,
+    .input-group-addon,
+    .input-group-btn > button {
+        padding: 0.175rem 0.5rem;
+        font-size: 0.725rem;
+        line-height: 1.677777;
+        border-bottom-left-radius: 0.175rem;
+        border-top-left-radius: 0.175rem;
+    }
+    .input-group-btn > button {
+        border-radius: 0.175rem;
+    }
+}
+// TODO:AJ: Removed margin
+/* .input-group-btn > button {
+    &.dropdown-toggle::after{
+        margin-top: -1.75rem;
+    }
+} */
+.input-group-addon{
+    padding: 0.75rem;
+}
+
+.floating-label-form-group-with-focus label,
+.floating-label-form-group-with-value label {
+    color: $primary !important;
+    text-transform: uppercase;
+    font-weight: 400;
+}

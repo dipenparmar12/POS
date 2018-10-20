@@ -1,0 +1,81 @@
+<!-- Interactive charts section start -->
+<section id="interactive-charts">
+    <div class="row">
+        <div class="col-12 mt-1 mb-3">
+            <h4>Interactive Charts</h4>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Live Visits</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+        <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-12">
+                            <div class="card-body">
+                                <div class="rickshaw-wrap">
+                                    <div id="live-visits"></div>
+                                    <div class="rickshaw-legend-wrap">
+                                        <div id="area-chart-legend"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-12">
+                            <div class="text-center">
+                                <canvas id="live-visits-doughnut"></canvas>
+                            </div>
+                            <div class="table-responsive mt-2">
+                                <table class="table table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Continent</th>
+                                            <th>Visits</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Asia</td>
+                                            <td>15684</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Africa</td>
+                                            <td>54789</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>America</td>
+                                            <td>89756</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Europe</td>
+                                            <td>23489</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Interactive charts section end -->

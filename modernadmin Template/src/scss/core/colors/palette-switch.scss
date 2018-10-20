@@ -1,0 +1,47 @@
+// ================================================================================================
+//   File Name: pallette-switch.scss
+//   Description: switch color system styles
+//   ----------------------------------------------------------------------------------------------
+//   Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 1.0
+//   Author: PIXINVENT
+//   Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+
+@function color-function($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  // @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}
+
+// Color palettes
+@import "palette-variables";
+// Overrides user variable
+@import "../../../../assets/scss/colors/palette-variables";
+
+@import "../../bootstrap/mixins/_gradients";
+@import "../../bootstrap/mixins/gradients";
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .bootstrap-switch{
+        .bootstrap-switch-container{
+          .bootstrap-switch-handle-on, .bootstrap-switch-handle-off{
+            &.bootstrap-switch-#{$color_name}{
+              @if (color-function($color_name, "darken-2") != null) {
+                @include gradient-y(map-get(($color),'darken-2'),map-get(($color),'lighten-1'));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

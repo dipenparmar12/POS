@@ -1,0 +1,43 @@
+- var dashLink = "../../../html/"+ useDirection +"/"+ useLayout +"/"+ "index.html"
+
+//- Horizontal navigation
+.header-navbar.navbar-expand-sm.navbar.navbar-horizontal(class=horizontalMenuType + ' ' + horizontalMenuColor, class=(menuFlipped == true ? 'navbar-flipped' : ''), class=(menuWithoutDDArrow == true ? 'navbar-without-dd-arrow' : ''), class=(menuIconRight == true ? 'navbar-icon-right' : ''), class=(menuDevider == true ? 'navbar-bordered' : ''), class=(menuShadow == true ? 'navbar-shadow' : ''), class=(menuBorder == true ? 'menu-border' : ''), role='navigation' data-menu="menu-wrapper")
+
+  //- Horizontal menu content
+  .navbar-container.main-menu-content(data-menu="menu-container", class= (centerLayout == true ? 'container center-layout' : ''))
+    //- include ../../../includes/mixins
+    +horizontalMenu([
+
+      {url:dashLink,name:"Dashboard",slug:"dashboard", icon:"la la-home", i18n:"nav.dash.main"},
+
+      {url:"#", name:"Starter kit", slug:"", i18n:"nav.starter_kit.main", icon:"la la-rocket", dropdown:"1",
+        submenu:[
+          {url:"horizontal-layout-1-column.html", name:"1 column", slug:"1-column", i18n:"nav.starter_kit.1_column"},
+          {url:"#", name:"Content Det. Sidebar", slug:"", i18n:"nav.starter_kit.3_columns_detached.main",
+            submenu:[
+              {url:"layout-content-detached-left-sidebar.html", name:"Detached left sidebar", slug:"content-detached-left-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_left_sidebar"},
+              {url:"layout-content-detached-left-sticky-sidebar.html", name:"Detached sticky left sidebar", slug:"content-detached-left-sticky-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_sticky_left_sidebar"},
+              {url:"layout-content-detached-right-sidebar.html", name:"Detached right sidebar", slug:"content-detached-right-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_right_sidebar"},
+              {url:"layout-content-detached-right-sticky-sidebar.html", name:"Detached sticky right sidebar", slug:"content-detached-right-sticky-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_sticky_right_sidebar"},
+            ]
+          },
+          {divider:"1"},
+          {url:"layout-fixed-navigation.html",name:"Fixed navigation",slug:"fixed-navigation", i18n:"nav.starter_kit.fixed_navigation"},
+          {divider:"1"},
+          {url:"layout-fixed.html",name:"Fixed layout",slug:"fixed", i18n:"nav.starter_kit.fixed_layout"},
+          {url:"layout-boxed.html",name:"Boxed layout",slug:"boxed", i18n:"nav.starter_kit.boxed_layout"},
+          {url:"layout-static.html",name:"Static layout",slug:"static", i18n:"nav.starter_kit.static_layout"},
+          {divider:"1"},
+          {url:"layout-light.html",name:"Light layout",slug:"light", i18n:"nav.starter_kit.light_layout"},
+          {url:"layout-dark.html",name:"Dark layout",slug:"dark", i18n:"nav.starter_kit.dark_layout"},
+        ]
+      },
+
+      {url:"changelog.html" ,name:"Changelog" ,slug:"changelog" ,label:"1.0", icon:"la la-file", labelcustom: "badge badge-glow badge-pill badge-default badge-danger", i18n:"nav.changelog.main"},
+      
+      {url:"https://pixinvent.ticksy.com/",name:"Raise Support",slug:"support-raise-support",icon:"la la-support"},
+      {url:"https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation",name:"Documentation",slug:"documentation",icon:"la la-folder"},
+
+    ])
+  //- /horizontal menu content
+//- Horizontal navigation

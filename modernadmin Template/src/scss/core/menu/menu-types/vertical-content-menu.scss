@@ -1,0 +1,354 @@
+/*=========================================================================================
+	File Name: vertical-content-menu.scss
+	Description: A vertical style content menu with expand and collops support. It support
+	light & dark version, filpped layout, right side icons, native scroll and borders menu
+	item seperation.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/mixins";
+@import "../../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../variables/variables";
+@import "../../variables/components-variables";
+
+// Overrides user variable
+@import "../../../../../assets/scss/variables/variables";
+@import "../../../../../assets/scss/variables/components-variables";
+
+// Import first main menu mixin
+@import "../../mixins/main-menu-mixin";
+
+
+//  Vertical Content Menu
+//=========================
+.vertical-content-menu {
+    //Vertical menu [Expanded]
+    &.menu-expanded {
+        //Navbar expanded
+        .navbar {
+            .navbar-header {
+                @include menu-navbar-width($content-menu-expanded-width);
+            }
+            &.navbar-brand-center{
+                .navbar-header{
+                    @include menu-navbar-width(auto);
+                }
+                .navbar-container {
+                    @include main-menu-width(0);
+                }
+            }
+            .navbar-container {
+                @include main-menu-width($content-menu-expanded-width);
+            }
+        }
+        // Main menu expanded
+        .main-menu {
+            width: $content-menu-expanded-width;
+            transition: 300ms ease all;
+            backface-visibility: hidden;
+            top: inherit;
+            .navigation {
+                .navigation-header {
+                    .ft-minus {
+                        display: none;
+                    }
+                }
+                > li {
+                    > a {
+                        > i {                            
+                            margin-right: 12px;
+                            float:left;
+                            &:before {
+                                font-size: 1.4rem;                                
+                            }
+                        }
+                        >span{                                
+                            display: inline-block;
+                            &.tag{
+                                position:absolute;
+                                right: 20px;
+                            }
+                        }
+                    }
+                }
+                li {
+                    @include vertical-menu-has-sub-arrow(1rem);
+                }
+            }
+            .main-menu-footer {
+                width: $content-menu-expanded-width;
+            }
+        }
+        //Content expanded
+        .content-body {
+            @include main-menu-width($content-menu-expanded-width + 28);
+            transition: 300ms ease all;
+        }
+        // Flipped menu expanded
+        &.menu-flipped {
+            //Content expanded flipped
+            .content-body {
+                @include vertical-flipped-menu($content-menu-expanded-width + 28);
+                transition: 300ms ease all;
+            }
+            @include media-breakpoint-up(sm) {
+                &:not(.boxed-layout) .main-menu {
+                    right: 20px;
+                }
+                &.boxed-layout {
+                    .main-menu {
+                        float: right;
+                        position: relative;
+                    }
+                }
+            }
+            //Navbar expanded flipped
+            .navbar {
+                .navbar-header {
+                    float: right;
+                }
+                .navbar-container {
+                    @include vertical-flipped-menu($content-menu-expanded-width);
+                }
+            }
+        }
+    }
+    //Vertical menu [Collapsed]
+    &.menu-collapsed {
+        //Navbar collapsed
+        .navbar {
+            .navbar-header {
+                @include menu-navbar-width($content-menu-expanded-width);
+            }
+            &.navbar-brand-center{
+                .navbar-header{
+                    @include menu-navbar-width(auto);
+                }
+                .navbar-container {
+                    @include main-menu-width(0);
+                }
+            }
+            .navbar-container {
+                @include main-menu-width($content-menu-expanded-width);
+            }
+        }
+        // Main menu collapsed
+        .main-menu {
+            width: $content-menu-collapsed-width;
+            transform: translateZ(-160px) translateX(-160px);
+            transform: translate3d(0, 0, 0);
+            transition: 300ms ease all;
+            top: inherit;
+            .main-menu-header .user-content {
+                padding: 20px 10px;
+            }
+            //hide header contect area & footer on collopse
+            .main-menu-footer,
+            .main-menu-header .media-body .media-heading,
+            .main-menu-header .media-body .text-muted,
+            .main-menu-header .media-right {
+                display: none;
+            }
+            .main-menu-header .media-body {
+                opacity: 0;
+            }
+            //content menu mixin
+            @include menu-content($content-menu-expanded-width, $content-menu-collapsed-width, $menu-light-color, $menu-light-bg);
+            //Navigation collapsed
+            .navigation {
+                overflow: visible;
+                > li.navigation-header {                    
+                    padding: 30px 20px 8px 20px;
+                    .ft-minus {
+                        display: block;
+                        padding: 12px 0px;
+                        text-align: center;
+                        font-size: 1.6rem;
+                    }
+                    span {                        
+                        display: none;                        
+                    }
+                }
+                > li {
+                    >a {
+                        padding: 8px 20px;   
+                        text-align: center;                     
+                        > span {
+                            visibility: hidden;
+                            opacity: 0;
+                            position: absolute;
+                            top: 0;
+                            right: -($content-menu-expanded-width);
+                            width: $content-menu-expanded-width;
+                            font-weight: 600;
+                            color: #fff;
+                            text-align: left;
+                            background-color: $primary;
+                            border-color: $primary;
+                            padding: 11px 20px;
+                        }
+                        > i {
+                            margin-right: 0;
+                            font-size: 1.4rem;
+                            visibility: visible;                            
+                        }
+                    }
+                    //hide inner span and ul for the collapsed menu 
+                        // &.hover{
+                        & > ul {
+                            display: none;
+                        }
+                        > a {
+                            > span {
+                                display: none;
+                            }
+                        }
+                        // }                 
+                }
+            }
+            .mTSWrapper {
+                overflow: visible;
+            }
+        }
+        //Content expanded
+        .content-body {
+            @include main-menu-width($content-menu-collapsed-width + 25);
+            transition: 300ms ease all;
+        }
+        // Flipped menu collapsed
+        &.menu-flipped {
+            //Content collapsed flipped
+            .content-body {
+                margin-left: 0px;
+                margin-right: $content-menu-collapsed-width + 25;
+                transition: 300ms ease all;
+            }
+            @include media-breakpoint-up(sm) {
+                &:not(.boxed-layout) .main-menu {
+                    right: 1.5rem;
+                    span.menu-title {
+                        right: $content-menu-collapsed-width;
+                    }
+                    ul.menu-content {
+                        right: $content-menu-collapsed-width;
+                        left: inherit;
+                    }
+                }
+                &.boxed-layout {
+                    .main-menu {
+                        float: right;
+                        position: relative;
+                    }
+                    span.menu-title {
+                        right: $content-menu-collapsed-width;
+                    }
+                    ul.menu-content {
+                        right: $content-menu-collapsed-width;
+                        left: inherit;
+                    }
+                }
+            }
+            //Navbar collapsed flipped
+            .navbar {
+                .navbar-header {
+                    float: right;
+                }
+                .navbar-container {
+                    // expanded width for this menu
+                    @include vertical-flipped-menu($content-menu-expanded-width);
+                }
+            }
+        }
+    }
+    .navbar-brand-center{
+        .content,.footer{
+            @include main-menu-width(0);
+        }
+    }
+    //Box layout specific
+    &.boxed-layout {
+        &.menu-flipped {
+            .main-men {
+                float: right;
+                position: relative;
+            }
+        }
+    }
+}
+// Collapsed menu RTL
+[data-textdirection="rtl"] body.vertical-layout{
+    &.vertical-content-menu.menu-collapsed{
+        .main-menu{
+            .navigation{
+                > li > a{
+                    padding: 12px 22px !important;
+                }  
+                > li.navigation-header .ft-minus {
+                    padding: 12px 0px;
+                }
+            }
+        }
+    }
+}
+
+// Initially menu & content width for lg and up screen
+@include media-breakpoint-up(lg) {
+    body{
+        &.vertical-content-menu{
+            .main-menu {
+                width: $content-menu-expanded-width;
+            }
+            .navbar{
+                .navbar-header{
+                    width: $content-menu-expanded-width;
+                }
+            }
+            .content-body {
+                @include main-menu-width($content-menu-expanded-width + 28);
+                transition: 300ms ease all;
+            }
+        }
+    }
+}
+
+// Initially menu & content width for md and down screen
+@include media-breakpoint-down(md) {
+    body{
+        &.vertical-content-menu{
+            .main-menu {
+                width: $content-menu-collapsed-width;
+            }
+            .navbar{
+                .navbar-header{
+                    width: $content-menu-collapsed-width;
+                }
+            }
+            .content-body {
+                @include main-menu-width($content-menu-collapsed-width + 25);
+                transition: 300ms ease all;
+            }
+        }
+    }
+}
+
+// Initially menu & content width for sm and down screen
+@include media-breakpoint-down(sm) {
+    body{
+        &.vertical-content-menu{
+            .content-body {
+                @include main-menu-width(0);
+            }
+        }
+    }
+}
+
+// Import vertical-overlay-menu.scss for small screen support
+@import "vertical-overlay-menu.scss";

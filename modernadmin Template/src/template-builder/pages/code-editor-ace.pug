@@ -1,0 +1,39 @@
+//- =========================================================================================
+	File Name: code-editor-ace.pug
+	Description: The high performance code editor for the web.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "Ace"
+	- var pageSubTitle = "An embeddable code editor written in JavaScript."
+	- var description  = "Ace matches the features and performance of native editors such as Sublime, Vim and TextMate. It can be easily embedded in any web page and JavaScript application. Ace is maintained as the primary editor for Cloud9 IDE and is the successor of the Mozilla Skywriter (Bespin) project."
+	- var activeMenu = "code-editor-ace"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"incex.html",name:"Home"},{url:"#",name:"Editors"}, {name:"Ace"}])
+
+//- Include page content in page block
+append content
+	include ../contents/code-editor-ace.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//- Ace Editor js Starts
+	script(src=app_assets_path + '/vendors/js/editors/ace/ace.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/editors/ace/ext-language_tools.js', type='text/javascript')
+	//- Ace Editor js Ends
+	
+append pagejs
+	//- Template js for Ace
+	script(src=app_assets_path + '/js/scripts/editors/editor-ace.js', type='text/javascript')

@@ -1,0 +1,66 @@
+//- =========================================================================================
+	File Name: users-contacts.pug
+	Description: Users Contacts List
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Contacts"
+	- var pageSubTitle = "Users Contacts List"
+	//- var description  = ""
+	- var activeMenu   = "users-contacts"
+
+
+
+append pageConfig
+	- var contentLayout = 'content-detached-left-sidebar'
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Users"}, {name:"Contacts"}])
+
+//- Include project content in page block
+append content
+	include ../contents/users-contacts.html
+//- Include project sidebar block
+append sidebar
+	include ../contents/users-contacts-sidebar.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/responsive.dataTables.min.css')
+	//- iCheck css
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/users.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+	//- Icheck JS
+	script(src=app_assets_path + '/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/pages/users-contacts.js', type='text/javascript')

@@ -1,0 +1,137 @@
+
+.badge{
+  color: $white;
+  font-weight: 400;
+  &[class*='badge-']{
+    [class*='icon-']{
+      line-height: 1;
+      ~span{
+        position: relative;
+        bottom: 2px;
+        padding: 0 5px;
+      }
+    }
+    span{
+      position: relative;
+      bottom: 2px;
+      padding: 0 5px;
+    }
+    a{
+      color: #fff;
+    }
+    .dropdown-toggle::after,
+    &.dropdown-toggle::after{
+      position: relative;
+      top: -2px;
+      right: 3px;
+      font-size: 1rem;
+    }
+    .dropdown-menu{
+      a{
+        color: #555;
+      }
+    }
+  }
+  &.badge-square{
+    border-radius: 0;
+  }
+  &.badge-border{
+    background-color: transparent;
+    border-width: 3px !important;
+    font-size: 85%;
+  }
+  &.badge-striped{
+    background-color: #dadada;
+    border-width: 3px !important;
+    font-size: 0.85rem;
+    color: #555;
+    a{
+      color: #555;
+    }
+  }
+  &.badge.float-right {
+    margin-left: 0.5rem;
+    margin-top: 0.15rem;
+  }
+}
+
+// badge sizes
+
+.badge-xl{
+  font-size: 1.8rem;
+}
+.badge-lg{
+  font-size: 1.2rem;
+}
+.badge-md{
+  font-size: 1rem;
+}
+.badge-sm{
+  font-size: 0.8rem;
+}
+
+// Colors
+//
+// Contextual variations (linked tags get darker on :hover).
+
+.badge-secondary {
+  // @include badge-variant($badge-secondary-bg);
+  @include badge-variant($secondary);
+}
+
+.badge-primary {
+  @include badge-variant($primary);
+}
+
+.badge-success {
+  @include badge-variant($success);
+}
+
+.badge-info {
+  @include badge-variant($info);
+}
+
+.badge-warning {
+  @include badge-variant($warning);
+}
+
+.badge-danger {
+  @include badge-variant($danger);
+}
+
+//Tag Up
+.badge-up{
+    position: absolute;
+    top: 10px;
+    right: 6px;
+}
+.badge-icon{
+  i{
+    font-size: 100%;
+    margin-right: 5px;
+  }
+}
+
+.form-control + .block-tag{
+	display:block;
+}
+.block-tag{
+	margin-top:0.5rem;
+}
+.block-area{
+	padding: 0.24rem 0.3rem;
+}
+
+//Prisam / Bootstrap tag class fix
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+  font-size: 100%;
+  font-weight: 400;
+  padding: 0;
+}

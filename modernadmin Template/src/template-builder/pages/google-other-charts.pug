@@ -1,0 +1,46 @@
+//- =========================================================================================
+	File Name: google-other-charts.pug
+	Description: google other chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Other Charts"
+	- var pageSubTitle = "other useful google charts like sankey, geo, treemap, candlestick, diff, trendlines, stick intervals and guage"
+	- var description  = "Examples of all other google charts like sankey, geo, treemap, candlestick, diff, trendlines, stick intervals and guage"
+	- var activeMenu   = "google-other-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Google Charts"}, {name:"Other Charts"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/google-other-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src='https://www.google.com/jsapi?key=AIzaSyBDkKetQwosod2SZ7ZGCpxuJdxY3kxo5Po', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/google/other/candlestick.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/diff.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/geo.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/guage.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/sankey.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/sticks-interval.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/treemap.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/google/other/trendlines.js', type='text/javascript')

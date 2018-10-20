@@ -1,0 +1,26 @@
+//- =========================================================================================
+	File Name: component-navs-component.pug
+	Description: Basic Bootstrap Navs
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Navs"
+	- var pageSubTitle = "Basic Bootstrap Navs"
+	- var description = "Navigation available in Bootstrap share general markup and styles, from the base .nav class to the active and disabled states. Swap modifier classes to switch between each style."
+	- var activeMenu  = "component-navs-component"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Navs"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-navs-component.html

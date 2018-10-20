@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: chartjs-advance-charts.pug
+	Description: Chartjs advance chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Chartjs Advance Chart"
+	- var pageSubTitle = "chartjs advance chart examples"
+	- var description  = "Examples of all other advance echarts like bubble, combo bar line, combo bar line data label and different point sizes"
+	- var activeMenu   = "chartjs-advance-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Chartjs"}, {name:"Advance Chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/chartjs-advance-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/chart.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/advance/bubble.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/advance/combo-bar-line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/advance/combo-bar-line-data-label.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/advance/different-point-sizes.js', type='text/javascript')

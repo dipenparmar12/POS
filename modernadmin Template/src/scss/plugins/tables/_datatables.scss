@@ -1,0 +1,164 @@
+// ================================================================================================
+//     File Name: datatables.scss
+//     Description: Datatables pages custom scss
+//     ----------------------------------------------------------------------------------------------
+//     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//     Version: 1.0
+//     Author: PIXINVENT
+//     Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+table.dataTable{
+  border-spacing: 0px;
+}
+.content-wrapper table.dataTable.dtr-inline.collapsed > tbody > tr {
+  > {
+    td:first-child:before, th:first-child:before {
+      background-color: $primary;
+      border-radius: 0;
+      top: 10px;
+      left: 10px;
+      box-shadow: 0 0 2px #444;
+    }
+  }
+  &.parent > {
+    td:first-child:before, th:first-child:before {
+      background-color: $danger;
+    }
+  }
+}
+
+//datatable small screen scroll x
+@include media-breakpoint-down(md) {
+  .dataTables_wrapper table {
+    display: block;
+    width: 100%;
+    min-height: .01%;
+    overflow-x: auto;
+  }
+}
+
+
+.DTFC_LeftBodyLiner {
+  top: -1px !important;
+}
+
+// Pagination
+
+div.dataTables_wrapper {
+  div.dataTables_filter label{
+    margin-top: 1rem;
+  }
+  div.dataTables_paginate ul.pagination {
+    margin: 10px 0;
+  }
+  //width: 930px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//css for vertical scroll
+
+//css for highlight td
+
+td.highlight {
+  font-weight: bold;
+  color: $primary;
+  background-color: whitesmoke !important;
+}
+
+tr.group {
+  background-color: #ededed !important;
+  &:hover {
+    background-color: #ededed !important;
+  }
+}
+
+th {
+  white-space: nowrap;
+}
+
+.toolbar {
+  float: left;
+}
+
+.no-style {
+  thead > tr > th, tfoot > tr > th {
+    border-bottom: 1px solid #e3ebf3;
+  }
+}
+
+table.dataTable.compact tbody td {
+  padding: 4px;
+}
+
+// CSS for Row selection (multiple rows)
+
+.table-striped tbody tr {
+  &.odd.selected, &.even.selected {
+    background-color: $primary;
+    color: #fff;
+  }
+}
+
+table.dataTable tbody > tr > .selected {
+  background-color: $primary;
+}
+
+// CSS for Class names
+
+a.dt-button {
+  &.red {
+    color: red;
+  }
+  &.orange {
+    color: orange;
+  }
+  &.green {
+    color: green;
+  }
+}
+
+// -- Fixed Columns --
+
+// CSS for CSS row sizing
+
+.dataex-css-row tr {
+  height: 55px;
+}
+
+// -- Focus cell custom styling --
+
+.dataex-key-customstyling td.focus {
+  outline: 1px solid #ac1212;
+  outline-offset: -3px;
+  background-color: #e3ebf3 !important;
+}
+
+// Reorder event
+// Events log for reorder event & select events
+.dt-events-log {
+  border: 1px solid #888;
+  background: #f7f7f7;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+// Individual column searching (text inputs)
+
+.dataTables_wrapper tfoot input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+td.details-control {
+  background: url('../images/datatables/resources/details_open.png') no-repeat center center;
+  cursor: pointer;
+}
+
+tr.shown td.details-control {
+  background: url('../images/datatables/resources/details_close.png') no-repeat center center;
+}
+// Datatables fixed column scroll issue fixed for bootstrap 4
+.DTFC_LeftBodyLiner, .DTFC_RightBodyLiner{
+  background: white;
+}

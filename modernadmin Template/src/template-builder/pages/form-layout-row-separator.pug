@@ -1,0 +1,28 @@
+//- =========================================================================================
+	File Name: form-layout-row-separator.pug
+	Description: Bootstrap 4 row separator forms with examples
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Row Reparator Forms"
+	- var pageSubTitle = "Row Reparator Form Layout"
+	- var description = "Add .row-separator to form tag to add border bottom to a form-group. In our example .form-horizontal is used to show the row separator functionality. You can always add more stuff like form sections, form control borders, tooltips, icons, round form controls, square form controls."
+	- var activeMenu = "form-layout-row-separator"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Form Layouts"}, {url:"#",name:"Row Separator Forms"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-layout-row-separator.html

@@ -1,0 +1,46 @@
+//- =========================================================================================
+	File Name: flot-pie-charts.pug
+	Description: Flot pie chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Flot Pie Chart"
+	- var pageSubTitle = "Flot pie chats examples"
+	- var description = "A pie chart (or a doughnut chart) is a circular statistical graphic, which is divided into slices to illustrate numerical proportion. In a pie chart, the arc length of each slice (and consequently its central angle and area), is proportional to the quantity it represents."
+	- var activeMenu   = "flot-pie-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Flot Charts"}, {name:"Flot Pie Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/flot-pie-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.pie.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/flot/jquery.flot.resize.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/flot/pie/donut-hole.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/pie/interactive-pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/pie/label-formatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/pie/pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/pie/rectangular-pie.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/flot/pie/tilted-pie.js', type='text/javascript')

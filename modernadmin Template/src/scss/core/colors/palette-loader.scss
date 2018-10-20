@@ -1,0 +1,116 @@
+// ================================================================================================
+//   File Name: pallette-loader.scss
+//   Description: loader color system styles
+//   ----------------------------------------------------------------------------------------------
+//   Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+//   Version: 1.0
+//   Author: PIXINVENT
+//   Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+
+@function color-function($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  // @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}
+
+// Color palettes
+@import "palette-variables";
+// Overrides user variable
+@import "../../../../assets/scss/colors/palette-variables";
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      // Colored Loader
+      .loader-#{$color_name}{
+        div{
+          background-color: $color_value !important;
+        }
+        &.ball-clip-rotate{
+          div{
+            border-color: $color_value !important;
+            border-bottom-color: transparent !important;
+            background-color: transparent !important;
+          }
+        }
+        &.ball-clip-rotate-pulse{
+          div{
+            &:first-child{
+              background: $color_value !important;
+            }
+            &:last-child{
+              background: transparent !important;
+              border-color: $color_value transparent $color_value transparent !important;
+            }
+          }
+        }
+        &.ball-clip-rotate-multiple{
+          div{
+            background-color: transparent !important;
+            border-color: transparent $color_value transparent $color_value !important;
+          }
+        }
+        &.ball-rotate{
+          div{
+            &:before, &:after{
+              background-color: $color_value !important;
+            }
+          }
+        }
+        &.ball-triangle-path{
+          div{
+            background-color: transparent !important;
+            border-color: $color_value !important;
+          }
+        }
+        &.ball-scale-ripple{
+          div{
+            background-color: transparent !important;
+            border-color: $color_value !important;
+          }
+        }
+        &.ball-scale-ripple-multiple{
+          div{
+            background-color: transparent !important;
+            border-color: $color_value !important;
+          }
+        }
+        &.triangle-skew-spin{
+          div{
+            background-color: transparent !important;
+            border-bottom-color: $color_value !important;
+          }
+        }
+        &.semi-circle-spin{
+          div{
+            background-image: linear-gradient(transparent 0%, transparent 70%, $color_value 30%, $color_value 100%);
+            background-color: transparent !important;
+          }
+        }
+        &.fading-circle{
+          div{
+            background-color: transparent !important;
+            &:before{
+              background-color: $color_value !important;
+            }            
+          }
+        }
+         &.folding-cube{
+          div{
+            background-color: transparent !important;
+            &:before{
+              background-color: $color_value !important;
+            }            
+          }
+        }
+      }
+    }
+  }
+}

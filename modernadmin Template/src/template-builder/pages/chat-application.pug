@@ -1,0 +1,62 @@
+//- =========================================================================================
+	File Name: chat-application.pug
+	Description: Chat application page layout.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Chat Application"
+	- var pageSubTitle = "Chat application."
+	//- var description  = ""
+	- var activeMenu   = "chat-application"
+
+append pageConfig
+	- var contentLayout = 'content-left-sidebar'
+	- var pageClass = 'chat-application'
+	- var sidebarFixed = true
+
+append verticalMenuConfig
+	- var menuType = "menu-fixed"
+	
+append horizontalMenuConfig
+	- var horizontalMenuType = "navbar-static"
+	
+append footerConfig
+	- var footerType = 'fixed-bottom'
+	- var footerColor = 'footer-light'
+	- var footerBorder = true
+
+block page-header
+
+//- Include chat content in page block
+append content
+	include ../contents/chat-application.html
+
+//- Include chat sidebar block
+append sidebar
+	include ../contents/chat-application-sidebar.html
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss	
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/simple-line-icons/style.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/chat-application.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs	
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs	
+	script(src=app_assets_path + '/js/scripts/pages/chat-application.js', type='text/javascript')

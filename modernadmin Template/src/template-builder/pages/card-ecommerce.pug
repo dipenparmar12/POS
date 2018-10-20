@@ -1,0 +1,44 @@
+//- =========================================================================================
+	File Name: card-ecommerce.pug
+	Description: Advance shopping & ecommerce cards
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Advance E-commerce Cards"
+	- var pageSubTitle = "Extended default cards"
+	- var description = "Exteding default bootstrap card functionality."
+	- var activeMenu  = "card-ecommerce"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"E-commerce Cards"}])
+
+//- Include page content in page block
+append content
+	include ../contents/card-ecommerce.html
+
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//- Echarts JS
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Advance cards JS
+	script(src=app_assets_path + '/js/scripts/cards/card-ecommerce.js', type='text/javascript')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-gradient.css')

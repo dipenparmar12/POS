@@ -1,0 +1,38 @@
+// ================================================================================================
+// 	File Name: search.scss
+// 	Description: Page content search pages page layouts SCSS.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins overrides
+@import "../bootstrap/functions";
+@import "../core/variables/variables";
+@import "../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../assets/scss/variables/variables";
+@import "../../../assets/scss/variables/components-variables";
+
+//Search Navbar
+#search-nav{
+    .nav{
+        border-bottom:2px solid #e0e0e0;
+    }
+    .nav-link{
+        &.active{
+            padding-bottom:9px;
+            border-bottom: 2px solid $info;
+            margin-bottom: -2px;
+        }
+    }
+}
+
+#search-results{
+    .media-search{
+        padding-top:5px;
+    }
+}

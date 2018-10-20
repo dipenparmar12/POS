@@ -1,0 +1,67 @@
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/variables";
+@import "../../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../../core/variables/variables";
+@import "../../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../../assets/scss/variables/variables";
+@import "../../../../../assets/scss/variables/components-variables";
+
+/* Typeahead Starts */
+
+.typeahead {
+	.twitter-typeahead{
+		width:100%;
+		.tt-menu{
+			width: 100%;
+			background: #fff;
+			border: 1px solid #aaa;
+			border-radius: 5px;
+			padding: 0.75rem 0;
+			.tt-suggestion{
+				padding: 0.25rem 0.75rem;
+				cursor: pointer;
+				&:hover{
+					background-color: $primary;
+					color: #fff;
+				}
+			}
+		}
+		.empty-message {
+			padding: 5px 10px;
+			text-align: center;
+		}
+		.rtl-typeahead{
+			.tt-menu {
+				text-align: right;
+			}
+		}
+		.league-name {
+			margin: 0 10px 5px 10px;
+			padding: 7px 5px 10px;
+			border-bottom: 1px solid #ccc;
+		}
+	}
+	.scrollable-dropdown{
+		.twitter-typeahead{
+			.tt-menu {
+				max-height: 150px;
+				overflow-y: auto;
+			}
+		}
+	}
+}
+
+/* Typeahead Ends */
+
+/* MaxLength Starts */
+
+.bootstrap-maxlength{
+	margin-top: 0.5rem;
+}
+
+/* MaxLength Ends */

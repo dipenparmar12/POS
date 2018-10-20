@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: gallery-masonry.pug
+	Description: The gallery masonry cascading grid layout contain Image & Video gallery.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Gallery Masonry Grid"
+	- var pageSubTitle = "Gallery Masonry grid layout"
+	- var description  = "The gallery masonry cascading grid layout contain Image & Video gallery."
+	- var activeMenu   = "gallery-masonry"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Gallery"}, {name:"Gallery Masonry Grid"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/gallery-masonry.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/gallery.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/gallery/masonry/masonry.pkgd.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/gallery/photo-swipe/photoswipe-script.js', type='text/javascript')

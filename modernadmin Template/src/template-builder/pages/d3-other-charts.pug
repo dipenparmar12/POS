@@ -1,0 +1,50 @@
+//- =========================================================================================
+	File Name: d3-other-charts.pug
+	Description: D3 other charts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "D3 Other Charts"
+	- var pageSubTitle = "chartjs line chart examples"
+	- var description  = "Examples of all other D3 charts like bubble, streamgraph, treemap, vertical-sankey, chord diagram & gantt chart"
+	- var activeMenu   = "d3-other-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"D3 Charts"}, {name:"Other Charts"}])
+
+//- Include page content in page block
+append content
+	include ../contents/d3-other-charts.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/d3.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/d3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/gantt-chart-d3.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/sankey.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/d3/other/bubble.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/d3/other/streamgraph.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/d3/other/treemap.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/d3/other/vertical-sankey.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/d3/other/chord-diagram-new.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/d3/other/gantt-chart.js', type='text/javascript')

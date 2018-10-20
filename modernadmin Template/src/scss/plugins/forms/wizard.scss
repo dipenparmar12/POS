@@ -1,0 +1,435 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../assets/scss/variables/variables";
+@import "../../../../assets/scss/variables/components-variables";
+
+.app-content .wizard {
+	width: 100%;
+	// overflow: hidden;
+
+	.content{
+		margin-left: 0 !important;
+	}
+
+	>.steps {
+		.current-info {
+			position: absolute;
+			left: -99999px;
+		}
+		position: relative;
+		display: block;
+		width: 100%;
+		>ul {
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			>li {
+				display: table-cell;
+				width: auto;
+				vertical-align: top;
+				text-align: center;
+				position: relative;
+				a {
+					position: relative;
+					padding-top: 52px;
+					margin-top: 20px;
+					margin-bottom: 20px;
+					display: block;
+				}
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					z-index: 9;
+					left: 0;
+				}
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					z-index: 9;
+					right: 0;
+				}
+				&:first-child {
+					&:before {
+						content: none;
+					}
+				}
+				&:last-child {
+					&:after {
+						content: none;
+					}
+				}
+			}
+			>li.current {
+				>a {
+					color: #333333;
+					cursor: default;
+				}
+				.step {
+					border-color: $primary;
+					background-color: #fff;
+					color: $primary;
+				}
+			}
+			>li.disabled {
+				a {
+					color: #999999;
+					cursor: default;
+					&:hover {
+						color: #999999;
+						cursor: default;
+					}
+					&:focus {
+						color: #999999;
+						cursor: default;
+					}
+				}
+			}
+			>li.done {
+				a {
+					color: #999999;
+					&:hover {
+						color: #999999;
+					}
+					&:focus {
+						color: #999999;
+					}
+				}
+				.step {
+					background-color: $primary;
+					border-color: $primary;
+					color: #fff;
+				}
+			}
+			>li.error {
+				.step {
+					border-color: $danger;
+					color: $danger;
+				}
+			}
+		}
+		.step {
+			background-color: #fff;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -24px;
+			z-index: 10;
+			text-align: center;
+		}
+	}
+
+	>.content {
+		>.title {
+			position: absolute;
+			left: -99999px;
+		}
+		// overflow: hidden;
+		position: relative;
+		width: auto;
+		padding: 0;
+		margin: 0;
+		>.body {
+			padding: 0 20px;
+		}
+		>iframe {
+			border: 0 none;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	>.actions {
+		position: relative;
+		display: block;
+		text-align: right;
+		padding: 20px;
+		padding-top: 0;
+		>ul {
+			float: right;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			&:after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+			>li {
+				float: left;
+				+ {
+					li {
+						margin-left: 10px;
+					}
+				}
+				>a {
+					background: $primary;
+					color: #fff;
+					display: block;
+					padding: 7px 12px;
+					border-radius: 2px;
+					border: 1px solid transparent;
+					&:hover {
+						-webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
+						box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
+					}
+					&:focus {
+						-webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
+						box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
+					}
+					&:active {
+						-webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+						box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+					}
+				}
+				>a[href="#previous"] {
+					background-color: #fcfcfc;
+					color: #333;
+					border: 1px solid #ddd;
+					&:hover {
+						-webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.02) inset;
+						box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.02) inset;
+					}
+					&:focus {
+						-webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.02) inset;
+						box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.02) inset;
+					}
+					&:active {
+						-webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.04) inset;
+						box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.04) inset;
+					}
+				}
+			}
+			>li.disabled {
+				>a {
+					color: #999999;
+					&:hover {
+						color: #999999;
+					}
+					&:focus {
+						color: #999999;
+					}
+				}
+				>a[href="#previous"] {
+					-webkit-box-shadow: none;
+					box-shadow: none;
+					&:hover {
+						-webkit-box-shadow: none;
+						box-shadow: none;
+					}
+					&:focus {
+						-webkit-box-shadow: none;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+
+	&.wizard-circle{
+		>.steps {
+			>ul{
+				>li{
+					&:before, &:after{
+						top: 43px;
+						width: 50%;
+						height: 5px;
+						background-color: $primary;
+					}
+				}
+				>li.current{
+					&:after {
+						background-color: $content-bg;
+					}
+					~ {
+						li {
+							&:before {
+								background-color: $content-bg;
+							}
+							&:after {
+								background-color: $content-bg;
+							}
+						}
+					}
+				}
+			}
+			.step{
+				width: 50px;
+				height: 50px;
+				line-height: 40px;
+				border: 5px solid $content-bg;
+				font-size: 1.3rem;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&.wizard-notification{
+		>.steps {
+			>ul{
+				>li{
+					&:before, &:after{
+						top: 39px;
+						width: 50%;
+						height: 2px;
+						background-color: $primary;
+					}
+				}
+				>li.current{
+					.step{
+						border:2px solid $primary;
+						color:$primary;
+						line-height: 36px;
+						&:after{
+							border-top-color: $primary;
+						}
+					}
+					&:after {
+						background-color: $content-bg;
+					}
+					~ {
+						li {
+							&:before {
+								background-color: $content-bg;
+							}
+							&:after {
+								background-color: $content-bg;
+							}
+						}
+					}
+				}
+				>li.done {
+					.step{
+						color:#FFF;
+
+						&:after{
+							border-top-color: $primary;
+						}
+					}
+				}
+			}
+			.step{
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 1.3rem;
+				border-radius: 15%;
+				background-color: $content-bg;
+
+				&:after{
+					content: "";
+					width: 0;
+					height: 0;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					margin-left: -8px;
+					margin-bottom: -8px;
+					border-left: 7px solid transparent;
+					border-right: 7px solid transparent;
+					border-top: 8px solid $content-bg;
+				}
+			}
+		}
+	}
+
+	&.vertical{
+		>.steps{
+			display: inline;
+		    float: left;
+		    width: 10%;
+
+		    >ul{
+		    	>li{
+					display: block;
+    				width: 100%;
+    				&:before,&:after{
+    					background-color:transparent;
+    				}
+		    	}
+		    	>li.current{
+		    		&:before,&:after{
+    					background-color:transparent;
+    				}
+    				~ {
+						li {
+							&:before {
+								background-color: transparent;
+							}
+							&:after {
+								background-color: transparent;
+							}
+						}
+					}
+		    	}
+		    }
+		}
+	}
+}
+@media (max-width: 768px) {
+	.app-content .wizard {
+		>.steps {
+			>ul {
+				margin-bottom: 20px;
+				>li {
+					display: block;
+					float: left;
+					width: 50%;
+					>a {
+						margin-bottom: 0;
+					}
+					&:first-child {
+						&:before {
+							content: '';
+						}
+					}
+					&:last-child {
+						&:after {
+							content: '';
+							background-color: $primary;
+						}
+					}
+				}
+			}
+		}
+
+		&.vertical{
+			>.steps{
+			    width: 15%;
+			}
+		}
+	}
+}
+@media (max-width: 480px) {
+	.app-content .wizard {
+		>.steps {
+			>ul {
+				>li {
+					width: 100%;
+				}
+				>li.current {
+					&:after {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+
+		&.vertical{
+			>.steps{
+			    width: 20%;
+			}
+		}
+	}
+}

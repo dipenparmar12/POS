@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: footer-transparent.pug
+	Description: The transparent color footer with custom transparent color options & other styling options.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Footer Transparent"
+	- var pageSubTitle = "Transparent color footer"
+	- var description  = "The footer transparent option set footer background same content background."
+	- var activeMenu   = "footer-transparent"
+
+append footerConfig
+	- var footerColor = "footer-transparent"
+	- var footerBorder = false
+	- var footerShadow = false
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Footer"}, {name:"Footer Transparent"}])
+
+//- Include page content in page block
+append content
+	include ../contents/footer-transparent.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

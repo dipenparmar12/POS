@@ -1,0 +1,48 @@
+.media-list{
+	.media{
+		padding: 1.5rem;
+		margin-top: 0;
+		.media-left{
+			padding-right: 1rem;
+			float: left;
+		}
+		.media-right{
+			padding-left: 1rem;
+			float: right;
+		}
+	}
+	a.media{
+		color: $gray-600 !important;		
+	}
+}
+.media{
+	[class*="avatar-"]{
+	    position: relative;
+	    padding-right: 0 !important;
+	    margin-right: 0;
+	    i{
+	        position: absolute;
+	        // right:1px;
+	        // top: 1px;
+	        right: -4px;
+    		bottom: -1px;
+	        width: 10px;
+	        height: 10px;
+	        border: 2px solid lighten($content-bg, 30%);
+	        border-radius: 100%;
+	    }
+	}
+}
+.media-bordered{
+	.media{
+		border-top: 1px solid #E4E7ED;
+		&:first-child{
+			border-top: 0;
+		}
+	}
+}
+.media-notation{
+	a {
+    	margin-right: 0.5rem;
+    }
+}

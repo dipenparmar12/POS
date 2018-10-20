@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: chartjs-polar-radar-charts.pug
+	Description: Chartjs polar & radar chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Chartjs Polar & Radar Chart"
+	- var pageSubTitle = "chartjs polar & radar chart examples"
+	- var description  = "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative."
+	- var activeMenu   = "chartjs-polar-radar-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Chartjs"}, {name:"Polar & Radar Chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/chartjs-polar-radar-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/chart.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/polar-radar/polar.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/polar-radar/radar.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/polar-radar/polar-skip-points.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartjs/polar-radar/radar-skip-points.js', type='text/javascript')

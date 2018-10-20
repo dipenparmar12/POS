@@ -1,0 +1,314 @@
+// fixed-top
+nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow(class=navbarPosition + ' ' + navbarColor, class=(navbarHideOnScroll == true ? 'navbar-hide-on-scroll' : ''), class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarShadow == true ? 'navbar-shadow' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''))
+  .navbar-wrapper
+    .navbar-header
+      ul.nav.navbar-nav.flex-row
+        li.nav-item.mobile-menu.d-md-none.mr-auto
+          a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+              i.ft-menu.font-large-1
+        li.nav-item
+          a.navbar-brand(href='index.html')
+            img(class='brand-logo' alt='modern admin logo' src=(logoType == 'dark' ? '../../../app-assets/images/logo/logo.png' : '../../../app-assets/images/logo/logo.png'))
+            h3.brand-text Modern Admin
+        li.nav-item.d-md-none
+          a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+            i.la.la-ellipsis-v
+    .navbar-container(class= (centerLayout == true ? 'container center-layout' : 'content'))
+      #navbar-mobile.collapse.navbar-collapse
+        ul.nav.navbar-nav.mr-auto.float-left
+          li.nav-item.d-none.d-md-block
+            a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+              i.ft-menu
+          li.nav-item.d-none.d-md-block
+            a.nav-link.nav-link-expand(href='#')
+              i.ficon.ft-maximize
+          li.dropdown.nav-item.mega-dropdown
+            a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+              | Mega
+            ul.mega-dropdown-menu.dropdown-menu.row
+              li.col-md-2
+                h6.dropdown-menu-header.text-uppercase.mb-1
+                  i.la.la-newspaper-o
+                  |  News
+                #mega-menu-carousel-example
+                  div
+                    img.rounded.img-fluid.mb-1(src='../../../app-assets/images/slider/slider-2.png', alt='First slide')
+                    a.news-title.mb-0(href='#') Poster Frame PSD
+                    p.news-content
+                      span.font-small-2 January 26, 2018
+              li.col-md-3
+                h6.dropdown-menu-header.text-uppercase
+                  i.la.la-random
+                  |  Drill down menu
+                ul.drilldown-menu
+                  li.menu-list
+                    ul
+                      li
+                        a.dropdown-item(href='layout-2-columns.html')
+                          i.ft-file
+                          |  Page layouts & Templates
+                      li
+                        a(href='#')
+                          i.ft-align-left
+                          |  Multi level menu
+                        ul
+                          li
+                            a.dropdown-item(href='#')
+                              i.la.la-bookmark-o
+                              |   Second level
+                          li
+                            a(href='#')
+                              i.la.la-lemon-o
+                              |  Second level menu
+                            ul
+                              li
+                                a.dropdown-item(href='#')
+                                  i.la.la-heart-o
+                                  |   Third level
+                              li
+                                a.dropdown-item(href='#')
+                                  i.la.la-file-o
+                                  |  Third level
+                              li
+                                a.dropdown-item(href='#')
+                                  i.la.la-trash-o
+                                  |  Third level
+                              li
+                                a.dropdown-item(href='#')
+                                  i.la.la-clock-o
+                                  |  Third level
+                          li
+                            a.dropdown-item(href='#')
+                              i.la.la-hdd-o
+                              |  Second level, third link
+                          li
+                            a.dropdown-item(href='#')
+                              i.la.la-floppy-o
+                              |  Second level, fourth link
+                      li
+                        a.dropdown-item(href='color-palette-primary.html')
+                          i.ft-camera
+                          |  Color palette system
+                      li
+                        a.dropdown-item(href='sk-2-columns.html')
+                          i.ft-edit
+                          |  Page starter kit
+                      li
+                        a.dropdown-item(href='changelog.html')
+                          i.ft-minimize-2
+                          |  Change log
+                      li
+                        a.dropdown-item(href='https://pixinvent.ticksy.com/')
+                          i.la.la-life-ring
+                          |  Customer support center
+              li.col-md-3
+                h6.dropdown-menu-header.text-uppercase
+                  i.la.la-list-ul
+                  |  Accordion
+                #accordionWrap(role='tablist', aria-multiselectable='true')
+                  .card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+                    #headingOne.card-header.p-0.pb-2.border-0(role='tab')
+                      a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+                    #accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+                      .card-content
+                          p.accordion-text.text-small-3 Caramels dessert chocolate cake pastry jujubes bonbon. Jelly wafer jelly beans. Caramels chocolate cake liquorice cake wafer jelly beans croissant apple pie.
+                    #headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+                      a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+                    #accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+                      .card-content
+                          p.accordion-text Sugar plum bear claw oat cake chocolate jelly tiramisu dessert pie. Tiramisu macaroon muffin jelly marshmallow cake. Pastry oat cake chupa chups.
+                    #headingThree.card-header.p-0.pb-2.border-0(role='tab')
+                      a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+                    #accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+                      .card-content
+                          p.accordion-text Candy cupcake sugar plum oat cake wafer marzipan jujubes lollipop macaroon. Cake dragée jujubes donut chocolate bar chocolate cake cupcake chocolate topping.
+              li.col-md-4
+                h6.dropdown-menu-header.text-uppercase.mb-1
+                  i.la.la-envelope-o
+                  |  Contact Us
+                form.form.form-horizontal
+                  div.form-body
+                    div.form-group.row
+                      label.col-sm-3.form-control-label(for='inputName1') Name
+                      .col-sm-9
+                        .position-relative.has-icon-left
+                          input.form-control(type='text', id='inputName1', placeholder='John Doe')
+                          .form-control-position.pl-1
+                            i.la.la-user
+                    div.form-group.row
+                      label.col-sm-3.form-control-label(for='inputEmail1') Email
+                      .col-sm-9
+                        .position-relative.has-icon-left
+                          input.form-control(type='email', id='inputEmail1', placeholder='john@example.com')
+                          .form-control-position.pl-1
+                            i.la.la-envelope-o
+                    div.form-group.row
+                      label.col-sm-3.form-control-label(for='inputMessage1') Message
+                      .col-sm-9
+                        .position-relative.has-icon-left
+                          textarea.form-control(id='inputMessage1', rows='2', placeholder='Simple Textarea')
+                          .form-control-position.pl-1
+                            i.la.la-commenting-o
+                    div.row
+                      .col-sm-12.mb-1
+                        button.btn.btn-info.float-right(type='button')
+                          i.la.la-paper-plane-o
+                          |  Send          
+          li.nav-item.nav-search
+              a.nav-link.nav-link-search(href='#')
+                i.ficon.ft-search
+              .search-input
+                input.input(type='text', placeholder='Explore Modern...')
+        ul.nav.navbar-nav.float-right
+          li.dropdown.dropdown-user.nav-item
+            a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+              span.mr-1 Hello,
+                span.user-name.text-bold-700 John Doe
+              span.avatar.avatar-online
+                img(src='../../../app-assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+                i
+            .dropdown-menu.dropdown-menu-right
+              a.dropdown-item(href='#')
+                i.ft-user
+                |  Edit Profile
+              a.dropdown-item(href='#')
+                i.ft-mail
+                |  My Inbox
+              a.dropdown-item(href='#')
+                i.ft-check-square
+                |  Task
+              a.dropdown-item(href='#')
+                i.ft-message-square
+                |  Chats
+              .dropdown-divider
+              a.dropdown-item(href='#')
+                i.ft-power
+                |  Logout
+          li.dropdown.dropdown-language.nav-item
+            a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              i.flag-icon.flag-icon-gb
+              span.selected-language
+            .dropdown-menu(aria-labelledby='dropdown-flag')
+              a.dropdown-item(href='#')
+                i.flag-icon.flag-icon-gb
+                |  English
+              a.dropdown-item(href='#')
+                i.flag-icon.flag-icon-fr
+                |  French
+              a.dropdown-item(href='#')
+                i.flag-icon.flag-icon-cn
+                |  Chinese
+              a.dropdown-item(href='#')
+                i.flag-icon.flag-icon-de
+                |  German
+          li.dropdown.dropdown-notification.nav-item
+            a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+              i.ficon.ft-bell
+              span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+            ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+              li.dropdown-menu-header
+                h6.dropdown-header.m-0
+                  span.grey.darken-2 Notifications
+                span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
+              li.scrollable-container.media-list.w-100
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left.align-self-center
+                      i.ft-plus-square.icon-bg-circle.bg-cyan
+                    .media-body
+                      h6.media-heading You have new order!
+                      p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left.align-self-center
+                      i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
+                    .media-body
+                      h6.media-heading.red.darken-1 99% Server load
+                      p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left.align-self-center
+                      i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
+                    .media-body
+                      h6.media-heading.yellow.darken-3 Warning notifixation
+                      p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left.align-self-center
+                      i.ft-check-circle.icon-bg-circle.bg-cyan
+                    .media-body
+                      h6.media-heading Complete the task
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left.align-self-center
+                      i.ft-file.icon-bg-circle.bg-teal
+                    .media-body
+                      h6.media-heading Generate monthly report
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+              li.dropdown-menu-footer
+                a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+          li.dropdown.dropdown-notification.nav-item
+            a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+              i.ficon.ft-mail              
+            ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+              li.dropdown-menu-header
+                h6.dropdown-header.m-0
+                  span.grey.darken-2 Messages
+                span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+              li.scrollable-container.media-list.w-100
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left
+                      span.avatar.avatar-sm.avatar-online.rounded-circle
+                        img(src='../../../app-assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+                        i
+                    .media-body
+                      h6.media-heading Margaret Govan
+                      p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left
+                      span.avatar.avatar-sm.avatar-busy.rounded-circle
+                        img(src='../../../app-assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+                        i
+                    .media-body
+                      h6.media-heading Bret Lezama
+                      p.notification-text.font-small-3.text-muted I have seen your work, there is
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left
+                      span.avatar.avatar-sm.avatar-online.rounded-circle
+                        img(src='../../../app-assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+                        i
+                    .media-body
+                      h6.media-heading Carie Berra
+                      p.notification-text.font-small-3.text-muted Can we have call in this week ?
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+                a(href='javascript:void(0)')
+                  .media
+                    .media-left
+                      span.avatar.avatar-sm.avatar-away.rounded-circle
+                        img(src='../../../app-assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+                        i
+                    .media-body
+                      h6.media-heading Eric Alsobrook
+                      p.notification-text.font-small-3.text-muted We have project party this saturday.
+                      small
+                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+              li.dropdown-menu-footer
+                a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+          

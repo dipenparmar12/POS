@@ -1,0 +1,53 @@
+//- =========================================================================================
+	File Name: jquery-ui-dialog-tooltip.pug
+	Description: jQuery UI dialogs and tooltips
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "jQuery UI dialogs and tooltips"
+	- var pageSubTitle = "jQuery UI dialogs and tooltips examples"
+	- var description = "A dialog is a floating window that contains a title bar and a content area. The dialog window can be moved, resized and closed with the 'x' icon by default."
+	- var activeMenu = "jquery-ui-dialog-tooltip"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"jQuery UI"}, {name:"Dialogs & Tooltips"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/jquery-ui-dialog-tooltip.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/jquery-ui.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/ui/jqueryui.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/ui/jquery-ui/dialog-tooltip.js', type='text/javascript')

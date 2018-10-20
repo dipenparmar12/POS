@@ -1,0 +1,72 @@
+<!-- gmaps services section start -->
+<section id="gmaps-services">
+    <!-- Geolocation -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Geolocation</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text"><code>GMaps.geolocate</code> supports 4 functions:</p>
+                        <ul>
+                            <li><code>success</code> (required): fires when geolocation has been successful</li>
+                            <li><code>error</code> (required): fires when geolocation has not been done</li>
+                            <li><code>not_supported</code> (required): fires when geolocation is not supported by the browser</li>
+                            <li><code>always</code> (optional): fires always after every scenario described above.</li>
+                        </ul>
+                        <div id="geolocation" class="height-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Geocoding -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Geocoding</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">You can define either <code>address</code> or <code>lat</code> and <code>lng</code>. Also, you must define <code>callback</code>, which will use <code>results</code> of geocoding and <code>status</code>.</p>
+
+                        <form method="post" id="geocoding_form">
+                            <label for="address">Address:</label>
+                            <div class="input-group mb-1">
+                                <input type="text" id="address" name="address" />
+                                <div class="input-group-append">
+                                    <input type="submit" class="btn btn-primary" value="Search" />
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="geocoding" class="height-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // gmaps services section end -->

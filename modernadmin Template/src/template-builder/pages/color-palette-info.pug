@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: color-palette-info.pug
+	Description:  Bootstrap 4 Info Color Palette
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Info Color Page"
+	- var pageSubTitle = "Info Color Options"
+	- var description  = "Info Color Palette with background & border color."
+	- var activeMenu  = "color-palette-info"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Color System"}, {name:"Info Palette"}])
+
+//- Include page content in page block
+append content
+	include ../contents/color-palette-info.html

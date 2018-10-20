@@ -1,0 +1,415 @@
+<!-- Lists section start -->
+<section id="lists">
+    <div class="row match-height">
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-basic">Basic</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <div id="basic-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-warning btn-round mb-2" data-sort="name">Sort by name</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="born">Sort by born</button>
+                                </div>
+                            </div>
+                            <ul class="list-group list">
+                                <li class="list-group-item">
+                                    <h3 class="name">Jonny Stromberg</h3>
+                                    <p class="born">1986</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3 class="name">Jonas Arnklint</h3>
+                                    <p class="born">1985</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3 class="name">Martina Elm</h3>
+                                    <p class="born">1986</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3 class="name">Gustaf Lindqvist</h3>
+                                    <p class="born">1983</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-add-item">Add Item</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <div id="add-item-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-warning btn-round mb-2" data-sort="name">Sort by name</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="born">Sort by born</button>
+                                </div>
+                            </div>
+                            <ul class="list-group list">
+                                <li class="list-group-item">
+                                    <h3 class="name">Jonny Stromberg</h3>
+                                    <p class="born">1986</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3 class="name">Jonas Arnklint</h3>
+                                    <p class="born">1985</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row match-height">
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-new">New List</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <div id="new-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-warning btn-round mb-2" data-sort="name">Sort by name</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="born">Sort by born</button>
+                                </div>
+                            </div>
+                            <ul class="list-group list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-table">Table</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <div id="table-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-warning btn-round mb-2" data-sort="name">Sort by name</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="born">Sort by born</button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-lg">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Born</th>
+                                    </tr>
+                                </thead>
+                                <!-- IMPORTANT, class="list" have to be at tbody -->
+                                <tbody class="list">
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td class="name"><h3>Jonny Stromberg</h3></td>
+                                        <td class="born">1986</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td class="name"><h3>Jonas Arnklint</h3></td>
+                                        <td class="born">1985</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td class="name"><h3>Martina Elm</h3></td>
+                                        <td class="born">1986</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td class="name"><h3>Gustaf Lindqvist</h3></td>
+                                        <td class="born">1983</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row match-height">
+        <div class="col-xl-6 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-data-attr">Data Attributes</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <p>Use data attributes and other custom attributes as keys.</p>
+
+                        <div id="data-attributes-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-warning btn-round mb-2" data-sort="name">Sort by name</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="born">Sort by born</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">Name</th>
+                                            <th class="text-center">Born</th>
+                                            <th class="text-center">Photo</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- IMPORTANT, class="list" have to be at tbody -->
+                                    <tbody class="list">
+                                        <tr data-id="1">
+                                            <th scope="row" class="id">1</th>
+                                            <td><a href="https://pixinvent.com" class="link name">Jonny Stromberg</a></td>
+                                            <td class="born timestamp" data-timestamp="12345">1986</td>
+                                            <td>
+                                                <img class="image" src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar">
+                                            </td>
+                                        </tr>
+                                        <tr data-id="2">
+                                            <th scope="row" class="id">2</th>
+                                            <td><a href="https://pixinvent.com" class="link name">Jonas Arnklint</a></td>
+                                            <td class="born timestamp" data-timestamp="23456">1985</td>
+                                            <td>
+                                                <img class="image" src="../../../app-assets/images/portrait/small/avatar-s-7.png" alt="avatar">
+                                            </td>
+                                        </tr>
+                                        <tr data-id="3">
+                                            <th scope="row" class="id">3</th>
+                                            <td><a href="https://pixinvent.com" class="link name">Martina Elm</a></td>
+                                            <td class="born timestamp" data-timestamp="34567">1986</td>
+                                            <td>
+                                                <img class="image" src="../../../app-assets/images/portrait/small/avatar-s-22.png" alt="avatar">
+                                            </td>
+                                        </tr>
+                                        <tr data-id="4">
+                                            <th scope="row" class="id">4</th>
+                                            <td><a href="https://pixinvent.com" class="link name">Gustaf Lindqvist</a></td>
+                                            <td class="born timestamp" data-timestamp="45678">1983</td>
+                                            <td>
+                                                <img class="image" src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-editable">Add, Get & Remove</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+
+                        <div id="editable-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-warning btn-round mb-2" data-sort="name">Sort by name</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="age">Sort by age</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-lg text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="sort text-center" data-sort="name">Name</th>
+                                            <th class="sort text-center" data-sort="age">Age</th>
+                                            <th class="sort text-center" data-sort="city">City</th>
+                                            <th>Edit</th>
+                                            <th>Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- IMPORTANT, class="list" have to be at tbody -->
+                                    <tbody class="list">
+                                        <tr>
+                                            <td class="name">Jonny</td>
+                                            <td class="age">27</td>
+                                            <td class="city">Stockholm</td>
+                                            <td class="edit"><button class="btn btn-outline-primary edit-item-btn">Edit</button></td>
+                                            <td class="remove"><button class="btn btn-outline-danger remove-item-btn">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">Jonas</td>
+                                            <td class="age">32</td>
+                                            <td class="city">Berlin</td>
+                                            <td class="edit"><button class="btn btn-outline-primary edit-item-btn">Edit</button></td>
+                                            <td class="remove"><button class="btn btn-outline-danger remove-item-btn">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">Gustaf</td>
+                                            <td class="age">23</td>
+                                            <td class="city">Sundsvall</td>
+                                            <td class="edit"><button class="btn btn-outline-primary edit-item-btn">Edit</button></td>
+                                            <td class="remove"><button class="btn btn-outline-danger remove-item-btn">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">Fredrik</td>
+                                            <td class="age">26</td>
+                                            <td class="city">Goteborg</td>
+                                            <td class="edit"><button class="btn btn-outline-primary edit-item-btn">Edit</button></td>
+                                            <td class="remove"><button class="btn btn-outline-danger remove-item-btn">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">Otis</td>
+                                            <td class="age">36</td>
+                                            <td class="city">Bacolod</td>
+                                            <td class="edit"><button class="btn btn-outline-primary edit-item-btn">Edit</button></td>
+                                            <td class="remove"><button class="btn btn-outline-danger remove-item-btn">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">Carla</td>
+                                            <td class="age">27</td>
+                                            <td class="city">Baleshwar</td>
+                                            <td class="edit"><button class="btn btn-outline-primary edit-item-btn">Edit</button></td>
+                                            <td class="remove"><button class="btn btn-outline-danger remove-item-btn">Remove</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-lg mt-2 mb-2">
+                                    <tr>
+                                        <td class="name">
+                                            <input type="hidden" id="id-field" />
+                                            <input type="text" id="name-field" placeholder="Name" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="age">
+                                            <input type="text" id="age-field" placeholder="Age" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="city">
+                                            <input type="text" id="city-field" placeholder="City" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="add">
+                                            <button id="add-btn" class="btn btn-success">Add</button>
+                                            <button id="edit-btn" class="btn btn-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <p>This is just a simple example showing how to use <code>add()</code>, <code>values()</code> and <code>remove()</code>. The example have bugs (not List.js (I hope ;)) so I do not recommend copy-paste programming.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-fuzzy-search">Fuzzy Search</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <p>Example of how to use the fuzzy search plugin.</p>
+                        <div id="fuzzy-search-list">
+                            <input class="fuzzy-search form-control round border-primary mb-1" type="text" placeholder="Search" />
+                            <ul class="list-group list">
+                                <li class="list-group-item"><p class="name">Guybrush Threepwood</p></li>
+                                <li class="list-group-item"><p class="name">Elaine Marley</p></li>
+                                <li class="list-group-item"><p class="name">LeChuck</p></li>
+                                <li class="list-group-item"><p class="name">Stan</p></li>
+                                <li class="list-group-item"><p class="name">Voodoo Lady</p></li>
+                                <li class="list-group-item"><p class="name">Herman Toothrot</p></li>
+                                <li class="list-group-item"><p class="name">Meathook</p></li>
+                                <li class="list-group-item"><p class="name">Carla</p></li>
+                                <li class="list-group-item"><p class="name">Otis</p></li>
+                                <li class="list-group-item"><p class="name">Rapp Scallion</p></li>
+                                <li class="list-group-item"><p class="name">Rum Rogers Sr.</p></li>
+                                <li class="list-group-item"><p class="name">Men of Low Moral Fiber</p></li>
+                                <li class="list-group-item"><p class="name">Murray</p></li>
+                                <li class="list-group-item"><p class="name">Cannibals</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="list-pagination">Pagination</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <p>Example of how to use the pagination plugin</p>
+                        <div id="pagination-list">
+                            <input type="text" class="search form-control round border-primary mb-1" placeholder="Search" />
+                            <ul class="list-group list">
+                                <li class="list-group-item"><p class="name">Guybrush Threepwood</p></li>
+                                <li class="list-group-item"><p class="name">Elaine Marley</p></li>
+                                <li class="list-group-item"><p class="name">LeChuck</p></li>
+                                <li class="list-group-item"><p class="name">Stan</p></li>
+                                <li class="list-group-item"><p class="name">Voodoo Lady</p></li>
+                                <li class="list-group-item"><p class="name">Herman Toothrot</p></li>
+                                <li class="list-group-item"><p class="name">Meathook</p></li>
+                                <li class="list-group-item"><p class="name">Carla</p></li>
+                                <li class="list-group-item"><p class="name">Otis</p></li>
+                                <li class="list-group-item"><p class="name">Rapp Scallion</p></li>
+                                <li class="list-group-item"><p class="name">Rum Rogers Sr.</p></li>
+                                <li class="list-group-item"><p class="name">Men of Low Moral Fiber</p></li>
+                                <li class="list-group-item"><p class="name">Murray</p></li>
+                                <li class="list-group-item"><p class="name">Cannibals</p></li>
+                            </ul>
+                            <ul class="pagination pagination-separate pagination-flat"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // List section end -->

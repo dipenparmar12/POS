@@ -1,0 +1,162 @@
+// ================================================================================================
+// 	File Name: chat-application.scss
+// 	Description: SCC file for chat application page.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../assets/scss/variables/variables";
+@import "../../../assets/scss/variables/components-variables";
+
+
+//Variables
+$sideber-border: #E4E7ED;
+
+.chat-application{
+	.app-content, .content-right, .content-wrapper, .content-body{
+		height: 100%;
+	}
+	.content-wrapper{
+		padding: 0 !important;
+	}
+	.sidebar-left{
+		border-right: 1px solid $sideber-border;
+    	z-index: 999;
+	}
+	.chat-fixed-search{
+		position: fixed;
+    	z-index: 999;
+    	background: $white;
+    	width: $sidebar-width;
+    	border-bottom: 1px solid $sideber-border;
+	}
+	.users-list-padding{
+		padding-top:83px;
+		padding-bottom: 60px;
+	}
+	.chat-app-window{
+		padding: 20px 30px;
+	    overflow-y: scroll;
+	    text-align: center;    
+	    height: calc(100% - 112px);
+	    background-color: #fff;
+	}
+	.chat-app-form{
+		position: relative;
+	    padding: 20px 10px;
+	    background-color: lighten($gray-100, 18%);
+	    overflow: hidden;
+	}
+	.chats {
+	    padding: 0;
+	    .chat-body {
+		    display: block;
+		    margin: 10px 30px 0 0;
+		    overflow: hidden;
+		    .chat-content {
+		    	&:before{
+		    		position: absolute;
+				    top: 10px;
+				    right: -10px;
+				    width: 0;
+				    height: 0;
+				    content: '';
+				    border: 5px solid transparent;
+				    border-left-color: $info;
+		    	}
+		    	+.chat-content:before {
+				    border-color: transparent;
+				}
+		    	text-align: right;
+			    position: relative;
+			    display: block;
+			    float: right;
+			    padding: 8px 15px;
+			    margin: 0 20px 10px 0;
+			    clear: both;
+			    color: #fff;
+			    background-color: $info;
+			    border-radius: 4px;
+			    p{
+			    	margin: 0;
+			    }
+			}
+		}		
+		.chat-avatar{			
+    			float: right;
+			.avatar {
+			    width: 50px;
+			    margin-top: -10px
+			}
+		}
+		.time {
+		    color: $gray-100;
+		    font-size: 12px;
+		    text-align: center;
+		    margin: 40px 0
+		}
+		.chat-left {
+			.chat-avatar{
+				float: left;
+			}
+			.chat-body {
+				margin-right: 0;
+    			margin-left: 30px;
+			}
+			.chat-content{
+				+.chat-content:before {
+				    border-color: transparent;
+				}
+				&:before{					
+					right: auto;
+				    left: -10px;
+				    border-right-color: lighten($gray-100, 18%);
+				    border-left-color: transparent;
+				}
+				text-align: left;
+				float: left;
+				margin: 0 0 10px 20px;
+    			color: $gray-600;
+    			background-color: lighten($gray-100, 18%);
+			}
+		}		
+	}
+	.form-control-position{
+		cursor: pointer;
+		&.control-position-right{
+			right: 18px;
+			top: 2px;
+			cursor: pointer;
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		.chat-app-window{		
+		    height: calc(100% - 132px);
+		}
+	}
+}
+
+// Horizontal layout specific scss for chat apps
+.horizontal-layout.chat-application{
+	.app-content{
+		height: calc(100% - 144px) !important;
+		min-height: calc(100% - 144px) !important;
+    	margin-top: 0 !important;
+		.chat-app-window{
+		   height: -webkit-calc(100% - 83px) !important;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+//- =========================================================================================
+	File Name: table-sizing.pug
+	Description: Tables.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Tables Sizing"
+	- var pageSubTitle = "Tables sizing examples"
+	- var description  = "Different types of tables sizing examples like extra large, large, default, small & extra small."
+	- var activeMenu   = "table-sizing"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Tables"}, {name:"Tables Sizing"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/table-sizing.html

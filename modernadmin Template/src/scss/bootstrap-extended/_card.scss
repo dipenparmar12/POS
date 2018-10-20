@@ -1,0 +1,194 @@
+.card-group, .card-deck{
+	margin-bottom: 0.75rem;
+}
+.card {
+    // box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.875rem;
+    border: none;
+    // border-radius: 0.42rem;
+    box-shadow: 0px 1px 15px 1px rgba(62,57,107,0.07);
+    .card {
+    	box-shadow: none !important;
+    }
+	.card-title{
+		font-weight: 500;
+		letter-spacing: 0.05rem;
+    	font-size: 1.12rem;
+	}
+    .card-bordered{
+    	border: $card-border-width solid $card-border-color;
+    }
+
+	//fullscreen card
+	&.card-fullscreen {
+	    display: block;
+	    z-index: 9999;
+	    position: fixed;
+	    width: 100% !important;
+	    height: 100% !important;
+	    top: 0;
+	    right: 0;
+	    left: 0;
+	    bottom: 0;
+	    overflow: auto;
+	}
+	.card-body[class*='border-bottom-'] {
+	    border-bottom-width: 2px !important;
+	}
+	.card-img-overlay{
+		&.bg-overlay{
+			background: rgba(0,0,0,0.45);
+		}
+		.text-muted{
+			color:$gray-800 !important;
+		}
+	}
+	&.card-minimal{
+		border: none;
+		box-shadow: none;
+	}
+	&.crypto-card-3{
+		.card-body:before{
+			font-family: "cryptocoins";			
+		    font-size: 10rem;
+		    color: rgba($white,0.15);
+		    position: absolute;
+		    bottom: -32px;
+		    right: 0px;
+		}
+	}
+
+}
+// If card moved
+.card-moved{
+	.card, .card-header{
+		background-color: $warning;
+		color: $white;
+	}
+}
+.handle, .titleArea{
+	cursor: move;
+}
+
+.card-header {
+    border-bottom: none;
+
+    .card-title{
+    	margin-bottom: 0;
+    }
+
+    .heading-elements,
+    .heading-elements-toggle{
+		background-color: inherit;
+	    position: absolute;
+	    top: 20px;
+	    right: 20px;
+	    &.heading-top-elements{
+	    	// top: 0px;
+	    	.page-item{
+	    		display: inline-block
+	    	}
+	    }
+
+	    a{
+	    	padding: 0 8px;
+	    	&.btn{
+				padding-top:6px;
+				padding-bottom:6px;
+	    	}
+	    }
+	}
+}
+.card-footer{
+	border-top: 1px solid #EEEEEE;
+}
+.text-white{
+	.card-text{
+		color: rgba(255,255,255,1);
+	}
+
+	.card-img-overlay{
+		.text-muted{
+			color: #FFF !important;
+		}
+	}
+	code{
+		background-color: rgba(255, 255, 255, 1);
+	}
+	.heading-elements{
+		i{
+			color: #FFF;
+		}
+	}
+}
+
+.card-head-inverse{
+	.heading-elements{
+		i{
+			color: #FFF;
+		}
+	}
+	color: #FFF;
+}
+.card-transparent{
+	background-color:transparent;
+}
+
+// Card Ecommerce
+.card-image-position-right{
+    margin-left: 50px;
+    position: absolute;
+    top: -27px;
+}
+.card-image-position-right-mid{
+    position: absolute;
+    top: 23px;
+    margin-left: 280px;
+    width: 250px;
+}
+.card-font-style-black{
+    font-size: 90px;
+    font-weight: 900;
+    color: #ffffff52;
+    margin-top: -12px;
+}
+.card-font-style-white{
+	font-size: 72px;
+    font-weight: 900;
+    margin-top: -10px;
+}
+.background-round {
+    background-color: rgba(0, 0, 0, 0.18);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+@include media-breakpoint-down(md) {
+	.heading-elements{
+		text-align: center;
+		.list-inline{
+			display: none;
+		}
+		&.visible{
+			.list-inline{
+				display: block;
+			}
+			    display: block;
+			    margin-top: 0;
+			    top: 100%;
+			    top: 50px;
+			    height: auto;
+			    left: 0px;
+			    padding: 10px;
+			    border: 1px solid #eee;
+			    z-index: 997;
+			    position: absolute;
+			    width: 100%;
+		}
+	}
+}
+@include media-breakpoint-up(lg) {
+	.heading-elements-toggle{
+		display: none;
+	}
+}

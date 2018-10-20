@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: chartist-line-charts.pug
+	Description: Chartist line chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Chartist line chart"
+	- var pageSubTitle = "Chartist line chart examples"
+	- var description  = "A line chart or line graph is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments."
+	- var activeMenu   = "chartist-line-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Chartist Charts"}, {name:"Chartist line chart"}])
+
+//- Include page content in page block
+append content
+	include ../contents/chartist-line-charts.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/chartist.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/chartist.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/area.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/bi-polar-area.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/holes-in-data.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/line-scatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/series-overrides.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/chartist/line/whole-numbers.js', type='text/javascript')

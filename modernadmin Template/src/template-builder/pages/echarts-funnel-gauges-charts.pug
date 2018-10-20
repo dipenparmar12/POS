@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: echarts-funnel-gauges-charts.pug
+	Description: Funnel & gauge echarts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Echarts - Funnel & Gauges Chart"
+	- var pageSubTitle = "Funnel & Gauges Chart Examples"
+	- var description = "Funnel charts are a type of chart, often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization's sales processes."
+	- var activeMenu   = "echarts-funnel-gauges-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Echarts"}, {name:"Funnel & gauges Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/echarts-funnel-gauges-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/funnel-plot.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/funnel-pyramid.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/multiple-funnel1.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/multiple-funnel2.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/left-align-funnel.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/right-align-funnel.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/angular-gauge.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/basic-gauge.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/customized-gauge.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/funnel-gauges/multiple-gauges.js', type='text/javascript')

@@ -1,0 +1,86 @@
+// Core variables and mixins
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/variables";
+@import "../../../bootstrap/mixins";
+
+// Core variables and mixins overrides
+@import "../../../core/variables/variables";
+@import "../../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../../assets/scss/variables/variables";
+@import "../../../../../assets/scss/variables/components-variables";
+
+.form-group{
+  &.issue{
+    .help-block, .help-inline{
+      color: $warning;
+    }
+    input, select, textarea{
+      color: $warning;
+      border-color: $warning;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: #CE2605;
+      -webkit-box-shadow: 0 0 6px #FCA08E;
+         -moz-box-shadow: 0 0 6px #FCA08E;
+              box-shadow: 0 0 6px #FCA08E;
+    }
+    .input-prepend, .input-append {
+      .add-on{
+        color: $warning;
+        background-color: #FED2C9;
+        border-color: $warning;
+      }
+    }
+  }
+
+  &.error{
+    .help-block, .help-inline{
+      color: $danger;
+    }
+    input, select, textarea{
+      color: $danger;
+      border-color: $danger;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: #B41323;
+      -webkit-box-shadow: 0 0 6px #F38C96;
+         -moz-box-shadow: 0 0 6px #F38C96;
+              box-shadow: 0 0 6px #F38C96;
+    }
+    .input-prepend, .input-append {
+      .add-on{
+        color: $danger;
+        background-color: #FACACF;
+        border-color: $danger;
+      }
+    }
+  }
+
+  &.validate{
+    .help-block, .help-inline{
+      color: $success;
+    }
+    input, select, textarea{
+      color: $success;
+      border-color: $success;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: #34C5A1;
+      -webkit-box-shadow: 0 0 6px #78DCC3;
+         -moz-box-shadow: 0 0 6px #78DCC3;
+              box-shadow: 0 0 6px #78DCC3;
+    }
+    .input-prepend, .input-append {
+      .add-on{
+        color: $success;
+        background-color: #DDF6F0;
+        border-color: $success;
+      }
+    }
+  }
+  .help-block ul{
+    padding-left: 1.5rem;
+  }
+}

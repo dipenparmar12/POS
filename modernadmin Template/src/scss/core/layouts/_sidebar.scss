@@ -1,0 +1,40 @@
+/*=========================================================================================
+	File Name: sidebar.scss
+	Description: content sidebar specific scss.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+
+
+// Sidebar base
+// ------------------------------
+
+// Base
+.sidebar {
+	position: relative;
+	width: 100%;
+
+	// For desktop only
+	@include media-breakpoint-up(lg){
+		// display: table-cell;
+		vertical-align: top;
+		width: $sidebar-width;
+	}	
+}
+.sidebar-fixed{
+	position: fixed;
+	height: 100%;
+	overflow: scroll;
+}
+@include media-breakpoint-up(lg){
+	.sidebar-left{
+	    float:left;
+	}
+	.sidebar-right{
+	    float:right;
+	}
+}

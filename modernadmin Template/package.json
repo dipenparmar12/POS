@@ -1,0 +1,74 @@
+{
+  "name": "modern-admin-clean-bootstrap-4-dashboard-html-template",
+  "description": "The most complete & feature packed bootstrap 4 admin template.",
+  "version": "1.0.0",
+  "homepage": "https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/",
+  "private": true,
+  "author": {
+    "name": "PIXINVENT",
+    "url": "https://pixinvent.com"
+  },
+  "bugs": {
+    "url": "https://pixinvent.ticksy.com"
+  },
+  "keywords": [
+    "css",
+    "js",
+    "scss",
+    "bootstrap",
+    "modern",
+    "mobile-first",
+    "responsive",
+    "framework",
+    "web app",
+    "admin"
+  ],
+  "license": "Themeforest Standard Licenses",
+  "licenses": [
+    {
+      "type": "Themeforest Standard Licenses",
+      "url": "http://themeforest.net/licenses/standard"
+    }
+  ],
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "hammerjs": "^2.0.4",
+    "latest-version": "^2.0.0",
+    "node-archiver": "^0.2.0",
+    "npm-check-updates": "^2.13.0"
+  },
+  "engine": "node >= 0.10",
+  "devDependencies": {
+    "autoprefixer": "^6.1.0",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-concurrent": "^2.0.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-compress": "^0.14.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-pug": "^1.0.0",
+    "pug-inheritance": "^1.0.0",
+    "grunt-contrib-rename": "^0.0.3",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.0",
+    "grunt-csscomb": "^3.1.1",
+    "grunt-notify": "^0.4.1",
+    "grunt-prettify": "^0.4.0",
+    "grunt-remove-logging": "^0.2.0",
+    "grunt-rtlcss": "^2.0.1",
+    "grunt-sass": "^1.1.0",
+    "grunt-text-replace": "^0.4.0",    
+    "jquery": "^2.1.4",
+    "load-grunt-config": "^0.19.2",
+    "node-sass": "^3.4.2",
+    "phantomjs": "^1.9.18",
+    "pug": "^2.0.0-rc.4",
+    "uglifycss": "0.0.25"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  }
+}

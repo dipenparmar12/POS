@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: ex-component-date-time-dropper.pug
+	Description: Datepicker and Timepicker plugins based on jQuery
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Date Time Dropper"
+	- var pageSubTitle = "jQuery Date & Time Dropper"
+	- var description  = "Datepicker and Timepicker plugins based on jQuery"
+	- var activeMenu   = "ex-component-date-time-dropper"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extra Components"}, {name:"Date Time Dropper"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/ex-component-date-time-dropper.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/datedropper.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/timedropper.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/datedropper.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/extensions/timedropper.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/date-time-dropper.js', type='text/javascript')

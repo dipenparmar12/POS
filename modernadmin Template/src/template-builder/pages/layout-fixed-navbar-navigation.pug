@@ -1,0 +1,62 @@
+//- =========================================================================================
+	File Name: layout-fixed-navbar-navigation.pug
+	Description: The fixed navbar & navigation page structure have fixed navbar, navigation and 
+				 static footer.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Fixed Navbar & Navigation"
+	- var pageSubTitle = "Fixed navbar with fixed navigation"
+	- var description  = "The fixed navbar & navigation page structure have fixed navbar and navigation, static footer."
+	- var activeMenu   = "layout-fixed-navbar-navigation"
+
+
+
+append pageConfig
+
+append navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarHideOnScroll = false
+
+append verticalMenuConfig
+	- var menuType = 'menu-fixed'
+
+append horizontalMenuConfig
+	- var horizontalMenuType = 'navbar-fixed'
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page Layouts"}, {name:"Fixed Navbar"}])
+
+//- Include page content in page block
+append content
+	include ../contents/layout-fixed-navbar-navigation.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/ui/prism.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

@@ -1,0 +1,28 @@
+//- =========================================================================================
+	File Name: form-layout-striped-rows.pug
+	Description: Bootstrap 4 striped rows forms with examples
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Striped Row Forms"
+	- var pageSubTitle = "Striped Row Form Layout"
+	- var description = "Add .striped-rows to form tag to add striped rows. In our example .form-horizontal and .form-bordered is used to show the striped rows functionality. You can always add more stuff like form sections, form control borders, tooltips, icons, round form controls, square form controls."
+	- var activeMenu = "form-layout-striped-rows"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Form Layouts"}, {url:"#",name:"Striped Row Forms"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-layout-striped-rows.html

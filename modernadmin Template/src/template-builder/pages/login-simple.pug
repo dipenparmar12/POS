@@ -1,0 +1,55 @@
+//- =========================================================================================
+	File Name: login-simple.pug
+	Description: User simple login page.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Login Page"
+	- var pageSubTitle = "Simple User Login Page"
+	- var description  = "User simple login page."
+	- var activeMenu   = "login-simple"
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var blankPage = true //- OPTIONS: true, false
+	- var navbarFixed = false //- OPTIONS:- true, false
+
+//- Include page content in page block
+append content
+	include ../contents/login-simple.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	//- iCheck css
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/login-register.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//- iCheck
+	script(src=app_assets_path + '/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/forms/validation/jqBootstrapValidation.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/forms/form-login-register.js', type='text/javascript')

@@ -1,0 +1,142 @@
+// ================================================================================================
+// 	File Name: custom-rtl.scss
+// 	Description: Modern RTL support SCSS file.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Align icons position
+.main-menu {
+    .navigation li > a > i,
+    .dropdown-menu i,
+    .dropdown-user > a > i,
+    .navigation > li > a > i {
+        float: right;
+    }
+}
+.dropdown-user.nav-item i{
+    float: right;
+}
+
+.horizontal-menu {
+    .main-menu-content {
+        #main-menu-navigation > li > a > i {
+            float: right;
+        }
+    }
+}
+
+
+.mega-dropdown-menu {
+    li {
+        a,
+        h6 {
+            i {
+                float: right;
+            }
+        }
+    }
+}
+
+.menu-expanded .form-group i {
+    float: inherit;
+}
+
+.form-control-position i {
+    top: 25%;
+    position: absolute;
+    right: 25%;
+}
+
+// Echart title fix for RTL
+.echart-container {
+    direction: ltr;
+}
+
+.mm-menu{
+    left: auto;
+}
+// Dopzone horizontal scrollbar issue
+.dz-hidden-input{
+    position: relative !important;
+}
+// rtl version sticky sidebar float
+.content-wrapper .sticky-wrapper, .content-right-sidebar .sticky-wrapper{
+    float:left;
+}
+
+// jquery ui icon position rtl fix TODO:AJ: add rtl support for jQ UI
+.ui-widget-icon-block{
+    right: 50%;
+}
+.ui-dialog .ui-dialog-titlebar-close{
+    right: 3rem;
+}
+
+.square{
+    &.slider-xl{
+        .noUi-handle{
+            &:before{
+                left: 5px;
+            }
+
+            &:after{
+                left: 10px;
+            }
+        }
+    }
+    .noUi-handle{
+        &:before{
+            left: 2px;
+        }
+
+        &:after{
+            left: 7px;
+        }
+    }
+}
+
+.noUi-vertical{
+    &.square{
+        .noUi-handle{
+            &:before{
+                left:-1px;
+            }
+            &:after{
+                left:-1px;
+            }
+        }
+    }
+}
+
+#tubular-container{
+    z-index: 0 !important;
+}
+
+.btn i[class^="icon-"], .btn i[class*=" icon-"] {
+    line-height: 1.25rem;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  direction: ltr;
+}
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+.jp-card {
+    .jp-card-front{
+        .jp-card-lower{
+            .jp-card-expiry{
+                right: 65%;
+            }
+        }
+    }
+}

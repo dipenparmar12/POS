@@ -1,0 +1,64 @@
+//- =========================================================================================
+	File Name: table-components.pug
+	Description: Table components.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Table components"
+	- var pageSubTitle = "Table using different components"
+	- var description  = "The full width 2 columns layout with content & navigation section."
+	- var activeMenu   = "table-components"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Tables"}, {name:"Table Components"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/table-components.html
+
+append vendorcss
+	//- Checkbox CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+	//- Switchery CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/toggle/switchery.min.css')
+	//- Select CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/selects/select2.min.css')
+	//- Bootstrap Touchspin CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')
+//- Page specific dependency
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/forms/switch.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-callout.css')
+		
+append vendorjs
+	//- Buttons JS
+	script(src=app_assets_path + '/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/forms/toggle/bootstrap-checkbox.min.js', type='text/javascript')
+	//- Switchery JS
+	script(src=app_assets_path + '/vendors/js/forms/toggle/switchery.min.js', type='text/javascript')
+	//- Select JS
+	script(src=app_assets_path + '/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+	//- Bootstrap TouchSpin JS
+	script(src=app_assets_path + '/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js', type='text/javascript')
+	//- google Bar Chart JS  
+	script(src='https://www.google.com/jsapi', type='text/javascript')
+	//- Sparkline Chart JS
+	script(src=app_assets_path + '/vendors/js/charts/jquery.sparkline.min.js', type='text/javascript')
+
+//- Add custom page specific JS
+append pagejs
+	//- Table Components custom JS
+	script(src=app_assets_path + '/js/scripts/tables/components/table-components.js', type='text/javascript')

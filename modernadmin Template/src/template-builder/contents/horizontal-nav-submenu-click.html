@@ -1,0 +1,189 @@
+<!-- Description -->
+<section id="description" class="card">
+    <div class="card-header">
+        <h4 class="card-title">Description</h4>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>Default dropdown menu opens on click. Via data attributes <code>data-open="click"</code> or JavaScript, the dropdown plugin toggles hidden content (dropdown menus) by toggling the <code>.open</code> class on the parent list item.</p>
+                <div class="alert bg-success alert-icon-left mb-2" role="alert">
+                  <span class="alert-icon"><i class="la la-pencil-square"></i></span>
+                  <strong>Experience it!</strong>
+                  <p>Please check horizontal layout menu open on click example to experience it live.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Description -->
+<!-- HTML Markup -->
+<section id="html-markup" class="card">
+    <div class="card-header">
+        <h4 class="card-title">HTML Markup</h4>
+        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                <li><a data-action="close"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>This section contains HTML Markup to create light vertical navigation. This markup define where to add css classes to make vertical navigation light.</p>
+                <ul>
+                    <li><span class="text-bold-600">Line no 4:</span> Contain the <code>data-open</code> attribute has <code>click</code> in <code>body</code> tage. Option <code>data-open="click"</code> will open all the dropdown on click.</li>
+                </ul>
+                <pre data-line="4" class="language-markup">
+        <code class="language-markup">
+            &lt;!DOCTYPE html&gt;
+              &lt;html lang="en"&gt;
+                &lt;head&gt;&lt;/head&gt;
+                &lt;body data-open="click" data-menu="vertical-menu" class="vertical-layout vertical-menu 2-column menu-expanded"&gt;
+
+                  &lt;!-- fixed-top--&gt;
+                  &lt;nav role="navigation" class="header-navbar navbar-expand-sm navbar navbar-with-menu fixed-top navbar-dark navbar-shadow navbar-border"&gt;
+                      ...
+                  &lt;/nav&gt;
+
+                  &lt;!-- BEGIN Navigation--&gt;
+                  &lt;div class="main-menu menu-light menu-shadow"&gt;
+                      ...
+                  &lt;/div&gt;
+                  &lt;!-- END Navigation--&gt;
+
+                  &lt;!-- BEGIN Content--&gt;
+                  &lt;div class="content app-content"&gt;
+                      &lt;div class="content-wrapper"&gt;
+                          &lt;!-- content header--&gt;
+                          &lt;div class="content-header row"&gt;
+                              ...
+                          &lt;/div&gt;
+                          &lt;!-- content header--&gt;
+
+                          &lt;!-- content body--&gt;
+                          &lt;div class="content-body"&gt;
+                              ...
+                          &lt;/div&gt;
+                          &lt;!-- content body--&gt;
+
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;!-- END Content--&gt;
+
+                  &lt;!-- START FOOTER DARK--&gt;
+                  &lt;footer class="footer footer-dark"&gt;
+                      ...
+                  &lt;/footer&gt;
+                  &lt;!-- START FOOTER DARK--&gt;
+
+                &lt;/body&gt;
+              &lt;/html&gt;
+        </code>
+        </pre>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ HTML Markup -->
+<!-- PUG Code -->
+<section id="pug-configuration" class="card">
+    <div class="card-header">
+        <h4 class="card-title">PUG Configuration</h4>
+        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                <li><a data-action="close"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="card-body">
+            <div class="card-text">
+                <p>Modern Admin use PUG as template engine to generate pages and whole template quickly using node js, for getting start with PUG usage & template generating process please refer template documentation.</p>
+                <h5 class="card-title mt-2">PUG Variables</h5>
+                <p>This table contains required PUG variables to generate vertical navigation light.</p>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Block</th>
+                                <th>Variable</th>
+                                <th>Datatype</th>
+                                <th>Value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>pageConfig</code></th>
+                                <td><code>menuOpen</code></td>
+                                <td><code>string</code></td>
+                                <td><code>'click'</code></td>
+                                <td><code>pageConfig</code> block has a <code>menuOpen</code> variable, it contains navigation specific classes in that you need to set <code>'click'</code> to open dropdown on click.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert bg-info alert-icon-left mb-2" role="alert">
+                    <span class="alert-icon"><i class="la la-info"></i></span>
+                    Modern Admin Template <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation" target="_blank" class="white"><u>documentation</u></a> has full list of all blocks, datatype, variables and their description table. Please review it for more configuration options.
+                </div>
+                <h5 class="card-title mt-2">PUG Code</h5>
+                <p>Use following PUG code to generate page or template having vertical light navigation.</p>
+                <ul>
+                    <li><span class="text-bold-600">Line no 20-21:</span> Set dropdown open on click settings to <code>menuOpen</code> variable value as <code>'click'</code> in <code>pageConfig</code> block.</li>
+                    <li><span class="text-bold-600">Line no 27-28:</span> <code>content</code> block has content section html file included <code>include ../contents/horizontal-navigation-submenu-click.html</code>, which can be customizable on page level.</li>
+                </ul>
+                <p>If you want to use dropdown menu open options on page level you need to define this configuration option on PUG page it self. This template has one example pug file for <code>horizontal-navigation-submenu-click.pug</code>, however you can use it on template level but it will generate template all pages with the same configuration option.</p>
+                <pre data-line="20-21, 27-28" data-line-offset="11" class="language-pug">
+              <code class="language-pug">
+                block pageVars
+                  - var pageTitle    = "Sub Menu on Click"
+                  - var pageSubTitle = "Horizontal navigation submenu click"
+                  - var description  = "Configuration options to open horizontal navigation dropdown menus & submenus on click."
+                  - var activeMenu   = "horizontal-nav-submenu-click"
+
+                extends template
+
+                append pageConfig
+                  - var menuOpen = "click"
+
+                append breadcrumbs
+                  +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Horizontal Navigation"}, {name:"Sub Menu on Click"}])
+
+                //- Include page content in page block
+                append content
+                  include ../contents/horizontal-nav-submenu-click.html
+
+                //- Vendor CSS
+                //------------------------------
+                //- Add Vendor specific CSS
+                append vendorcss
+
+                //- Page CSS
+                //------------------------------
+                //- Add custom page specific CSS
+                append pagecss
+
+                //- Vendor JS
+                //------------------------------
+                //- Add vendor specific JS
+                append vendorjs
+
+                //- Page JS
+                //------------------------------
+                //- Add custom page specific JS
+                append pagejs
+              </code>
+              </pre>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ PUG Code -->

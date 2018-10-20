@@ -1,0 +1,126 @@
+<!-- Full calendar extra example section start -->
+<section id="extra-examples">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Gcal</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">FullCalendar can display events from a public google Calendar. google Calendar can serve as a backend that manages and persistently stores event data (a feature that FullCalendar currently lacks). You must have google calendar API key, make your google calendar public and obtain your google calendar's ID. Please visit this <a href="http://fullcalendar.io/docs/google_calendar/" target="_blank">link</a> for all the documentation </p>
+
+                        <div id='fc-gcal'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">JSON</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">A URL of a JSON feed that the calendar will fetch Event Objects from. FullCalendar will visit the URL whenever it needs new event data. This happens when the user clicks prev/next or changes views. FullCalendar will determine the date-range it needs events for and will pass that information along in GET parameters.</p>
+
+                        <div id='fc-json'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Languages</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">Customize the language and localization options for the calendar. This option affects many things such as: the text in buttons, as defined by header, text that contains month or day-of-week strings, date formatting strings, such as timeFormat, weekNumberCalculation, firstDay.</p>
+
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-md-2 col-lg-1 col-form-label">Language:</label>
+                                <div class="col-sm-9 col-md-10 col-lg-11">
+                                    <select id='lang-selector' class="custom-select form-control"></select>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id='fc-languages'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Timezones</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">Determines the timezone in which dates throughout the API are parsed and rendered. <code>false (default), 'local', 'UTC', a timezone string ('America/Chicago')</code> Each of these possible values has an effect on (1) the way event data requests are made, (2) the timezones that event dates are represented in, and (3) the timezones that other dates in the API are represented in.</p>
+
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-md-2 col-lg-1 col-form-label">Timezone:</label>
+                                <div class="col-sm-9 col-md-10 col-lg-11">
+                                    <select id='timezone-selector' class="custom-select form-control">
+                                        <option value='' selected>none</option>
+                                        <option value='local'>local</option>
+                                        <option value='UTC'>UTC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div id='fc-timezones'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Full calendar extra example section end -->

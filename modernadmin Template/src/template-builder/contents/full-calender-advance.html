@@ -1,0 +1,76 @@
+<!-- Full calendar advance example section start -->
+<section id="advance-examples">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">External Dragging</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">Add extended dragging functionality with droppable option. Data can be attached to the element in order to specify its duration when dropped. A <code>Duration</code>-ish value can be provided. This can either be done via jQuery or via an <code>data-duration</code> attribute. This option operates with jQuery UI draggables. You must <code>download</code> the appropriate jQuery UI files and initialize a <code>draggable</code> element. Additionally, you must set the calendar's <code>droppable</code> option to <code>true</code>.</p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div id='external-events'>
+                                    <h4>Draggable Events</h4>
+                                    <div class="fc-events-container">
+                                        <div class='fc-event' data-color='#2D95BF'>All Day Event</div>
+                                        <div class='fc-event' data-color='#48CFAE'>Long Event</div>
+                                        <div class='fc-event' data-color='#50C1E9'>Meeting</div>
+                                        <div class='fc-event' data-color='#FB6E52'>Birthday party</div>
+                                        <div class='fc-event' data-color='#ED5564'>Lunch</div>
+                                        <div class='fc-event' data-color='#F8B195'>Conference Meeting</div>
+                                        <div class='fc-event' data-color='#6C5B7B'>Party</div>
+                                        <div class='fc-event' data-color='#355C7D'>Happy Hour</div>
+                                        <div class='fc-event' data-color='#547A8B'>Dance party</div>
+                                        <div class='fc-event' data-color='#3EACAB'>Dinner</div>
+                                        <p>
+                                            <input type='checkbox' id='drop-remove' />
+                                            <label for='drop-remove'>remove after drop</label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div id='fc-external-drag'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Selectable</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">Allows a user to highlight multiple days or timeslots by clicking and dragging. To let the user make selections by clicking and dragging, <code>selectable</code> option must be set to <code>true</code>. The <code>select</code> and <code>unselect</code> callbacks will be useful for monitoring when selections are made and cleared.</p>
+                        <div id='fc-selectable'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Full calendar advance example section end -->

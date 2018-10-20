@@ -1,0 +1,419 @@
+// // Core variables and mixins
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+@import "../../bootstrap-extended/mixins";
+
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../assets/scss/variables/variables";
+@import "../../../../assets/scss/variables/components-variables";
+
+/*
+Square Shape
+*/
+
+.square-shape {
+  width: 100px;
+  height: 100px;
+  background: theme-color("primary");
+}
+
+/*
+Rectangle Shape
+*/
+
+.rectangle-shape {
+  width: 200px;
+  height: 100px;
+  background: theme-color("primary");
+}
+
+/*
+Circle Shape
+*/
+
+.circle-shape {
+  width: 100px;
+  height: 100px;
+  background: theme-color("primary");
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+/*
+Oval Shape
+*/
+
+.oval-shape {
+  width: 200px;
+  height: 100px;
+  background: theme-color("primary");
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 100px / 50px;
+}
+
+/*
+Triangle Up
+*/
+
+.triangle-up-shape {
+  width: 100px;
+  height: 100px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid theme-color("primary");
+}
+
+/*
+Triangle Down
+*/
+
+.triangle-down-shape {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid theme-color("primary");
+}
+
+/*
+Triangle Left
+*/
+
+.triangle-left-shape {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid theme-color("primary");
+  border-bottom: 50px solid transparent;
+}
+
+/*
+Triangle Right
+*/
+
+.triangle-right-shape {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 100px solid theme-color("primary");
+  border-bottom: 50px solid transparent;
+}
+
+/*
+Triangle Top Left
+*/
+
+.triangle-topleft-shape {
+  width: 0;
+  height: 0;
+  border-top: 100px solid theme-color("primary");
+  border-right: 100px solid transparent;
+}
+
+/*
+Triangle Top Right
+*/
+
+.triangle-topright-shape {
+  width: 0;
+  height: 0;
+  border-top: 100px solid theme-color("primary");
+  border-left: 100px solid transparent;
+}
+
+/*
+Triangle Bottom Left
+*/
+
+.triangle-bottomleft-shape {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid theme-color("primary");
+  border-right: 100px solid transparent;
+}
+
+/*
+Triangle Bottom Right
+*/
+
+.triangle-bottomright-shape {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid theme-color("primary");
+  border-left: 100px solid transparent;
+}
+
+/*
+Star Shape
+*/
+
+.star-shape {
+  margin: 50px 0;
+  position: relative;
+  display: block;
+  color: theme-color("primary");
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px  solid theme-color("primary");
+  border-left: 100px solid transparent;
+  transform: rotate(35deg);
+  &:before {
+    border-bottom: 80px solid theme-color("primary");
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+  }
+  &:after {
+    position: absolute;
+    display: block;
+    color: theme-color("primary");
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid theme-color("primary");
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+  }
+}
+
+/*
+Pentagon
+*/
+
+.pentagon-shape {
+  position: relative;
+  width: 54px;
+  border-width: 50px 18px 0;
+  border-style: solid;
+  border-color: theme-color("primary") transparent;
+  &:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -85px;
+    left: -18px;
+    border-width: 0 45px 35px;
+    border-style: solid;
+    border-color: transparent transparent theme-color("primary");
+  }
+}
+
+/*
+Hexagon
+*/
+
+.hexagon-shape {
+  width: 100px;
+  height: 55px;
+  background: theme-color("primary");
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid theme-color("primary");
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid theme-color("primary");
+  }
+}
+
+/*
+Octagon
+*/
+
+.octagon-shape {
+  width: 100px;
+  height: 100px;
+  background: theme-color("primary");
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 29px solid theme-color("primary");
+    border-left: 29px solid #eee;
+    border-right: 29px solid #eee;
+    width: 42px;
+    height: 0;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 29px solid theme-color("primary");
+    border-left: 29px solid #eee;
+    border-right: 29px solid #eee;
+    width: 42px;
+    height: 0;
+  }
+}
+
+/*
+Heart Shape
+*/
+
+.heart-shape {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  &:before {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: theme-color("primary");
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: theme-color("primary");
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+}
+
+/*
+Diamond
+*/
+
+.cut-diamond-shape {
+  border-style: solid;
+  border-color: transparent transparent theme-color("primary") transparent;
+  border-width: 0 25px 25px 25px;
+  height: 0;
+  width: 50px;
+  position: relative;
+  margin: 20px 0 50px 0;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: -25px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: theme-color("primary") transparent transparent transparent;
+    border-width: 70px 50px 0 50px;
+  }
+}
+
+/*
+Diamond Square
+*/
+
+.diamond-shape {
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-bottom-color: theme-color("primary");
+  position: relative;
+  top: -50px;
+  &:after {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-top-color: theme-color("primary");
+  }
+}
+
+/*
+Egg Shape
+*/
+
+.egg-shape {
+  display: block;
+  width: 126px;
+  height: 180px;
+  background-color: theme-color("primary");
+  -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+  border-radius: 50%  50%  50%  50%  / 60%   60%   40%  40%;
+}
+
+.app-shape {
+  position: relative;
+  color: #FFF;
+  vertical-align: middle;
+  margin: auto;
+  z-index: 10;
+
+  span{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    margin-top: -10px;
+    left: 0;
+    right: 0;
+    z-index: 11;
+  }
+}
+
+.heart-shape{
+  span{
+    margin-top: -20px;
+  }
+}
+
+// Media Queries
+
+@include media-breakpoint-up(md) {
+  .jqueryui-ele-container{
+    .app-shape{
+      display: inline-block;
+    }
+  }
+}

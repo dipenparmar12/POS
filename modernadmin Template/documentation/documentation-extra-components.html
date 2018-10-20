@@ -1,0 +1,922 @@
+
+<!-- - var navbarCustom = "fixed-top navbar-semi-dark navbar-shadow"--><!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Extra Components Documentation - Modern Admin Template</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="../app-assets/images/ico/apple-icon-60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../app-assets/images/ico/apple-icon-76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../app-assets/images/ico/apple-icon-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../app-assets/images/ico/apple-icon-152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="../app-assets/images/ico/favicon-32.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/vendors.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN MODERN CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/app.css">
+    <!-- END MODERN CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-overlay-menu.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/ui/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/documentation.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <!-- END Custom CSS-->
+  </head>
+  <body class="vertical-layout vertical-menu content-right-sidebar  fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="content-right-sidebar">
+
+    <!-- fixed-top-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow">
+      <div class="navbar-wrapper">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li class="nav-item mobile-menu d-md-none float-left"><a class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="icon-menu5 font-large-1">
+                  <div class="bs-callout-info callout-border-left mt-1 p-1"><strong>Great Job!</strong>
+                    <p>Biscuit macaroon tootsie roll croissant. Dessert candy canes halvah cookie liquorice. Candy canes muffin gummies jujubes brownie. Pie cake pie pastry sugar plum jelly apple pie cotton candy.</p>
+                  </div></i></a></li>
+            <li class="nav-item"><a class="navbar-brand" href="index.html"><img class="brand-logo" alt="modern admin logo" src="../app-assets/images/logo/logo.png">
+                <h3 class="brand-text">Modern Admin</h3></a></li>
+            <li class="nav-item d-md-none float-right"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-ellipsis pe-2x fa-rotate-90"></i></a></li>
+          </ul>
+        </div>
+        <div class="navbar-container content">
+          <div class="collapse navbar-collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="icon-menu5"></i></a></li>
+              <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon icon-expand2"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav float-right">
+              <li class="nav-item"><a class="btn btn-link btn-doc-header" href="#"> V 2.1</a></li>
+              <li class="nav-item"><a class="btn btn-success btn-doc-header" href="https://pixinvent.ticksy.com" target="_blank"><i class="icon-help2"></i> Support</a></li>
+              <li class="nav-item"><a class="btn btn-warning btn-doc-header" href="https://themeforest.net/item/modern-admin-clean-bootstrap-4-dashboard-html-template/20039431?ref=PIXINVENT"><i class="icon-bag3"></i> Purchase</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+      <div class="main-menu-content menu-accordion">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class=" nav-item"><a href="index.html"><i class="ft-home"></i><span class="menu-title" data-i18n="">Modern Admin</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-introduction.html"><i class="ft-align-justify"></i><span class="menu-title" data-i18n="">Introduction</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-folder-structure.html"><i class="ft-folder"></i><span class="menu-title" data-i18n="">Folder Structure</span></a>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="ft-settings"></i><span class="menu-title" data-i18n="">Building Tools</span></a>
+            <ul class="menu-content">
+              <li><a class="menu-item" href="documentation-grunt.html">Grunt</a>
+              </li>
+              <li><a class="menu-item" href="documentation-gulp.html">Gulp</a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="documentation-building-system.html"><i class="ft-monitor"></i><span class="menu-title" data-i18n="">Building System</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-pug-template-structure.html"><i class="ft-shuffle"></i><span class="menu-title" data-i18n="">PUG Template Structure</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-pug-page-structure.html"><i class="ft-share"></i><span class="menu-title" data-i18n="">PUG Page Structure</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-styles-customization.html"><i class="ft-check-square"></i><span class="menu-title" data-i18n="">Styles Customization</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-javascript-usage.html"><i class="ft-file"></i><span class="menu-title" data-i18n="">JavaScript Usage</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-html-structure.html"><i class="la la-code"></i><span class="menu-title" data-i18n="">HTML Structure</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-template-customization.html"><i class="ft-settings"></i><span class="menu-title" data-i18n="">Template Customization</span></a>
+          </li>
+          <li class=" nav-item"><a href="documentation-color-customization.html"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Color Customization</span></a>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">General</span></a>
+            <ul class="menu-content">
+              <li><a class="menu-item" href="#">Layouts</a>
+                <ul class="menu-content">
+                  <li><a class="menu-item" href="#">Page Layouts</a>
+                    <ul class="menu-content">
+                      <li><a class="menu-item" href="documentation-page-layouts.html">1 Column</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-2-columns.html">2 Column</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-content-left-sidebar.html">Content Left Sidebar</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-content-left-sticky-sidebar.html">Content Left Sticky Sidebar</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-content-right-sidebar.html">Content Right Sidebar</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-content-right-sticky-sidebar.html">Content Right Sticky Sidebar</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-fixed-navbar.html"> Fixed Navbar</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-fixed-navigation.html"> Fixed Navigation</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-fixed-navbar-navigation.html"> Fixed Navbar &amp; Navigation</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-fixed-navbar-footer.html"> Fixed Navbar &amp; Footer</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-fixed-layout.html"> Fixed Layout</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-boxed-layout.html"> Boxed Layout</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-static-layout.html"> Static Layout</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-light-layout.html"> Light Layout</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-dark-layout.html"> Dark Layout</a>
+                      </li>
+                      <li><a class="menu-item" href="documentation-semi-dark-layout.html"> Semi dark Layout</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="menu-item" href="documentation-navbars.html">Navbars</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-vertical-nav.html">Vertical Nav</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-horizontal-nav.html">Horizontal Nav</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-page-header.html">Page Headers</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-footer.html">Footer</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="menu-item" href="documentation-starter-kit.html">Starter Kit</a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="ft-grid"></i><span class="menu-title" data-i18n="">UI</span></a>
+            <ul class="menu-content">
+              <li><a class="menu-item" href="documentation-content.html">Content</a>
+              </li>
+              <li><a class="menu-item" href="documentation-card.html">Cards</a>
+              </li>
+              <li><a class="menu-item" href="#">Color Palette</a>
+                <ul class="menu-content">
+                  <li><a class="menu-item" href="documentation-color-primary.html">Primary Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-danger.html">Danger Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-success.html">Success Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-warning.html">Warning Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-info.html">Info Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-red.html">Red Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-pink.html">Pink Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-purple.html">Purple Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-blue.html">Blue Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-cyan.html">Cyan Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-teal.html">Teal Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-yellow.html">Yellow Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-amber.html">Amber Color</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-color-blue-grey.html">Blue Grey Color</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="menu-item" href="documentation-icons.html">Icons</a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="ft-box"></i><span class="menu-title" data-i18n="">Components</span></a>
+            <ul class="menu-content">
+              <li><a class="menu-item" href="documentation-components.html">Components</a>
+              </li>
+              <li class="active"><a class="menu-item" href="documentation-extra-components.html">Extra Components</a>
+              </li>
+              <li><a class="menu-item" href="#">Forms</a>
+                <ul class="menu-content">
+                  <li><a class="menu-item" href="documentation-form-elements.html">Form Elements</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-form-layouts.html">Form Layouts</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-form-wizard.html">Form Wizard</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-form-repeater.html">Form Repeater</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="menu-item" href="#">Tables</a>
+                <ul class="menu-content">
+                  <li><a class="menu-item" href="documentation-bootstrap-tables.html">Bootstrap Tables</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-datatables.html">Data Tables</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-jsgrid.html">jsGrid</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="menu-item" href="#.html">Charts</a>
+                <ul class="menu-content">
+                  <li><a class="menu-item" href="documentation-charts-echart.html">Echarts</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-charts-chartjs.html">Chart JS</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-charts-morris.html">Morris Charts</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-charts-flot.html">Flot Charts</a>
+                  </li>
+                  <li><a class="menu-item" href="documentation-charts-chartist.html">Chartist</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="menu-item" href="documentation-maps.html">Maps</a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Other</span></a>
+            <ul class="menu-content">
+              <li><a class="menu-item" href="documentation-sources-credits.html">Sources &amp; Credits</a>
+              </li>
+              <li><a class="menu-item" href="documentation-changelog.html">Changelog</a>
+              </li>
+              <li><a class="menu-item" href="documentation-notes.html">Notes</a>
+              </li>
+              <li><a class="menu-item" href="https://pixinvent.ticksy.com/">Support</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="app-content content">
+      <div class="sidebar-right sidebar-sticky">
+        <div class="sidebar"><div class="pt-2 pr-2">
+    <div class="sidebar-content p-1" data-spy="affix" data-offset-top="-77">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title">Extra Components</h6>
+            </div>
+            <div class="card-content" aria-expanded="true">
+                <div class="card-body">
+                    <nav id="sidebar-page-navigation">
+                        <ul id="page-navigation-list" class="nav">
+                            <li class="nav-item"><a class="nav-link" href="#sweet-alerts">Sweet Alerts</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#toastr">Toastr</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#ratings">Ratings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#noui-slider">NoUI Slider</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#knob">Knob</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#image-cropper">Image Cropper</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#file-uploader">File Uploader</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h6 class="border-top-grey border-top-lighten-2 p-1 mt-1 mb-0">
+                    <a class="nav-link display-block text-muted" href="#top">Back to top
+                        <i class="float-right la la-arrow-circle-o-up font-medium-3"></i>
+                    </a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+      </div>
+      <div class="content-left">
+        <div class="content-wrapper">
+          <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-1">
+              <h2 class="content-header-title">Extra Components Documentation</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-12">
+              <div class="breadcrumb-wrapper col-12">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Extra Components Documentation
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="content-body"><!-- Sweet Alerts -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="sweet-alerts" class="card-title">Sweet Alerts</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <div class="card-text">
+                <p>A beautiful replacement for javascript's "alert". SweetAlert automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizable.</p>
+            </div>
+            <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;script src="sweetalert.min.js"&gt;&lt;/script&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="sweetalert.css"&gt;
+                </code>
+            </pre>
+
+            <h6>2. Call the sweetAlert-function after the page has loaded</h6>
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    swal({
+                        title: "Error!",
+                        text: "Here's my error message!",
+                        type: "error",
+                        confirmButtonText: "Cool"
+                    });
+                </code>
+            </pre>
+
+            <p><strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="http://t4t5.github.io/sweetalert/" target="_blank">http://t4t5.github.io/sweetalert/</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-sweet-alerts.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-sweet-alerts.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ Sweet Alerts -->
+
+
+<!-- Toastr -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="toastr" class="card-title">Toastr</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <div class="card-text">
+                <p>toastr is a Javascript library for Gnome / Growl type non-blocking notifications.</p>
+            </div>
+            <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;script src="toastr.js"&gt;&lt;/script&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="toastr.css"&gt;
+                </code>
+            </pre>
+
+            <h6>2. Use toastr to display a toast for info, success, warning or error.</h6>
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    // Display an info toast with no title
+                    toastr.info('Are you the 6 fingered man?')
+                </code>
+            </pre>
+
+            <p><strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="https://github.com/CodeSeven/toastr" target="_blank">https://github.com/CodeSeven/toastr</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-toastr.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-toastr.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ Toastr -->
+
+
+<!-- jQuery Raty -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="ratings" class="card-title">jQuery Raty</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <div class="card-text">
+                <p>jQuery Raty - A Star Rating Plugin</p>
+            </div>
+            <h4>Usage with Image</h4>
+            <hr>
+            <div class="with-image mt-2">
+                <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+                <pre class="language-markup">
+                    <code class="language-markup">
+                        &lt;script src="jquery.raty.js"&gt;&lt;/script&gt;
+                    </code>
+                </pre>
+
+                <h6>2. The component will bind to any existing DOM element.</h6>
+                <pre class="language-markup">
+                    <code class="language-markup">
+                        &lt;div id="star-rating"&gt;&lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h6>3. Basic usage may look something like this.</h6>
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+                        $('#star-rating').raty();
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <h4>Usage with Font</h4>
+            <hr>
+            <div class="with-font mt-2">
+                <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+                <pre class="language-markup">
+                    <code class="language-markup">
+                        &lt;script src="jquery.raty.js"&gt;&lt;/script&gt;
+                        &lt;link rel="stylesheet" type="text/css" href="jquery.raty.css"&gt;
+                    </code>
+                </pre>
+
+                <h6>2. The component will bind to any existing DOM element.</h6>
+                <pre class="language-markup">
+                    <code class="language-markup">
+                        &lt;div id="star-rating"&gt;&lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h6>3. Basic usage may look something like this.</h6>
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+                        $('#star-rating').raty({ starType: 'i' });
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <p><strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="https://github.com/wbotelhos/raty" target="_blank">https://github.com/wbotelhos/raty</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-ratings.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-ratings.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ jQuery Raty -->
+
+
+<!-- NoUI Slider -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="noui-slider" class="card-title">NoUI Slider</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <div class="card-text">
+                <p>noUiSlider is a lightweight JavaScript range slider library. It offers a wide selection of options and settings, and is compatible with a ton of (touch) devices, including those running iOS, Android, Windows 8/8.1/10, Windows Phone 8.1 and Windows Mobile 10.</p>
+            </div>
+            <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;script src="nouislider.min.js"&gt;&lt;/script&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="nouislider.min.css"&gt;
+                </code>
+            </pre>
+
+            <h6>2. Binding to existing DOM element.</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;div id="slider"&gt;&lt;/div&gt;
+                </code>
+            </pre>
+
+            <h6>3. Basic usage may look something like this.</h6>
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    var slider = document.getElementById('slider');
+
+                    noUiSlider.create(slider, {
+                        start: [20, 80],
+                        connect: true,
+                        range: {
+                            'min': 0,
+                            'max': 100
+                        }
+                    });
+                </code>
+            </pre>
+
+            <p><strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="https://refreshless.com/nouislider/" target="_blank">https://refreshless.com/nouislider/</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-noui-slider.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-noui-slider.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ NoUI Slider -->
+
+
+<!-- Knob -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="knob" class="card-title">Knob</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <div class="card-text">
+                <p>Nice, downward compatible, touchable, jQuery dial.</p>
+            </div>
+            <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;script src="jquery.knob.min.js"&gt;&lt;/script&gt;
+                </code>
+            </pre>
+            <h6>2. Binding component to DOM element.</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;input type="text" value="75" class="dial"&gt;
+                </code>
+            </pre>
+
+            <h6>3. Basic usage may look something like this.</h6>
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    $(function() {
+                        $(".dial").knob();
+                    });
+                </code>
+            </pre>
+
+            <p><strong>Refer following links for detailed documentation, configuration options, methods and examples:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="http://anthonyterrien.com/knob/" target="_blank">http://anthonyterrien.com/knob/</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-knob.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-knob.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ Knob -->
+
+
+<!-- Image Cropper -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="image-cropper" class="card-title">Image Cropper</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <p class="card-text">The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX, without locking the browser. When activated, it will prevent user activity with the page (or part of the page) until it is deactivated. BlockUI adds elements to the DOM to give it both the appearance and behavior of blocking user interaction.</p>
+
+            <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;script src="/path/to/cropper.js"&gt;&lt;/script&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="/path/to/cropper.css"&gt;
+                </code>
+            </pre>
+
+            <h6>2. Wrap the image or canvas element with a block element (container).</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;div&gt;
+                        &lt;img id="image" src="picture.jpg"&gt;
+                    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <h6>3. Limit image width to avoid overflow the container.</h6>
+            <pre class="language-css">
+                <code class="language-css">
+                    img {
+                        max-width: 100%; /* This rule is very important, please do not ignore this! */
+                    }
+                </code>
+            </pre>
+
+            <h6>3. Basic usage may look something like this.</h6>
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    $('#image').cropper({
+                        aspectRatio: 16 / 9,
+                            crop: function(e) {
+                            // Output the result data for cropping image.
+                            console.log(e.x);
+                            console.log(e.y);
+                            console.log(e.width);
+                            console.log(e.height);
+                            console.log(e.rotate);
+                            console.log(e.scaleX);
+                            console.log(e.scaleY);
+                        }
+                    });
+                </code>
+            </pre>
+        </div>
+
+        <div class="card-body">
+            <p><strong>Refer following links for usage:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="https://fengyuanchen.github.io/cropper" target="_blank">https://fengyuanchen.github.io/cropper</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Github Page</strong></td>
+                        <td><a href="https://github.com/fengyuanchen/cropper" target="_blank">https://github.com/fengyuanchen/cropper</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-image-cropper.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-image-cropper.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ Image Cropper -->
+
+
+<!-- Dropzone File Uploader -->
+<div class="card">
+    <div class="card-header">
+        <h4 id="file-uploader" class="card-title">Dropzone</h4>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <p class="card-text">DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews. It’s lightweight, doesn't depend on any other library (like jQuery) and is highly customizable.</p>
+
+            <div class="alert alert-warning" role="alert">
+                <strong>Warning!</strong> Don’t forget to specify an url option if you’re not using a form element, since Dropzone doesn't know where to post to without an action attribute.
+            </div>
+
+            <div class="alert alert-warning" role="alert">
+                <strong>Warning!</strong> Dropzone does not handle your file uploads on the server. You have to implement the code to receive and store the file yourself. See the section <a href="http://www.dropzonejs.com/#server-side-implementation" class="alert-link">Server side implementation</a> for more information.
+            </div>
+
+            <h6>1. Initialize the plugin by referencing the necessary files:</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;script src="/path/to/dropzone.min.js"&gt;&lt;/script&gt;
+                </code>
+            </pre>
+
+            <h6>2. The typical way of using dropzone is by creating a form element with the class <code>dropzone</code>. That’s it. Dropzone will find all form elements with the class dropzone, automatically attach itself to it, and upload files dropped into it to the specified <code>action</code> attribute. The uploaded files can be handled just as if there would have been a html input.</h6>
+            <pre class="language-markup">
+                <code class="language-markup">
+                    &lt;form action="/file-upload" class="dropzone"&gt;
+                        &lt;div class="fallback"&gt;
+                            &lt;input name="file" type="file" multiple /&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                </code>
+            </pre>
+
+            <h6>3. Alternatively you can create dropzones programmatically (even on non <code>form</code> elements) by instantiating the <code>Dropzone</code> class</h6>
+
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    // Dropzone class:
+                    var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
+                </code>
+            </pre>
+
+            <pre class="language-javascript">
+                <code class="language-javascript">
+                    // jQuery
+                    $("div#myId").dropzone({ url: "/file/post" });
+                </code>
+            </pre>
+
+        </div>
+
+        <div class="card-body">
+            <h4>Notes</h4>
+            <hr>
+            <ul class="list-unstyled">
+                <li><i class="icon-record2 mr-1"></i> If you do not want the default message at all (»Drop files to upload (or click)«), you can put an element inside your dropzone element with the class <code>dz-message</code> and dropzone will not create the message for you.</li>
+
+                <li><i class="icon-record2 mr-1"></i> Dropzone will submit any hidden fields you have in your dropzone form. So this is an easy way to submit additional data. You can also use the <code>params</code> option.</li>
+
+                <li><i class="icon-record2 mr-1"></i> Dropzone adds data to the <code>file</code> object you can use when events fire. You can access <code>file.width</code> and <code>file.height</code> if it’s an image, as well as <code>file.upload</code> which is an object containing: <code>progress</code> (0-100), <code>total</code> (the total bytes) and <code>bytesSent</code>.</li>
+
+                <li><i class="icon-record2 mr-1"></i> If you want to add additional data to the file upload that has to be specific for each file, you can register for the <code>sending</code> event:
+                    <pre class="language-javascript">
+                        <code class="language-javascript">
+                            myDropzone.on("sending", function(file, xhr, formData) {
+                                // Will send the filesize along with the file as POST data.
+                                formData.append("filesize", file.size);
+                            });
+                        </code>
+                    </pre>
+                </li>
+
+                <li><i class="icon-record2 mr-1"></i> To access the preview html of a file, you can access <code>file.previewElement</code>. For example:
+                    <pre class="language-javascript">
+                        <code class="language-javascript">
+                            myDropzone.on("addedfile", function(file) {
+                                file.previewElement.addEventListener("click", function() {
+                                    myDropzone.removeFile(file);
+                                });
+                            });
+                        </code>
+                    </pre>
+                </li>
+
+                <li><i class="icon-record2 mr-1"></i> If you want the whole body to be a Dropzone and display the files somewhere else you can simply instantiate a Dropzone object for the body, and define the <code>previewsContainer</code> option. The <code>previewsContainer</code> should have the <code>dropzone-previews</code> or <code>dropzone</code> class to properly display the file previews.
+                    <pre class="language-javascript">
+                        <code class="language-javascript">
+                            new Dropzone(document.body, {
+                                previewsContainer: ".dropzone-previews",
+                                // You probably don't want the whole body
+                                // to be clickable to select files
+                                clickable: false
+                            });
+                        </code>
+                    </pre>
+                </li>
+
+                <li><i class="icon-record2 mr-1"></i> Look at the <a href="https://github.com/enyo/dropzone/wiki">github wiki</a> for more examples.</li>
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <p><strong>Refer following links for usage:</strong></p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plugin Link</strong></td>
+                        <td><a href="http://www.dropzonejs.com/" target="_blank">http://www.dropzonejs.com/</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Github Page</strong></td>
+                        <td><a href="https://github.com/enyo/dropzone" target="_blank">https://github.com/enyo/dropzone</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Template Page</strong></td>
+                        <td><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-file-uploader-dropzone.html" target="_blank">https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template/ex-component-file-uploader-dropzone.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--/ Dropzone -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <footer class="footer footer-static footer-light navbar-border">
+      <p class="clearfix text-muted text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright  &copy; 2018 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT </a>, All rights reserved. </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Hand-crafted & Made with <i class="icon-heart5 pink"></i></span></p>
+    </footer>
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="../app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN MODERN JS-->
+    <script src="../app-assets/js/core/app-menu.js" type="text/javascript"></script>
+    <script src="../app-assets/js/core/app.js" type="text/javascript"></script>
+    <script src="../app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+    <!-- END MODERN JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="../app-assets/js/scripts/documentation.js" type="text/javascript"></script>
+    <script src="../app-assets/vendors/js/ui/prism.min.js" type="text/javascript"></script>
+    <script src="../app-assets/vendors/js/ui/affix.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS-->
+  </body>
+</html>

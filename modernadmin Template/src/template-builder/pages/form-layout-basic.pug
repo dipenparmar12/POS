@@ -1,0 +1,28 @@
+//- =========================================================================================
+	File Name: form-layout-basic.pug
+	Description: Bootstrap 4 basic forms with examples
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Basic Forms"
+	- var pageSubTitle = "Basic Form Layout"
+	- var description = "Basic form labels have inline block styling where form controls are below its label. This is the default bootstrap and most basic style for displaying forms. You can always add more stuff like form sections, form control borders, tooltips, icons, round form controls, square form controls."
+	- var activeMenu = "form-layout-basic"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Form Layouts"}, {url:"#",name:"Basic Forms"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/form-layout-basic.html

@@ -1,0 +1,104 @@
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+@import "../../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../assets/scss/variables/variables";
+@import "../../../../assets/scss/variables/components-variables";
+
+.clndr {
+  width: 100%;
+  background-color: $content-bg;
+  -moz-box-shadow: 0px 4px 0 #272727;
+  -webkit-box-shadow: 0px 4px 0 #272727;
+  box-shadow: 0px 4px 0 #272727;
+  .clndr-controls {
+    padding: 14px;
+    background-color: $success;
+    color: white;
+    text-align: center;
+    .clndr-previous-button {
+      float: left;
+      text-align: left;
+    }
+    .clndr-next-button {
+      float: right;
+      text-align: right;
+    }
+    .clndr-previous-button, .clndr-next-button {
+      width: 30px;
+      cursor: pointer;
+    }
+    .clndr-previous-button:hover, .clndr-next-button:hover {
+      opacity: 0.5;
+    }
+  }
+  .clndr-grid {
+    float: left;
+    width: 65%;
+    background-color: $white;
+    .days-of-the-week {
+      width: 100%;
+      background-color: $warning;
+      .header-day {
+        float: left;
+        width: 14.2857%;
+        padding: 14px;
+        text-align: center;
+        color: white;
+      }
+    }
+    .days {
+      width: 100%;
+      .day, .empty {
+        float: left;
+        width: 14.2857%;
+        padding: 12px 0;
+        text-align: center;
+        color: #4f4f4f;
+      }
+      .day.event .day-number, .empty.event .day-number {
+        border: 1px solid $warning;
+        border-radius: 50%;
+        padding: 6px 9px;
+      }
+      .day.adjacent-month .day-number, .day.inactive .day-number, .empty.adjacent-month .day-number {
+        opacity: 0.3;
+        cursor: pointer;
+      }
+      .day.selected{
+        background-color: $danger;
+        color: white;
+      }
+      .today {
+        background-color: $success;
+        color: white;
+        background-image: none;
+      }
+    }
+  }
+  .event-listing {
+    float: left;
+    width: 35%;
+    .event-listing-title {
+      padding: 15.5px;
+      font-size: 0.88rem;
+      background-color: darken($warning,10%);
+      text-align: center;
+      color: white;
+      letter-spacing: 1px;
+    }
+    .event-item {
+      padding: 6px 14px;
+      color: #4f4f4f;
+    }
+    .event-item-location {
+      font-weight: 400;
+    }
+  }
+}

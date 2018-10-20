@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name:dt-basic-initialization.pug
+	Description: Basic initialisation of DataTables
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Basic DataTables"
+	- var pageSubTitle = "Basic initialisation of DataTables"
+	- var description  = "DataTables is very simple to use as a jQuery plug-in with a huge range of customisable option. The examples in this section demonstrate basic initialisation of DataTables and how it can be easily customised by passing an object with the options you want."
+	- var activeMenu   = "dt-basic-initialization"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"Basic DataTables"}])
+
+//- Include page content in page block
+append content
+	include ../contents/dt-basic-initialization.html
+
+//- Page specific dependency
+//------------------------------
+
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/tables/datatables/datatable-basic.js', type='text/javascript')

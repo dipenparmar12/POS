@@ -1,0 +1,59 @@
+//- =========================================================================================
+	File Name: navbar-hide-on-scroll-top.pug
+	Description: The hide on scroll option use to hide your fixed top navbar on page scroll.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Hide on Scroll Top"
+	- var pageSubTitle = "Top navbar hide on page scroll"
+	- var description  = "The hide on scroll option use to hide your fixed top navbar on page scroll."
+	- var activeMenu   = "navbar-hide-on-scroll-top"
+
+
+
+append navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarHideOnScroll = true
+
+append verticalMenuConfig
+	- var menuType = "menu-static"
+
+append horizontalMenuConfig
+	- var horizontalMenuType = "navbar-static"	
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navbars"}, {name:"Hide on Scroll Top"}])
+
+//- Include page content in page block
+append content
+	include ../contents/navbar-hide-on-scroll-top.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/ui/headroom.min.js', type='text/javascript')
+	script(type='text/javascript', src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

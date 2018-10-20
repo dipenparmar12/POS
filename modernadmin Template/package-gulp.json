@@ -1,0 +1,50 @@
+{
+  "name": "modern-admin-clean-bootstrap-4-dashboard-html-template",
+  "version": "1.0.0",
+  "description": "The most complete & feature packed bootstrap 4 admin template.",
+  "author": "PIXINVENT",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:geekslabs/modern-admin.git"
+  },
+  "license": "Themeforest Standard Licenses",
+  "private": true,
+  "homepage": "https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "async": "^2.5.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "gulp-cli": "^1.4.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-copy": "^1.0.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-multistream": "^0.1.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-require-tasks": "^1.2.1",
+    "gulp-rtlcss": "^1.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0",
+    "gulp-w3cjs": "^1.3.0",
+    "gulp-watch": "^4.3.11",
+    "load-grunt-tasks": "^3.5.2",
+    "minimist": "^1.2.0",
+    "pug": "^2.0.0-rc.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

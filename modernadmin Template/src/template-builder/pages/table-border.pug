@@ -1,0 +1,27 @@
+//- =========================================================================================
+	File Name: table-border.pug
+	Description: Different types of tables border example.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Table border"
+	- var pageSubTitle = "Different types of tables border example"
+	- var description  = "Table border classes allow you to set different types of table border like row, column & both borders. Also border less and color borders."
+	- var activeMenu   = "table-border"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Tables"}, {name:"Table Border"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/table-border.html

@@ -1,0 +1,26 @@
+//- =========================================================================
+	File Name: component-carousel.pug
+	Description: A slideshow component for cycling through elements—images or slides of text—like a carousel.
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Carousel"
+	- var pageSubTitle = "A slideshow component for cycling through elements like a carousel."
+	- var description = "In browsers where the Page Visibility API is supported, the carousel will avoid sliding when the webpage is not visible to the user (such as when the browser tab is inactive, the browser window is minimized, etc.)."
+	- var activeMenu  = "component-carousel"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Carousel"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-carousel.html

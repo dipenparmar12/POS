@@ -1,0 +1,128 @@
+// ================================================================================================
+// 	File Name: email-application.scss
+// 	Description: SCC file for email application page.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+// 	Version: 1.0
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+// Core variables and mixins
+@import "../bootstrap/functions";
+@import "../bootstrap/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Load variable overrides
+@import "../core/variables/variables";
+@import "../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../assets/scss/variables/variables";
+@import "../../../assets/scss/variables/components-variables";
+
+
+//Variables
+$sideber-border: #E4E7ED;
+$sideber-width: 500px;
+
+.email-application{
+	.email-app-menu{
+		border-right: 1px solid $sideber-border;
+		height: 100%;
+		.form-group-compose{
+			border-bottom: 1px solid $sideber-border;
+		}
+		.list-group-messages{
+			border-bottom: 1px solid $sideber-border;
+			a{
+				padding: 0.85rem 1rem;
+				font-size: 1.1rem;
+			}
+		}
+	}
+	.email-app-list{
+		// position: fixed;
+		// height: 100%;
+		// overflow: scroll;
+		#users-list{
+			position: fixed;
+    		height: 100%;
+    		overflow: scroll;
+    		width: 291px;
+    		background: $white;
+		}
+	}
+	.email-app-details{
+		overflow-y: scroll;
+		height: calc(100% - 30px);
+		.email-app-options,.email-app-title{
+			border-bottom: 1px solid $sideber-border;
+		}
+	}
+	.sidebar{
+		width: ($sideber-width)-1;
+		display: table;
+    	height: 100%;
+    	.email-app-sidebar{
+    		display: table;
+    		height: 100%;
+    	}
+	}
+	.content-right{
+		width: calc(100% - #{$sideber-width});
+	}
+	.app-content, .content-right, .content-wrapper, .content-body{
+	// .sidebar-left, .sidebar, .sidebar-content, .email-app-list-wraper{
+	 	height:100%;
+	 }
+	.content-wrapper{
+		padding: 0 !important;
+	}
+	.sidebar-left{
+		border-right: 1px solid $sideber-border;
+    	z-index: 999;
+    	display: table;
+    	height: 100%;
+	}
+	.chat-fixed-search{
+		position: fixed;
+    	z-index: 999;
+    	background: $white;
+    	width: 291px;    	
+    	padding: 1rem;
+    	fieldset{
+    		border-bottom: 1px solid $sideber-border;
+    	// 	margin: 1rem 0;
+    	}
+	}
+	.users-list-padding{
+		padding-top:83px;
+		padding-bottom: 60px;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.email-application .chat-fixed-search,
+	.email-application .email-app-list #users-list{
+		// width: 100%;
+		width: calc(100% - 60px);
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.email-application .chat-fixed-search,
+	.email-application .email-app-list #users-list{
+		width: 100%;
+		// width: calc(100% - 60px);
+	}
+}
+
+// Horizontal layout specific scss for email apps
+.horizontal-layout.email-application{
+	.app-content{
+		height: calc(100% - 144px) !important;
+		min-height: calc(100% - 144px) !important;
+    	margin-top: 0 !important;
+	}
+}

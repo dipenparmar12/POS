@@ -1,0 +1,21 @@
+.content-header-left.col-md-6.col-12
+	h3.content-header-title #{pageTitle}	
+	.row.breadcrumbs-top
+		block breadcrumbs
+			+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs bottom"}])
+.content-header-right.col-md-6.col-12
+	.btn-group.float-md-right(role='group', aria-label='Button group with nested dropdown')
+		.btn-group(role='group')
+			a.btn.btn-outline-info.round(href='calendars-clndr.html')
+				i.la.la-calendar
+			a.btn.btn-outline-info.round(href='timeline-center.html')
+				i.la.la-bar-chart
+			button#btnGroupDrop1.btn.btn-outline-info.round.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+				i.icon-cog3.icon-left
+				|  Settings
+			.dropdown-menu(aria-labelledby='btnGroupDrop1')
+				a.dropdown-item(href='card-bootstrap.html') Bootstrap Cards
+				a.dropdown-item(href='component-buttons-extended.html') Buttons Extended
+.content-header-lead.col-12.mt-2
+	p.lead
+		| #{description}

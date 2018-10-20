@@ -1,0 +1,56 @@
+//- =========================================================================================
+	File Name: navbar-semi-dark.pug
+	Description: The semi dark color navbar with custom dark and light color options & other 
+				styling options.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Navbar Semi Dark"
+	- var pageSubTitle = "Semi dark color navbar"
+	- var description  = "The semi dark color navbar with custom dark and light color options & other styling options."
+	- var activeMenu   = "navbar-semi-dark"
+
+append pageConfig
+	- var logoType = 'light'
+
+append navbarConfig
+	- var navbarColor = "navbar-semi-dark"
+	- var navbarBrandCenter = false
+	- var navbarBorder = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navbars"}, {name:"Navbar Semi Dark"}])
+
+//- Include page content in page block
+append content
+	include ../contents/navbar-semi-dark.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(type='text/javascript', src=app_assets_path + '/vendors/js/ui/prism.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

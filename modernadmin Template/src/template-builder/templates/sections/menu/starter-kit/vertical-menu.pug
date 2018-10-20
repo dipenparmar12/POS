@@ -1,0 +1,53 @@
+- var dashLink = "../../../html/"+ useDirection +"/"+ useLayout +"/"+ "index.html"
+
+//- main menu
+.main-menu(class=menuType + ' ' + menuColor + ' ' + menuOpenType, class=(menuNativeScroll == true ? 'menu-native-scroll' : ''), class=(menuIconRight == true ? 'menu-icon-right' : ''), class=(menuDevider == true ? 'menu-bordered' : ''), class=(menuShadow == true ? 'menu-shadow' : ''), class=(menuBorder == true ? 'menu-border' : '') data-scroll-to-active="true")
+
+  //- main menu content
+  .main-menu-content
+    +verticalMenu([
+
+      {url:dashLink,name:"Dashboard",slug:"dashboard",icon:"la la-home", tag:"5" , tagcustom: "badge badge-info badge-pill float-right mr-2"},
+
+      {url:"#", name:"Starter kit", slug:"", icon:"la la-rocket",
+        submenu:[
+          {url:"layout-1-column.html", name:"1 column", slug:"1-column", i18n:"nav.starter_kit.1_column"},
+          {url:"layout-2-columns.html", name:"2 columns", slug:"2-columns", i18n:"nav.starter_kit.2_columns"},
+          {url:"#", name:"Content Det. Sidebar", slug:"", i18n:"nav.starter_kit.3_columns_detached.main",
+            submenu:[
+              {url:"layout-content-detached-left-sidebar.html", name:"Detached left sidebar", slug:"content-detached-left-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_left_sidebar"},
+              {url:"layout-content-detached-left-sticky-sidebar.html", name:"Detached sticky left sidebar", slug:"content-detached-left-sticky-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_sticky_left_sidebar"},
+              {url:"layout-content-detached-right-sidebar.html", name:"Detached right sidebar", slug:"content-detached-right-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_right_sidebar"},
+              {url:"layout-content-detached-right-sticky-sidebar.html", name:"Detached sticky right sidebar", slug:"content-detached-right-sticky-sidebar", i18n:"nav.starter_kit.3_columns_detached.3_columns_detached_sticky_right_sidebar"},
+            ]
+          },
+          {divider:"1"},
+          {url:"layout-fixed-navbar.html",name:"Fixed navbar",slug:"fixed-navbar", i18n:"nav.starter_kit.fixed_navbar"},
+          {url:"layout-fixed-navigation.html",name:"Fixed navigation",slug:"fixed-navigation", i18n:"nav.starter_kit.fixed_navigation"},
+          {url:"layout-fixed-navbar-navigation.html",name:"Fixed navbar & navigation",slug:"fixed-navbar-navigation", i18n:"nav.starter_kit.fixed_navbar_navigation"},
+          {url:"layout-fixed-navbar-footer.html",name:"Fixed navbar & footer",slug:"fixed-navbar-footer", i18n:"nav.starter_kit.fixed_navbar_footer"},
+          {divider:"1"},
+          {url:"layout-fixed.html",name:"Fixed layout",slug:"fixed", i18n:"nav.starter_kit.fixed_layout"},
+          {url:"layout-boxed.html",name:"Boxed layout",slug:"boxed", i18n:"nav.starter_kit.boxed_layout"},
+          {url:"layout-static.html",name:"Static layout",slug:"static", i18n:"nav.starter_kit.static_layout"},
+          {divider:"1"},
+          {url:"layout-light.html",name:"Light layout",slug:"light", i18n:"nav.starter_kit.light_layout"},
+          {url:"layout-dark.html",name:"Dark layout",slug:"dark", i18n:"nav.starter_kit.dark_layout"},
+          {url:"layout-semi-dark.html",name:"Semi dark layout",slug:"semi-dark", i18n:"nav.starter_kit.semi_dark_layout"},
+        ]
+      },
+
+      {url:"changelog.html" ,name:"Changelog" ,icon:"la la-file",slug:"changelog" ,tag:"1.0", tagcustom: "badge badge-pill badge-danger float-right"},
+
+      {navheader:"Support",icon:"la la-ellipsis-h"},
+        {url:"https://pixinvent.ticksy.com/",name:"Raise Support",slug:"support-raise-support",icon:"la la-support"},
+        {url:"https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation",name:"Documentation",slug:"documentation",icon:"la la-folder"},
+
+    ])
+
+  //-main menu content
+
+  //- main menu footer
+  //- include ../includes/menu-footer
+  //- main menu footer
+//- main menu

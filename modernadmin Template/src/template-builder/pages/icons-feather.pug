@@ -1,0 +1,30 @@
+//- =========================================================================================
+	File Name: icons-feather.pug
+	Description: Feather Icons
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Feather Icons"
+	- var activeMenu = "icons-feather"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},  {name:"Icons"}, {name:"Feather Icons"}])
+
+//- Include page content in page block
+append content
+	include ../contents/icons-feather.html
+
+//- Page CSS
+//------------------------------
+//- Add Page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/feather/style.css')

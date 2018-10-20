@@ -1,0 +1,135 @@
+// // Core variables and mixins
+// Core variables and mixins
+@import "../../bootstrap/functions";
+@import "../../bootstrap/mixins";
+@import "../../bootstrap-extended/mixins";
+
+
+// Core variables and mixins overrides
+@import "../../core/variables/variables";
+@import "../../core/variables/components-variables";
+
+// Overrides user variable
+@import "../../../../assets/scss/variables/variables";
+@import "../../../../assets/scss/variables/components-variables";
+
+@import '../../bootstrap/buttons';
+
+.fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead{
+  border-color: lighten($primary,5%);
+}
+th.fc-widget-header, .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span{
+  padding: 10px;
+}
+.fc-state-default{
+  background-image: none;
+  box-shadow: none;
+}
+.fc button{
+  @extend .btn;
+  @extend .btn-outline-primary;
+  height: auto;
+  outline: none;
+  border-radius: 0;
+  text-shadow: none;
+}
+.btn:focus, .fc button:focus, .btn.focus, .fc button.focus, .btn:active:focus, .fc button:active:focus, .btn:active.focus, .fc button:active.focus, .btn.active:focus, .fc button.active:focus, .btn.active.focus, .fc button.active.focus{
+  outline: none;
+}
+.fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active{
+  // @extend .btn-secondary.active
+}
+.fc-day-grid-event {
+  margin: 0 5px 5px 5px;
+  padding: 4px 8px;
+}
+.fc-event{
+  background:$primary;
+  border: 1px solid darken($primary,5%);
+  span{
+    font-size: 1rem;
+    color: #FFF;
+  }
+}
+.fc-time-grid-event .fc-title{
+  color: #FFF;
+}
+.fc-unthemed .fc-today {
+  color: #FFF;
+  background: $primary;
+}
+.fc-unthemed .fc-divider, .fc-unthemed .fc-popover .fc-header {
+    background: #E4EBF1;
+}
+.fc-popover .fc-header {
+    padding: 10px 5px;
+}
+/* Styling for each event from Schedule */
+.fc-time-grid-event.fc-v-event.fc-event {
+  border-radius: 4px;
+  border: none;
+  padding: 5px;
+  opacity: .65;
+  left: 5% !important;
+  right: 5% !important;
+}
+
+/* Bolds the name of the event and inherits the font size */
+.fc-event {
+  font-size: inherit !important;
+  font-weight: bold !important;
+  color: #fff !important;  
+  &:hover{
+    color: #fff !important;
+  }
+}
+
+
+/* Inherits background for each event from Schedule. */
+.fc-event .fc-bg {
+  z-index: 1 !important;
+  background: inherit !important;
+  opacity: .25 !important;
+}
+
+/* Normal font weight for the time in each event */
+.fc-time-grid-event .fc-time {
+  font-weight: normal !important;
+}
+
+/* Apply same opacity to all day events */
+.fc-ltr .fc-h-event.fc-not-end, .fc-rtl .fc-h-event.fc-not-start {
+  opacity: .65 !important;
+  margin-left: 12px !important;
+  padding: 5px! important;
+}
+
+/* Apply same opacity to all day events */
+.fc-day-grid-event.fc-h-event.fc-event.fc-not-start.fc-end {
+  opacity: .65 !important;
+  margin-left: 12px !important;
+  padding: 5px! important;
+}
+
+.fc-time-grid .fc-slats td{
+  height: auto;
+}
+
+.fc-ltr .fc-axis{
+  padding: 10px;
+}
+
+.fc-nonbusiness{
+  background: #D7E0EA;
+}
+
+.fc-events-container{
+  padding: 0 10px;
+  border: 1px solid #A2B8CD;
+  background: $content-bg;
+  text-align: left;
+}
+.fc-events-container .fc-event{
+  padding: 5px;
+  margin: 10px 0;
+}

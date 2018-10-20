@@ -1,0 +1,39 @@
+footer(class="navbar navbar-expand footer " + footerType +' ' + footerColor, class=(footerBorder == true ? 'navbar-border' : ''), class=(footerShadow == true ? 'navbar-shadow' : ''))
+  ul.nav.navbar-nav.ml-1.mr-auto
+    li.nav-item
+      a.nav-link.text-muted(href='#') Terms of use
+    li.nav-item
+      a.nav-link.text-muted(href='#') Privacy Policy
+    li.dropdown.dropdown-language.nav-item
+      a#dropdown-curr.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        i.la.la-usd
+        span.selected-language USD
+        i.caret
+      .dropdown-menu.dropdown-menu-right(aria-labelledby='dropdown-flag')
+        a.dropdown-item(href='#')
+          i.la.la-gbp
+          |  GBP
+        a.dropdown-item(href='#')
+          i.la.la-eur
+          |  EUR
+        a.dropdown-item(href='#')
+          i.la.la-btc
+          |  BTC
+        a.dropdown-item(href='#')
+          i.la.la-inr
+          |  INR
+  .float-right
+    form.form-inline
+      span.mr-1
+        | Checked
+      input#switcherySize3.switchery(type='checkbox', data-size='xs', checked='')
+      .input-group.mx-1.my-0
+        span.input-group-prepend
+          button.btn.btn-success(type='button')
+            i.ft-search
+        input.form-control.border-success(type='text', placeholder='Quick search...', aria-label='Amount')
+        span.input-group-append
+          button.btn.btn-outline-success(type='button') Go!
+      button.btn.btn-outline-danger(type='button')
+        i.pe-mi-close
+        |  Logout

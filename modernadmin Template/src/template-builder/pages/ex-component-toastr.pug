@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: ex-component-toastr.pug
+	Description: Toastr Notifications
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Toastr"
+	- var pageSubTitle = "Simple javascript toast notifications"
+	- var description  = "toastr is a Javascript library for Gnome / Growl type non-blocking notifications."
+	- var activeMenu   = "ex-component-toastr"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Extra Components"}, {name:"Toastr"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/ex-component-toastr.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/extensions/toastr.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/extensions/toastr.min.js', type='text/javascript')
+
+//- Page CSS
+//------------------------------
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/extensions/toastr.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/extensions/toastr.js', type='text/javascript')

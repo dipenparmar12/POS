@@ -1,0 +1,38 @@
+//- =========================================================================================
+	File Name: editor-tinymce.pug
+	Description: The Most Advanced WYSIWYG HTML Editor
+	-------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	======================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "tinyMCE"
+	- var pageSubTitle = "Everything you expect from a rich text editor and more..."
+	- var description  = "TinyMCE (Tiny Moxiecode Content Editor) is a platform-independent, browser-based WYSIWYG editor control, written in JavaScript and released as open-source software under the LGPL by Ephox."
+	- var activeMenu = "editor-tinymce"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Editors"}, {name:"tinyMCE"}])
+
+//- Include page content in page block
+append content
+	include ../contents/editor-tinymce.html
+
+append vendorcss
+	//- Default TinyMCE CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/editors/tinymce/tinymce.min.css')
+		
+append vendorjs
+	//- TinyMCE editor JS
+	script(src=app_assets_path + '/vendors/js/editors/tinymce/tinymce.js', type='text/javascript')
+	
+append pagejs
+	//- Template Js for TinyMCE
+	script(src=app_assets_path + '/js/scripts/editors/editor-tinymce.js', type='text/javascript')

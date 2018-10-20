@@ -1,0 +1,43 @@
+//- =========================================================================================
+	File Name: echarts-scatter-charts.pug
+	Description: Scatter echarts examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Echarts - Scatter Chart"
+	- var pageSubTitle = "Scatter Chart Examples"
+	- var description = "A scatter plot (also called a scatter graph, scatter chart, scattergram, or scatter diagram) is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data. If the points are color-coded you can increase the number of displayed variables to three. The data is displayed as a collection of points, each having the value of one variable determining the position on the horizontal axis and the value of the other variable determining the position on the vertical axis."
+	- var activeMenu   = "echarts-scatter-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Echarts"}, {name:"Scatter Chart"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/echarts-scatter-charts.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/echarts/scatter/basic-bubble.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/scatter/basic-scatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/scatter/category-scatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/scatter/large-scale-scatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/scatter/scatter-multi-level-control.js', type='text/javascript')

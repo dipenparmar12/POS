@@ -1,0 +1,42 @@
+//- =========================================================================================
+	File Name: component-modals.pug
+	Description: Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: Pixinvent
+	Author URL: hhttp://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "Modal"
+	- var pageSubTitle = "Modals is a dialog box/popup"
+	- var description  = "Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults."
+	- var activeMenu = "component-modals"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Components"}, {name:"Modal"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-modals.html
+
+append vendorcss
+	//- Select2 CSS
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/selects/select2.min.css')
+
+append vendorjs
+	//- select2 min js
+	script(src=app_assets_path + '/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/animate/animate.css')
+
+append pagejs
+	//- Template js file
+	script(src=app_assets_path + '/js/scripts/forms/select/form-select2.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/modal/components-modal.js', type='text/javascript')

@@ -1,0 +1,33 @@
+//- =========================================================================================
+	File Name: changelog.pug
+	Description: Change log
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle = "ChangeLog"
+	- var pageSubTitle = ""
+	- var description  = ""
+	- var activeMenu = "changelog"
+
+
+
+append pageConfig	
+	- var headerType = 'sk-header'
+	- var starterKit    = true
+	
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"Change log"}])
+
+//- Include page content in page block
+append content
+	include ../../contents/changelog.html
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/timeline.css')

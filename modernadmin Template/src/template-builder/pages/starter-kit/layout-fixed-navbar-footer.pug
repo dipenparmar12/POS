@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: layout-fixed-navbar-footer.pug
+	Description: The fixed navbar & footer page structure have fixed navbar and footer,
+				 static navigation.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent 
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Fixed Navbar & Footer"
+	- var pageSubTitle = "The fixed navbar with fixed footer"
+	- var description  = "Fixed navbar & footer page structure have fixed navbar and footer, static navigation"
+	- var activeMenu   = "fixed-navbar-footer"
+
+
+
+append pageConfig
+	- var headerType = 'sk-header'
+	- var navbarFixed = true
+	- var starterKit  = true
+
+append navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarHideOnScroll = false
+
+append footerConfig
+	- var footerType = "fixed-bottom"
+	- var footerHideOnScroll = false
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Starters Kit"}, {name:"Fixed Navbar & Footer"}])
+
+//- include  page content in page block
+append content
+	include ../../contents/starter-kit/starter-page-content.html

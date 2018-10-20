@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name:handson-table-rows-only.pug
+	Description: Present the template values.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Rows only"
+	- var pageSubTitle = "Present the template values"
+	- var description  = "Cell renderers can be used to present the template values for empty rows"
+	- var activeMenu   = "handson-table-rows-only"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"HandsonTable"}, {name:"Rows only"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/handson-table-rows-only.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/handsontable/handsontable.full.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/handsontable/jsgrid-theme.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/handsontable/jsgrid.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/handsontable/handsontable.full.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/handsontable/jsgrid.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//-Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/handsontable/handsontable-rows-only.js', type='text/javascript')

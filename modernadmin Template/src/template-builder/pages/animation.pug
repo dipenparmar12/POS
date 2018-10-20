@@ -1,0 +1,43 @@
+//- =========================================================================
+	File Name: animation.pug
+	Description:  All animations for components using animate.js
+	--------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Animations"
+	- var pageSubTitle = "A cross-browser library of CSS animations."
+	- var description  = "animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness."
+	- var activeMenu  = "animation"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"Animation"}])
+
+//- Include page content in page block
+append content
+	include ../contents/animation.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/animation/jquery.appear.js', type='text/javascript')
+
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/plugins/animate/animate.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/simple-line-icons/style.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/core/colors/palette-callout.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/animation/animation.js', type='text/javascript')

@@ -1,0 +1,41 @@
+//- =========================================================================================
+	File Name: layout-light.pug
+	Description: The light layout has light version navbar, navigation & footer.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent 
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Light Layout"
+	- var pageSubTitle = "Light template layout"
+	- var description  = "The light layout has light version navbar, navigation & footer."
+	- var activeMenu   = "light"
+
+append pageConfig
+	- var headerType = 'sk-header'
+	- var logoType = 'dark'
+	- var starterKit  = true
+
+append navbarConfig
+	- var navbarColor = "navbar-light"
+
+append verticalMenuConfig
+	- var menuColor = "menu-light"
+
+append horizontalMenuConfig
+	- var horizontalMenuColor = "navbar-light"
+
+append footerConfig
+	- var footerColor = "footer-light"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Starters Kit"}, {name:"Light Layout"}])
+
+//- include  page content in page block
+append content
+	include ../../contents/starter-kit/starter-page-content.html

@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: horizontal-nav-submenu-click.pug
+	Description: Open horizontal navigation menus & submenus on click.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Sub Menu on Click"
+	- var pageSubTitle = "Horizontal navigation submenu click"
+	- var description  = "Configuration options to open horizontal navigation dropdown menus & submenus on click."
+	- var activeMenu   = "horizontal-nav-submenu-click"
+
+
+
+append pageConfig
+	- var menuOpen = "click"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Horizontal Navigation"}, {name:"Sub Menu on Click"}])
+
+//- Include page content in page block
+append content
+	include ../contents/horizontal-nav-submenu-click.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/ui/prism.min.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(type='text/javascript' ,src=app_assets_path + '/vendors/js/ui/prism.min.js')

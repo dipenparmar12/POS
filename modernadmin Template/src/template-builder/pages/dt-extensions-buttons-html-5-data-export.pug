@@ -1,0 +1,56 @@
+//- =========================================================================================
+	File Name:dt-extensions-buttons-html-5-data-export.pug
+	Description: HTML5 buttons provides the local file saving features.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "HTML 5 Data Export"
+	- var pageSubTitle = "HTML5 buttons provides the local file saving features"
+	- var description  = "The HTML5 export buttons make use of the local file saving features of modern browsers to create files on the client-side and then download them without any server interaction required."
+	- var activeMenu   = "dt-extensions-buttons-html-5-data-export"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"DataTables"}, {name:"HTML 5 Data Export"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/dt-extensions-buttons-html-5-data-export.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/datatables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/extensions/buttons.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/tables/datatable/buttons.bootstrap4.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/tables/datatable/datatables.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/dataTables.buttons.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/datatable/buttons.bootstrap4.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/jszip.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/pdfmake.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/vfs_fonts.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/buttons.html5.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/buttons.print.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/tables/buttons.colVis.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Custom JS
+	script(src=app_assets_path + '/js/scripts/tables/datatables-extensions/datatable-button/datatable-html5.js', type='text/javascript')

@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: rickshaw-chart.pug
+	Description: Rickshaw chart examples.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Rickshaw Charts"
+	- var pageSubTitle = "Rickshaw charts examples"
+	- var description = "Rickshaw is a Javascript toolkit for creating interactive time series graphs."
+	- var activeMenu   = "rickshaw-charts"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"Rickshaw Charts"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/rickshaw-charts.html
+
+//- Vendor CSS
+//------------------------------
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/charts/rickshaw.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/js/charts/d3.min.js', type='text/javascript')
+	script(src=app_assets_path + '/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/rickshaw.min.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/charts/rickshaw/line.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/rickshaw/bar.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/rickshaw/area.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/rickshaw/scatter.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/rickshaw/multiple-renderers.js', type='text/javascript')

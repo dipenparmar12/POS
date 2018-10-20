@@ -1,0 +1,9 @@
+.content-header-left.col-md-6.col-12.mb-2
+  h3.content-header-title #{pageTitle}
+  .row.breadcrumbs-top
+    block breadcrumbs
+      +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page headers"}, {name:"Breadcrumbs with round button"}])
+.content-header-right.text-md-right.col-md-6.col-12
+  .form-group  
+    button.btn-icon.btn.btn-danger.btn-glow.btn-round(type='button')
+      i.ft-bell

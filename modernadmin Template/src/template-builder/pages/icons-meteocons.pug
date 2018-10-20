@@ -1,0 +1,32 @@
+//- =========================================================================================
+	File Name: icons-meteocons.pug
+	Description: Meteocons
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================
+
+extends template
+
+block pageVars
+	- var pageTitle = "Meteocons"
+	- var activeMenu = "icons-meteocons"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {name:"Icons"}, {name:"Meteocons"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/icons-meteocons.html
+
+//- Page CSS
+//------------------------------
+//- Add Page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/meteocons/style.min.css')

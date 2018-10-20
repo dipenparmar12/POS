@@ -1,0 +1,17 @@
+@mixin bs-callout($color, $bgcolor : lighten($color, 35%)) {
+    display: block;
+    border-color: $color !important;
+    background-color: $bgcolor;
+    border-radius: 0.25rem;
+    color: darken($color, 50%);
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        color: $color;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    code, .highlight {
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,30 @@
+//- =========================================================================================
+	File Name: component-scrollable.pug
+	Description: Scrollable Component
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+extends template
+
+block pageVars
+	- var pageTitle    = "Scrollable Component"
+	- var activeMenu   = "component-scrollable"
+	- var description  = "We are using perfect scrollbar plugin as custom content scroller in this theme. It is minimalistic but perfect custom scrollbar plugin. You can change nearly all css styles of the scrollbar. The scrollbar design has no dependency on scripts. Additionally, perfect-scrollbar uses 'scrollTop' and 'scrollLeft', not absolute positioning or something messy. Perfect-scrollbar supports RTL perfectly on both WebKit and Gecko based browsers."
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Page"}, {name:"Scrollable Component"}])
+
+//- Include page content in page block
+append content
+	include ../contents/component-scrollable.html
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/ui/scrollable.js', type='text/javascript')

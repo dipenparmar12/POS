@@ -1,0 +1,84 @@
+//- ===============================================================================================
+	File Name: vertical-menu-template.pug
+	Description: A template file for generating template with classic vertical menu.
+	----------------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	================================================================================================ -//
+
+extends ../../base
+
+//- Template customization
+//------------------------
+block templateConfig
+	- var templateCustom = "vertical-layout vertical-menu-modern"
+	- var dataMenu = "vertical-menu-modern"
+
+//- Page level customization
+//------------------------
+block pageConfig
+	- var logoType = 'light'
+
+block navbarConfig
+	- var navbarPosition = "fixed-top"
+	- var navbarColor = "navbar-semi-dark"
+	- var navbarShadow = true	
+
+block verticalMenuConfig
+	- var menuType = "menu-fixed"
+	- var menuColor = "menu-dark"
+	- var menuOpenType = "menu-accordion"
+	- var menuShadow = true
+	- var menuCollapsed = false
+
+block footerConfig
+	- var footerType = "footer-static"
+	- var footerColor = "footer-light"
+	- var footerShadow = true
+	- var footerBorder = true
+
+//- Template includes
+//-------------------
+
+block header
+	if(headerType == 'back-sk-header')
+		include ../../templates/sections/header/back-sk-header
+	else
+		include ../../templates/sections/header/sk-modern-header
+
+block main-menu
+	include ../sections/menu/starter-kit/vertical-modern-menu
+
+block page-header
+	if blankPage != true
+		include ../../pages/page-headers/breadcrumbs-new
+
+block footer
+	include ../sections/footer/footer
+
+//- Template specific dependency
+//------------------------------
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss	
+	link(rel='stylesheet', type='text/css', href='../../../app-assets/css'+rtl+'/core/menu/menu-types/vertical-menu-modern.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+block pagejs

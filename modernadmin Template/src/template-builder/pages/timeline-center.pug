@@ -1,0 +1,74 @@
+//- =========================================================================================
+	File Name: timeline-center.pug
+	Description: Center aligned responsive timeline.
+	----------------------------------------------------------------------------------------
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+	==========================================================================================-//
+
+extends template
+
+block pageVars
+	- var pageTitle    = "Timeline Center"
+	- var pageSubTitle = "Center aligned responsive timeline."
+	- var description  = ""
+	- var activeMenu   = "timeline-center"
+
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Gallery"}, {name:"Responsive Timeline"}])
+
+
+
+//- Include page content in page block
+append content
+	include ../contents/timeline-center.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	//- iCheck css
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/icheck.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/css/forms/icheck/custom.css')
+	//- Photo-swipe for gallery
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/timeline.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	//- Icheck JS
+	script(src=app_assets_path + '/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+	script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyBDkKetQwosod2SZ7ZGCpxuJdxY3kxo5Po', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/charts/gmaps.min.js', type='text/javascript')
+
+	//- masonry
+	script(src=app_assets_path + '/vendors/js/gallery/masonry/masonry.pkgd.min.js', type='text/javascript')
+	//- Photo-swipe for gallery
+	script(src=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe.min.js', type='text/javascript')
+	script(src=app_assets_path + '/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js', type='text/javascript')
+
+	//- Charts
+	script(src=app_assets_path + '/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Charts custom script
+	script(src=app_assets_path + '/js/scripts/charts/echarts/bar-column/stacked-column.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/charts/echarts/radar-chord/non-ribbon-chord.js', type='text/javascript')
+	//- Photoswipe custom script
+	script(src=app_assets_path + '/js/scripts/gallery/photo-swipe/photoswipe-script.js', type='text/javascript')
+	script(src=app_assets_path + '/js/scripts/pages/timeline.js', type='text/javascript')
