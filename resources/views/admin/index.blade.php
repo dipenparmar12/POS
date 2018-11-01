@@ -1,5 +1,8 @@
 @extends('admin.main')
 
+{{-- Optional @yeild --}}
+@section('title',"Sale Point of Sale")
+
 @section('content')
     <div class="card-content">
         <div class="card-body">
@@ -299,4 +302,3 @@
         </div>
     </div>
 @endsection
-

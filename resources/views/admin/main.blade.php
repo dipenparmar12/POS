@@ -27,7 +27,13 @@
   </footer>
 
 
+  {{--  Js_script_optional ( Each-Page )  --}}
+  @yield('js_script')
+
   @include('admin.layout.scripts')
+
+
+
 
 </body>
 </html>
