@@ -20,7 +20,6 @@ class CreateSubCategoriesTable extends Migration
             $table->string('nick_name',100);
             $table->text('desc',190);
             $table->text('img',190);
-            // $table->string('company_id');
             $table->timestamps();
         });
     }

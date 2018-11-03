@@ -15,9 +15,14 @@ class CreateTablesTable extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('status');// Hold,paid,free,empty,occupaid
-            $table->tinyInteger('part');// table divided by one or two customers
-            $table->string('comment',190);
+            
+            $table->enum('status',['hold','empty','unpaid']);
+            //  Hold->order done but full order not served, free, occupaid 
+            //  unpaid->order compalte, but unpaid
+            //  empty->free ready to use
+            // $table->string('status');
+
+            $table->string('remark',190);
             $table->timestamps();
         });
     }

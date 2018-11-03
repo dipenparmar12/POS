@@ -18,14 +18,15 @@ class CreateCustomersTable extends Migration
             $table->string('f_name',50);
             $table->string('m_name',50);
             $table->string('l_name',50);
-            $table->unsignedInteger('mobile');
-            $table->unsignedInteger('mobile1');
+            $table->integer('mobile');
+            $table->integer('mobile1');
             $table->text('address');
             $table->string('city',50);
-            $table->integer('pin_code',10);
+            $table->integer('pin_code');
             $table->decimal('credit_limit');
             $table->text('remark');
             $table->timestamps();
+            
         });
     }
 

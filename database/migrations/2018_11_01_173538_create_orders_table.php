@@ -17,7 +17,8 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('customer_id');
             $table->string('order_detail_id');
-            $table->enum('status');// pending for letter
+            // $table->enum('status');// pending for letter
+            $table->enum('status',['hold','empty','unpaid']);
             $table->string('paid',50);
             $table->unsignedDecimal('amount');
             $table->unsignedDecimal('discount');

@@ -17,9 +17,8 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name',100);
             $table->string('nick_name',100);
-            $table->string('desc',190);
+            $table->text('desc');
             $table->text('img');
-            // $table->integer('company_id'); // ForingKey
             $table->timestamps();
         });
     }
