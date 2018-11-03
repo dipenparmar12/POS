@@ -16,7 +16,7 @@ class Companies_table_seeder extends Seeder
     public function run()
     {
         DB::table('companies')->insert([
-            'name' => 'LilaShah',
+            'name' => 'Gdham',
             'type' => 'all',
         ]);
 

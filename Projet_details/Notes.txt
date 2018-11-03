@@ -9,4 +9,15 @@ php artisan db:seed --class=UsersTableSeeder
 
 
 
+
+-----ONE artisan command for, Creating Post model with migration and resource controller
+php artisan make:model Post -m -c --resource
+
+
+
+-----something_important Note
+-----something_important Note
+-----something_important Note
+-----something_important Note
+-----something_important Note
 -----something_important Note
