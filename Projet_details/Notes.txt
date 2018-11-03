@@ -1,0 +1,12 @@
+
+-----refresh with fake data 
+php artisan migrate:refresh --seed
+
+
+
+-----option to specify a specific seeder class to run individually:
+php artisan db:seed --class=UsersTableSeeder
+
+
+
+-----something_important Note
