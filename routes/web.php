@@ -20,6 +20,8 @@ Route::get('/tab', function () {
 
 
 // Test Controller Methods 
-Route::get('/test/tables','Test@tables');
-Route::get('/test/table_data','Test@table_data');
-Route::get('/test/get_table_data/{table?}','Test@get_table_data');
+Route::get('/test/test', 'TestC@test');
+Route::get('/test/tables','TestC@tables');
+Route::get('/test/table_data','TestC@table_data');
+Route::get('/test/get_table_data/{table?}','TestC@get_table_data');
+
