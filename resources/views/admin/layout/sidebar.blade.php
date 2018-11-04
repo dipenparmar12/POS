@@ -4,11 +4,11 @@
     
       <li class="nav-item has-sub"><a href=""><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
         <ul class="menu-content" style="">
-          <li class=""><a class="menu-item" href="" data-i18n="nav.dash.ecommerce">eCommerce</a>
+          <li class=""><a class="menu-item" href="{{ URL::to('pos/')}}" data-i18n="nav.dash.ecommerce">Sales</a>
           </li>
-          <li class=""><a class="menu-item" href="" data-i18n="nav.dash.crypto">Crypto</a>
+        <li class=""><a class="menu-item" href="{{ URL::to('pos/table')}}" data-i18n="nav.dash.crypto">Tables</a>
           </li>
-          <li class="active"><a class="menu-item" href="" data-i18n="nav.dash.sales">Sales</a>
+          <li class="active"><a class="menu-item" href="{{ URL::to('pos/items')}}" data-i18n="nav.dash.sales">Items</a>
           </li>
         </ul>
       </li>

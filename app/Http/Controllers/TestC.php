@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use App\Category;
+
 use Illuminate\Http\Request;
+use DB;
 
 class TestC extends Controller
 {

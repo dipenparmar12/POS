@@ -13,10 +13,14 @@ Route::get('/', function () {
 Route::get('/template', function () {
     return view('admin.main');
 });
-
 Route::get('/tab', function () {
     return view('admin.index');
 });
+
+
+Route::get('/pos/{page?}', 'PosController@href');
+
+
 
 
 // Test Controller Methods 

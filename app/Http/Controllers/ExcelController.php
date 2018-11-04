@@ -9,6 +9,8 @@ use DB;
 use Session;
 use Excel;
 
+use App\Category;
+
 
 class ExcelController extends Controller
 {
@@ -20,7 +22,7 @@ class ExcelController extends Controller
     public function downloadExcel($type)
     {
         $data = Category::get()->toArray();
-        return Excel::create('laravelcode', function($excel) use ($data) {
+        return Excel::create('Category_dump', function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
@@ -39,10 +41,7 @@ class ExcelController extends Controller
                     if(!empty($row)) {
                         // DB::table('categories')->insert($row);
                     }
-                    // Preview Witch Data inserted 
-                    // echo "<pre>";
-                    // print_r($row);
-                    // echo "</pre>";
+
 
                     // ------ By Specify Colunm Name and Row name
                     // $data['title'] = $row['title'];
