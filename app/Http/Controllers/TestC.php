@@ -1,19 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 
-
-
 class TestC extends Controller
 {
     public function test(){
-        // echo 'Test@test'.'<br>';
-        // echo Category::all()->random();
-
-
-
+        echo 'Test@test'.'<br>';
+        echo Category::all()->random();
     }
 
     public function index(){
@@ -42,5 +36,7 @@ class TestC extends Controller
             echo '<hr>';
         }
     } #table_data()
+
+
 
 }

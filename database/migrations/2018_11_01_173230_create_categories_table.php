@@ -18,8 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->unsignedInteger('company_id')->references('id')->on('companies');
             $table->string('name',100);
             $table->string('nick_name',100);
-            $table->text('desc');
-            $table->text('img');
+            $table->text('desc')->nullable();
+            $table->text('img')->nullable();
             $table->timestamps();
         });
     }

@@ -18,8 +18,8 @@ class CreateSubCategoriesTable extends Migration
             $table->integer('category_id');
             $table->string('name',100);
             $table->string('nick_name',100);
-            $table->text('desc',190);
-            $table->text('img',190);
+            $table->text('desc',190)->nullable();
+            $table->text('img',190)->nullable();
             $table->timestamps();
         });
     }

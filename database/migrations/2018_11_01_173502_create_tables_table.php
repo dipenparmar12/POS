@@ -22,7 +22,7 @@ class CreateTablesTable extends Migration
             //  empty->free ready to use
             // $table->string('status');
 
-            $table->string('remark',190);
+            $table->string('remark',190)->nullable();
             $table->timestamps();
         });
     }
