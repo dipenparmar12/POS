@@ -14,12 +14,11 @@ Route::get('/template', function () {
     return view('admin.main');
 });
 Route::get('/tab', function () {
-    return view('admin.index');
+    return view('admin.pages.index');
 });
 
 
 Route::get('/pos/{page?}', 'PosController@href');
-
 
 
 
@@ -40,3 +39,4 @@ Route::get('importExport', 'ExcelController@importExport');
 Route::get('downloadExcel/{type}', 'ExcelController@downloadExcel');
 // Route for import excel data to database.
 Route::post('importExcel', 'ExcelController@importExcel');
+

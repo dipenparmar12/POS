@@ -7,7 +7,14 @@ use Illuminate\Http\Request;
 class PosController extends Controller
 {
     public function href($view='index'){
-        return view('admin.'.$view);
+        $data['category'] = \App\Category::all();
+        
+        return view('admin.pages.'.$view)->with($data);
+    }
+
+    public function Category_display()
+    {
+        
     }
     
 }

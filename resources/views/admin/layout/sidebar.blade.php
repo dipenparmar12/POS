@@ -6,9 +6,9 @@
         <ul class="menu-content" style="">
           <li class=""><a class="menu-item" href="{{ URL::to('pos/')}}" data-i18n="nav.dash.ecommerce">Sales</a>
           </li>
-        <li class=""><a class="menu-item" href="{{ URL::to('pos/table')}}" data-i18n="nav.dash.crypto">Tables</a>
+        <li class="active"><a class="menu-item" href="{{ URL::to('pos/table')}}" data-i18n="nav.dash.crypto">Tables</a>
           </li>
-          <li class="active"><a class="menu-item" href="{{ URL::to('pos/items')}}" data-i18n="nav.dash.sales">Items</a>
+          <li class=""><a class="menu-item" href="#file:///E:/xampp/htdocs/project/SAGAR/project/modernadmin%20Template/html/ltr/vertical-menu-template%20Nice%20One/index.html" data-i18n="nav.dash.sales">Items</a>
           </li>
         </ul>
       </li>

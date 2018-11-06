@@ -34,6 +34,7 @@ class Categories_table_seeder extends Seeder
             'desc' => '',
             'img' => 'images/testFood3.png',
         ]);
+        
         DB::table('categories')->insert([
             'company_id' => 1,
             'name' => 'Chaat',
@@ -41,5 +42,23 @@ class Categories_table_seeder extends Seeder
             'desc' => '',
             'img' => 'images/testFood4.png',
         ]);
+
+        DB::table('categories')->insert([
+            'company_id' => 1,
+            'name' => 'Tea Coffee',
+            'nick_name' => 'TC',
+            'desc' => '',
+            'img' => 'images/testFood5.png',
+        ]);
+
+        DB::table('categories')->insert([
+            'company_id' => 1,
+            'name' => 'Dummy Category',
+            'nick_name' => 'Dummy',
+            'desc' => '',
+            'img' => 'images/testFood6.png',
+        ]);
+
     }
+    
 }
