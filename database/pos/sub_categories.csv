@@ -1,0 +1,32 @@
+id,category_id,name,price,desc,img
+,1,A Regulers,87,A,A.jpg
+,1,A Koftas,98,A,A.jpg
+,1,A Salad,240,A,A.jpg
+,1,A Paneer Sabji,115,A,A.jpg
+,1,A Dal,64,A,A.jpg
+,1,A Roti,107,A,A.jpg
+,1,A Rice,15,A,A.jpg
+,1,A Soup,139,A,A.jpg
+,1,A Starter,33,A,A.jpg
+,1,A Baby Corn Msrm,248,A,A.jpg
+,2,B Rice Nuddle,151,B,B.jpg
+,2,B Ice Cream,183,B,B.jpg
+,2,B Sweet,133,B,B.jpg
+,2,B Hot Beverages,190,B,B.jpg
+,2,B Season Spl,52,B,B.jpg
+,2,B Idli Vada,41,B,B.jpg
+,2,B Dhosa,30,B,B.jpg
+,2,B Spl Dhosa,122,B,B.jpg
+,2,B Uttappam,62,B,B.jpg
+,5,C Pizza,112,C,C.jpg
+,5,C Coolers-Juices,56,C,C.jpg
+,5,C Bhel,91,C,C.jpg
+,5,C Pau bhaji-Lite Bites,22,C,C.jpg
+,5,C Sanwich,42,C,C.jpg
+,5,C RICE MGIC,238,C,C.jpg
+,5,D HALF SABJI S  E TC,71,D,D.jpg
+,4,D PARSEL,152,D,D.jpg
+,4,D HOME DELIVARI,49,D,D.jpg
+,4,D FOODISS,101,D,D.jpg
+,4,D FODDISS PUNJABI,134,D,D.jpg
+,4,D FOODIS DOSA,103,D,D.jpg

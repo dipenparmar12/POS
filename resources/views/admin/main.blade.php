@@ -22,13 +22,11 @@
       <br>
       <div class="container-fluid">
           @yield('content')
-          
-          <div class="row">
-            <div class="col-5">@yield('category_list')</div>
-            <div class="col-5">@yield('active_table_item_list')</div>
-            <div class="col-2"> @yield('table_selection_palette') </div>
+          <div class="row no-gutters" >
+            <div class="col-5">@yield('order_items')</div>
+            <div class="col-5">@yield('item_selecter')</div>
+            <div class="col-2">@yield('table_select_palette')</div>
           </div>
-
       </div>
     </div>
     
