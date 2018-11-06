@@ -1,9 +1,9 @@
-@extends('admin.main')
+@extends('admin.pos_page')
 @section('title',"Sale Point of Sale Index")
-
-  @section('category_list')
+@section('content')
+<div class="row">
   {{-- SubCategory Selection Menu --}}
-   {{-- <divcol5 class="col-5"> --}}
+    <div class="col-5">
       <div class="card-content">
         <div class="card-body">
           <ul class="nav nav-tabs nav-underline ">
@@ -63,47 +63,48 @@
                 </div>
               </div>
             </div>
+            
+            {{-- @foreach ($category as $sub_category)
+            <div class="tab-pane" id="{{$sub_category->name}}" aria-labelledby="base-market">
+              <div class="row">
+                <h3> {{$sub_category->id." ".$sub_category->name}} </h3>
+              </div>
+            </div>
+            @endforeach --}}
+            
           </div>
         </div>
       </div>
-    {{-- </divcol5>       --}}
-  @endsection
-
-
-  @section('active_table_item_list')
+    </div>
   {{-- Main Category Selection ( South, Panjabi, Chinise Etc ) --}}
-   {{-- <divcol-5 class="col-5"> --}}
-      <div class="card-content">
-        <div class="card-body ">
-          
-          {{-- <p>I am Card_body in main Category Selection Menu </p> --}}
-          <ul class="nav nav-tabs nav-underline ">
-            @foreach ($category as $sub_category)
-            <li class="nav-item">
-              <a class="nav-link " id="id_{{$sub_category->name}}" data-toggle="tab" aria-controls="{{$sub_category->name}}" href="#{{$sub_category->name}}" aria-expanded="true"> {{$sub_category->nick_name}} </a>
-            </li>
-            @endforeach
-          </ul>
-          
-          <div class="row">
-            <div class="tab-content px-0 pt-0">
-              @foreach ($category as $sub_category)
-              <div class="tab-pane" id="{{$sub_category->name}}" aria-labelledby="base-market">
-                {{$sub_category->name}} This is one
-              </div>
-              @endforeach
-            </div>
-          </div>
-          
-          </div> <!-- Card_body -->
-        </div>
-    {{-- </divcol-5>  --}}
+  <div class="col-5">
+    <div class="card-content">
+      <div class="card-body ">
         
-  @endsection
-
-
-  @section('table_selection_palette')
+        {{-- <p>I am Card_body in main Category Selection Menu </p> --}}
+        <ul class="nav nav-tabs nav-underline ">
+          @foreach ($category as $sub_category)
+          <li class="nav-item">
+            <a class="nav-link " id="id_{{$sub_category->name}}" data-toggle="tab" aria-controls="{{$sub_category->name}}" href="#{{$sub_category->name}}" aria-expanded="true"> {{$sub_category->nick_name}} </a>
+          </li>
+          @endforeach
+        </ul>
+        
+        <div class="row">
+          <div class="tab-content px-0 pt-0">
+            @foreach ($category as $sub_category)
+            <div class="tab-pane" id="{{$sub_category->name}}" aria-labelledby="base-market">
+              {{$sub_category->name}} This is one
+            </div>
+            @endforeach
+          </div>
+        </div>
+        
+        </div> <!-- Card_body -->
+      </div>
+    </div>
   {{-- Table Selection Tool Palatte --}}
+    <div class="col-2">
       <div class="card-content">
         <div class="card-body">
           <ul class="nav nav-tabs nav-underline ">
@@ -131,5 +132,7 @@
           
         </div>
       </div>
-      
-  @endsection
+    </div>
+</div>
+  
+@endsection

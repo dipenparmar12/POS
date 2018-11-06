@@ -1,23 +1,24 @@
 @extends('admin.main')
-@section('title',"Sale Point of Sale Index")
-
-  @section('category_list')
+{{-- Optional @yeild --}}
+@section('title',"Sale Point of Sale")
+@section('content')
+<div class="row">
   {{-- SubCategory Selection Menu --}}
-   {{-- <divcol5 class="col-5"> --}}
-      <div class="card-content">
-        <div class="card-body">
-          <ul class="nav nav-tabs nav-underline ">
-            <li class="nav-item">
-              <a class="nav-link " id="base-limit" data-toggle="tab" aria-controls="limit" href="#limit" aria-expanded="true"> Active Table 13 </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col">
+  <div class="col-5">
+    <div class="card-content">
+      <div class="card-body">
+        <ul class="nav nav-tabs nav-underline ">
+          <li class="nav-item">
+            <a class="nav-link " id="base-limit" data-toggle="tab" aria-controls="limit" href="#limit" aria-expanded="true"> Active Table 13 </a>
+          </li>
+        </ul>
+        
+        {{-- <div class="tab-content px-1 pt-1"> --}}
           <div class="tab-content px-0 pt-0">
             <div id="recent-sales" class="">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title"> Active Table 14 </h4>
+                  <h4 class="card-title">Recent Sales</h4>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -63,16 +64,23 @@
                 </div>
               </div>
             </div>
+            
+            @foreach ($category as $sub_category)
+            <div class="tab-pane" id="{{$sub_category->name}}" aria-labelledby="base-market">
+              <div class="row">
+                <h3> {{$sub_category->id." ".$sub_category->name}} </h3>
+              </div>
+            </div>
+            @endforeach
+            
           </div>
+          
+          
         </div>
       </div>
-    {{-- </divcol5>       --}}
-  @endsection
-
-
-  @section('active_table_item_list')
-  {{-- Main Category Selection ( South, Panjabi, Chinise Etc ) --}}
-   {{-- <divcol-5 class="col-5"> --}}
+    </div>
+    {{-- Main Category Selection ( South, Panjabi, Chinise Etc ) --}}
+    <div class="col-5">
       <div class="card-content">
         <div class="card-body ">
           
@@ -80,30 +88,23 @@
           <ul class="nav nav-tabs nav-underline ">
             @foreach ($category as $sub_category)
             <li class="nav-item">
-              <a class="nav-link " id="id_{{$sub_category->name}}" data-toggle="tab" aria-controls="{{$sub_category->name}}" href="#{{$sub_category->name}}" aria-expanded="true"> {{$sub_category->nick_name}} </a>
+              <a class="nav-link " id="{{$sub_category->name}}" data-toggle="tab" aria-controls="{{$sub_category->name}}" href="#{{$sub_category->name}}" aria-expanded="true"> {{$sub_category->nick_name}} </a>
             </li>
             @endforeach
           </ul>
           
           <div class="row">
-            <div class="tab-content px-0 pt-0">
-              @foreach ($category as $sub_category)
-              <div class="tab-pane" id="{{$sub_category->name}}" aria-labelledby="base-market">
-                {{$sub_category->name}} This is one
-              </div>
-              @endforeach
-            </div>
+            <hr>
+              <div class="col-6">#temp</div>
+              <div class="col-6">#temp</div>
           </div>
           
-          </div> <!-- Card_body -->
         </div>
-    {{-- </divcol-5>  --}}
-        
-  @endsection
-
-
-  @section('table_selection_palette')
-  {{-- Table Selection Tool Palatte --}}
+      </div>
+    </div>
+    
+    {{-- Table Selection Tool Palatte --}}
+    <div class="col-2">
       <div class="card-content">
         <div class="card-body">
           <ul class="nav nav-tabs nav-underline ">
@@ -128,8 +129,8 @@
               </div>
             </div>
           </ul>
-          
         </div>
       </div>
-      
+    </div>
+  </div>
   @endsection

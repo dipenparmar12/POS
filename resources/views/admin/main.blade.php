@@ -21,7 +21,14 @@
     <div class="app-content content">
       <br>
       <div class="container-fluid">
-        @yield('content')
+          @yield('content')
+          
+          <div class="row">
+            <div class="col-5">@yield('category_list')</div>
+            <div class="col-5">@yield('active_table_item_list')</div>
+            <div class="col-2"> @yield('table_selection_palette') </div>
+          </div>
+
       </div>
     </div>
     

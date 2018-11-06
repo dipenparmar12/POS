@@ -1,9 +1,10 @@
-@extends('admin.main')
+@extends('admin.pos_page')
 @section('title',"Sale Point of Sale Index")
 
+  {{-- Section  --}}
   @section('category_list')
   {{-- SubCategory Selection Menu --}}
-   {{-- <divcol5 class="col-5"> --}}
+   <div class="col-5">
       <div class="card-content">
         <div class="card-body">
           <ul class="nav nav-tabs nav-underline ">
@@ -63,16 +64,25 @@
                 </div>
               </div>
             </div>
+            
+            {{-- @foreach ($category as $sub_category)
+            <div class="tab-pane" id="{{$sub_category->name}}" aria-labelledby="base-market">
+              <div class="row">
+                <h3> {{$sub_category->id." ".$sub_category->name}} </h3>
+              </div>
+            </div>
+            @endforeach --}}
+            
           </div>
         </div>
       </div>
-    {{-- </divcol5>       --}}
+    </div>      
   @endsection
 
-
+  {{-- Section  --}}
   @section('active_table_item_list')
   {{-- Main Category Selection ( South, Panjabi, Chinise Etc ) --}}
-   {{-- <divcol-5 class="col-5"> --}}
+  <div class="col-5">
       <div class="card-content">
         <div class="card-body ">
           
@@ -97,13 +107,14 @@
           
           </div> <!-- Card_body -->
         </div>
-    {{-- </divcol-5>  --}}
+    </div>
         
   @endsection
 
-
+  {{-- Section  --}}
   @section('table_selection_palette')
   {{-- Table Selection Tool Palatte --}}
+    <div class="col-2">
       <div class="card-content">
         <div class="card-body">
           <ul class="nav nav-tabs nav-underline ">
@@ -131,5 +142,10 @@
           
         </div>
       </div>
+    </div>
       
   @endsection
+
+  
+
+
