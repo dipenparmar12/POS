@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class PosController extends Controller
 {
     public function href($view='index'){
-        $data['category'] = \App\Category::all();
-        
+        $data['categories'] = \App\Category::all();
+        $data['sub_categories'] = \App\Sub_category::all();        
         // return view('admin.pages.'.$view)->with($data);
         return view('admin.pages.'.$view)->with($data);
     }

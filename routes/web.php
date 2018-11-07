@@ -23,6 +23,10 @@ Route::get('/pos/{page?}', 'PosController@href');
 
 
 // Test Controller Methods 
+// Route::resource('test', 'TestC'); // Not Working for custome method (only working for resource methods )
+
+
+Route::get('/test', 'TestC@index');
 Route::get('/test/test', 'TestC@test');
 Route::get('/test/tables','TestC@tables');
 Route::get('/test/table_data','TestC@table_data');

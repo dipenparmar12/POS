@@ -28,5 +28,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/cryptocoins/cryptocoins.css')}}">
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
-<link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/style.css') }}"> --}}
 <!-- END Custom CSS-->

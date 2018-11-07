@@ -4,9 +4,9 @@
     
       <li class="nav-item has-sub"><a href=""><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
         <ul class="menu-content" style="">
-          <li class=""><a class="menu-item" href="{{ URL::to('pos/')}}" data-i18n="nav.dash.ecommerce">Sales</a></li>
-          <li class="active"><a class="menu-item" href="{{ URL::to('pos/table')}}" data-i18n="nav.dash.crypto">Tables</a></li>
-          <li class=""><a class="menu-item" href="#file:///E:/xampp/htdocs/project/SAGAR/project/modernadmin%20Template/html/ltr/vertical-menu-template%20Nice%20One/index.html" data-i18n="nav.dash.sales">Items</a></li>
+          <li class=""><a class="menu-item" href="{{ URL::to('pos/table')}}" data-i18n="nav.dash.crypto">Tables</a></li>
+          <li class="active"><a class="menu-item" href="{{ URL::to('pos/')}}" data-i18n="nav.dash.ecommerce">Sales</a></li>
+          <li class=""><a class="menu-item" href="test/test" data-i18n="nav.dash.sales">Test/test()</a></li>
           <li class=""><a class="menu-item" href="{{URL::to('/importExport')}}" data-i18n="nav.dash.sales">Import/Export</a> </li>
         </ul>
       </li>

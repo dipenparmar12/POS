@@ -9,7 +9,7 @@ use DB;
 use Session;
 use Excel;
 
-use App\Category;
+use App\Sub_categories;
 
 
 class ExcelController extends Controller
@@ -22,8 +22,8 @@ class ExcelController extends Controller
     public function downloadExcel($type)
     {
         $data = Category::get()->toArray();
-        return Excel::create('Category_dump', function($excel) use ($data) {
-            $excel->sheet('mySheet', function($sheet) use ($data)
+        return Excel::create('sub_categories_dump', function($excel) use ($data) {
+            $excel->sheet('sub_categories', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
             });
@@ -39,23 +39,26 @@ class ExcelController extends Controller
                 foreach ($reader->toArray() as $key => $row) {
 
                     if(!empty($row)) {
-                        // DB::table('categories')->insert($row);
+                        DB::table('sub_categories')->insert($row);
                     }
-
 
                     // ------ By Specify Colunm Name and Row name
                     // $data['title'] = $row['title'];
                     // $data['description'] = $row['description'];
                     
                     // if(!empty($row)) {
-                        // DB::table('Category')->insert($data);
+                        // DB::table('sub_categories')->insert($data);
                     // }
                 }
             });
         }
         Session::put('success', 'Youe file successfully import in database!!!');
-         // return back();
+        return back();
 
     } #importExcel(Request $request)
+
+
+    
+
 
 }

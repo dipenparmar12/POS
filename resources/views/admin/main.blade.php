@@ -2,6 +2,7 @@
 <html class="loading" lang="en" data-textdirection="ltr">
   <head>
     @include('admin.layout.head')
+    @yield('js')    
   </head>
   
   <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
@@ -38,5 +39,6 @@
     {{--  Js_script_optional ( Each-Page )  --}}
     @yield('js_script')
     @include('admin.layout.scripts')
+
   </body>
 </html>

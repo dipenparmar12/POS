@@ -11,21 +11,15 @@
       @foreach ($categories as $category)
       <li class="nav-item" id="{{$category->nick_name}}">
         
-        <a class="nav-link dropdown-toggle" id="tab_{{$category->nick_name}}" data-value='{{$category->name}}' data-toggle="dropdown" href="#{{$category->name}}" > {{$category->nick_name}}</a>
+        <a class="nav-link dropdown-toggle" id="tab_{{$category->nick_name}}" data-value='{{$category->name}}' data-toggle="dropdown" href="#{{$category->name}}" > {{$category->nick_name}}_1</a>
 
-        <div class="dropdown " id="drop_{{$category->nick_name}}">
-            
+        <div class="dropdown " id="drop_{{$category->nick_name}}">    
             <div class="dropdown-menu">
-              @forelse ($sub_categories as $sub_category)
-                @if ($sub_category->category_id == $category->id)
-                  <a class="dropdown-item" href="#"> {{$sub_category->name}} </a>    
-                @endif
-              @empty
-                  <p class="dropdown-item"> Add Item </p>
-              @endforelse
-              
+              <a class="dropdown-item" href="#pos"> {{$category->id}} </a>
+              <a class="dropdown-item" href="#"> {{$category->nick_name}}</a>
+              <a class="dropdown-item" href="#"> {{$category->name}}</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Edit</a>
+              <a class="dropdown-item" href="#"> Setting</a>
             </div>
           </div>  
       </li>
