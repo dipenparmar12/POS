@@ -1,0 +1,8 @@
+	// $('li.nav-item').on('onClick',function () {
+          // alert('hello congrates');
+          // $('#drop_'+this.id).attr('class','show');
+          // console.log($('a.[data-value="sub_category"]'));
+        // });
+        // $('li.nav-item').mouseout( function () {
+          // $('#drop_'+this.id).attr('class','hidden');
+        // });

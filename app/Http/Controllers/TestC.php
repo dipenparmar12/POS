@@ -15,7 +15,9 @@ class TestC extends Controller
     public function test(){
         echo 'Test@test'.'<br>';
 
-        $this->upload_seeder(); // $this->get_file_list_from_dir();
+        // view('admin.layout.form.create_category');
+        // $this->upload_seeder(); 
+        // $this->get_file_list_from_dir();
         // $this->tables();
         // $this->get_table_data($table="items");
         // $this->table_data();
@@ -24,12 +26,10 @@ class TestC extends Controller
     
 
     public function upload_seeder() {
-
         $seeder_files = glob(public_path("factories\*.csv"));
-
         foreach($seeder_files as $file) {
-            Session::put('TEMP_T',pathinfo($file)['filename']);
 
+            Session::put('TEMP_T',pathinfo($file)['filename']);
             Excel::load( $file ,function($reader) {
                 foreach ($reader->toArray() as $key => $row) {
                     if(!empty($row)) {
@@ -41,7 +41,6 @@ class TestC extends Controller
             }); # excelMethod
 
         } #foreach
-
         Session::forget('TEMP_T');
     } ## upload_dump(Request $request)
 
@@ -79,14 +78,12 @@ class TestC extends Controller
         }
     } ## table_data()
 
-    
 
-    // public function index(){}
-    // public function create(){}
-    // public function store(Request $request){}
-    // public function show($id){}
-    // public function edit($id){}
-    // public function update(Request $request, $id){}
-    // public function destroy($id){}
-
+        // public function index() {} ## index()
+        // public function create() {} ## create()
+        // public function store(Request $request) {} ## store()
+        // public function show($id) {} ## show()
+        // public function edit($id) {} ## edit()
+        // public function update(Request $request, $id) {} ## update()
+        // public function destroy($id) {} ## destroy()           
 }

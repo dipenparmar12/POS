@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 
 use App\App;
-use Illuminate\Http\Request;
+use DB;
 
 class AppController extends Controller
 {
@@ -12,9 +13,10 @@ class AppController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($table="category")
     {
-        //
+        $data[''] = '';
+        return view('categories.index')->with($data);
     }
 
     /**

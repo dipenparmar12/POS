@@ -22,7 +22,7 @@
               <table id="recent-orders" class="table table-hover">
                 <thead>
                   <tr>
-                    <th class="border-top-0 m-0 ">#</th>
+                    {{-- <th class="border-top-0 m-0 "></th> --}}
                     <th class="border-top-0 m-0 w-25" >Item</th>
                     <th class="border-top-0 m-0 ">Price</th>
                     <th class="border-top-0 m-0">Qty</th>
@@ -33,8 +33,8 @@
                 <tbody>
                   @for ($i = 0; $i < 7; $i++)
                   <tr>
-                    <td class="text-truncate m-0">{{$i}}</td>
-                    <td class="text-truncate">Masala Dhosa </td>
+                    {{-- <td class="text-truncate m-0">{{$i}}</td> --}}
+                    <td class="text-truncate">{{ $i }} Masala Dhosa </td>
                     <td class="text-truncate"> 270.00 </td>
                     <td class="text-truncate">+4</td>
                     <td>
@@ -48,9 +48,9 @@
               <!-- item_table_btn -->
               <div class="heading-elements ">
                 <ul class="list-inline ">
-                    <li><a class=" btn box-shadow-1 round btn-outline-success  " href=" {{ URL::to('pos/table') }}" target="_blank">CheckOut</a></li>
-                    <li><a class=" btn box-shadow-1 round btn-outline-danger   " href=" {{ URL::to('pos/index') }}" target="_blank">Process</a></li>
-                    <li><a class=" btn box-shadow-1 round btn-outline-blue-grey  " href=" {{ URL::to('pos/') }}" target="_blank">Clear</a></li>
+                  <li><a class=" btn box-shadow-1 round btn-outline-success  " href=" {{ URL::to('pos/table') }}" target="_blank">CheckOut</a></li>
+                  <li><a class=" btn box-shadow-1 round btn-outline-danger   " href=" {{ URL::to('pos/index') }}" target="_blank">Process</a></li>
+                  <li><a class=" btn box-shadow-1 round btn-outline-blue-grey  " href=" {{ URL::to('pos/') }}" target="_blank">Clear</a></li>
                 </ul>
               </div>
               

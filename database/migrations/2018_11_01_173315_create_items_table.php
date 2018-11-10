@@ -15,7 +15,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id');
+            $table->integer('sub_category_id');
             $table->string('name',190);
             $table->decimal('price',65);
             $table->text('desc')->nullable();

@@ -1,9 +1,4 @@
 <?php
-// echo "<pre>";
-// print_r($table);
-// echo "</pre>";
-
-use App\Http\Controllers\TestController;
 
 Route::get('/', function () {
     echo " R-POS ";
@@ -13,19 +8,18 @@ Route::get('/', function () {
 Route::get('/template', function () {
     return view('admin.main');
 });
-Route::get('/tab', function () {
-    return view('admin.pages.index');
-});
 
+Route::get('/crud','posController@crud');
 
 Route::get('/pos/{page?}', 'PosController@href');
+Route::resource('/category', 'CategoryController');
+Route::resource('/app', 'AppController');
+
+
 
 
 
 // Test Controller Methods 
-// Route::resource('test', 'TestC'); // Not Working for custome method (only working for resource methods )
-
-
 Route::get('/test', 'TestC@index');
 Route::get('/test/test', 'TestC@test');
 Route::get('/test/tables','TestC@tables');
@@ -35,12 +29,26 @@ Route::get('/test/get_table_data/{table?}','TestC@get_table_data');
 
 
 
-// ----- Excel Import Export --------
+// ----- Ajax CRUD --------
+Route::group(['middleware'=>['Ajax_check']] , function(){
+    Route::get('test/ajax',function(){
+        echo "Middleware Ajax Check ";
+    });
+    // Route::resource('category', 'CategoryController');
+});
 
+Route::get('test/item', function () {
+    return view('item.create');
+});
+
+
+
+
+
+// ----- Excel Import Export --------
 // Route for view/blade file.
 Route::get('importExport', 'ExcelController@importExport');
 // Route for export/download tabledata to .csv, .xls or .xlsx
 Route::get('downloadExcel/{type}', 'ExcelController@downloadExcel');
 // Route for import excel data to database.
 Route::post('importExcel', 'ExcelController@importExcel');
-
