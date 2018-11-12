@@ -16,7 +16,16 @@ class CategoryController extends Controller
         return view('crud.category.create');
     } ## create()
     
-    public function store(Request $request) {} ## store()
+    public function store(Request $request) {
+
+        foreach (($request->all()) as $key => $field_data) {
+            $data = Category::create($field_data);
+        };
+        
+        // $data = Category::create($request->all());
+        // return view('crud.category.index')->with($data);
+
+    } ## store()
     public function show($id) {} ## show()
     public function edit($id) {} ## edit()
     public function update(Request $request, $id) {} ## update()

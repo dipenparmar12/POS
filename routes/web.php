@@ -1,5 +1,9 @@
 <?php
 
+
+Session::put('company_id' , 1 );
+
+
 Route::get('/', function () {
     echo " R-POS ";
     // return view('welcome');

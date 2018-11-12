@@ -1,13 +1,11 @@
 {{-- Modal Component --}}
 
-<div class="col-lg-4 col-md-6 col-sm-12">
-    
+<div class="col-lg-4 col-md-6 col-sm-12">    
     <!-- Modal -->
     <div class="modal animated bounceIn text-left " id="create_category_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel46" style="display: none;" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    {{-- add_main_category_modal Add Modal --}}
 
                       {!! Form::open(['action' => 'CategoryController@store']) !!}
 
@@ -43,7 +41,6 @@
                           </div>
 
                       {!! Form::close() !!}
-
                 </div>
 
                 <div class="modal-footer">
@@ -55,3 +52,4 @@
         </div>
     </div>
 </div>
+                    {{-- add_main_category_modal Add Modal --}}

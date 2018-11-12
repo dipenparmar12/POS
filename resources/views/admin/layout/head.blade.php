@@ -28,3 +28,7 @@
 
 <!-- Jquery Temp -->
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+
+
+{{-- AJAX CSRF TOKEN FORM AJAX REQ --}}
+<meta name="csrf-token" content="{{ csrf_token() }}" />

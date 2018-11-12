@@ -1,9 +1,7 @@
- 
-@php
-  $modal_id = 'create_category_modal';
-  $modal_submit_id  = 'create_category_modal_btn';
-@endphp
-
+{{-- 
+    $modal_id = 'create_category_modal';
+    $modal_submit_id  = 'create_category_modal_btn'; 
+--}}
 
 {{-- Modal Component --}}
 <div class="col-lg-4 col-md-6 col-sm-12">
@@ -16,10 +14,11 @@
                     {{ $slot }}
                 </div>
 
-                <div class="modal-footer">
+
+                {{-- <div class="modal-footer">
                     <button type="button" class="btn box-shadow-1 round btn-outline-danger grey" data-dismiss="modal">Close</button>
                     <button type="button" id="{{$modal_submit_id}}" class="btn box-shadow-1 round btn-outline-success">Save</button>
-                </div>
+                </div> --}}
 
             </div>
         </div>
