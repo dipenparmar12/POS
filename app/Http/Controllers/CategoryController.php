@@ -51,7 +51,7 @@ class CategoryController extends Controller
     } ## show()
 
     public function delete_record($id) {
-        Category::findOrFail($id)->delete();
+        // Category::findOrFail($id)->delete();
         return "Record Deleted: ".$id;
     } ## destroy()
 

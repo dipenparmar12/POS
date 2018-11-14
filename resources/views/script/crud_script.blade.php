@@ -9,10 +9,11 @@
 // index Listout_ all Records by controller
 // set table btn add new Record btn and Edit btn ( and delete,clear,save general btns )
 // Record_Delete
+// Update/Delete Conformation
 
 
 // == Pending JOBS ===
-// Update/Delete Conformation
+
 // Jquery && laravel Validation
 // Notification
 // SoftDelete()
@@ -117,17 +118,21 @@ $(document).ready(function(){
 			alert(" Data not updated ");
 		}
 
+
     }); // # Ajax send data for create or update
 
 
     // Delete Record
     $('[data-delete_btn]').on('click',function(event){
     	// alert(this);
+    	
     	var delete_record_id = $(this).data('delete_btn');
     	var delete_url = '{{ URL::to("category/delete") }}/'+ delete_record_id;
+    	var deleting_record = $(this)[0].closest('tr');
     	// console.log(delete_record_id);
 
-    	if ( prompt("Please Confirm") == 'yes' ) {
+    	// if ( prompt("Please Confirm") == 'yes' ) {
+    	if ( true ) {
     		$.ajax({
 	    		url: delete_url,
 	    		type: 'POST',
@@ -135,7 +140,8 @@ $(document).ready(function(){
 	    	})
 	    	.done(function(data) {
 	    		console.log("success "+data);
-	    		$
+	    		deleting_record.remove()
+	    		alert("record Delete successfully");
 	    	})
 	    	.fail(function() {
 	    		console.log("error");
@@ -144,6 +150,7 @@ $(document).ready(function(){
     	}else{
     		alert('No');
     	}
+
     }) // #delete(Record)
 
 

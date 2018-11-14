@@ -44,14 +44,14 @@
                             });   
                             break;
 
-                        // case "checkbox": 
-                        //         // console.log(element_name);
-                        //      $(element_name).each(function(){
-                        //         console.log(value);
-                        //         console.log(this);
-                        //         if(this.value == value) { element_name.attr("checked", true); } 
-                        //     });   
-                        //     break;
+                        case "checkbox": 
+                             // console.log(element_name);
+                             $(element_name).each(function(){
+                                console.log(value);
+                                console.log(this);
+                                if(this.value == value) { element_name.attr("checked", true); } 
+                            });   
+                            break;
 
                         // case "hidden":  
                             // $(element_name).each(function(){
