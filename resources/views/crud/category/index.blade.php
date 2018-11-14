@@ -6,7 +6,8 @@
 @section('content')
 
 {{-- Ajax Script for Append Modal Form into index Page --}}
-@include('script.my_jquery_functions',['form_mode'=>@$form_mode,'category'=>@$category])
+@include('script.crud_script',['form_mode'=>@$form_mode,'category'=>@$category])
+@include('script.my_jquery_functions',[ 'category'=> @$category ]  )
 
   <div class="card">
       <div class="card-header">
@@ -47,7 +48,7 @@
                               <td class="text-truncate"> {{ $category->id.' '.$category->name }}</td>
                               <td class="text-truncate"> {{ $category->nick_name }} </td>
                               <td>
-                                  <button type="button" class="btn btn-sm btn-outline-blue round"> Edt </button>
+                                <button type="button" data-edit-btn="{{ $category->id }}" class="btn btn-sm btn-outline-blue round"> Edt </button>
                               </td>
                           </tr>
                         @empty
@@ -69,5 +70,6 @@
   </div>
   @endcomponent
   
+
 
 @endsection {{-- #content --}}

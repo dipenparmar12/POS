@@ -1,75 +1,101 @@
 <script>
+    my_js_functions = {
+    	test:function(){
+    		alert('invocked from my_js_functions');
+    	} // #test()
 
-$(document).ready(function(){
+    	,test1:function(category){
+    		console.log(category);
+    	}// #test(data)
 
-	$.ajaxSetup({
-	    headers: {
-	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	    }
-	});
+        ,populate_form: function (json_data){
+    		// console.log(json_data);
+            $.each(json_data, function(table_field_name, value) {
+                // console.log(table_field_name);
+                // console.log(value);
+                var element_name = $('[name='+table_field_name+']');
+                var input_element_type = element_name.prop('type'); // You usually want prop() rather than attr().
 
-	// Category Modal fetch data from create.blade.php and show modal for create New Category
+                	// console.log(input_element_type);
+                    // console.log(table_field_name,element_name[0]); 
+                    // console.log(table_field_name + " " + input_element_type);
+                    // console.log(element_name,input_element_type);
 
-    $('#create_category_modal_btn').on('click', function(event) {
-        event.preventDefault();        
-        
-        alert('{{ @$form_mode }}');
+                    switch(input_element_type)  
+                    {  
 
-		var category = {!! json_encode($category) !!};// don't use quotes
-		console.log(category);
+                        case "select-one" :   
+                                $("option").each(function(){
+                                    // console.log(this.value);
+                                    if (this.value == value) { this.selected=true;}
+                                });    
+                            break;
 
-        $.get('{{ URL::to("category/create") }}', function(data) {
+                        case "text" :  case "date" :  case "textarea":  case "number": case "hidden":
+                            element_name.val(value);   
+                            break;
 
-        	// console.log(data); // Modal with Form HTML Code Fetched
+                        case "radio" :  //case "checkbox": 
+                                // console.log(element_name);
+                             $(element_name).each(function(){
+                                // console.log(value);
+                                // console.log(this);
+                                if(this.value == value) { $(this).prop("checked", true); } 
+                            });   
+                            break;
 
-            $('.modal-backdrop show').remove(); // remove Black background Display Block Div 
-            $('#ajax_modal').empty().append(data); // Add_modal to HTML PAGE
+                        // case "checkbox": 
+                        //         // console.log(element_name);
+                        //      $(element_name).each(function(){
+                        //         console.log(value);
+                        //         console.log(this);
+                        //         if(this.value == value) { element_name.attr("checked", true); } 
+                        //     });   
+                        //     break;
 
-            console.log($('[name="form_mode"]').val('{{ @$form_mode }}'));
+                        // case "hidden":  
+                            // $(element_name).each(function(){
+                            //     console.log(value,this)
+                            //     console.log(this.type);
+                            //     if (this.type == 'hidden') {
+                            //         element_name.disabled = true;
 
-            $('#create_category_modal').modal('show'); // show or view Modal
+                            //     }
 
-        });
-        // alert('modal Show');
+                            //         // $(element_name).attr("checked", true);
+                            //     if(this.value == value) { 
+                            //         element_name.attr("checked",value); 
+                            //     } 
+                            // });   
+                            // break;                                
 
-    }); // #Create Category modal(Fetch/show)
+                        // case "checkbox": 
+                        //     $(element_name).each(function(){
+                        //         alert(this,value);
+                        //         if(this.value == value) { element_name.prop("checked",true); } 
+                        //     });   
+                        //     break;
+
+                        // case "checkbox":
+                        //     (element_name).each(function(){
+                        //        if($(this).attr('value') == value) {  $(this).attr("checked",value); } 
+                        //        else{ $(this).attr("checked",false); }
+                        //     });
+                        //     break;
+                    } 
+               
+            }); // End of each loop
+        } // End of populate(json_data) fun()
 
 
-    $('#ajax_modal').on('click','#create_category_submit_btn', function(event) {
-    	// event.preventDefault();
-    	alert('Submit btn Clicked');
+        ,escapeSpecialChars: function(jsonString) {
+            return jsonString.replace(/\n/g, "\\n")
+                .replace(/\r/g, "\\r")
+                .replace(/\t/g, "\\t")
+                .replace(/\f/g, "\\f");
+        } // Helper Function for escaping json multi line errors 
+    
 
-		// var form_data = $('form#create_category').serialize(); //  FORM INPUT DATA in POST STRING FORMATED
- 		// var form_data = $('form#create_category').serializeArray(); // FORM INPUT DATA in POST STRING ARRAY FORMATED
-		var url = '{{ URL::to("category") }}';
- 		var token = $('[name="_token"]').val();
- 		var form_data = $('form [name]').toArray();
- 		var data = {};
-
- 		$.each( form_data, function(index, html_obj) {
- 			// console.log(html_obj.name);
- 			// console.log(html_obj.value);
- 			data[html_obj.name] = html_obj.value;
- 		});
-
- 		// console.log(data);
- 		// console.log(url);
- 		// console.log(form_data);
-
-		$.ajax({
-			type: 'POST',
-			url: url,
-			data: {data},
-			success: function(data){
-			console.log(data);
-			}
-	    });
-
-    });
-
-    // $('#create_category_modal_btn').click();
-    $("#create_category_modal_btn").trigger("click");
-
-});
+    }
 
 </script>

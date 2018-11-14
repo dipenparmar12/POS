@@ -1,4 +1,5 @@
-  
+
+
   {{-- {!! Form::open($form_confi) !!} --}}
   {!! Form::open(['route' => 'category.store', 'id'=> 'create_category']) !!}
       @csrf
