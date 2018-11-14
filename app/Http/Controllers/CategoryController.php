@@ -35,7 +35,7 @@ class CategoryController extends Controller
                 $record->update($field_data);
 
             }else{
-                // Category::create($field_data);
+                Category::create($field_data);
                 return " NEW create insert";
             }
 
@@ -46,20 +46,23 @@ class CategoryController extends Controller
 
     } ## store()
     
-    
-    public function edit($id) {
-        $data['categories'] = Category::all();
-        $data['category'] = Category::findOrFail($id);
-        return view('crud.category.index')->with($data);
-    } ## edit()
-
     public function show($id) {
         return Category::findOrFail($id);
     } ## show()
 
+    public function delete_record($id) {
+        Category::findOrFail($id)->delete();
+        return "Record Deleted: ".$id;
+    } ## destroy()
 
+    // public function edit($id) {
+    //     $data['categories'] = Category::all();
+    //     $data['category'] = Category::findOrFail($id);
+    //     return view('crud.category.index')->with($data);
+    // } ## edit()
 
-    public function update(Request $request, $id) {} ## update()
-    public function destroy($id) {} ## destroy()
-    
-}
+    // public function destroy($id) {
+    //     return " Deleting  ".$id;
+    // } ## destroy()    
+
+} // #end of Category Class

@@ -1,6 +1,3 @@
-
-
-  {{-- {!! Form::open($form_confi) !!} --}}
   {!! Form::open(['route' => 'category.store', 'id'=> 'create_category']) !!}
       @csrf
       
@@ -40,7 +37,7 @@
       </div>
     
       <div class="modal-footer">
-          <button type="button" class="btn box-shadow-1 round btn-outline-danger grey" data-dismiss="modal">Close</button>
+          <button type="button" class="btn box-shadow-1 round btn-outline-blue-grey grey" data-dismiss="modal">Close</button>
           <button type="button" id="create_category_submit_btn" class="btn box-shadow-1 round btn-outline-success">Save</button>
       </div>
 

@@ -15,6 +15,7 @@ Route::get('/crud','posController@crud');
 
 Route::get('/pos/{page?}', 'PosController@href');
 Route::resource('/category', 'CategoryController');
+Route::post('/category/delete/{id}', 'CategoryController@delete_record');
 Route::resource('/app', 'AppController');
 
 
