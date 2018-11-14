@@ -12,6 +12,11 @@ $(document).ready(function(){
 
     $('#create_category_modal_btn').on('click', function(event) {
         event.preventDefault();        
+        
+        alert('{{ @$form_mode }}');
+
+		var category = {!! json_encode($category) !!};// don't use quotes
+		console.log(category);
 
         $.get('{{ URL::to("category/create") }}', function(data) {
 
@@ -19,7 +24,11 @@ $(document).ready(function(){
 
             $('.modal-backdrop show').remove(); // remove Black background Display Block Div 
             $('#ajax_modal').empty().append(data); // Add_modal to HTML PAGE
+
+            console.log($('[name="form_mode"]').val('{{ @$form_mode }}'));
+
             $('#create_category_modal').modal('show'); // show or view Modal
+
         });
         // alert('modal Show');
 
@@ -58,11 +67,8 @@ $(document).ready(function(){
 
     });
 
-
     // $('#create_category_modal_btn').click();
     $("#create_category_modal_btn").trigger("click");
-    $("#create_category_submit_btn").trigger("click");
-
 
 });
 

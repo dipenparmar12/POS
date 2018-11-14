@@ -1,6 +1,4 @@
 <?php
-
-
 Session::put('company_id' , 1 );
 
 
