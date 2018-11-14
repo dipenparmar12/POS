@@ -11,8 +11,6 @@
         {{-- Compnay_id determinded by login  --}}
         <input type="hidden" value="{{ Session::get('company_id') }}" name="company_id">
       
-        <input type="hidden" value="create" name="form_mode">
-
         <div class="col-md-6">
           <div class="form-group">
             <label for="id_category_name"> Category Name </label>
