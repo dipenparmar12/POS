@@ -14,12 +14,6 @@
                     {{ $slot }}
                 </div>
 
-
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn box-shadow-1 round btn-outline-danger grey" data-dismiss="modal">Close</button>
-                    <button type="button" id="{{$modal_submit_id}}" class="btn box-shadow-1 round btn-outline-success">Save</button>
-                </div> --}}
-
             </div>
         </div>
     </div>
