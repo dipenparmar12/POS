@@ -73,7 +73,7 @@ $(document).ready(function(){
         // Get json Record that going to be edited or updated
         $.get(crud_url+record_id, function(response) {
         	form_data = $.parseJSON(JSON.stringify(response)); // clone one Obj data to another
-        	// console.log(form_data);
+        	console.log(form_data);
         }); // get one specifiyed Record in json format from Category.Show($id)
 
 

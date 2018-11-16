@@ -11,6 +11,11 @@ use Session;
 class AppController extends Controller
 {
 
+    public function __construct() {
+        // $this->middleware('subscribed')->except('store');
+        // $this->middleware('Session_Check');
+    }
+
     public function get_table_records(){
         $data['db_records'] =  DB::table(str_plural(Session::get('table')))->get();
         // $data['db_records'] = Category::all();
@@ -69,7 +74,7 @@ class AppController extends Controller
     } ## show()
 
     public function delete_record($id) {
-        Category::findOrFail($id)->delete();
+        // Category::findOrFail($id)->delete();
         return "Record Deleted: ".$id;
     } ## destroy()
 

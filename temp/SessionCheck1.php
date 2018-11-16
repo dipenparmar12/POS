@@ -23,28 +23,27 @@ class SessionCheck
         // echo  $request->path(); // Getting the URL after domain
         // echo str_plural(item);
         // echo str_singular("items")
+        
         // $msg = null;
         // echo "<script> alert('{$msg}') </script>";
 
 
-        // Condition 1 --------------------------------
         if(!$request->ajax()) {
             Session::forget('table');
             Session::put('table', $request->path() );
-        }
-        
+        }else{
 
-        // Condition 2 --------------------------------
-        $tables_obj = json_decode(json_encode( DB::select('SHOW TABLES') ), true); // object to array convert
-        foreach ($tables_obj as $key => $value) {
-            $tables[] =($value['Tables_in_pos']);
-        }
-        if (!in_array( $request->path(), $tables)) {
-            response()->view('errors.404');
-        }
-        
+            $tables_obj = json_decode(json_encode( DB::select('SHOW TABLES') ), true); // object to array convert
+            foreach ($tables_obj as $key => $value) {
+                $tables[] =($value['Tables_in_pos']);
+            }
 
-        // Condition 3 --------------------------------
+            if (!in_array( $request->path(), $tables)) {
+                response()->view('errors.404');
+            }
+
+        }
+
         // Check table Session exited (if yes then farther request goes)
         if (Session::has('table')) {
             return $next($request);    

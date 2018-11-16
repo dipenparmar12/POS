@@ -16,6 +16,8 @@ class TestC extends Controller
         echo 'Test@test'.'<br>';
 
         // view('admin.layout.form.create_category');
+
+        $this->get_table_name();
         // $this->upload_seeder(); 
         // $this->get_file_list_from_dir();
         // $this->tables();
@@ -24,6 +26,28 @@ class TestC extends Controller
 
     } ## test() 
     
+
+    public function get_table_name(){
+
+        $arr = ['categories','items'];
+
+        $tables_obj = json_decode(json_encode( DB::select('SHOW TABLES') ), true);
+        foreach ($tables_obj as $key => $value) {
+            $tables[] =($value['Tables_in_pos']);
+        }
+        if (in_array('items', $tables)) {
+            
+        }else{
+            
+        }
+        
+        // foreach ($tables as $table) {
+            // echo $table->Tables_in_pos," <hr>";
+        // }
+
+        // echo s($table);
+
+    }
 
     public function upload_seeder() {
         $seeder_files = glob(public_path("factories\*.csv"));
