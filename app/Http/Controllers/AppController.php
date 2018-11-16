@@ -5,83 +5,78 @@ use Illuminate\Http\Request;
 
 use App\App;
 use DB;
+use App\Category;
+use Session;
 
 class AppController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index($table="category")
-    {
-        $data[''] = '';
-        return view('categories.index')->with($data);
+
+    public function get_table_records(){
+        $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();        
+        return view('crud.'.Session::get('table').'._table')->with($data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    // List out all Records ( Category Table )
+    public function index() {  
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\App  $app
-     * @return \Illuminate\Http\Response
-     */
-    public function show(App $app)
-    {
-        //
-    }
+        // $data['db_records'] = Category::all();
+        return view('crud.category.index')->with($data);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\App  $app
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(App $app)
-    {
-        //
-    }
+    } ## index()
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\App  $app
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, App $app)
-    {
-        //
-    }
+    // Fetch Category Form by Ajax Call
+    public function create() {
+        return view('crud.category.category_form');
+    } ## create()
+    
+    public function store(Request $request) {
+        // return dd($request->data['form_mode']);
+        // return $request->data['form_mode'];
+        foreach (($request->all()) as $key => $field_data) {
+            // Category::create($field_data);
+            // dd($field_data);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\App  $app
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(App $app)
-    {
-        //
-    }
+            // Record Update, otherwise Create New_One
+            if ($request->data['form_mode'] == 'edit') {
+                // return " Edit || Update ";
+                unset($field_data['form_mode'],$field_data['_token']);
+                $record = Category::findOrFail($field_data['id']);
+                $record->update($field_data);
+
+            }else{
+                Category::create($field_data);
+                return " NEW create insert";
+            }
+
+        };
+        
+        // $data = Category::create($request->all());
+        // return view('crud.category.index')->with($data);
+
+    } ## store()
+    
+    public function show($id) {
+        return Category::findOrFail($id);
+    } ## show()
+
+    public function delete_record($id) {
+        // Category::findOrFail($id)->delete();
+        return "Record Deleted: ".$id;
+    } ## destroy()
+
+
+
+    // public function edit($id) {
+    //     $data['categories'] = Category::all();
+    //     $data['category'] = Category::findOrFail($id);
+    //     return view('crud.category.index')->with($data);
+    // } ## edit()
+
+    // public function destroy($id) {
+    //     return " Deleting  ".$id;
+    // } ## destroy()    
+
+ 
 }

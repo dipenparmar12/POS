@@ -11,12 +11,28 @@ Route::get('/template', function () {
     return view('admin.main');
 });
 
+
 Route::get('/crud','posController@crud');
 
 Route::get('/pos/{page?}', 'PosController@href');
-Route::resource('/category', 'CategoryController');
-Route::post('/category/delete/{id}', 'CategoryController@delete_record');
 Route::resource('/app', 'AppController');
+
+
+
+Route::group(['middleware' => 'Session_Check'], function() {
+
+	Route::resource('/category', 'CategoryController');
+	Route::post('/category/delete/{id}', 'CategoryController@delete_record');
+    Route::post('/category/db_records/','CategoryController@get_table_records');
+
+	Route::resource('/sub_category', 'SubCategoryController');
+	Route::post('/sub_category/delete/{id}', 'SubCategoryController@delete_record');
+
+	Route::resource('/item', 'ItemController');
+	Route::post('/item/delete/{id}', 'ItemController@delete_record');
+
+});
+
 
 
 

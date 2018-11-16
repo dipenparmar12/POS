@@ -1,0 +1,1 @@
+{{-- var category = {!! json_encode(@$category) !!};// don't use quotes --}}
