@@ -32,17 +32,29 @@ $(document).ready(function(){
 	});
 	
 
+<<<<<<< HEAD
 	var curd = 				'{{ Session::get('table') }}';
+=======
+	var curd = 				'category';
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
 	var modal_appear_btn =  '#'+curd+'_modal_btn';
 	var modal_id = 			'#'+curd+'_modal';
 	var modal_submit_btn =  '#'+curd+'_submit_btn';
 	
 
+<<<<<<< HEAD
 	var crud_url = '{{ URL::to(Session::get('table')) }}/';
 	var crud_html_form_url = crud_url +'create';
 	var crud_delete_url = crud_url +'delete/';
 	var crud_get_db_records_url = crud_url+'db_records/';
 
+=======
+	var crud_url = '{{ URL::to("category") }}/';
+	var crud_html_form_url = crud_url +'create';
+	var crud_delete_url = crud_url +'delete/';
+	
+    {{-- var categorys = {!! json_encode(@$categorys) !!};// don't use quotes --}}
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
 
     var form_data = {}; // Autofill up form_data holder, invocked by Edit_btn
 
@@ -110,7 +122,11 @@ $(document).ready(function(){
  		});
 
  		// console.log(data);
+<<<<<<< HEAD
  		console.log(form_data);
+=======
+ 		// console.log(form_data);
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
 
 		if ( prompt("Please Confirm Submit") == 'yes' ) {
 			$.ajax({
@@ -120,7 +136,10 @@ $(document).ready(function(){
 				success: function(response){
 					console.log(response);
 					$(modal_id).modal('hide');
+<<<<<<< HEAD
                     refresh_index_table();// Reresh_table
+=======
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
 				},
 				error: function(xhr) {
 			        console.log(xhr.responseText);
@@ -137,7 +156,11 @@ $(document).ready(function(){
 
 
     // Delete Record
+<<<<<<< HEAD
     $('body').on('click','[data-delete_btn]',function(event){
+=======
+    $('[data-delete_btn]').on('click',function(event){
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
     	// alert(this);    	
     	var delete_record_id = $(this).data('delete_btn');
     	var delete_url = crud_delete_url + delete_record_id;
