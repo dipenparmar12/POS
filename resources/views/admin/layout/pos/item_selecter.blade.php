@@ -7,7 +7,8 @@
 $(document).ready(function () {
 
   var sub_cat = $('a[data-value="sub_category"]');
-    sub_cat.on('click',function(){
+  
+  sub_cat.on('click',function(){
     console.log(this);
   });
     

@@ -6,37 +6,53 @@ use Illuminate\Http\Request;
 use App\App;
 use DB;
 use App\Category;
+<<<<<<< HEAD
 use Session;
+=======
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
 
 class AppController extends Controller
 {
 
+<<<<<<< HEAD
     public function get_table_records(){
-        $data['db_records'] =  DB::table(str_plural(Session::get('table')))->get();
-        // $data['db_records'] = Category::all();
-        return view('crud.category._table')->with($data);
-    }// get_table_records() Get HTML Table
-
-
+        $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();        
+        return view('crud.'.Session::get('table').'._table')->with($data);
+    }
 
     // List out all Records ( Category Table )
-    public function index() {
+    public function index() {  
 
         $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();
-        return view('crud.category.index')->with($data);
-        // str_plural(Session::get('table'))
+
         // $data['db_records'] = Category::all();
+        return view('crud.category.index')->with($data);
 
     } ## index()
 
+=======
+    protected $table;
 
+    public function __construct(){
 
+    }
+
+    // List out all Records ( Category Table )
+    public function index() {  
+        
+        $data['db_records'] = DB::table($this->table)->get();
+        // Session::forget('table',"Categories");
+
+        // $data['db_records'] = Category::all();
+        return view('crud.category.index')->with($data);
+
+    } ## index()
+
+>>>>>>> e70184c5916a29c530198c4878e539d3ca80438b
     // Fetch Category Form by Ajax Call
     public function create() {
         return view('crud.category.category_form');
     } ## create()
-
-
     
     public function store(Request $request) {
         // return dd($request->data['form_mode']);
@@ -69,7 +85,7 @@ class AppController extends Controller
     } ## show()
 
     public function delete_record($id) {
-        Category::findOrFail($id)->delete();
+        // Category::findOrFail($id)->delete();
         return "Record Deleted: ".$id;
     } ## destroy()
 

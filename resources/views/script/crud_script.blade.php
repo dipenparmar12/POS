@@ -32,24 +32,23 @@ $(document).ready(function(){
 	});
 	
 
-	var curd = 				'category';
+	var curd = 				'{{ Session::get('table') }}';
 	var modal_appear_btn =  '#'+curd+'_modal_btn';
 	var modal_id = 			'#'+curd+'_modal';
 	var modal_submit_btn =  '#'+curd+'_submit_btn';
 	
 
-	var crud_url = '{{ URL::to("category") }}/';
+	var crud_url = '{{ URL::to(Session::get('table')) }}/';
 	var crud_html_form_url = crud_url +'create';
 	var crud_delete_url = crud_url +'delete/';
-	
-    {{-- var categorys = {!! json_encode(@$categorys) !!};// don't use quotes --}}
+	var crud_get_db_records_url = crud_url+'db_records/';
 
     var form_data = {}; // Autofill up form_data holder, invocked by Edit_btn
 
     // console.log(crud_html_form_url);
 
     // Category Modal fetch HTML FORM from category_form.blade.php and show modal for create New Category    
-    $(modal_appear_btn).on('click', function(event) {
+    $('body').on('click',modal_appear_btn, function(event) {
         event.preventDefault();
         // alert('add_new Btn Clicked');
 
@@ -66,7 +65,7 @@ $(document).ready(function(){
 
 
 	// Category Modal fetch HTML FORM from category_form.blade.php and Fetch Data from Category.show(id) Method
-    $('[data-edit_btn]').on('click', function(event) {
+    $('body').on('click','[data-edit_btn]', function(event) {
         event.preventDefault();
         // console.log(this);
         var record_id = $(this).data('edit_btn'); //console.log(record_id);
@@ -107,7 +106,7 @@ $(document).ready(function(){
  		});
 
  		// console.log(data);
- 		// console.log(form_data);
+ 		console.log(form_data);
 
 		if ( prompt("Please Confirm Submit") == 'yes' ) {
 			$.ajax({
@@ -117,6 +116,7 @@ $(document).ready(function(){
 				success: function(response){
 					console.log(response);
 					$(modal_id).modal('hide');
+                    refresh_index_table();  
 				},
 				error: function(xhr) {
 			        console.log(xhr.responseText);
@@ -126,12 +126,11 @@ $(document).ready(function(){
 			alert(" Data not updated ");
 		}
 
-
     }); // # Ajax send data for create or update
 
 
     // Delete Record
-    $('[data-delete_btn]').on('click',function(event){
+    $('body').on('click','[data-delete_btn]',function(event){
     	// alert(this);    	
     	var delete_record_id = $(this).data('delete_btn');
     	var delete_url = crud_delete_url + delete_record_id;
@@ -160,6 +159,22 @@ $(document).ready(function(){
 
     }) // #delete(Record)
 
+    $('body').on('click','#reload', function(event) {
+        event.preventDefault();
+        // alert('Reload Clicked');
+        refresh_index_table();
+    });
+
+
+    function refresh_index_table(){
+        alert('Reload Fun');
+        $.post(crud_get_db_records_url, {}, function(data, textStatus, xhr) {
+            // alert(data);
+            console.log(data);
+            $('#db_records').empty().append(data);
+        });
+
+    }
 
 
     // Auto Trigger BTNS  ( Dev-req )
