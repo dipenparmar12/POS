@@ -72,8 +72,13 @@ $(document).ready(function(){
 
         // Get json Record that going to be edited or updated
         $.get(crud_url+record_id, function(response) {
-        	form_data = $.parseJSON(JSON.stringify(response)); // clone one Obj data to another
-        	console.log(form_data);
+            form_data = $.parseJSON(response);
+            // console.log(form_data);
+
+            // Old Method That Working With DB ELEQUNT
+        	// form_data = $.parseJSON(JSON.stringify(response)); // clone one Obj data to another
+        	// console.log(form_data);
+            
         }); // get one specifiyed Record in json format from Category.Show($id)
 
 
@@ -87,6 +92,7 @@ $(document).ready(function(){
             my_js_functions.populate_form(form_data); //fillupFORM,By Json_data (Cat_Controller.edit($id))
 
         }); // Modal append and auto fillup data to html form 
+
     }); // #Create Category modal(Fetch/show)
 
 
@@ -108,20 +114,24 @@ $(document).ready(function(){
  		// console.log(data);
  		console.log(form_data);
 
-		if ( prompt("Please Confirm Submit") == 'yes' ) {
-			$.ajax({
+		// if ( prompt("Please Confirm Submit") == 'yes' ) {
+        if ( true ) {
+			
+            $.ajax({
 				type: 'POST',
 				url: crud_url,
 				data: {data},
 				success: function(response){
-					console.log(response);
+                    console.log(response);
 					$(modal_id).modal('hide');
-                    refresh_index_table();  
+                    refresh_index_table();
+                    // alert('AJax_Modal_submit');
 				},
 				error: function(xhr) {
 			        console.log(xhr.responseText);
 			    }
 		    });// Ajax_call
+
 		}else{
 			alert(" Data not updated ");
 		}
@@ -167,23 +177,22 @@ $(document).ready(function(){
 
 
     function refresh_index_table(){
-        alert('Reload Fun');
+        // alert('Reload Fun');
         $.post(crud_get_db_records_url, {}, function(data, textStatus, xhr) {
             // alert(data);
-            console.log(data);
+            // console.log(data);
             $('#db_records').empty().append(data);
         });
-
     }
 
 
     // Auto Trigger BTNS  ( Dev-req )
     // $('#category_modal_btn').click();
     // $("#category_modal_btn").trigger("click");
-    
+
+
 
 });
-
 </script>
 
 

@@ -6,18 +6,31 @@ use Illuminate\Http\Request;
 use DB;
 use Session;
 use Excel;
+use URL;
 
 // Temp Fucntion for testing Purose
 function s($str){ echo '<pre>';  print_r($str);  echo '</pre>'; }
 
 class TestC extends Controller
 {
-    public function test(){
+    public function test($paramenter="Test"){
         echo 'Test@test'.'<br>';
 
-        // view('admin.layout.form.create_category');
+        // echo $paramenter;
 
-        $this->get_table_name();
+        // echo URL::current();
+        $uri =  \Request::getRequestUri();
+        echo $uri;
+
+        s(.explode('/', $uri)[1]);
+
+
+        
+
+        // $test = DB::table(str_plural(Session::get('table')))->where('id',55)->get()->first();
+
+        // s($test);
+        // $this->get_table_name();
         // $this->upload_seeder(); 
         // $this->get_file_list_from_dir();
         // $this->tables();

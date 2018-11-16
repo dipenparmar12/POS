@@ -8,18 +8,18 @@ use DB;
 use App\Category;
 use Session;
 
+// echo "<script> consol.log('{$result}') </script>";
+
+// function s($str){ echo '<pre>';  print_r($str);  echo '</pre>'; }
+
 class AppController extends Controller
 {
 
-    public function __construct() {
-        // $this->middleware('subscribed')->except('store');
-        // $this->middleware('Session_Check');
-    }
-
     public function get_table_records(){
         $data['db_records'] =  DB::table(str_plural(Session::get('table')))->get();
+        return view('crud.'.Session::get('table').'._table')->with($data);
+
         // $data['db_records'] = Category::all();
-        return view('crud.category._table')->with($data);
     }// get_table_records() Get HTML Table
 
 
@@ -28,7 +28,8 @@ class AppController extends Controller
     public function index() {
 
         $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();
-        return view('crud.category.index')->with($data);
+        return view('crud.'.Session::get('table').'.index')->with($data);
+
         // str_plural(Session::get('table'))
         // $data['db_records'] = Category::all();
 
@@ -38,7 +39,7 @@ class AppController extends Controller
 
     // Fetch Category Form by Ajax Call
     public function create() {
-        return view('crud.category.category_form');
+        return view('crud.'.Session::get('table').'._form');
     } ## create()
 
 
@@ -54,12 +55,26 @@ class AppController extends Controller
             if ($request->data['form_mode'] == 'edit') {
                 // return " Edit || Update ";
                 unset($field_data['form_mode'],$field_data['_token']);
-                $record = Category::findOrFail($field_data['id']);
-                $record->update($field_data);
+
+                    DB::table(str_plural(Session::get('table')))
+                        ->where('id', $field_data['id'] )  // find your user by their email
+                        ->limit(1)  // optional - to ensure only one record is updated.
+                        ->update($field_data);  // update the record in the DB. 
+
+                return " Data Updated";
+
+                // $record = Category::findOrFail($field_data['id']);
+                // $record->update($field_data);
 
             }else{
-                Category::create($field_data);
+
+                unset($field_data['form_mode'],$field_data['_token']);
+
+                DB::table(str_plural(Session::get('table')))->insert($field_data);
+
                 return " NEW create insert";
+
+                // Category::create($field_data);
             }
 
         };
@@ -70,7 +85,12 @@ class AppController extends Controller
     } ## store()
     
     public function show($id) {
-        return Category::findOrFail($id);
+        
+        $result = DB::table(str_plural(Session::get('table')))->where('id',$id)->limit(1)->first();
+        // echo $result->name;
+        return json_encode($result);
+
+        // return Category::findOrFail($id);
     } ## show()
 
     public function delete_record($id) {

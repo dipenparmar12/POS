@@ -10,7 +10,7 @@
 
 
   {{-- Card With Table ( Records index Lists ) --}}
-  @component('admin.layout.components.card',['title'=>Session::get('table').""])
+  @component('admin.layout.components.card',['title'=>Session::get('table')])
     <div id="db_records">
       @include('crud.category._table',[$db_records])
     </div>
@@ -18,7 +18,7 @@
           
 
   {{-- Repeatative Modal component For, Modal Configration  --}}
-  @component('admin.layout.components.modal',['modal_id'=>'category_modal'])
+  @component('admin.layout.components.modal',['modal_id'=>Session::get('table').'_modal'])
     <div id="ajax_modal">      
     </div>
   @endcomponent

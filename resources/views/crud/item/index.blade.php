@@ -1,16 +1,26 @@
-@extends('layout.app')
+@extends('admin.main')
+
+{{-- Index Categories ( Card->table->list ) --}}
 @section('content')
-    <h1> Blogs By Atmiya clg </h1>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, distinctio! </p> <br>
-    @if( count($posts) > 0 )
-        @foreach($posts as $post)
-            <h1> <a href="posts/{{$post->id}}"> {{$post->title}} </a></h1>
-            <small> {{$post->created_at }} </small>
-            <p> {{$post->body}} </p>
-            <hr>
-        @endforeach
-         {{$posts->links()}} <!--   #For Pagination if Available it -->
-    @else
-        <p>There is no Posts </p>
-    @endif
-@endsection
+  
+
+  {{-- Ajax Script for Append Modal Form into index Page --}}
+  @include('script.crud_script')
+  @include('script.my_jquery_functions')
+
+
+  {{-- Card With Table ( Records index Lists ) --}}
+  @component('admin.layout.components.card',['title'=>Session::get('table')])
+    <div id="db_records">
+      @include('crud.category._table',[$db_records])
+    </div>
+  @endcomponent
+          
+
+  {{-- Repeatative Modal component For, Modal Configration  --}}
+  @component('admin.layout.components.modal',['modal_id'=>Session::get('table').'_modal'])
+    <div id="ajax_modal">      
+    </div>
+  @endcomponent
+
+@endsection {{-- #content --}}

@@ -1,7 +1,7 @@
-  {!! Form::open(['route' => 'category.store', 'id'=> 'create_category']) !!}
+  {!! Form::open(['route' => Session::get('table').'.store', 'id'=> 'create_'.Session::get('table')]) !!}
       @csrf
       
-      <h4 class="form-section"><i class="la la-eye"></i>Add Main Category</h4>
+      <h4 class="form-section"><i class="la la-eye"></i>Add  {{ Session::get('table') }}</h4>
       
       <div class="row">
 

@@ -3,6 +3,7 @@
   
   <div class="form-body">
     <h4 class="form-section"><i class="la la-eye"></i>Add Item</h4>
+
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
@@ -30,6 +31,7 @@
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
@@ -42,7 +44,9 @@
         </div>
       </div>
     </div>
+
     <hr>
+
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
@@ -57,5 +61,5 @@
         </div>
       </div>
     </div>
-    
-  </form>
+  </div>
+</form>
