@@ -169,6 +169,7 @@ $(document).ready(function(){
 
     }) // #delete(Record)
 
+
     $('body').on('click','#reload', function(event) {
         event.preventDefault();
         // alert('Reload Clicked');

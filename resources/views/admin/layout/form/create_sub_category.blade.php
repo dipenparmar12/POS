@@ -42,4 +42,5 @@
             <button type="button" class="btn box-shadow-1 round btn-outline-danger grey" data-dismiss="modal">Close</button>
             <button type="button" class="btn box-shadow-1 round btn-outline-success">Save Sub_category</button>
         </div>
-    </form>
+    </div>
+</form>

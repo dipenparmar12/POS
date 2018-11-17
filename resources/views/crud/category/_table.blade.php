@@ -19,7 +19,7 @@
               </td>
           </tr>
         @empty
-          <p>Empty <a href="#">Add new</a></p> 
+          <h1>Empty</h1>
         @endforelse
 
       </tbody>

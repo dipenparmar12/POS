@@ -16,7 +16,7 @@
               </select>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="form-group">
               <label for="location2"> Sub Category :
                 <a href="#" data-toggle="modal" data-target="#add_sub_category_modal"> <div class="badge badge-success"> +Add </div> </a>
@@ -31,14 +31,19 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <div class="form-group">
-              <input type="text" id="userinput4" class="form-control border-success" placeholder="Item Name" name="name" value="Cat_new">
+              <input type="text" id="userinput4" class="form-control border-success" placeholder="Item Name" name="name" value="Item_name">
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <input type="number" id="userinput3" class="form-control border-success" placeholder="Item Price" name="price" value="123">
+              <input type="text" id="userinput3" class="form-control border-success" placeholder="Nick name" name="nick_name" value="Nic">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <input type="number" id="userinput5" class="form-control border-success" placeholder="Item Price" name="price" value="120">
             </div>
           </div>
         </div>

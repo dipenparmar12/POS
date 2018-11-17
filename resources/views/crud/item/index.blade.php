@@ -12,7 +12,7 @@
   {{-- Card With Table ( Records index Lists ) --}}
   @component('admin.layout.components.card',['title'=>Session::get('table')])
     <div id="db_records">
-      @include('crud.category._table',[$db_records])
+      @include('crud.'.Session::get('table').'._table',[$db_records])
     </div>
   @endcomponent
           

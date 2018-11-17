@@ -17,6 +17,7 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->integer('sub_category_id');
             $table->string('name',190);
+            $table->string('nick_name',190)->nullable();
             $table->decimal('price',65);
             $table->text('desc')->nullable();
             $table->text('img')->nullable();

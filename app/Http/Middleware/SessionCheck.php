@@ -36,6 +36,7 @@ class SessionCheck
             response()->view('errors.404');
         }
 
+
         // Condition 1 --------------------------------
         if(!$request->ajax()) {
             $uri_table = explode('/', \Request::getRequestUri() )[1];
@@ -43,16 +44,14 @@ class SessionCheck
             Session::put('table', $uri_table);
         }
         
-        
-        
 
         // Condition 3 --------------------------------
         // Check table Session exited (if yes then farther request goes)
-        // if (Session::has('table')) {
+        if (Session::has('table')) {
             return $next($request);    
-        // }else{
-            // return response()->view('errors.404');
-        // }
+        }else{
+            return response()->view('errors.404');
+        }
 
 
     } // # handle()

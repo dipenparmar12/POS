@@ -15,6 +15,7 @@ use Session;
 class AppController extends Controller
 {
 
+
     public function get_table_records(){
         $data['db_records'] =  DB::table(str_plural(Session::get('table')))->get();
         return view('crud.'.Session::get('table').'._table')->with($data);
