@@ -15,21 +15,10 @@ class TestC extends Controller
 {
     public function test($paramenter="Test"){
         echo 'Test@test'.'<br>';
-
-        // echo $paramenter;
-
-        // echo URL::current();
-        $uri =  \Request::getRequestUri();
-        echo $uri;
-
-        s(.explode('/', $uri)[1]);
-
-
         
 
-        // $test = DB::table(str_plural(Session::get('table')))->where('id',55)->get()->first();
-
-        // s($test);
+        // $this->trim_table_name_from_class_name();
+        // $this->get_table_from_uri();
         // $this->get_table_name();
         // $this->upload_seeder(); 
         // $this->get_file_list_from_dir();
@@ -39,6 +28,38 @@ class TestC extends Controller
 
     } ## test() 
     
+    public function trim_table_name_from_class_name(){
+        return str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));
+        
+        # METHOD 1 Optimized
+        // $class =  $this->get_class_name() ; // "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding
+        // $contrller_name =  strrchr($class,'\\'); // \CategoryController
+        // $trim_controller = str_replace('\\','', $contrller_name);
+        // $table = str_replace('Controller','',$trim_controller);
+        // echo $db_table = str_plural($table);
+
+
+        # METHOD 2 ( LONG time Consuming )
+        // $class = $this->get_class_name();// "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding 
+        // $con = explode('\\', $class); //  array:4 [ 0=>"App", 1=>"Http", 2=>"Controllers", 3=>"TableContrler"];
+        // $max = max(array_keys($con)); // Max Key Value 3 (may Alaways return 3)
+        // $current_controller = $con[$max]; // AppController,CategoryController etc ( or those who Inherited )
+        // $table_name = str_replace('Controller','',$current_controller); // TableName(Category,item etc ) Remove 'Controlelr' Word
+        // $db_table = str_plural($table_name); // Get same table name that exited in Database
+        // return $db_table;
+
+        // s(__Class__);
+        // s(explode('\\', __Class__));
+        // s(max(explode('\\', __Class__)));
+        // s(str_replace('Contoller','',max(explode('\\', __Class__))));
+    }
+
+    public function get_table_from_uri(){
+        // echo URL::current();
+        $uri =  \Request::getRequestUri();
+        echo $uri;
+        echo(explode('/', $uri)[1]);
+    }
 
     public function get_table_name(){
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TableController extends Controller
+class TableController extends AppController
 {
     
 }

@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 
 use App\App;
 use DB;
-use App\Category;
 use Session;
 
 // echo "<script> consol.log('{$result}') </script>";
@@ -15,11 +14,43 @@ use Session;
 class AppController extends Controller
 {
 
-    protected $table;
+    public function test(){
+        $this->table_name();
+    }
+
+    public function table_name($str_plural=false){
+
+        // SortHand Method to Get DB table name from current Class
+        if ($str_plural == 'plural') {
+            return str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));    
+        }else{
+            return (str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));    
+        }
+        
+        # METHOD 1 Optimized
+        // $class =  $this->get_class_name() ; // "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding
+        // $contrller_name =  strrchr($class,'\\'); // \CategoryController
+        // $trim_controller = str_replace('\\','', $contrller_name);
+        // $table = str_replace('Controller','',$trim_controller);
+        // echo $db_table = str_plural($table);
+
+        # METHOD 2 ( LONG time Consuming )
+        // $class = $this->get_class_name();// "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding 
+        // $con = explode('\\', $class); //  array:4 [ 0=>"App", 1=>"Http", 2=>"Controllers", 3=>"TableContrler"];
+        // $max = max(array_keys($con)); // Max Key Value 3 (may Alaways return 3)
+        // $current_controller = $con[$max]; // AppController,CategoryController etc ( or those who Inherited )
+        // $table_name = str_replace('Controller','',$current_controller); // TableName(Category,item etc ) Remove 'Controlelr' Word
+        // $db_table = str_plural($table_name); // Get same table name that exited in Database
+        // return $db_table;
+    }
+
+    public function get_class_name(){
+        return get_called_class();
+    }
 
     public function get_table_records(){
-        $data['db_records'] =  DB::table(str_plural(Session::get('table')))->get();
-        return view('crud.'.Session::get('table').'._table')->with($data);
+        $data['db_records'] =  DB::table( $this->table_name('plural') )->get();
+        return view('crud.'.$this->table_name().'._table')->with($data);
 
         // $data['db_records'] = Category::all();
     }// get_table_records() Get HTML Table
@@ -29,10 +60,10 @@ class AppController extends Controller
     // List out all Records ( Category Table )
     public function index() {
 
-        $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();
+        $data['db_records'] = DB::table($this->table_name('plural'))->get();
         return view('crud.index')->with($data);
 
-        // str_plural(Session::get('table'))
+        // $this->table_name('plural')
         // $data['db_records'] = Category::all();
 
     } ## index()
@@ -41,7 +72,7 @@ class AppController extends Controller
 
     // Fetch Category Form by Ajax Call
     public function create() {
-        return view('crud.'.Session::get('table').'._form');
+        return view('crud.'.$this->table_name().'._form');
     } ## create()
 
 
@@ -58,7 +89,7 @@ class AppController extends Controller
                 // return " Edit || Update ";
                 unset($field_data['form_mode'],$field_data['_token']);
 
-                    DB::table(str_plural(Session::get('table')))
+                    DB::table($this->table_name('plural'))
                         ->where('id', $field_data['id'] )  // find your user by their email
                         ->limit(1)  // optional - to ensure only one record is updated.
                         ->update($field_data);  // update the record in the DB. 
@@ -72,7 +103,7 @@ class AppController extends Controller
 
                 unset($field_data['form_mode'],$field_data['_token']);
 
-                DB::table(str_plural(Session::get('table')))->insert($field_data);
+                DB::table($this->table_name('plural'))->insert($field_data);
 
                 return " NEW create insert";
 
@@ -88,7 +119,7 @@ class AppController extends Controller
     
     public function show($id) {
         
-        $result = DB::table(str_plural(Session::get('table')))->where('id',$id)->limit(1)->first();
+        $result = DB::table($this->table_name('plural'))->where('id',$id)->limit(1)->first();
         // echo $result->name;
         return json_encode($result);
 
