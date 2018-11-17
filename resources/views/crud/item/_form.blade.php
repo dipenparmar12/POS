@@ -1,13 +1,13 @@
-  {!! Form::open(['route' => Session::get('table').'.store', 'id'=> 'create_'.Session::get('table')]) !!}
+  {!! Form::open(['route' => $crud_table.'.store', 'id'=> 'create_'.$crud_table]) !!}
       @csrf
       
-      <h4 class="form-section"><i class="la la-eye"></i>Add  {{ Session::get('table') }}</h4>
+      <h4 class="form-section"><i class="la la-eye"></i>Add  {{ $crud_table }}</h4>
 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="location2"> Main Category:
-                <a href="#" data-toggle="modal" data-target="#add_main_category_modal"> <div class="badge badge-success"> +Add </div> </a>
+                {{-- <a href="#" data-toggle="modal" data-target="#add_main_category_modal"> <div class="badge badge-success"> +Add </div> </a> --}}
               </label>
               <select class="custom-select form-control" id="category_id" >
                 <option value="1">item 1</option>
@@ -19,7 +19,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="location2"> Sub Category :
-                <a href="#" data-toggle="modal" data-target="#add_sub_category_modal"> <div class="badge badge-success"> +Add </div> </a>
+                {{-- <a href="#" data-toggle="modal" data-target="#add_sub_category_modal"> <div class="badge badge-success"> +Add </div> </a> --}}
               </label>
               <select class="custom-select form-control" id="sub_category_id" name="sub_category_id">
                 <option value="1">item 1</option>
@@ -65,7 +65,7 @@
   
         <div class="modal-footer">
           <button type="button" class="btn box-shadow-1 round btn-outline-blue-grey grey" data-dismiss="modal">Close</button>
-          <button type="button" id="{{ Session::get('table') }}_submit_btn" class="btn box-shadow-1 round btn-outline-success">Save</button>
+          <button type="button" id="{{ $crud_table }}_submit_btn" class="btn box-shadow-1 round btn-outline-success">Save</button>
         </div>
 
   {!! Form::close() !!}

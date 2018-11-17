@@ -22,9 +22,9 @@ class AppController extends Controller
 
         // SortHand Method to Get DB table name from current Class
         if ($str_plural == 'plural') {
-            return str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));    
+            return strtolower(str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));    
         }else{
-            return (str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));    
+            return strtolower((str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));    
         }
         
         # METHOD 1 Optimized
@@ -61,6 +61,8 @@ class AppController extends Controller
     public function index() {
 
         $data['db_records'] = DB::table($this->table_name('plural'))->get();
+        $data['crud_table'] = $this->table_name();
+
         return view('crud.index')->with($data);
 
         // $this->table_name('plural')
@@ -72,11 +74,11 @@ class AppController extends Controller
 
     // Fetch Category Form by Ajax Call
     public function create() {
-        return view('crud.'.$this->table_name().'._form');
+        $data['crud_table'] = $this->table_name();
+        return view('crud.'.$this->table_name().'._form')->with($data);
     } ## create()
 
 
-    
     public function store(Request $request) {
         // return dd($request->data['form_mode']);
         // return $request->data['form_mode'];
