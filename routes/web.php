@@ -33,6 +33,10 @@ Route::group(['middleware' => 'Ajax_check','middleware' => 'Session_Check'], fun
     Route::post('/item/delete/{id}', 'AppController@delete_record');
     Route::post('/item/db_records/{table?}','AppController@get_table_records');
 
+    Route::resource('/table', 'TableController');
+    Route::post('/table/delete/{id}', 'TableController@delete_record');
+    Route::post('/table/db_records/{table?}','TableController@get_table_records');
+
 
     // Route::resource('/category', 'CategoryController');
     // Route::post('/category/delete/{id}', 'CategoryController@delete_record');
@@ -42,9 +46,9 @@ Route::group(['middleware' => 'Ajax_check','middleware' => 'Session_Check'], fun
     // Route::post('/sub_category/delete/{id}', 'SubCategoryController@delete_record');
     // Route::post('/sub_category/db_records/{table?}','SubCategoryController@get_table_records');
 
-    // Route::resource('/item', 'SubCategoryController');
-    // Route::post('/item/delete/{id}', 'SubCategoryController@delete_record');
-    // Route::post('/item/db_records/{table?}','SubCategoryController@get_table_records');
+    // Route::resource('/item', 'ItemController');
+    // Route::post('/item/delete/{id}', 'ItemController@delete_record');
+    // Route::post('/item/db_records/{table?}','ItemController@get_table_records');
 
 });
 

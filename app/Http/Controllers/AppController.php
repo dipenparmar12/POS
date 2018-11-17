@@ -15,6 +15,7 @@ use Session;
 class AppController extends Controller
 {
 
+    protected $table;
 
     public function get_table_records(){
         $data['db_records'] =  DB::table(str_plural(Session::get('table')))->get();
@@ -29,7 +30,7 @@ class AppController extends Controller
     public function index() {
 
         $data['db_records'] = DB::table(str_plural(Session::get('table')))->get();
-        return view('crud.'.Session::get('table').'.index')->with($data);
+        return view('crud.index')->with($data);
 
         // str_plural(Session::get('table'))
         // $data['db_records'] = Category::all();
