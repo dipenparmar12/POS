@@ -7,6 +7,8 @@ use DB;
 use Session;
 use Excel;
 use URL;
+use Route;
+use Schema;
 
 // Temp Fucntion for testing Purose
 function s($str){ echo '<pre>';  print_r($str);  echo '</pre>'; }
@@ -16,7 +18,8 @@ class TestC extends Controller
     public function test($paramenter="Test"){
         echo 'Test@test'.'<br>';
         
-
+        // $this->drop_tables();
+        // $this->get_controller_names();
         // $this->trim_table_name_from_class_name();
         // $this->get_table_from_uri();
         // $this->get_table_name();
@@ -27,9 +30,36 @@ class TestC extends Controller
         // $this->table_data();
 
     } ## test() 
+
+    public function drop_tables(){
+        $tables = DB::select('SHOW TABLES');
+        foreach($tables as $table){
+            Schema::drop($table->Tables_in_pos);
+            echo 'Table '.$table->Tables_in_pos.' Droped. <br>';
+        } 
+
+    }
+
+    public function get_controller_names(){
+        $controllers = [];
+
+            foreach (Route::getRoutes()->getRoutes() as $route)
+            {
+                $action = $route->getAction();
+
+                if (array_key_exists('controller', $action))
+                {
+                    // You can also use explode('@', $action['controller']); here
+                    // to separate the class name from the method
+                    $controllers[] = $action['controller'];
+                }
+            }
+
+        s($controllers);
+    } ## get_controller_names()
     
     public function trim_table_name_from_class_name(){
-        return str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));
+        return (str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));
         
         # METHOD 1 Optimized
         // $class =  $this->get_class_name() ; // "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding
@@ -85,6 +115,9 @@ class TestC extends Controller
 
     public function upload_seeder() {
         $seeder_files = glob(public_path("factories\*.csv"));
+
+        s($seeder_files);
+        
         foreach($seeder_files as $file) {
 
             Session::put('TEMP_T',pathinfo($file)['filename']);

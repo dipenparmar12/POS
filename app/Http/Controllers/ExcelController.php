@@ -52,7 +52,9 @@ class ExcelController extends Controller
                 }
             });
         }
+
         Session::put('success', 'Youe file successfully import in database!!!');
+
         return back();
 
     } #importExcel(Request $request)

@@ -13,7 +13,7 @@ class CreateCreaditMastersTable extends Migration
      */
     public function up()
     {
-        Schema::create('creadit_masters', function (Blueprint $table) {
+        Schema::create('creaditMasters', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('customer_id');
             $table->integer('order_id');
@@ -31,6 +31,6 @@ class CreateCreaditMastersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('creadit_masters');
+        Schema::dropIfExists('creaditMasters');
     }
 }

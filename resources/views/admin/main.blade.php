@@ -30,12 +30,15 @@
           </div>
           @yield('modal')
       </div>
+
+      {!! Session::get('import_done', '' ) !!}
+      
     </div>
     
     <!--  MAIN FOOTER -->
-    <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+    {{-- <footer class="footer footer-static footer-light navbar-border navbar-shadow">
       @include('admin.layout.footer')
-    </footer>
+    </footer> --}}
     
     {{--  Js_script_optional ( Each-Page )  --}}
     @yield('js_script')

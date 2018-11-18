@@ -12,34 +12,39 @@ Route::get('/template', function () {
 });
 
 
-Route::get('/crud','posController@crud');
-
-Route::get('/pos/{page?}', 'PosController@href');
-Route::resource('/app', 'AppController');
+Route::get('/pos/{page?}', 'PosController@index');
 
 
+// Route::get('/temp',function(){
+//     echo \App\SubCategory::all();
+// });
 
-Route::group(['middleware' => 'Ajax_check','middleware' => 'Session_Check'], function() {
+
+Route::group(['middleware' => 'Session_Check'], function() {
 
     // Route::get('/table/test', 'TableController@test');
     // Route::get('/category/test', 'CategoryController@test');
     // Route::get('/item/test', 'ItemController@test');
 
-    Route::resource('/category', 'CategoryController');
-    Route::post('/category/delete/{id}', 'CategoryController@delete_record');
-    Route::post('/category/db_records/{table?}','CategoryController@get_table_records');
+    Route::resource('/Category', 'CategoryController');
+    Route::post('/Category/delete/{id}', 'CategoryController@delete_record');
+    Route::post('/Category/db_records/{table?}','CategoryController@get_table_records');
 
-    Route::resource('/sub_category', 'SubCategoryController');
-    Route::post('/sub_category/delete/{id}', 'SubCategoryController@delete_record');
-    Route::post('/sub_category/db_records/{table?}','SubCategoryController@get_table_records');
+    Route::resource('/SubCategory', 'SubCategoryController');
+    Route::post('/SubCategory/delete/{id}', 'SubCategoryController@delete_record');
+    Route::post('/SubCategory/db_records/{table?}','SubCategoryController@get_table_records');
 
-    Route::resource('/item', 'ItemController');
-    Route::post('/item/delete/{id}', 'ItemController@delete_record');
-    Route::post('/item/db_records/{table?}','ItemController@get_table_records');
+    Route::resource('/Item', 'ItemController');
+    Route::post('/Item/delete/{id}', 'ItemController@delete_record');
+    Route::post('/Item/db_records/{table?}','ItemController@get_table_records');
 
-    Route::resource('/table', 'TableController');
-    Route::post('/table/delete/{id}', 'TableController@delete_record');
-    Route::post('/table/db_records/{table?}','TableController@get_table_records');
+    Route::resource('/Table', 'TableController');
+    Route::post('/Table/delete/{id}', 'TableController@delete_record');
+    Route::post('/Table/db_records/{table?}','TableController@get_table_records');
+
+    Route::resource('/PaymentMethod', 'PaymentMethodController');
+    Route::post('/PaymentMethod/delete/{id}', 'PaymentMethodController@delete_record');
+    Route::post('/PaymentMethod/db_records/{table?}','PaymentMethodController@get_table_records');
 
 
     // Route::resource('/category', 'CategoryController');
@@ -88,7 +93,16 @@ Route::get('test/item', function () {
 
 
 
+
+// ----- Drop All Tables From DB --------
+Route::get('database_table_drop','TestC@drop_tables');
+
+
 // ----- Excel Import Export --------
+// // Mash Data Seeder (DUMP Data)
+Route::get('import_table', 'AppFunController@upload_seeder');
+
+
 // Route for view/blade file.
 Route::get('importExport', 'ExcelController@importExport');
 // Route for export/download tabledata to .csv, .xls or .xlsx

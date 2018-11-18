@@ -26,7 +26,7 @@ $(document).ready(function () {
         <div class="dropdown " id="drop_{{$category->nick_name}}">
           <div class="dropdown-menu">
             
-            @forelse ($sub_categories as $sub_category)
+            @forelse ($subCategories as $sub_category)
             @if ($sub_category->category_id == $category->id)
             <a class="dropdown-item" data-value="sub_category" id="sub_category_id_{{$sub_category->category_id}}" > {{$sub_category->name}}_cat </a>
             @endif
