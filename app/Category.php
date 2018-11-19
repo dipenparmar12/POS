@@ -15,6 +15,11 @@ class Category extends Model
 		'img',
     ];
 
+    public function subCategory(){
+    	return $this->hasMany('App\SubCategory');
+    }
+    
+
 	# // set all data fillabe in model ?
     // protected $fillable = ['*'];
 

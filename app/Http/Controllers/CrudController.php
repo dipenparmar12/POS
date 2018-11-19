@@ -131,6 +131,7 @@ class CrudController extends Controller
     } ## show()
 
     public function delete_record($id) {
+        DB::table($this->table_name('plural'))->where('id',$id)->delete();
         // Category::findOrFail($id)->delete();
         return "Record Deleted: ".$id;
     } ## destroy()

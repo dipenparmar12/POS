@@ -1,4 +1,13 @@
 <?php
+
+// return response()->view('errors.404');
+// echo $request->url(); // GetFUll URL
+// echo  $request->path(); // Getting the URL after domain
+// echo str_plural(item);
+// echo str_singular("items")
+// $msg = null;
+// echo "<script> alert('{$msg}') </script>";
+
 Session::put('company_id' , 1 );
 
 
@@ -12,7 +21,13 @@ Route::get('/template', function () {
 });
 
 
-Route::get('/pos/{page?}', 'PosController@index');
+
+// POS Oprations
+Route::get('/pos/', 'PosController@index');
+Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
+Route::post('/pos/item_table/{subCategory_id}','PosController@get_items');
+// Route::get('/pos/item_table/{subCategory_id}','PosController@get_items');
+
 
 
 // Route::get('/temp',function(){
@@ -27,24 +42,25 @@ Route::group(['middleware' => 'Session_Check'], function() {
     // Route::get('/item/test', 'ItemController@test');
 
     Route::resource('/Category', 'CategoryController');
-    Route::post('/Category/delete/{id}', 'CategoryController@delete_record');
+    Route::post('/Category/delete/{id}', 'CategoryController@delete_record')->where(['id'=>'[0-9]+']);
     Route::post('/Category/db_records/{table?}','CategoryController@get_table_records');
 
     Route::resource('/SubCategory', 'SubCategoryController');
-    Route::post('/SubCategory/delete/{id}', 'SubCategoryController@delete_record');
+    Route::post('/SubCategory/delete/{id}', 'SubCategoryController@delete_record')->where(['id'=>'[0-9]+']);
     Route::post('/SubCategory/db_records/{table?}','SubCategoryController@get_table_records');
 
     Route::resource('/Item', 'ItemController');
-    Route::post('/Item/delete/{id}', 'ItemController@delete_record');
+    Route::post('/Item/delete/{id}', 'ItemController@delete_record')->where(['id'=>'[0-9]+']);;
     Route::post('/Item/db_records/{table?}','ItemController@get_table_records');
 
     Route::resource('/Table', 'TableController');
-    Route::post('/Table/delete/{id}', 'TableController@delete_record');
+    Route::post('/Table/delete/{id}', 'TableController@delete_record')->where(['id'=>'[0-9]+']);
     Route::post('/Table/db_records/{table?}','TableController@get_table_records');
 
-    Route::resource('/PaymentMethod', 'PaymentMethodController');
-    Route::post('/PaymentMethod/delete/{id}', 'PaymentMethodController@delete_record');
-    Route::post('/PaymentMethod/db_records/{table?}','PaymentMethodController@get_table_records');
+    // Route::resource('/PaymentMethod', 'PaymentMethodController');
+    // Route::post('/PaymentMethod/delete/{id}', 'PaymentMethodController@delete_record')->where(['id'=>'[0-9]+']);
+    // Route::post('/PaymentMethod/db_records/{table?}','PaymentMethodController@get_table_records');
+
 
 
     // Route::resource('/category', 'CategoryController');
@@ -69,6 +85,7 @@ Route::group(['middleware' => 'Session_Check'], function() {
 
 // Test Controller Methods 
 Route::get('/test', 'TestC@index');
+Route::get('/test/fun/{fun?}/{p1?}/{p2?}/', 'TestC@href');
 Route::get('/test/test/{parameter?}', 'TestC@test');
 Route::get('/test/tables','TestC@tables');
 Route::get('/test/table_data','TestC@table_data');
