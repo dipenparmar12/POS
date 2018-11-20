@@ -1,4 +1,4 @@
-@extends('admin.main')
+8m@extends('admin.main')
 @section('content')
 		@if($message = Session::get('success'))
 			<div class="alert alert-info alert-dismissible fade in" role="alert">

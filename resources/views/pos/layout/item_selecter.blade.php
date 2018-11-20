@@ -17,7 +17,7 @@
             
             @forelse ($subCategories as $subCategory)
               @if ($subCategory->category_id == $category->id)
-              <a class="dropdown-item" data-value="subCategory" data-subCategory_id={{ $subCategory->id }} id="subCategory_id__{{$subCategory->id}}" > {{$subCategory->name}}_cat </a>
+              <a class="dropdown-item" data-value="subCategory" data-subCategory_id="{{ $subCategory->id }}" data-subCategory_name="{{ $subCategory->id }}" data-subCategory_id="{{ $subCategory->id }}" id="subCategory_id__{{$subCategory->id}}" > {{$subCategory->name}}_cat </a>
               @endif
             @empty
              <p class="dropdown-item"> Add Item </p>
@@ -33,6 +33,19 @@
 
     <br>
     
+    <form>
+      <div class="input-group">
+         <div class="input-group-prepend">
+           {{-- <span class="input-group-text">By_Cate</span> --}}
+          </div>
+          <input type="text" class="form-control" placeholder="Witin category inputtem Search">
+
+          <div class="input-group-prepend">
+           {{-- <span class="input-group-text">By_item</span> --}}
+          </div>
+          <input type="text" class="form-control" placeholder="Item Search">
+      </div>
+    </form>
 
     @component('admin.layout.components.card',['title'=>'item'])
       <div id="item_select_table">        

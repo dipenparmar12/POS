@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Session;
 
 class PosController extends Controller
 {
@@ -24,11 +24,12 @@ class PosController extends Controller
 
     public function index($view='pos'){
 
-        $data['categories'] = \App\Category::all();
-        $data['subCategories'] = \App\SubCategory::all();
-        $data['items'] = \App\Item::all();
+        $variables['categories'] = \App\Category::all();
+        $variables['subCategories'] = \App\SubCategory::all();
+        $variables['items'] = \App\Item::all();
+        $variables['tables'] = \App\Table::all();
 
-        return view('pos.'.$view)->with($data);
+        return view('pos.'.$view)->with($variables);
     }// #index Page (MAIN PAGE)
 
 
@@ -40,11 +41,39 @@ class PosController extends Controller
         // $variables['SubCategory_id'] = $subCategory_id;
         // echo ($variables['items']);
         return view('pos.item_table')->with($variables);
+
+    } // # get_items();
+
+
+    public function active_table_select(Request $request){
+        $table =  \App\Table::find($request->id);
+            
+        switch ($table->status) {
+            case 'empty':
+                    $table->status = "hold";
+                    $table->save();    
+                break;
+            case 'hold':
+                # code...
+                break;
+            case 'unpaid':
+                # code...
+                break;
+            default:
+                # code...
+                break;
+        }
+
+        Session::put('active_table',$table->id);
+        $variables['tables'] = \App\Table::all();
+        return view('pos.layout.table_select_palette')->with($variables);
     }
 
-    // public function crud(){
-    //     return view('admin.pages.crud');
-    // }
+    public function section_order_items(){
+        $variables['active_table_order_items'] = 1;
+        return view('pos.layout.order_items')->with($variables);
+    }
 
-    // public function Category_display(){}    
+
+
 }

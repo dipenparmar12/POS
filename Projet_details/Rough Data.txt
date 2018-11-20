@@ -10,7 +10,22 @@ __________________________________________
 __________________________________________
 __________________________________________
 __________________________________________
+
+		$.ajax({
+			type:'POST',
+			url:'/pos/active_table_select/'+table_id,
+			data:{id:table_id},
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			success:function(response){
+			// console.log(response);
+			// Append Updated table_select_palette after Active Table selected
+			$('#section_table_select_palette div').empty().append(response);
+			}
+	       	});
+		
+		
 __________________________________________
+
 
 
     public function table_name(){

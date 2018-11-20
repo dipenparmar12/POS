@@ -1,19 +1,26 @@
 @extends('admin.main')
 @section('title'," Sale Point of Sale Index ")
 
+
 {{-- Sub_category Selection Menu --}}
   @section('order_items')
-     @include('pos.layout.order_items')
+   <section id="section_order_items">
+      @include('pos.layout.order_items')
+   </section>
   @endsection
 
 {{-- Main_category Selection ( South, Panjabi, Chinise Etc ) --}}
   @section('item_selecter')
-    @include('pos.layout.item_selecter')
+    <section id="section_item_selecter">
+      @include('pos.layout.item_selecter')
+    </section>
   @endsection
 
 {{-- Table_selection Tool Palatte --}}
   @section('table_select_palette')
-    @include('pos.layout.table_select_palette')
+    <section id="section_table_select_palette">
+      @include('pos.layout.table_select_palette',['tables'=>$tables])
+    </section>
   @endsection
 
   

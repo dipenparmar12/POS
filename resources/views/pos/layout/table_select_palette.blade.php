@@ -1,3 +1,4 @@
+
 {{-- Table_selection Tool Palatte --}}
 <div class="card-content">
     <div class="card-body">
@@ -8,18 +9,24 @@
             <div class="col-12">
                 <hr>
                 <div class="row ">
-                    @for ($i = 1; $i < 21 ; $i++)
-                    <div class="col-6 line-height-2">
-                        @if( ($i%3) == 0)
-                        <p class="btn btn-danger btn-sm"> T-{{$i}}</p>
-                        @else
-                        <p class="btn btn-success btn-sm"> T-{{$i}}</p>
-                        @endif
-                        @if ($i==7)
-                        <p class="btn bg-amber btn-sm"> T-{{$i}}</p>
-                        @endif
-                    </div>
-                    @endfor
+                    @forelse($tables as $table)
+                        <div class="col-6 line-height-3 mb-1" >
+                            @switch(trim($table->status))
+                                @case("empty")
+                                    <button class="btn btn-success btn-sm col-12 " data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
+                                    @break
+                                @case("unpaid")
+                                    <button class="btn bg-amber btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button>    <br>
+                                    @break
+                                @case("hold")
+                                    <button class="btn btn-danger btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
+                                    @break
+                            @endswitch                            
+                        </div>
+                        {{-- <h1>{{ $table->status }} <hr> </h1> --}}
+                    @empty
+                        <p> Add Table </p>
+                    @endforelse
                 </div>
             </div>
         </ul>

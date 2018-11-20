@@ -14,40 +14,8 @@ use Session;
 class CrudController extends Controller
 {
 
-    protected $db_tables = [];
-
     public function test(){
         $this->table_name();
-    }
-
-    public function table_name($str_plural=false){
-
-        // SortHand Method to Get DB table name from current Class
-        if ($str_plural == 'plural') {
-            return (str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));    
-        }else{
-            return ((str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));    
-        }
-        
-        # METHOD 1 Optimized
-        // $class =  $this->get_class_name() ; // "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding
-        // $contrller_name =  strrchr($class,'\\'); // \CategoryController
-        // $trim_controller = str_replace('\\','', $contrller_name);
-        // $table = str_replace('Controller','',$trim_controller);
-        // echo $db_table = str_plural($table);
-
-        # METHOD 2 ( LONG time Consuming )
-        // $class = $this->get_class_name();// "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding 
-        // $con = explode('\\', $class); //  array:4 [ 0=>"App", 1=>"Http", 2=>"Controllers", 3=>"TableContrler"];
-        // $max = max(array_keys($con)); // Max Key Value 3 (may Alaways return 3)
-        // $current_controller = $con[$max]; // AppController,CategoryController etc ( or those who Inherited )
-        // $table_name = str_replace('Controller','',$current_controller); // TableName(Category,item etc ) Remove 'Controlelr' Word
-        // $db_table = str_plural($table_name); // Get same table name that exited in Database
-        // return $db_table;
-    }
-
-    public function get_class_name(){
-        return get_called_class();
     }
 
     public function get_table_records(){
@@ -136,6 +104,36 @@ class CrudController extends Controller
         return "Record Deleted: ".$id;
     } ## destroy()
 
+
+    public function table_name($str_plural=false){
+
+        // SortHand Method to Get DB table name from current Class
+        if ($str_plural == 'plural') {
+            return (str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));    
+        }else{
+            return ((str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\'))));    
+        }
+        
+        # METHOD 1 Optimized
+        // $class =  $this->get_class_name() ; // "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding
+        // $contrller_name =  strrchr($class,'\\'); // \CategoryController
+        // $trim_controller = str_replace('\\','', $contrller_name);
+        // $table = str_replace('Controller','',$trim_controller);
+        // echo $db_table = str_plural($table);
+
+        # METHOD 2 ( LONG time Consuming )
+        // $class = $this->get_class_name();// "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding 
+        // $con = explode('\\', $class); //  array:4 [ 0=>"App", 1=>"Http", 2=>"Controllers", 3=>"TableContrler"];
+        // $max = max(array_keys($con)); // Max Key Value 3 (may Alaways return 3)
+        // $current_controller = $con[$max]; // AppController,CategoryController etc ( or those who Inherited )
+        // $table_name = str_replace('Controller','',$current_controller); // TableName(Category,item etc ) Remove 'Controlelr' Word
+        // $db_table = str_plural($table_name); // Get same table name that exited in Database
+        // return $db_table;
+    } // # table_name(); get Table name from Class
+
+    public function get_class_name(){
+        return get_called_class();
+    } // # get_class_name() get Current Class Name
 
 
     // public function edit($id) {

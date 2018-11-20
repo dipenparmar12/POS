@@ -26,7 +26,8 @@ Route::get('/template', function () {
 Route::get('/pos/', 'PosController@index');
 Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
 Route::post('/pos/item_table/{subCategory_id}','PosController@get_items');
-// Route::get('/pos/item_table/{subCategory_id}','PosController@get_items');
+Route::post('/pos/active_table_select/{table_id}','PosController@active_table_select');
+Route::post('/pos/section_order_items/','PosController@section_order_items');
 
 
 
