@@ -29,10 +29,7 @@
             <div class="col-2">@yield('table_select_palette')</div>
           </div>
           @yield('modal')
-      </div>
-
-      {!! Session::get('import_done', '' ) !!}
-      
+      </div>  
     </div>
     
     <!--  MAIN FOOTER -->
@@ -41,8 +38,9 @@
     </footer> --}}
     
     {{--  Js_script_optional ( Each-Page )  --}}
-    @yield('js_script')
+    
     @include('admin.layout.scripts')
-
+    @yield('js_script')
+    @yield('js_bottom')
   </body>
 </html>

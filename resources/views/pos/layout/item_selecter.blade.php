@@ -1,6 +1,6 @@
 {{-- Main_category Selection ( South, Panjabi, Chinise Etc ) --}}
-@section('js')
-
+@section('js')  
+  {{-- <script src="{{ asset('app-assets/js/scripts/tables/datatables/datatable-basic.js') }}" type="text/javascript"></script> --}}
 @endsection
 
 @include('script.pos_script')
@@ -38,7 +38,8 @@
          <div class="input-group-prepend">
            {{-- <span class="input-group-text">By_Cate</span> --}}
           </div>
-          <input type="text" class="form-control" placeholder="Witin category inputtem Search">
+
+          <input type="text" class="form-control" placeholder="Witin category inputtem Search" id="search_item_from_subCategory" onkeyup="subCategory_search()">
 
           <div class="input-group-prepend">
            {{-- <span class="input-group-text">By_item</span> --}}
@@ -52,5 +53,32 @@
         
       </div>        
     @endcomponent
-
+  
   </div>
+
+
+<script>
+
+  function subCategory_search() {  
+    // alert('MyFun');
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("search_item_from_subCategory");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("item_list_table");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      } 
+    }
+  }
+  
+</script>

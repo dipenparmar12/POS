@@ -11,7 +11,7 @@
 
 {{-- Main_category Selection ( South, Panjabi, Chinise Etc ) --}}
   @section('item_selecter')
-    <section id="section_item_selecter">
+    <section id="section_item_list_table">
       @include('pos.layout.item_selecter')
     </section>
   @endsection

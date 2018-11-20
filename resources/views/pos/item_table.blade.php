@@ -1,6 +1,6 @@
 
 <div class="table-responsive">
-  <table id="new-orders-table" class="table table-hover table-xl mb-0">
+  <table id="item_list_table" class="table table-hover table-xl mb-0">
     <thead>
       <tr>
         <th class="border-top-0">#</th>
