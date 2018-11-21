@@ -1,4 +1,5 @@
 <?php
+// dinner_tables
 
 // return response()->view('errors.404');
 // echo $request->url(); // GetFUll URL
@@ -28,7 +29,7 @@ Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
 Route::post('/pos/item_table/{subCategory_id}','PosController@get_items');
 Route::post('/pos/active_table_select/{table_id}','PosController@active_table_select');
 Route::post('/pos/section_order_items/','PosController@section_order_items');
-
+Route::post('/pos/check_out/','PosController@check_out');
 
 
 // Route::get('/temp',function(){
@@ -113,7 +114,7 @@ Route::get('test/item', function () {
 
 
 // ----- Drop All Tables From DB --------
-Route::get('database_table_drop','TestC@drop_tables');
+Route::get('drop_database','TestC@drop_tables');
 
 
 // ----- Excel Import Export --------

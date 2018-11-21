@@ -36,10 +36,10 @@
                 <thead>
                   <tr>
                     
-                    <th class="border-top-0 m-0 w-25" >Item</th>
-                    <th class="border-top-0 m-0 ">Price</th>
-                    <th class="border-top-0 m-0">Qty</th>
-                    <th class="border-top-0 m-0">Amt</th>
+                    <th class="border-top-0 m-0 " style="width:40% " >Item</th>
+                    <th class="border-top-0 m-0 " style="width:25% " >Qty</th>
+                    <th class="border-top-0 m-0 " style="width:10%" >Price</th>
+                    <th class="border-top-0 m-0 " style="width:14% " >Options</th>
                   </tr>
                 </thead>
                 
@@ -48,8 +48,8 @@
                   <tr>
                     
                     <td class="text-truncate">{{ $i }} Masala Dhosa </td>
-                    <td class="text-truncate"> 270.00 </td>
-                    <td class="text-truncate">+4</td>
+                    <td class="text-truncate"><input type="number" class="w-100" value="{{$i+20}}" ></td>
+                    <td class="text-truncate"> <span>100.0 </span></td>
                     <td>
                       <button type="button" class="btn btn-sm btn-outline-blue round"> Edt </button>
                     </td>
@@ -61,9 +61,9 @@
               <!-- item_table_btn -->
               <div class="heading-elements ">
                 <ul class="list-inline ">
-                  <li><a class=" btn box-shadow-1 round btn-outline-success  " href=" {{ URL::to('pos/table') }}" target="_blank">CheckOut</a></li>
-                  <li><a class=" btn box-shadow-1 round btn-outline-danger   " href=" {{ URL::to('pos/index') }}" target="_blank">Process</a></li>
-                  <li><a class=" btn box-shadow-1 round btn-outline-blue-grey  " href=" {{ URL::to('pos/') }}" target="_blank">Clear</a></li>
+                  <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out"" >CheckOut</a></li>
+                  <li><a class="btn box-shadow-1 round btn-outline-danger   " href=" {{ URL::to('pos/index') }}" >Process</a></li>
+                  <li><a class="btn box-shadow-1 round btn-outline-blue-grey  " href=" {{ URL::to('pos/') }}"  >Clear</a></li>
                 </ul>
               </div>
             </div>

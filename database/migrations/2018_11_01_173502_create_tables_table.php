@@ -15,7 +15,7 @@ class CreateTablesTable extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->increments('id');
-            
+            // $table->integer('order_id');
             $table->enum('status',['hold','empty','unpaid']);
             //  Hold->order done but full order not served, free, occupaid 
             //  unpaid->order compalte, but unpaid

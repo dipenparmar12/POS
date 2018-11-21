@@ -5,6 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 
+// use Category;
+// use SubCategory;
+// use Item;
+
+// use Table;
+// use Order;
+// use OrderDetail;
+
+
 class PosController extends Controller
 {
 
@@ -45,35 +54,49 @@ class PosController extends Controller
     } // # get_items();
 
 
-    public function active_table_select(Request $request){
+    public function active_table_select(Request $request)  {  
+         // UPDATE `tables` SET status="empty"
+
         $table =  \App\Table::find($request->id);
-            
+        $order = \App\Order::create(['table_id'=>$table->id]);
+
+        Session::put('active_table',$table->id);
+        Session::put('order_id',$order->id);
+
         switch ($table->status) {
             case 'empty':
-                    $table->status = "hold";
-                    $table->save();    
+                $table->status = "hold";
+                $table->save();
+
                 break;
             case 'hold':
-                # code...
+
                 break;
             case 'unpaid':
-                # code...
+
                 break;
             default:
                 # code...
                 break;
         }
 
-        Session::put('active_table',$table->id);
+        
         $variables['tables'] = \App\Table::all();
         return view('pos.layout.table_select_palette')->with($variables);
+
     }
 
     public function section_order_items(){
         $variables['active_table_order_items'] = 1;
         return view('pos.layout.order_items')->with($variables);
+
     }
 
+
+    public function check_out(){
+        return \App\Order::find(Session::get('order_id'));
+
+    }
 
 
 }

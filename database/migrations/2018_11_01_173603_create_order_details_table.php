@@ -15,7 +15,7 @@ class CreateOrderDetailsTable extends Migration
     {
         Schema::create('orderDetails', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('table_id');
+            $table->integer('order_id');
             $table->integer('item_id');
             $table->unsignedInteger('item_qty'); // pizza 2qty,20rs = 40rs || dosha 10qty 3rs = 30rs
             $table->string('remark',190);

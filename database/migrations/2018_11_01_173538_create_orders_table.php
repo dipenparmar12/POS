@@ -15,15 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('customer_id');
-            $table->string('order_detail_id');
+            $table->string('customer_id')->nullable(true);
+            $table->integer('table_id')->nullable(true);;
             // $table->enum('status');// pending for letter
-            $table->enum('status',['hold','empty','unpaid']);
-            $table->string('paid',50);
-            $table->unsignedDecimal('amount');
-            $table->unsignedDecimal('discount');
-            $table->boolean('bill_printed');
-            $table->string('type',30); // Home_Delivery, Walkin, Onsite
+            // $table->enum('status',['hold','empty','unpaid']); // Table->order_status
+            $table->string('paid',50)->nullable(true);;
+            $table->unsignedDecimal('amount')->nullable(true);;
+            $table->unsignedDecimal('discount_percent')->nullable(true)->default('0');
+            $table->boolean('bill_printed')->nullable(true);;
+            $table->string('type',30)->nullable(true);; // Home_Delivery, Walkin, Onsite
             $table->timestamps();
         });
     }

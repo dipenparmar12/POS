@@ -4,12 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Table extends Model
+class OrderDetail extends Model
 {
-
-	
-	
     public function order(){
-    	return $this->hasMany('App\Order');
+    	return $this->belongsTo('App\Order');
     }
 }
