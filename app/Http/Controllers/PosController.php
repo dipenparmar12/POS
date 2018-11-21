@@ -55,23 +55,29 @@ class PosController extends Controller
 
 
     public function active_table_select(Request $request)  {  
-         // UPDATE `tables` SET status="empty"
-
+        
         $table =  \App\Table::find($request->id);
-        $order = \App\Order::create(['table_id'=>$table->id]);
-
-        Session::put('active_table',$table->id);
-        Session::put('order_id',$order->id);
-
+        
         switch ($table->status) {
             case 'empty':
+                $order = \App\Order::create(['table_id'=>$table->id,'status'=>'hold']);
+
                 $table->status = "hold";
+                $table->order_id = $order->id;
                 $table->save();
 
-                break;
-            case 'hold':
+                Session::put('active_table',$table->id);
+                Session::put('order_id',$order->id);    
 
                 break;
+
+            case 'hold':
+                $order = \App\Order::where('table_id', $table->id)->where('status','hold')->get();
+                Session::put('active_table', $table_id);
+                Session::put('order_id',$order->id);
+
+                break;
+
             case 'unpaid':
 
                 break;
@@ -80,7 +86,6 @@ class PosController extends Controller
                 break;
         }
 
-        
         $variables['tables'] = \App\Table::all();
         return view('pos.layout.table_select_palette')->with($variables);
 
@@ -92,10 +97,21 @@ class PosController extends Controller
 
     }
 
+    public function item_add_to_order_details(Request $request){        
+        $insert_data = [
+            'order_id'=>Session::get('order_id'),
+            'table_id'=>Session::get('active_table'),
+            'item_id'=>$request->item_id
+        ];
+
+        $order_details = \App\OrderDetail::create( $insert_data );
+        return ($order_details);
+
+    }
 
     public function check_out(){
-        return \App\Order::find(Session::get('order_id'));
-
+        return "Check_Out for Order_id: ".Session::get('order_id')." table_id :".Session::get('active_table');
+        // return \App\Order::find(Session::get('order_id'));
     }
 
 

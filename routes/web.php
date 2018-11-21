@@ -1,26 +1,21 @@
 <?php
+Session::put('company_id' , 1 );
 // dinner_tables
-
-// return response()->view('errors.404');
-// echo $request->url(); // GetFUll URL
-// echo  $request->path(); // Getting the URL after domain
-// echo str_plural(item);
-// echo str_singular("items")
-// $msg = null;
 // echo "<script> alert('{$msg}') </script>";
 
-Session::put('company_id' , 1 );
 
+// ----- Drop All Tables From DB --------
+Route::get('drop_database','TestC@drop_tables');
 
-Route::get('/', function () {
-    echo " R-POS ";
-    // return view('welcome');
-});
-
-Route::get('/template', function () {
-    return view('admin.main');
-});
-
+// ----- Excel Import Export --------
+// // Mash Data Seeder (DUMP Data)
+Route::get('import_table', 'AppFunController@upload_seeder');
+// Route for view/blade file.
+Route::get('importExport', 'ExcelController@importExport');
+// Route for export/download tabledata to .csv, .xls or .xlsx
+Route::get('downloadExcel/{type}', 'ExcelController@downloadExcel');
+// Route for import excel data to database.
+Route::post('importExcel', 'ExcelController@importExcel');
 
 
 // POS Oprations
@@ -29,12 +24,10 @@ Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
 Route::post('/pos/item_table/{subCategory_id}','PosController@get_items');
 Route::post('/pos/active_table_select/{table_id}','PosController@active_table_select');
 Route::post('/pos/section_order_items/','PosController@section_order_items');
+Route::post('/pos/item_add_to_order_details/{item_id}','PosController@item_add_to_order_details');
 Route::post('/pos/check_out/','PosController@check_out');
 
 
-// Route::get('/temp',function(){
-//     echo \App\SubCategory::all();
-// });
 
 
 Route::group(['middleware' => 'Session_Check'], function() {
@@ -113,18 +106,11 @@ Route::get('test/item', function () {
 
 
 
-// ----- Drop All Tables From DB --------
-Route::get('drop_database','TestC@drop_tables');
+Route::get('/', function () {
+    echo " R-POS ";
+    // return view('welcome');
+});
 
-
-// ----- Excel Import Export --------
-// // Mash Data Seeder (DUMP Data)
-Route::get('import_table', 'AppFunController@upload_seeder');
-
-
-// Route for view/blade file.
-Route::get('importExport', 'ExcelController@importExport');
-// Route for export/download tabledata to .csv, .xls or .xlsx
-Route::get('downloadExcel/{type}', 'ExcelController@downloadExcel');
-// Route for import excel data to database.
-Route::post('importExcel', 'ExcelController@importExcel');
+Route::get('/template', function () {
+    return view('admin.main');
+});

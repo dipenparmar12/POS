@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('customer_id')->nullable(true);
             $table->integer('table_id')->nullable(true);;
             // $table->enum('status');// pending for letter
-            // $table->enum('status',['hold','empty','unpaid']); // Table->order_status
+            $table->enum('status',['hold','empty','unpaid']); // Table->order_status
             $table->string('paid',50)->nullable(true);;
             $table->unsignedDecimal('amount')->nullable(true);;
             $table->unsignedDecimal('discount_percent')->nullable(true)->default('0');

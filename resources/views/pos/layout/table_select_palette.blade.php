@@ -21,7 +21,11 @@
                                 @case("hold")
                                     <button class="btn btn-danger btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
                                     @break
-                            @endswitch                            
+                                @default
+                                    <button class="btn btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
+                                    @break
+                            @endswitch
+                                        
                         </div>
                         {{-- <h1>{{ $table->status }} <hr> </h1> --}}
                     @empty

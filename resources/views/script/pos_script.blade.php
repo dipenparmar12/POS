@@ -146,10 +146,22 @@ $(document).ready(function() {
 	});
 
 
+	// Item Click Event for add more Items to Runing OrderDetails Table 
 	$('body').on('click', 'tr.item_select_list', function(event) {
 		event.preventDefault();
 		console.log(this);
+		var item_id = $(this).data('item_id');
 
+		$.ajax({
+			type:'POST',
+			url:'/pos/item_add_to_order_details/'+item_id,
+			data:{item_id:item_id},
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			success:function(response){
+				console.log(response);
+				alert(response);
+			}
+      	});
 	});
 	
 
@@ -165,7 +177,7 @@ $(document).ready(function() {
 			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 			success:function(response){
 				console.log(response);
-				alert(response.table_id);
+				alert(response);
 			}
       	});
 	});
