@@ -57,45 +57,74 @@ class PosController extends Controller
     public function active_table_select(Request $request)  {  
         
         $table =  \App\Table::find($request->id);
+        // dd($request->id);
         
-        switch ($table->status) {
-            case 'empty':
-                $order = \App\Order::create(['table_id'=>$table->id,'status'=>'hold']);
+        if ($table->status == "empty") {
+            
+            $order = \App\Order::create(['table_id'=>$table->id,'status'=>'hold']);
 
-                $table->status = "hold";
-                $table->order_id = $order->id;
-                $table->save();
+            $table->status = "hold";
+            $table->order_id = $order->id;
+            $table->save();
 
-                Session::put('active_table',$table->id);
-                Session::put('order_id',$order->id);    
+            Session::put('active_table',$table->id);
+            Session::put('order_id',$order->id);    
+            
+        }elseif ($table->status == "hold") {
+            // return " ";
+            // $order = \App\Order::where( ['table_id'=>$table->id, 'status'=>'hold' ] )->first();
+            $order = \App\Order::where('table_id', $table->id)->where('status','hold')->first();
+            // dd($order->id);
+            Session::put('active_table', $table->id);
+            Session::put('order_id',$order->id);
 
-                break;
+        }elseif ($table->status == "unpaid") {
+            # code...
+        }else{
 
-            case 'hold':
-                $order = \App\Order::where('table_id', $table->id)->where('status','hold')->get();
-                Session::put('active_table', $table_id);
-                Session::put('order_id',$order->id);
-
-                break;
-
-            case 'unpaid':
-
-                break;
-            default:
-                # code...
-                break;
         }
+
+        // switch ($table->status) {
+        //     case 'empty':
+        //         $order = \App\Order::create(['table_id'=>$table->id,'status'=>'hold']);
+
+        //         $table->status = "hold";
+        //         $table->order_id = $order->id;
+        //         $table->save();
+
+        //         Session::put('active_table',$table->id);
+        //         Session::put('order_id',$order->id);    
+
+        //         break;
+
+        //     case 'hold':
+        //         $order = \App\Order::where('table_id', $table->id)->where('status','hold')->get();
+        //         Session::put('active_table', $table_id);
+        //         Session::put('order_id',$order->id);
+
+        //         break;
+
+        //     case 'unpaid':
+
+        //         break;
+        //     default:
+        //         # code...
+        //         break;
+        // }
+
 
         $variables['tables'] = \App\Table::all();
         return view('pos.layout.table_select_palette')->with($variables);
 
-    }
+    } // active_table_select()
+
 
     public function section_order_items(){
         $variables['active_table_order_items'] = 1;
         return view('pos.layout.order_items')->with($variables);
 
-    }
+    } //section_order_items()
+
 
     public function item_add_to_order_details(Request $request){        
         $insert_data = [
@@ -106,13 +135,13 @@ class PosController extends Controller
 
         $order_details = \App\OrderDetail::create( $insert_data );
         return ($order_details);
+    } // item_add_to_order_details()
 
-    }
 
     public function check_out(){
         return "Check_Out for Order_id: ".Session::get('order_id')." table_id :".Session::get('active_table');
         // return \App\Order::find(Session::get('order_id'));
-    }
+    } // check_out()
 
 
 }
