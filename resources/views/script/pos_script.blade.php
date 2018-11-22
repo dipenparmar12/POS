@@ -1,17 +1,15 @@
 <script>
-
 pos_fucntion = {
 
 	test:function(){
 		alert(' Click anyware pos_fucntion:test(){}');
-	}, // Test()
+	 }, // Test()
 
 	test2:function(){
 		alert('pos_fucntion:test2(){}');
-	}, // Test2()
+	 }, // Test2()
 
-	html_table_mini_search_engine:
-		function(jq_input_search_field_selector_obj,jq_table_tr_selector,search_col_index_num=0){
+	html_table_mini_search_engine:function(jq_input_search_field_selector_obj,jq_table_tr_selector,search_col_index_num=0){
 		var filter, tr, td, i;
 
         filter = jq_input_search_field_selector_obj.val().toUpperCase();
@@ -27,20 +25,39 @@ pos_fucntion = {
                 }
             }
         }
-    }, // html_table_mini_search_engine()
+     }, // html_table_mini_search_engine()
+
+	html_table_mini_search_engine_for_all_col:function(jq_input_field_selector){
+		// search for the whole table - all td's. But in My Item table not working (working on other tables )
+		$(input_field).keyup(function() {
+		    var value = this.value;
+
+		    $("table").find("tr").each(function(index) {
+		        if (index === 0) return;
+
+		        var if_td_has = false; //boolean value to track if td had the entered key
+		        
+		        $(this).find('td').each(function () {
+		            if_td_has = if_td_has || $(this).text().indexOf(value) !== -1; //Check if td's text matches key and then use OR to check it for all td's
+		        });
+
+		        $(this).toggle(if_td_has);
+
+		    });
+		});
+	 },  // html_table_mini_search_engine_for_all_col()
 
 	ajax:{
-
 		AjaxTest:function(){
 			alert('pos_fucntion->ajax->AjaxTest() Test');
 		},
 
-		refresh_dinner_table:function(){
+		// OrderItems for 
+		refresh_orderDetails_table:function(){
 			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
 			$.ajax({
 				type:'POST',
 				url:'/pos/section_order_items/',
-				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 				success:function(response){
 					// console.log(response);
 					// Append Updated table_select_palette after Active Table selected
@@ -48,53 +65,68 @@ pos_fucntion = {
 				}
 
 		  	});// AJax();
-
 		},// Referesh_Dinner_table -> Ajax()
-	}, // Ajax.()
-	
+
+
+		// status change [empty->to->hold->...] Table_talette[1,2,3,4,5 btn's]
+		select_dinner_table:function(table_id){
+			$.ajax({
+				type:'POST',
+				url:'/pos/active_table_select/'+table_id,
+				data:{id:table_id},
+				success:function(response){
+					// console.log(response);
+					// Append Updated table_select_palette after Active Table selected
+					$('#section_table_select_palette div').empty().append(response);
+				}
+	      	});
+		 }, // select_dinner_table(table_id)
+
+		add_item_to_orderDetails_table:function(item_id){
+			$.ajax({
+				type:'POST',
+				url:'/pos/item_add_to_order_details/'+item_id,
+				data:{item_id:item_id},
+				success:function(response){
+					console.log(response);
+					// alert(response);
+				}
+	      	});
+		},  // add_item_to_orderDetails_table()
+
+
+		check_out_active_order_or_table:function(){
+			$.ajax({
+				type:'POST',
+				url:'/pos/check_out/',
+				success:function(response){
+					console.log(response);
+					alert(response);
+				}
+	      	});
+		 } // check_out_current_order()
+
+	 }, // Ajax.()	
 
 } /// # pos_fucntions() Object
 
 $(document).ready(function() {
-	// alert('Hello Pos Script');
-	{
 
-		// Test Function() // Fucntion testing Mosue Click Event For Whole page 
-		// $('body').on('click', function(event) {
-		// 	event.preventDefault();
-		// 	pos_fucntion.ajax.AjaxTest();
-		// });
+	$('body').on('click','selectores', function(event) {
+		event.preventDefault();
+		pos_fucntion.ajax.AjaxTest();
+	 });
 
-
-		// #General by your Selector Test();
-		// $('body').on('click','*', function(event) {
-		// 	event.preventDefault();
-		// 	pos_fucntion.ajax.AjaxTest();
-		// });
-	}
+	$.ajaxSetup({
+	    headers: {
+	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	    }
+	});
+	
 
 	$('#search_item_from_subCategory').on('keyup', function() {
         pos_fucntion.html_table_mini_search_engine( $(this) ,"table#item_list_table tr",1);
     })// item Select Search Keyup()
-
-
- 	// search for the whole table - all td's. But in My Item table not working (working on other tables )
-	// $("#search_item_from_subCategory").keyup(function() {
-	//     var value = this.value;
-
-	//     $("table").find("tr").each(function(index) {
-	//         if (index === 0) return;
-
-	//         var if_td_has = false; //boolean value to track if td had the entered key
-	        
-	//         $(this).find('td').each(function () {
-	//             if_td_has = if_td_has || $(this).text().indexOf(value) !== -1; //Check if td's text matches key and then use OR to check it for all td's
-	//         });
-
-	//         $(this).toggle(if_td_has);
-
-	//     });
-	// });
 
 
 	// Item Select Table Generation with Ajax req
@@ -106,9 +138,7 @@ $(document).ready(function() {
 		$('#item_select_table_title .card-header h4.card-title').text($(this)[0].text);
 		
 		$.ajax({
-			headers: {
-	          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	        },
+			headers: get_csrf_token(),
 			url: '/pos/item_table/'+subCategory_id,
 			type: 'POST',
 			data: {subCategory_id:subCategory_id},
@@ -125,9 +155,7 @@ $(document).ready(function() {
 		.always(function() {
 			// console.log("complete");
 		});
-
 	}); // # Ajax() Get and Append Items From SubCategory_id
-
 
 
 	// Active table by btn ( Current Table )
@@ -136,77 +164,43 @@ $(document).ready(function() {
 		event.preventDefault();
 		var table_id =  $(this).data('table_id');
 
-		// if (confirm("Select Table:" + table_id)) { 
-		if (true) { 
-			// alert(this);	
-			// console.log( table_id );
+		if (confirm("Select Table:" + table_id)) { 
 
-			// table_select_palette Refresh after change Current active Table
-			$.ajax({
-				type:'POST',
-				url:'/pos/active_table_select/'+table_id,
-				data:{id:table_id},
-				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-				success:function(response){
-					// console.log(response);
-					// Append Updated table_select_palette after Active Table selected
-					$('#section_table_select_palette div').empty().append(response);
-				}
-	      	});
+			// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
+			pos_fucntion.ajax.select_dinner_table(table_id);
 			
 			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-			pos_fucntion.ajax.refresh_dinner_table();
+			pos_fucntion.ajax.refresh_orderDetails_table();
 			
 		}
-	});
-
+	}); // Dinner Table Select
 
 	// Item Click Event for add more Items to Runing OrderDetails Table 
 	$('body').on('click', 'tr.item_select_list', function(event) {
 		event.preventDefault();
-		console.log(this);
+		// console.(this);
 		var item_id = $(this).data('item_id');
 
 		// Add item to OrderDetails by Order_id in Orders Tables
-		$.ajax({
-			type:'POST',
-			url:'/pos/item_add_to_order_details/'+item_id,
-			data:{item_id:item_id},
-			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-			success:function(response){
-				console.log(response);
-				// alert(response);
-			}
-      	});
+		pos_fucntion.ajax.add_item_to_orderDetails_table(item_id);
 
 		// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-		pos_fucntion.ajax.refresh_dinner_table();
-
-	}); 
+		pos_fucntion.ajax.refresh_orderDetails_table();
+	}); // Add Item to Cart
 	
 
-
-
-
+	// CheckOut Order_id & Table
 	$('body').on('click', '#check_out', function(event) {
 		// console.log(this);
-		$.ajax({
-			type:'POST',
-			url:'/pos/check_out/',
-			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-			success:function(response){
-				console.log(response);
-				alert(response);
-			}
-      	});
-	});
+		pos_fucntion.ajax.check_out_active_order_or_table();
+	}); // CheckOut
 		
-		
-
 
 }); // # Jquery 
 
 
-
-
+// {{-- for AJax Req - header:get_csrf_token(), --}}
+// function get_csrf_token(){	
+// 	return {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
+//  }	
 </script>

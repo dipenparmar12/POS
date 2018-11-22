@@ -36,11 +36,11 @@
               <table id="recent-orders" class="table table-hover">
                 <thead>
                   <tr>
-                    
-                    <th class="border-top-0 m-0 " style="width:40% " >Item</th>
-                    <th class="border-top-0 m-0 w-50" style="width:25% " >Qty</th>
-                    <th class="border-top-0 m-0 " style="width:10%" >Price</th>
-                    <th class="border-top-0 m-0 " style="width:14% " >Options</th>
+                    <th class="border-top-0 m-0 " style="" >Item</th>
+                    <th class="border-top-0 m-0 w-50" style="" >Qty </th>
+                    <th class="border-top-0 m-0 w-50" style="width: 10%" > Dlvrd </th>
+                    <th class="border-top-0 m-0 " style="" >Price</th>
+                    <th class="border-top-0 m-0 " style="" >Options</th>
                   </tr>
                 </thead>
                 
@@ -54,11 +54,18 @@
                         <td class="text-truncate">{{ $ordered_item->item->name }} </td>
                         <td class="text-truncate">
                           {{-- <input type="number" class="w-75" value="{{$loop->iteration}}"> --}}
-                          {{$loop->iteration}}
+                          {{$loop->iteration}} 
+                        </td>
+                        <td>
+                          @if ( ( $loop->index )/2 == 0 )
+                            <button type="button" class="btn btn-sm btn-outline-success round"> &check; </button>
+                          @else
+                            <button type="button" class="btn btn-sm btn-outline-light round"> &check; </button>
+                          @endif
                         </td>
                         <td class="text-truncate"> <span> {{ $ordered_item->item->price }} </span></td>
                         <td>
-                          <button type="button" class="btn btn-sm btn-outline-danger round "> &cross; </button>
+                          <button type="button" class="btn btn-sm btn-outline-danger round "> &#10005; </button>
                         </td>
                       </tr>
 
@@ -80,7 +87,7 @@
                     <li><a class="btn box-shadow-1 round btn-outline-danger" href=" {{ URL::to('pos/index') }}" >Process</a></li>
                     <li><a class="btn box-shadow-1 round btn-outline-blue-grey" href=" {{ URL::to('pos/') }}"  >Abort</a></li>
                   @else
-                    <h1 class="m-2"> Currently Cart is <div class="badge badge-warning">Empty</div></h1>
+                    <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
                   @endif
 
                 </ul>
