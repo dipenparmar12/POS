@@ -20,12 +20,13 @@
       <div id="recent-sales" class="">
         <div class="card">
           <div class="card-header">
-            {{-- <h4 class="card-title">
-            Active Table
-            @if(Session::has('active_table'))
-            {{ Session::get('active_table') }}
-            @endif
-            </h4> --}}
+            <h4 class="card-title">
+                Active Table {{ Session::get('active_table') }}
+                <div class="heading-elements">
+                  <div class="badge border-left-primary badge-striped"> A-2018-{{Session::get('order_id') }}</div>
+                </div>
+            </h4>
+
             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
           </div>
           
@@ -45,13 +46,10 @@
                 
                 <tbody>
 
-                  {{-- {{count($order)}} --}}
-
                   @if ( count(@$order) > 0 )
 
                     @forelse ( ($order->with('item'))->get() as $ordered_item)
                       {{-- {{ ($ordered_item)->item->name }} --}}
-                      
                       <tr>
                         <td class="text-truncate">{{ $ordered_item->item->name }} </td>
                         <td class="text-truncate">
@@ -63,11 +61,11 @@
                           <button type="button" class="btn btn-sm btn-outline-danger round "> &cross; </button>
                         </td>
                       </tr>
-                    @empty
 
+                    @empty
+                        @php $order=null @endphp
                     @endforelse
                     
-
                   @endif
 
                 </tbody>
@@ -76,9 +74,15 @@
               <!-- item_table_btn -->
               <div class="heading-elements ">
                 <ul class="list-inline ">
-                  <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out"" >CheckOut</a></li>
-                  <li><a class="btn box-shadow-1 round btn-outline-danger   " href=" {{ URL::to('pos/index') }}" >Process</a></li>
-                  <li><a class="btn box-shadow-1 round btn-outline-blue-grey  " href=" {{ URL::to('pos/') }}"  >Abort</a></li>
+
+                  @if ( $order )
+                    <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out"" >CheckOut</a></li>
+                    <li><a class="btn box-shadow-1 round btn-outline-danger" href=" {{ URL::to('pos/index') }}" >Process</a></li>
+                    <li><a class="btn box-shadow-1 round btn-outline-blue-grey" href=" {{ URL::to('pos/') }}"  >Abort</a></li>
+                  @else
+                    <h1 class="m-2"> Currently Cart is <div class="badge badge-warning">Empty</div></h1>
+                  @endif
+
                 </ul>
               </div>
             </div>

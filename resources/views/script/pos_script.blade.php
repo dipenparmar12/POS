@@ -1,45 +1,24 @@
 <script>
 
-{{-- Create Customer Id and select From Exsiting when clicked Table --}}
+pos_fucntion = {
 
-// function subCategory_search() {  
-// 	// alert('MyFun');
-// 	// Declare variables 
-// 	var input, filter, table, tr, td, i;
-// 	input = document.getElementById("search_item_from_subCategory");
-// 	filter = input.value.toUpperCase();
-// 	table = document.getElementById("item_list_table");
-// 	tr = table.getElementsByTagName("tr");
+	test:function(){
+		alert(' Click anyware pos_fucntion:test(){}');
+	}, // Test()
 
-// 	// Loop through all table rows, and hide those who don't match the search query
-// 	for (i = 0; i < tr.length; i++) {
-// 	  td = tr[i].getElementsByTagName("td")[1];
-// 	  if (td) {
-// 	    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-// 	      tr[i].style.display = "";
-// 	    } else {
-// 	      tr[i].style.display = "none";
-// 	    }
-// 	  } 
-// 	}
-// }
+	test2:function(){
+		alert('pos_fucntion:test2(){}');
+	}, // Test2()
 
-// '#search_item_from_subCategory';
-// 'table#item_list_table'
+	html_table_mini_search_engine:
+		function(jq_input_search_field_selector_obj,jq_table_tr_selector,search_col_index_num=0){
+		var filter, tr, td, i;
 
-$(document).ready(function() {
-	// alert('Hello Pos Script');
-
-	$('#search_item_from_subCategory').on('keyup', function() {
-		// alert(this.id);
-        var input, filter, tr, td, i;
-
-        input  = $(this);
-        filter = input.val().toUpperCase();
-        tr     = $("table#item_list_table tr");
+        filter = jq_input_search_field_selector_obj.val().toUpperCase();
+        tr     = $(jq_table_tr_selector);
 
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1]; // <-- change number if you want other column to search
+            td = tr[i].getElementsByTagName("td")[search_col_index_num]; // <-- change number if you want other column to search
             if (td) {
                 if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
@@ -48,6 +27,54 @@ $(document).ready(function() {
                 }
             }
         }
+    }, // html_table_mini_search_engine()
+
+	ajax:{
+
+		AjaxTest:function(){
+			alert('pos_fucntion->ajax->AjaxTest() Test');
+		},
+
+		refresh_dinner_table:function(){
+			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+			$.ajax({
+				type:'POST',
+				url:'/pos/section_order_items/',
+				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+				success:function(response){
+					// console.log(response);
+					// Append Updated table_select_palette after Active Table selected
+					$('#section_order_items section').empty().append(response);
+				}
+
+		  	});// AJax();
+
+		},// Referesh_Dinner_table -> Ajax()
+	}, // Ajax.()
+	
+
+} /// # pos_fucntions() Object
+
+$(document).ready(function() {
+	// alert('Hello Pos Script');
+	{
+
+		// Test Function() // Fucntion testing Mosue Click Event For Whole page 
+		// $('body').on('click', function(event) {
+		// 	event.preventDefault();
+		// 	pos_fucntion.ajax.AjaxTest();
+		// });
+
+
+		// #General by your Selector Test();
+		// $('body').on('click','*', function(event) {
+		// 	event.preventDefault();
+		// 	pos_fucntion.ajax.AjaxTest();
+		// });
+	}
+
+	$('#search_item_from_subCategory').on('keyup', function() {
+        pos_fucntion.html_table_mini_search_engine( $(this) ,"table#item_list_table tr",1);
     })// item Select Search Keyup()
 
 
@@ -127,18 +154,8 @@ $(document).ready(function() {
 				}
 	      	});
 			
-
-			// Section_order_items Refresh after change Current active Table
-			$.ajax({
-				type:'POST',
-				url:'/pos/section_order_items/',
-				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-				success:function(response){
-					// console.log(response);
-					// Append Updated table_select_palette after Active Table selected
-					$('#section_order_items section').empty().append(response);
-				}
-	      	});
+			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+			pos_fucntion.ajax.refresh_dinner_table();
 			
 		}
 	});
@@ -162,17 +179,8 @@ $(document).ready(function() {
 			}
       	});
 
-		// Section_order_items Refresh after change Current active Table
-		$.ajax({
-			type:'POST',
-			url:'/pos/section_order_items/',
-			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-			success:function(response){
-				console.log(response);
-				// Append Updated table_select_palette after Active Table selected
-				$('#section_order_items section').empty().append(response);
-			}
-      	});
+		// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+		pos_fucntion.ajax.refresh_dinner_table();
 
 	}); 
 	
@@ -181,8 +189,7 @@ $(document).ready(function() {
 
 
 	$('body').on('click', '#check_out', function(event) {
-		console.log(this);
-
+		// console.log(this);
 		$.ajax({
 			type:'POST',
 			url:'/pos/check_out/',
@@ -198,4 +205,8 @@ $(document).ready(function() {
 
 
 }); // # Jquery 
+
+
+
+
 </script>

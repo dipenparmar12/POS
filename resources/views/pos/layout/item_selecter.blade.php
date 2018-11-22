@@ -39,7 +39,7 @@
           <div class="input-group-prepend">
            {{-- <span class="input-group-text">By_item</span> --}}
           </div>
-          <input type="text" class="form-control" placeholder="Item Search">
+          <input type="text" class="form-control" placeholder="Item Search" id="">
       </div>
     </form>
 
