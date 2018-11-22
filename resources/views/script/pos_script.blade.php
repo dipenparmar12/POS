@@ -157,12 +157,24 @@ $(document).ready(function() {
 			data:{item_id:item_id},
 			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 			success:function(response){
-				// console.log(response);
+				console.log(response);
 				// alert(response);
 			}
       	});
 
-	});
+		// Section_order_items Refresh after change Current active Table
+		$.ajax({
+			type:'POST',
+			url:'/pos/section_order_items/',
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			success:function(response){
+				console.log(response);
+				// Append Updated table_select_palette after Active Table selected
+				$('#section_order_items section').empty().append(response);
+			}
+      	});
+
+	}); 
 	
 
 

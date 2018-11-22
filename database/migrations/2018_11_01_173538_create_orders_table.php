@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('table_id')->nullable(true);;
             // $table->enum('status');// pending for letter
             $table->enum('status',['hold','empty','unpaid']); // Table->order_status
-            $table->string('paid',50)->nullable(true);;
+            $table->string('paid',50)->nullable(true); //['true','false'] Credite(Account)For Regualer Customers (true if FullAmout paid )
             $table->unsignedDecimal('amount')->nullable(true);;
             $table->unsignedDecimal('discount_percent')->nullable(true)->default('0');
             $table->boolean('bill_printed')->nullable(true);;

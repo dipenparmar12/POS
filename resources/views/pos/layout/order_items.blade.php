@@ -51,12 +51,16 @@
 
                     @forelse ( ($order->with('item'))->get() as $ordered_item)
                       {{-- {{ ($ordered_item)->item->name }} --}}
+                      
                       <tr>
                         <td class="text-truncate">{{ $ordered_item->item->name }} </td>
-                        <td class="text-truncate"><input type="number" class="w-75" value="{{$loop->iteration}}"></td>
+                        <td class="text-truncate">
+                          {{-- <input type="number" class="w-75" value="{{$loop->iteration}}"> --}}
+                          {{$loop->iteration}}
+                        </td>
                         <td class="text-truncate"> <span> {{ $ordered_item->item->price }} </span></td>
                         <td>
-                          <button type="button" class="btn btn-sm btn-outline-blue round"> Edt </button>
+                          <button type="button" class="btn btn-sm btn-outline-danger round "> &cross; </button>
                         </td>
                       </tr>
                     @empty
