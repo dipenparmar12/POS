@@ -158,8 +158,8 @@ $(document).ready(function() {
 			data:{item_id:item_id},
 			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 			success:function(response){
-				console.log(response);
-				alert(response);
+				// console.log(response);
+				// alert(response);
 			}
       	});
 	});

@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Table extends Model
 {
 
-	
-	
     public function order(){
-    	return $this->hasMany('App\Order');
+    	return $this->hasOne('App\Order');
     }
+
 }

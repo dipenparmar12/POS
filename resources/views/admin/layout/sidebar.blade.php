@@ -19,7 +19,16 @@
       <li class="{{ Request::is('Table') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Table/')}}" data-i18n="nav.dash.ecommerce">Table</a></li>
   </ul>
 </li>
-<li class="nav-item"><a href="{{ URL::to('import_table') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">ImportData</span></a> </li>
+
+<li class="nav-item"><a href="{{ URL::to('import_table') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+ImportData</span></a> </li>
+
+<li class="nav-item"><a href="{{ URL::to('drop_database/truncate') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+TruncateTables</span></a> </li>
+
+<li class="nav-item"><a href="{{ URL::to('drop_database') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+DropTables</span></a> </li>
+
 <li class="nav-item"><a href="#"><i class="la la-repeat">♫</i><span class="menu-title" data-i18n="nav.form_repeater.main">Link 2</span></a> </li>
 </ul>
 </div>

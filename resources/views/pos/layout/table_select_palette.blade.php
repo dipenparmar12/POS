@@ -29,7 +29,9 @@
                         </div>
                         {{-- <h1>{{ $table->status }} <hr> </h1> --}}
                     @empty
-                        <p> Add Table </p>
+                        <div class="col-12 line-height-3 mb-1" >
+                            <a class="btn btn-info btn-sm" href="{{ URL::to('Table') }}"> Add Table </a>
+                        </div>
                     @endforelse
                 </div>
             </div>

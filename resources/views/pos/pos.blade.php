@@ -12,7 +12,7 @@
     @section('order_items')
       
      <section id="section_order_items">
-        @include('pos.layout.order_items')
+        @include('pos.layout.order_items',['ordered_items'=>@$ordered_items])
      </section>
     @endsection
 

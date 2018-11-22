@@ -44,17 +44,26 @@
                 </thead>
                 
                 <tbody>
-                  @for ($i = 0; $i < 7; $i++)
-                  <tr>
+
+                  {{-- {{ dd($ordered_items) }} --}}
+                  
+                  @if ( count(@$ordered_items) > 0 )
                     
-                    <td class="text-truncate">{{ $i }} Masala Dhosa </td>
-                    <td class="text-truncate"><input type="number" class="w-75" value="{{$i+20}}" ></td>
-                    <td class="text-truncate"> <span>100.0 </span></td>
-                    <td>
-                      <button type="button" class="btn btn-sm btn-outline-blue round"> Edt </button>
-                    </td>
-                  </tr>
-                  @endfor
+                    @forelse($ordered_items as $ordered_item)
+                      <tr>
+                        <td class="text-truncate">{{ $ordered_item->name }} </td>
+                        <td class="text-truncate"><input type="number" class="w-75" value="{{ $ordered_item->price }}" ></td>
+                        <td class="text-truncate"> <span>100.0 </span></td>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-outline-blue round"> Edt </button>
+                        </td>
+                      </tr>
+                    @empty
+                      <p> Add items in Order Table </p>
+                    @endforelse
+
+                  @endif
+
                 </tbody>
               </table>
               

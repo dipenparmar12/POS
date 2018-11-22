@@ -37,8 +37,24 @@ class PosController extends Controller
         $variables['subCategories'] = \App\SubCategory::all();
         $variables['items'] = \App\Item::all();
         $variables['tables'] = \App\Table::all();
+        $variables['ordered_items'] = [];
+
+        // $order = \App\Order::find(Session::get('order_id'));
+        
+        // if ( $order ) {
+        //     $variables['ordered_items'] = $order->order_details()->with('item')->select('*','order_id as order_new_name')->get();
+        // }else{
+        //     echo "No Result";
+        // }
+
+        // foreach ( $variables['ordered_items'] as $key => $value) {
+        //     echo $value;
+        // }
+
 
         return view('pos.'.$view)->with($variables);
+        // echo Session::get('order_id');
+
     }// #index Page (MAIN PAGE)
 
 

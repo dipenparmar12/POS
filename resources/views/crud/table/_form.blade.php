@@ -8,8 +8,8 @@
               <div class="col">
                   <div class="form-group">
                       <select class="custom-select form-control" id="category_id" name="status">
-                          <option value="hold"> HOlD </option>
-                          <option value="empty"> EMPTY </option>
+                          <option value="empty"> Emoty </option>
+                          <option value="hold"> Hold </option>
                           
                       </select>
                   </div>
@@ -18,7 +18,7 @@
           <div class="row">
               <div class="col-md-6">
                   <div class="form-group">
-                      <input type="text" id="userinput4" class="form-control border-success" placeholder="Name" name="remark">
+                      <input type="text" id="userinput4" class="form-control border-success" placeholder="Remark" name="remark">
                   </div>
               </div>
           </div>

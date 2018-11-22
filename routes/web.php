@@ -5,7 +5,7 @@ Session::put('company_id' , 1 );
 
 
 // ----- Drop All Tables From DB --------
-Route::get('drop_database','TestC@drop_tables');
+Route::get('drop_database/{truncate?}','TestC@drop_tables');
 
 // ----- Excel Import Export --------
 // // Mash Data Seeder (DUMP Data)
