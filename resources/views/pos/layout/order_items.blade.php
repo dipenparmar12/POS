@@ -45,22 +45,24 @@
                 
                 <tbody>
 
-                  {{-- {{ dd($ordered_items) }} --}}
-                  
-                  @if ( count(@$ordered_items) > 0 )
-                    
-                    @forelse($ordered_items as $ordered_item)
+                  {{-- {{count($order)}} --}}
+
+                  @if ( count(@$order) > 0 )
+
+                    @forelse ( ($order->with('item'))->get() as $ordered_item)
+                      {{-- {{ ($ordered_item)->item->name }} --}}
                       <tr>
-                        <td class="text-truncate">{{ $ordered_item->name }} </td>
-                        <td class="text-truncate"><input type="number" class="w-75" value="{{ $ordered_item->price }}" ></td>
-                        <td class="text-truncate"> <span>100.0 </span></td>
+                        <td class="text-truncate">{{ $ordered_item->item->name }} </td>
+                        <td class="text-truncate"><input type="number" class="w-75" value="{{$loop->iteration}}"></td>
+                        <td class="text-truncate"> <span> {{ $ordered_item->item->price }} </span></td>
                         <td>
                           <button type="button" class="btn btn-sm btn-outline-blue round"> Edt </button>
                         </td>
                       </tr>
                     @empty
-                      <p> Add items in Order Table </p>
+
                     @endforelse
+                    
 
                   @endif
 

@@ -37,23 +37,10 @@ class PosController extends Controller
         $variables['subCategories'] = \App\SubCategory::all();
         $variables['items'] = \App\Item::all();
         $variables['tables'] = \App\Table::all();
-        $variables['ordered_items'] = [];
 
-        // $order = \App\Order::find(Session::get('order_id'));
-        
-        // if ( $order ) {
-        //     $variables['ordered_items'] = $order->order_details()->with('item')->select('*','order_id as order_new_name')->get();
-        // }else{
-        //     echo "No Result";
-        // }
-
-        // foreach ( $variables['ordered_items'] as $key => $value) {
-        //     echo $value;
-        // }
-
+        $variables['order'] = $this->get_order_details_item_details(Session::get('order_id'));
 
         return view('pos.'.$view)->with($variables);
-        // echo Session::get('order_id');
 
     }// #index Page (MAIN PAGE)
 
@@ -100,35 +87,6 @@ class PosController extends Controller
 
         }
 
-        // switch ($table->status) {
-        //     case 'empty':
-        //         $order = \App\Order::create(['table_id'=>$table->id,'status'=>'hold']);
-
-        //         $table->status = "hold";
-        //         $table->order_id = $order->id;
-        //         $table->save();
-
-        //         Session::put('active_table',$table->id);
-        //         Session::put('order_id',$order->id);    
-
-        //         break;
-
-        //     case 'hold':
-        //         $order = \App\Order::where('table_id', $table->id)->where('status','hold')->get();
-        //         Session::put('active_table', $table_id);
-        //         Session::put('order_id',$order->id);
-
-        //         break;
-
-        //     case 'unpaid':
-
-        //         break;
-        //     default:
-        //         # code...
-        //         break;
-        // }
-
-
         $variables['tables'] = \App\Table::all();
         return view('pos.layout.table_select_palette')->with($variables);
 
@@ -136,7 +94,7 @@ class PosController extends Controller
 
 
     public function section_order_items(){
-        $variables['active_table_order_items'] = 1;
+        $variables['order'] = $this->get_order_details_item_details(Session::get('order_id'));
         return view('pos.layout.order_items')->with($variables);
 
     } //section_order_items()
@@ -159,5 +117,10 @@ class PosController extends Controller
         // return \App\Order::find(Session::get('order_id'));
     } // check_out()
 
+
+    public function get_order_details_item_details($order_id){
+        $order = \App\Order::find($order_id);
+        return ($order) ? $order->order_details() : [];
+    }
 
 }

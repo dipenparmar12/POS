@@ -1,7 +1,5 @@
 <script>
 
-
-
 {{-- Create Customer Id and select From Exsiting when clicked Table --}}
 
 // function subCategory_search() {  
@@ -123,9 +121,9 @@ $(document).ready(function() {
 				data:{id:table_id},
 				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 				success:function(response){
-				// console.log(response);
-				// Append Updated table_select_palette after Active Table selected
-				$('#section_table_select_palette div').empty().append(response);
+					// console.log(response);
+					// Append Updated table_select_palette after Active Table selected
+					$('#section_table_select_palette div').empty().append(response);
 				}
 	      	});
 			
@@ -136,9 +134,9 @@ $(document).ready(function() {
 				url:'/pos/section_order_items/',
 				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 				success:function(response){
-				// console.log(response);
-				// Append Updated table_select_palette after Active Table selected
-				$('#section_order_items section').empty().append(response);
+					// console.log(response);
+					// Append Updated table_select_palette after Active Table selected
+					$('#section_order_items section').empty().append(response);
 				}
 	      	});
 			
@@ -152,6 +150,7 @@ $(document).ready(function() {
 		console.log(this);
 		var item_id = $(this).data('item_id');
 
+		// Add item to OrderDetails by Order_id in Orders Tables
 		$.ajax({
 			type:'POST',
 			url:'/pos/item_add_to_order_details/'+item_id,
@@ -162,6 +161,7 @@ $(document).ready(function() {
 				// alert(response);
 			}
       	});
+
 	});
 	
 
