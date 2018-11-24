@@ -101,10 +101,12 @@ class PosController extends Controller
         ];
 
         try {
-            $order_details = \App\OrderDetail::create( $insert_data ) ;
+            $order_details = \App\OrderDetail::create( $insert_data );
+            return " add_item_to_section_order_card_table Done";
         } catch (Exception $e) {
             return "Errors";
         }
+
 
     } // add_item_to_section_order_card_table()
 
