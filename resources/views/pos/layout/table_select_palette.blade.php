@@ -13,16 +13,16 @@
                         <div class="col-6 line-height-3 mb-1" >
                             @switch(trim($table->status))
                                 @case("empty")
-                                    <button class="btn btn-success btn-sm col-12 " data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
+                                    <button class="btn btn-success btn-sm col-12 " data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$table->id }}</button><br>
                                     @break
                                 @case("unpaid")
-                                    <button class="btn bg-amber btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button>    <br>
+                                    <button class="btn bg-amber btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$table->id }}</button>    <br>
                                     @break
                                 @case("hold")
-                                    <button class="btn btn-danger btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
+                                    <button class="btn btn-danger btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$table->id }}</button><br>
                                     @break
                                 @default
-                                    <button class="btn btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$loop->iteration}}</button><br>
+                                    <button class="btn btn-sm col-12" data-table_status="{{ $table->status }}" data-table_id="{{ $table->id }}"> T-{{$table->id }}</button><br>
                                     @break
                             @endswitch
                                         

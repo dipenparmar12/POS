@@ -21,8 +21,8 @@ class CreateItemsTable extends Migration
             $table->decimal('price',65);
             $table->text('desc')->nullable();
             $table->text('img')->nullable();
-            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

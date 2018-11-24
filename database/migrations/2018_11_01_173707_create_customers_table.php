@@ -26,6 +26,7 @@ class CreateCustomersTable extends Migration
             $table->decimal('credit_limit');
             $table->text('remark');
             $table->timestamps();
+            $table->softDeletes();
             
         });
     }

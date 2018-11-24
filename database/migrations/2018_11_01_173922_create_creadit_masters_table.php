@@ -21,6 +21,7 @@ class CreateCreaditMastersTable extends Migration
             $table->integer('transition_id');
             $table->unsignedDecimal('diff_amount');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -1,7 +1,5 @@
 <?php
 Session::put('company_id' , 1 );
-// dinner_tables
-// echo "<script> alert('{$msg}') </script>";
 
 
 // ----- Drop All Tables From DB --------
@@ -26,6 +24,7 @@ Route::post('/pos/active_table_select/{table_id}','PosController@active_table_se
 Route::post('/pos/section_order_items/','PosController@section_order_items');
 Route::post('/pos/item_add_to_order_details/{item_id}','PosController@item_add_to_order_details');
 Route::post('/pos/check_out/','PosController@check_out');
+Route::post('/pos/abort_order/','PosController@abort_order');
 
 
 
@@ -55,8 +54,6 @@ Route::group(['middleware' => 'Session_Check'], function() {
     // Route::resource('/PaymentMethod', 'PaymentMethodController');
     // Route::post('/PaymentMethod/delete/{id}', 'PaymentMethodController@delete_record')->where(['id'=>'[0-9]+']);
     // Route::post('/PaymentMethod/db_records/{table?}','PaymentMethodController@get_table_records');
-
-
 
     // Route::resource('/category', 'CategoryController');
     // Route::post('/category/delete/{id}', 'CategoryController@delete_record');
@@ -97,12 +94,6 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
     // Route::resource('category', 'CategoryController');
 });
 
-Route::get('test/item', function () {
-    return view('item.create');
-});
-
-
-
 
 
 
@@ -114,3 +105,8 @@ Route::get('/', function () {
 Route::get('/template', function () {
     return view('admin.main');
 });
+
+// echo "<script> alert('{$msg}') </script>";
+// if (!Session::get('user_loged_in')) {
+//     unset('all_sessions');
+// }

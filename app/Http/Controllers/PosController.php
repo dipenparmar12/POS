@@ -71,15 +71,15 @@ class PosController extends Controller
             $table->save();
 
             Session::put('active_table',$table->id);
-            Session::put('order_id',$order->id);    
+            Session::put('order_id',$table->order_id);    
             
         }elseif ($table->status == "hold") {
             // return " ";
-            // $order = \App\Order::where( ['table_id'=>$table->id, 'status'=>'hold' ] )->first();
+
             $order = \App\Order::where('table_id', $table->id)->where('status','hold')->first();
             // dd($order->id);
             Session::put('active_table', $table->id);
-            Session::put('order_id',$order->id);
+            Session::put('order_id',$table->order_id);
 
         }elseif ($table->status == "unpaid") {
             # code...
@@ -93,6 +93,8 @@ class PosController extends Controller
     } // active_table_select()
 
 
+    
+
     public function section_order_items(){
         $variables['order'] = $this->get_order_details_item_details(Session::get('order_id'));
         return view('pos.layout.order_items')->with($variables);
@@ -102,8 +104,8 @@ class PosController extends Controller
 
     public function item_add_to_order_details(Request $request){        
         $insert_data = [
-            'order_id'=>Session::get('order_id'),
             'table_id'=>Session::get('active_table'),
+            'order_id'=>Session::get('order_id'),
             'item_id'=>$request->item_id
         ];
 
@@ -117,6 +119,22 @@ class PosController extends Controller
         // return \App\Order::find(Session::get('order_id'));
     } // check_out()
 
+    public function abort_order(){
+
+        $table = \App\Table::find(Session::get('active_table'));
+        $order = \App\OrderDetail::find($table->order_id);
+
+        $table->order_id = null;
+        $table->status = "empty";
+        $table->save();
+
+        Session::forget('active_table');
+        Session::forget('order_id');
+
+        return $order;
+
+        // return "Order Abort Done";
+    }
 
     public function get_order_details_item_details($order_id){
         $order = \App\Order::find($order_id);

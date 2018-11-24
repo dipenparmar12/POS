@@ -59,6 +59,7 @@ pos_fucntion = {
 				type:'POST',
 				url:'/pos/section_order_items/',
 				success:function(response){
+					// console.log('refresh_orderDetails_table');
 					// console.log(response);
 					// Append Updated table_select_palette after Active Table selected
 					$('#section_order_items section').empty().append(response);
@@ -75,7 +76,8 @@ pos_fucntion = {
 				url:'/pos/active_table_select/'+table_id,
 				data:{id:table_id},
 				success:function(response){
-					// console.log(response);
+					console.log('select_dinner_table');
+					console.log(response);
 					// Append Updated table_select_palette after Active Table selected
 					$('#section_table_select_palette div').empty().append(response);
 				}
@@ -88,6 +90,7 @@ pos_fucntion = {
 				url:'/pos/item_add_to_order_details/'+item_id,
 				data:{item_id:item_id},
 				success:function(response){
+					console.log("add_item_to_orderDetails_table");
 					console.log(response);
 					// alert(response);
 				}
@@ -100,11 +103,24 @@ pos_fucntion = {
 				type:'POST',
 				url:'/pos/check_out/',
 				success:function(response){
+					console.log('check_out_active_order_or_table');
 					console.log(response);
 					alert(response);
 				}
 	      	});
-		 } // check_out_current_order()
+		 }, // check_out_current_order()
+
+		abort_order:function(){
+			$.ajax({
+				type:'POST',
+				url:'/pos/abort_order/',
+				success:function(response){
+					console.log('abort_order');
+					console.log(response);
+					// alert(response);
+				}
+	      	});
+		},
 
 	 }, // Ajax.()	
 
@@ -138,7 +154,6 @@ $(document).ready(function() {
 		$('#item_select_table_title .card-header h4.card-title').text($(this)[0].text);
 		
 		$.ajax({
-			headers: get_csrf_token(),
 			url: '/pos/item_table/'+subCategory_id,
 			type: 'POST',
 			data: {subCategory_id:subCategory_id},
@@ -195,6 +210,16 @@ $(document).ready(function() {
 		pos_fucntion.ajax.check_out_active_order_or_table();
 	}); // CheckOut
 		
+	// Abort Current Table/Order ( records deleted )
+	$('body').on('click', '#abort_order', function(event) {
+		event.preventDefault();
+		if (confirm("Clear table( Delete Data) : {{ Session::get('active_table') }} ")) { 
+			pos_fucntion.ajax.abort_order();	
+			pos_fucntion.ajax.refresh_orderDetails_table();
+		}
+	}); // abort_order Click
+
+
 
 }); // # Jquery 
 

@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             $table->boolean('bill_printed')->nullable(true);;
             $table->string('type',30)->nullable(true);; // Home_Delivery, Walkin, Onsite
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

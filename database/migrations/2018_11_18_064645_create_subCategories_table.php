@@ -26,6 +26,7 @@ class CreateSubCategoriesTable extends Migration
             $table->text('desc',190)->nullable();
             $table->text('img',190)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         // Schema::rename('subcategories','subCategories');

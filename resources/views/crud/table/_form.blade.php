@@ -9,7 +9,7 @@
                   <div class="form-group">
                       <select class="custom-select form-control" id="category_id" name="status">
                           <option value="empty"> Emoty </option>
-                          <option value="hold"> Hold </option>
+                          <option value="hold" disabled="true"> Hold </option>
                           
                       </select>
                   </div>

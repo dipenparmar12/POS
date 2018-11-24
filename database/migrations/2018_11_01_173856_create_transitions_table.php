@@ -19,6 +19,7 @@ class CreateTransitionsTable extends Migration
             $table->integer('order_id');
             $table->unsignedDecimal('amount');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

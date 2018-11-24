@@ -23,7 +23,7 @@
             <h4 class="card-title">
                 Active Table {{ Session::get('active_table') }}
                 <div class="heading-elements">
-                  <div class="badge border-left-primary badge-striped"> A-2018-{{Session::get('order_id') }}</div>
+                  <div class="badge border-left-primary badge-striped"> InvoiceNo-2018-{{Session::get('order_id') }}</div>
                 </div>
             </h4>
 
@@ -85,10 +85,11 @@
                   @if ( $order )
                     <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out"" >CheckOut</a></li>
                     <li><a class="btn box-shadow-1 round btn-outline-danger" href=" {{ URL::to('pos/index') }}" >Process</a></li>
-                    <li><a class="btn box-shadow-1 round btn-outline-blue-grey" href=" {{ URL::to('pos/') }}"  >Abort</a></li>
                   @else
                     <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
                   @endif
+                  
+                    <li><a class="btn box-shadow-1 round btn-outline-blue-grey" id="abort_order" >Abort</a></li>
 
                 </ul>
               </div>
