@@ -33,7 +33,7 @@
 </style>
 
 <div class="">
-  <table id="item_list_table" class="table table-hover table-xl ">
+  <table id="menu_item_list_table" class="table table-hover table-xl ">
     <thead>
       <tr>
         <th class="border-top-0">#</th>
@@ -48,7 +48,6 @@
           <td class=""> {{$loop->iteration}} </td>
           <td class="">{{$item->name}}</td>
           <td class=""> {{$item->price}} </td>
-            @break( $item->id == 30 )
         </tr>
       @empty
         <td> Empty </td>
@@ -56,3 +55,6 @@
     </tbody>
   </table>
 </div>
+
+
+

@@ -1,0 +1,7 @@
+4.5 hourse ( UI )
+	
+  -> 1. Excel auto import feature (csv)
+  -> 2. UI Table Item Dropdown Selector
+  -> 3. item_list_out in POS page
+
+

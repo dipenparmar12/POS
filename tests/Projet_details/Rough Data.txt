@@ -1,0 +1,56 @@
+__________________________________________
+UPDATE `tables` SET STATUS="empty", order_id=null 
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+__________________________________________
+
+		$.ajax({
+			type:'POST',
+			url:'/pos/active_table_select/'+table_id,
+			data:{id:table_id},
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			success:function(response){
+			// console.log(response);
+			// Append Updated table_select_palette after Active Table selected
+			$('#section_table_select_palette div').empty().append(response);
+			}
+	       	});
+		
+		
+__________________________________________
+
+
+
+    public function table_name(){
+
+        // SortHand Method to Get DB table name from current Class
+        return str_plural(str_replace( 'Controller','', trim(strrchr($this->get_class_name(),'\\') ,'\\')));
+
+        # METHOD 1 Optimized
+        // $class =  $this->get_class_name() ; // "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding
+        // $contrller_name =  strrchr($class,'\\'); // \CategoryController
+        // $trim_controller = str_replace('\\','', $contrller_name);
+        // $table = str_replace('Controller','',$trim_controller);
+        // echo $db_table = str_plural($table);
+
+        # METHOD 2 ( LONG time Consuming )
+        // $class = $this->get_class_name();// "App\Http\Controllers\TableController"  // Get Current Class name Late::Static Binding 
+        // $con = explode('\\', $class); //  array:4 [ 0=>"App", 1=>"Http", 2=>"Controllers", 3=>"TableContrler"];
+        // $max = max(array_keys($con)); // Max Key Value 3 (may Alaways return 3)
+        // $current_controller = $con[$max]; // AppController,CategoryController etc ( or those who Inherited )
+        // $table_name = str_replace('Controller','',$current_controller); // TableName(Category,item etc ) Remove 'Controlelr' Word
+        // $db_table = str_plural($table_name); // Get same table name that exited in Database
+        // return $db_table;
+    }
+
+__________________________________________
+{{-- var category = {!! json_encode(@$category) !!};// don't use quotes --}}
+__________________________________________

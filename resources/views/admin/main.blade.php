@@ -13,7 +13,7 @@
     </nav>
     
     <!-- SideBar (menu) -->
-    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow " data-scroll-to-active="true">
       @include('admin.layout.sidebar')
     </div>
     
@@ -23,9 +23,9 @@
       <div class="container-fluid">   
           @yield('content')
           <div class="row no-gutters" >
-            <div class="col-5">@yield('order_items')</div>
-            <div class="col-5">@yield('item_selecter')</div>
-            <div class="col-2">@yield('table_select_palette')</div>
+            <div class="col-5">@yield('section_order_cart')</div>
+            <div class="col-5">@yield('section_menu')</div>
+            <div class="col-2">@yield('section_table_palette')</div>
           </div>
           @yield('modal')
       </div>  
@@ -41,5 +41,6 @@
     @include('admin.layout.scripts')
     @yield('js_script')
     @yield('js_bottom')
-  </body>
-</html>
+s  </body>
+
+</html>s

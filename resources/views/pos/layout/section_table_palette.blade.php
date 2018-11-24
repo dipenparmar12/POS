@@ -1,4 +1,3 @@
-
 {{-- Table_selection Tool Palatte --}}
 <div class="card-content">
     <div class="card-body">

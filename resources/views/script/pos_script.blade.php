@@ -53,15 +53,15 @@ pos_fucntion = {
 		},
 
 		// OrderItems for 
-		refresh_orderDetails_table:function(){
+		get_section_order_cart:function(){
 			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
 			$.ajax({
 				type:'POST',
-				url:'/pos/section_order_items/',
+				url:'/pos/section_order_cart/',
 				success:function(response){
-					// console.log('refresh_orderDetails_table');
+					// console.log('get_section_order_cart');
 					// console.log(response);
-					// Append Updated table_select_palette after Active Table selected
+					// Append Updated section_table_palette after Active Table selected
 					$('#section_order_items section').empty().append(response);
 				}
 
@@ -70,32 +70,33 @@ pos_fucntion = {
 
 
 		// status change [empty->to->hold->...] Table_talette[1,2,3,4,5 btn's]
-		select_dinner_table:function(table_id){
+		select_dinner_table_by_id:function(table_id){
 			$.ajax({
 				type:'POST',
-				url:'/pos/active_table_select/'+table_id,
+				url:'/pos/select_dinner_table_by_id/'+table_id,
 				data:{id:table_id},
 				success:function(response){
-					console.log('select_dinner_table');
+					console.log('select_dinner_table_by_id');
 					console.log(response);
-					// Append Updated table_select_palette after Active Table selected
-					$('#section_table_select_palette div').empty().append(response);
+					// Append Updated section_table_palette after Active Table selected
+					$('#section_table_palette div').empty().append(response);
 				}
 	      	});
-		 }, // select_dinner_table(table_id)
+		 }, // select_dinner_table_by_id(table_id)
 
-		add_item_to_orderDetails_table:function(item_id){
+
+		add_item_to_section_order_card_table:function(item_id){
 			$.ajax({
 				type:'POST',
-				url:'/pos/item_add_to_order_details/'+item_id,
+				url:'/pos/add_item_to_section_order_card_table/'+item_id,
 				data:{item_id:item_id},
 				success:function(response){
-					console.log("add_item_to_orderDetails_table");
+					console.log("add_item_to_section_order_card_table");
 					console.log(response);
 					// alert(response);
 				}
 	      	});
-		},  // add_item_to_orderDetails_table()
+		},  // add_item_to_section_order_card_table()
 
 
 		check_out_active_order_or_table:function(){
@@ -118,6 +119,7 @@ pos_fucntion = {
 					console.log('abort_order');
 					console.log(response);
 					// alert(response);
+					$('#section_table_palette div').empty().append(response);
 				}
 	      	});
 		},
@@ -132,7 +134,6 @@ $(document).ready(function() {
 		event.preventDefault();
 		pos_fucntion.ajax.AjaxTest();
 	 });
-
 	$.ajaxSetup({
 	    headers: {
 	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -141,26 +142,31 @@ $(document).ready(function() {
 	
 
 	$('#search_item_from_subCategory').on('keyup', function() {
-        pos_fucntion.html_table_mini_search_engine( $(this) ,"table#item_list_table tr",1);
-    })// item Select Search Keyup()
+        pos_fucntion.html_table_mini_search_engine( $(this) ,"table#menu_item_list_table tr",1);
+     })// item Select Search Keyup()
 
-
-	// Item Select Table Generation with Ajax req
+	
+	// SubCategory menu-list Generation with Ajax req
 	$('a[id^="subCategory_id__"').click(function(event) {
 		// console.log(this);
 		var subCategory_id = $(this).attr('data-subCategory_id');
 		// alert(subCategory_id);
 		// console.log(subCategory);
-		$('#item_select_table_title .card-header h4.card-title').text($(this)[0].text);
+
+		// Subcategory_item_menu bootsrap Card/table Title Set as per Sub_Category_name
+		$('#category_menu_navbar .card-header h4.card-title').text($(this)[0].text);
+
+		// set PlaceHolder value as per Subcateogry Name in search field
+		$("#search_item_from_subCategory").attr('placeholder','Search in '+$.trim($(this)[0].text) );
 		
 		$.ajax({
-			url: '/pos/item_table/'+subCategory_id,
+			url: '/pos/get_section_menu_item_table/'+subCategory_id,
 			type: 'POST',
 			data: {subCategory_id:subCategory_id},
 		})
 		.done(function(response) {
 			// console.log(response);
-			$('#item_select_table').empty().append(response);
+			$('#menu_item_select_table').empty().append(response);
 			
 		})
 		.fail(function(response) {
@@ -182,14 +188,16 @@ $(document).ready(function() {
 		if (confirm("Select Table:" + table_id)) { 
 
 			// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
-			pos_fucntion.ajax.select_dinner_table(table_id);
-			
+			pos_fucntion.ajax.select_dinner_table_by_id(table_id);
+				
+
 			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-			pos_fucntion.ajax.refresh_orderDetails_table();
+			pos_fucntion.ajax.get_section_order_cart();
 			
 		}
 	}); // Dinner Table Select
 
+	
 	// Item Click Event for add more Items to Runing OrderDetails Table 
 	$('body').on('click', 'tr.item_select_list', function(event) {
 		event.preventDefault();
@@ -197,35 +205,30 @@ $(document).ready(function() {
 		var item_id = $(this).data('item_id');
 
 		// Add item to OrderDetails by Order_id in Orders Tables
-		pos_fucntion.ajax.add_item_to_orderDetails_table(item_id);
+		pos_fucntion.ajax.add_item_to_section_order_card_table(item_id);
 
 		// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-		pos_fucntion.ajax.refresh_orderDetails_table();
+		pos_fucntion.ajax.get_section_order_cart();
 	}); // Add Item to Cart
 	
-
+	
 	// CheckOut Order_id & Table
 	$('body').on('click', '#check_out', function(event) {
 		// console.log(this);
 		pos_fucntion.ajax.check_out_active_order_or_table();
 	}); // CheckOut
 		
+	
 	// Abort Current Table/Order ( records deleted )
 	$('body').on('click', '#abort_order', function(event) {
 		event.preventDefault();
 		if (confirm("Clear table( Delete Data) : {{ Session::get('active_table') }} ")) { 
 			pos_fucntion.ajax.abort_order();	
-			pos_fucntion.ajax.refresh_orderDetails_table();
+			pos_fucntion.ajax.get_section_order_cart();
 		}
 	}); // abort_order Click
 
 
 
-}); // # Jquery 
-
-
-// {{-- for AJax Req - header:get_csrf_token(), --}}
-// function get_csrf_token(){	
-// 	return {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
-//  }	
+}); // # Jquery
 </script>

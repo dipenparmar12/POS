@@ -16,15 +16,31 @@ Route::get('downloadExcel/{type}', 'ExcelController@downloadExcel');
 Route::post('importExcel', 'ExcelController@importExcel');
 
 
+
+
 // POS Oprations
 Route::get('/pos/', 'PosController@index');
 Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
-Route::post('/pos/item_table/{subCategory_id}','PosController@get_items');
-Route::post('/pos/active_table_select/{table_id}','PosController@active_table_select');
-Route::post('/pos/section_order_items/','PosController@section_order_items');
-Route::post('/pos/item_add_to_order_details/{item_id}','PosController@item_add_to_order_details');
+
+Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
+Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
+Route::post('/pos/section_order_cart/','PosController@section_order_cart');
+
+Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
 Route::post('/pos/check_out/','PosController@check_out');
 Route::post('/pos/abort_order/','PosController@abort_order');
+
+
+
+
+
+
+// ----- Accept only Ajax_Request   --------
+Route::group(['middleware'=>['Ajax_check']] , function(){
+    
+});
+
+
 
 
 

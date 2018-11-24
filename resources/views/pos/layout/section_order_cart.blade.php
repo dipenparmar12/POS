@@ -6,9 +6,7 @@
         <li class="nav-item">
           <a class="nav-link " id="base-limit" data-toggle="tab" aria-controls="limit" href="#limit" aria-expanded="true">
             Active Table
-            @if (Session::has('active_table'))
             {{ Session::get('active_table') }}
-            @endif
           </a>
         </li>
       </ul>

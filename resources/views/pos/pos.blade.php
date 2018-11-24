@@ -1,3 +1,4 @@
+{{-- UPDATE `tables` SET status="empty", order_id=null --}}
 @extends('admin.main')
 
 @section('js_script')
@@ -9,24 +10,23 @@
 
 
   {{-- Sub_category Selection Menu --}}
-    @section('order_items')
-      
+    @section('section_order_cart')
      <section id="section_order_items">
-        @include('pos.layout.order_items',['order'=>@$order])
+        @include('pos.layout.section_order_cart',['order'=>@$order])
      </section>
     @endsection
 
   {{-- Main_category Selection ( South, Panjabi, Chinise Etc ) --}}
-    @section('item_selecter')
-      <section id="section_item_list_table">
-        @include('pos.layout.item_selecter')
+    @section('section_menu')
+      <section id="section_menu">
+        @include('pos.layout.section_menu')
       </section>
     @endsection
 
   {{-- Table_selection Tool Palatte --}}
-    @section('table_select_palette')
-      <section id="section_table_select_palette">
-        @include('pos.layout.table_select_palette',['tables'=>$tables])
+    @section('section_table_palette')
+      <section id="section_table_palette">
+        @include('pos.layout.section_table_palette',['tables'=>$tables])
       </section>
 
 @endsection
