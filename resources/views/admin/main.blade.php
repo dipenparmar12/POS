@@ -3,6 +3,8 @@
   <head>
     @include('admin.layout.head')
     @yield('js')
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   </head>
   
   <body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
@@ -41,6 +43,10 @@
     @include('admin.layout.scripts')
     @yield('js_script')
     @yield('js_bottom')
-s  </body>
 
-</html>s
+    <script>
+    </script>
+    
+ </body>
+
+</html>

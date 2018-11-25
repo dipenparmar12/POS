@@ -22,23 +22,23 @@ Route::post('importExcel', 'ExcelController@importExcel');
 Route::get('/pos/', 'PosController@index');
 Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
 
-Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
-Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
-Route::post('/pos/section_order_cart/','PosController@section_order_cart');
-
-Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
-Route::post('/pos/check_out/','PosController@check_out');
-Route::post('/pos/abort_order/','PosController@abort_order');
-
-
-
-
-
 
 // ----- Accept only Ajax_Request   --------
 Route::group(['middleware'=>['Ajax_check']] , function(){
     
+    Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
+    Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
+    Route::post('/pos/get_menu_sub_category_table/','PosController@get_menu_sub_category_table');
+    Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
+    Route::post('/pos/section_order_cart/','PosController@section_order_cart');
+    Route::post('/pos/check_out/','PosController@check_out');
+    Route::post('/pos/abort_order/','PosController@abort_order');
+
 });
+
+
+
+
 
 
 

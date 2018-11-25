@@ -99,6 +99,33 @@ pos_fucntion = {
 		},  // add_item_to_section_order_card_table()
 
 
+		get_section_menu_item_table_by_subcateogry_id:function(subCategory_id){
+			$.ajax({
+				url: '/pos/get_section_menu_item_table/'+subCategory_id,
+				type: 'POST',
+				data: {subCategory_id:subCategory_id},
+				success:function(response){
+					console.log('get_section_menu_item_table_by_subcateogry_id');
+					console.log(response);
+					// alert(response);
+					$('#menu_item_select_table').empty().append(response);
+				}
+	      	});
+		}, // get_section_menu_item_table_by_subcateogry_id(SubCategory_id)
+
+		get_menu_sub_category_table:function(){
+			$.ajax({
+				url: '/pos/get_menu_sub_category_table/',
+				type: 'POST',
+				success:function(response){
+					console.log('get_menu_sub_category_table');
+					console.log(response);
+					// alert(response);
+					$('#menu_item_select_table').empty().append(response);
+				}
+	      	});
+		}, // get_menu_sub_category_table();
+
 		check_out_active_order_or_table:function(){
 			$.ajax({
 				type:'POST',
@@ -128,6 +155,8 @@ pos_fucntion = {
 
 } /// # pos_fucntions() Object
 
+
+
 $(document).ready(function() {
 
 	$('body').on('click','selectores', function(event) {
@@ -150,32 +179,15 @@ $(document).ready(function() {
 	$('a[id^="subCategory_id__"').click(function(event) {
 		// console.log(this);
 		var subCategory_id = $(this).attr('data-subCategory_id');
-		// alert(subCategory_id);
 		// console.log(subCategory);
 
 		// Subcategory_item_menu bootsrap Card/table Title Set as per Sub_Category_name
 		$('#category_menu_navbar .card-header h4.card-title').text($(this)[0].text);
-
 		// set PlaceHolder value as per Subcateogry Name in search field
-		$("#search_item_from_subCategory").attr('placeholder','Search in '+$.trim($(this)[0].text) );
-		
-		$.ajax({
-			url: '/pos/get_section_menu_item_table/'+subCategory_id,
-			type: 'POST',
-			data: {subCategory_id:subCategory_id},
-		})
-		.done(function(response) {
-			// console.log(response);
-			$('#menu_item_select_table').empty().append(response);
+		$("#search_item_from_subCategory").attr('placeholder','Search in '+$.trim($(this)[0].text) +' [alt+f2]');
 			
-		})
-		.fail(function(response) {
-			console.log("Error: ");
-			// console.log(response);
-		})
-		.always(function() {
-			// console.log("complete");
-		});
+		pos_fucntion.ajax.get_section_menu_item_table_by_subcateogry_id(subCategory_id)
+
 	}); // # Ajax() Get and Append Items From SubCategory_id
 
 
@@ -186,15 +198,12 @@ $(document).ready(function() {
 		var table_id =  $(this).data('table_id');
 
 		if (confirm("Select Table:" + table_id)) { 
-
 			// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
 			pos_fucntion.ajax.select_dinner_table_by_id(table_id);
-				
-
 			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
 			pos_fucntion.ajax.get_section_order_cart();
-			
 		}
+
 	}); // Dinner Table Select
 
 	
@@ -229,6 +238,74 @@ $(document).ready(function() {
 	}); // abort_order Click
 
 
+	// Search Sub_category 
+	
+
 
 }); // # Jquery
+
+
+
+
+
+// 
+// --------KeyBoard Sortcuts for making User Friendly Enverment 
+// 
+
+$(document).keydown(function(e) {	
+	var keyCode = e.keyCode || e.which;
+	console.log(keyCode);
+    // if(e.key == "c" && e.ctrlKey) {
+    //     console.log('ctrl+c was pressed');
+    //     $('#search_item_from_subCategory').focus();
+    // }
+});
+
+
+// Search Item within SubCategory 
+$(document).bind('keydown', function(event) {
+	if( event.shiftKey && event.ctrlKey  ) {
+        // alert('Search item by SubCateogry');
+        $('input#search_item_from_subCategory').focus();
+    }
+});
+
+
+// Select table By SortCut KEY
+$(document).bind('keydown', function(event) {
+	if( event.shiftKey && event.which === 84  ) {
+        if ( table_id = parseInt(prompt("Select Table")) ) {
+        	// alert('you pressed SHIFT+T '+ table_id);
+			// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
+			pos_fucntion.ajax.select_dinner_table_by_id(table_id);
+			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+			pos_fucntion.ajax.get_section_order_cart();
+        }
+    }
+});// Select Table By Shift+T Key
+
+
+// CheckOut order by SHift + C 
+$(document).bind('keydown',function(){
+	if (event.shiftKey && event.which == 67) {
+		// console.log(this);
+		pos_fucntion.ajax.check_out_active_order_or_table();
+	}
+}); // Checkout
+
+
+// Abourt/ Cancel order by SHift + x 
+$(document).bind('keydown', function(event) {
+	if ( event.shiftKey && event.which == 88 ) {
+		event.preventDefault();
+		if (confirm("Cancel Order ( Delete Data ) ")) { 
+			pos_fucntion.ajax.abort_order();	
+			pos_fucntion.ajax.get_section_order_cart();
+		}
+	} 
+}); //  Abourt Order
+
+
+
+
 </script>

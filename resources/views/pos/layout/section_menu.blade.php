@@ -30,7 +30,8 @@
         </li>
 
       @endforeach
-
+              
+      
 
     </ul>
 
@@ -41,17 +42,19 @@
          <div class="input-group-prepend">
            {{-- <span class="input-group-text">By_Cate</span> --}}
           </div>
-          <input type="text" class="form-control" placeholder="Select SubCategory & Search" id="search_item_from_subCategory" >
+          <input type="text" class="form-control" placeholder="[ Ctlr+Shift ] Search Items" id="search_item_from_subCategory" >
           <div class="input-group-prepend">
            {{-- <span class="input-group-text">By_item</span> --}}
           </div>
-          <input type="text" class="form-control" placeholder="Item Search" id="">
+          
+          <input type="text" class="form-control" placeholder="SubCategory Search []" id="menu_subCategory_search" >
+          
       </div>
     </form>
 
     @component('admin.layout.components.card',['title'=>'item'])
-      <div id="menu_item_select_table">        
-          {{-- @include('pos.ajax_request.menu_item_list_table') --}}
+      <div id="menu_item_select_table">
+          {{-- @include('pos.ajax_request.menu_sub_category_table') --}}
       </div>        
     @endcomponent
   
