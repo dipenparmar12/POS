@@ -30,7 +30,14 @@
             <div class="col-2">@yield('section_table_palette')</div>
           </div>
           @yield('modal')
-      </div>  
+      </div>
+    </div>
+
+    <div id="test" class="col-12">
+      Testing Perpose
+      <div class="mini_win">
+      </div>
+
     </div>
     
     <!--  MAIN FOOTER -->

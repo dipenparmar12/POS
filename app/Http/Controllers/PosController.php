@@ -39,8 +39,9 @@ class PosController extends Controller
         $variables['tables'] = \App\Table::all();
 
         $variables['order'] = $this->get_order_details(Session::get('order_id'));
-        
         // return $variables['order']->get();
+
+        // echo '<html><head><script type="text/javascript">function submitForm(){document.form1.target = "myActionWin";window.open("","myActionWin","width=500,height=300,toolbar=0");document.form1.submit();}</script></head><body><form name="form1" action="demo_action.cfm" method="post">First name: <input type="text" name="fname" /><br />Last name: <input type="text" name="lname" /><br /><input type="button" name="btnSubmit" value="Submit" onclick="submitForm()" /></form></body></html>';
 
         return view('pos.'.$view)->with($variables);
 
@@ -97,14 +98,12 @@ class PosController extends Controller
 
     public function add_item_to_section_order_card_table(Request $request){        
         
-        if ( Session::get('active_table') >= 0 && Session::get('order_id') >= 0 ) {
-            
+        if ( is_numeric(Session::get('active_table')) && is_numeric(Session::get('order_id')) ) {
             $insert_data = [
                 'table_id'=>Session::get('active_table'),
                 'order_id'=>Session::get('order_id'),
                 'item_id'=>$request->item_id
             ];
-
             try {
                 $order_details = \App\OrderDetail::create( $insert_data );
                 return " add_item_to_section_order_card_table Done";
@@ -113,7 +112,7 @@ class PosController extends Controller
             }
 
         }else{
-            
+            return "<script> alert('please selecte Table ') </script>";
         }
 
     } // add_item_to_section_order_card_table()
@@ -121,7 +120,9 @@ class PosController extends Controller
 
 
     public function check_out(){
-        return "Check_Out for Order_id: ".Session::get('order_id')." table_id :".Session::get('active_table');
+        $variables['order'] = $this->get_order_details(Session::get('order_id'));
+        return view('pos.ajax_request.check_out')->with($variables);
+        // return "Check_Out for Order_id: ".Session::get('order_id')." table_id :".Session::get('active_table');
         // return \App\Order::find(Session::get('order_id'));
     } // check_out()
 

@@ -16,7 +16,7 @@ class CreateTablesTable extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('table_name')->nullable(true);//For Index if Some Table deleted, after some time created new ones then index sould be start from 1
-            $table->integer('order_id')->nullable(true); // Hold By ( Which Order_id Hold the table )
+            $table->integer('order_id')->nullable(true)->unique(); // Hold By ( Which Order_id Hold the table )
             $table->enum('status',['hold','empty','unpaid'])->default('empty');
             //  Hold->order done but full order not served, free, occupaid 
             //  unpaid->order compalte, but unpaid

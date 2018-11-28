@@ -34,7 +34,6 @@ pos_fucntion = {
 
 		    $("table").find("tr").each(function(index) {
 		        if (index === 0) return;
-
 		        var if_td_has = false; //boolean value to track if td had the entered key
 		        
 		        $(this).find('td').each(function () {
@@ -224,7 +223,18 @@ $(document).ready(function() {
 	// CheckOut Order_id & Table
 	$('body').on('click', '#check_out', function(event) {
 		// console.log(this);
-		pos_fucntion.ajax.check_out_active_order_or_table();
+		// pos_fucntion.ajax.check_out_active_order_or_table();
+
+		// $.ajax({
+		// 	type:'POST',
+		// 	url:'/pos/check_out/',
+		// 	success:function(response){
+		// 		console.log('abort_order');
+		// 		// console.log(response);
+		// 		$('#test').append(response);
+		// 	}
+	   	//  });
+
 	}); // CheckOut
 		
 	
@@ -247,65 +257,69 @@ $(document).ready(function() {
 
 
 
+{
 
-// 
-// --------KeyBoard Sortcuts for making User Friendly Enverment 
-// 
+	// 
+	// --------KeyBoard Sortcuts for making User Friendly Enverment 
+	// 
 
-$(document).keydown(function(e) {	
-	var keyCode = e.keyCode || e.which;
-	console.log(keyCode);
-    // if(e.key == "c" && e.ctrlKey) {
-    //     console.log('ctrl+c was pressed');
-    //     $('#search_item_from_subCategory').focus();
-    // }
-});
-
-
-// Search Item within SubCategory 
-$(document).bind('keydown', function(event) {
-	if( event.shiftKey && event.ctrlKey  ) {
-        // alert('Search item by SubCateogry');
-        $('input#search_item_from_subCategory').focus();
-    }
-});
+	$(document).keydown(function(e) {	
+		var keyCode = e.keyCode || e.which;
+		console.log(keyCode);
+	    // if(e.key == "c" && e.ctrlKey) {
+	    //     console.log('ctrl+c was pressed');
+	    //     $('#search_item_from_subCategory').focus();
+	    // }
+	});
 
 
-// Select table By SortCut KEY
-$(document).bind('keydown', function(event) {
-	if( event.shiftKey && event.which === 84  ) {
-        if ( table_id = parseInt(prompt("Select Table")) ) {
-        	// alert('you pressed SHIFT+T '+ table_id);
-			// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
-			pos_fucntion.ajax.select_dinner_table_by_id(table_id);
-			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-			pos_fucntion.ajax.get_section_order_cart();
-        }
-    }
-});// Select Table By Shift+T Key
+	// Search Item within SubCategory 
+	$(document).bind('keydown', function(event) {
+		if( event.shiftKey && event.ctrlKey  ) {
+	        // alert('Search item by SubCateogry');
+	        $('input#search_item_from_subCategory').focus();
+	    }
+	});
 
 
-// CheckOut order by SHift + C 
-$(document).bind('keydown',function(){
-	if (event.shiftKey && event.which == 67) {
-		// console.log(this);
-		pos_fucntion.ajax.check_out_active_order_or_table();
-	}
-}); // Checkout
+	// Select table By SortCut KEY
+	$(document).bind('keydown', function(event) {
+		if( event.shiftKey && event.which === 84  ) {
+	        if ( table_id = parseInt(prompt("Select Table")) ) {
+	        	// alert('you pressed SHIFT+T '+ table_id);
+				// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
+				pos_fucntion.ajax.select_dinner_table_by_id(table_id);
+				// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+				pos_fucntion.ajax.get_section_order_cart();
+	        }
+	    }
+	});// Select Table By Shift+T Key
 
 
-// Abourt/ Cancel order by SHift + x 
-$(document).bind('keydown', function(event) {
-	if ( event.shiftKey && event.which == 88 ) {
-		event.preventDefault();
-		if (confirm("Cancel Order ( Delete Data ) ")) { 
-			pos_fucntion.ajax.abort_order();	
-			pos_fucntion.ajax.get_section_order_cart();
+	// CheckOut order by SHift + C 
+	$(document).bind('keydown',function(){
+		if (event.shiftKey && event.which == 67) {
+			// console.log(this);
+			pos_fucntion.ajax.check_out_active_order_or_table();
 		}
-	} 
-}); //  Abourt Order
+	}); // Checkout
+
+
+	// Abourt/ Cancel order by SHift + x 
+	$(document).bind('keydown', function(event) {
+		if ( event.shiftKey && event.which == 88 ) {
+			event.preventDefault();
+			if (confirm("Cancel Order ( Delete Data ) ")) { 
+				pos_fucntion.ajax.abort_order();	
+				pos_fucntion.ajax.get_section_order_cart();
+			}
+		} 
+	}); //  Abourt Order
+
+
+	
 
 
 
-
+ }
 </script>

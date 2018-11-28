@@ -13,6 +13,14 @@
     </div>
   </div>
 
+<script>
+    $('#check_out').on('click', function(event) {
+      document.form1.target = "myActionWin";
+      window.open("{{ URL::to('pos/check_out') }}","myActionWin","width=350,height=350,toolbar=0");
+    });
+</script>  
+  
+   
   <div class="col">
     <div class="tab-content px-0 pt-0">
       <div id="recent-sales" class="">
@@ -46,7 +54,11 @@
 
                   @if ( count(@$order) > 0 )
 
+                      
                     @forelse ( ($order->with('item'))->get() as $ordered_item)
+                      {{ $ordered_item }}
+                      <hr>
+
                       {{-- {{ ($ordered_item)->item->name }} --}}
                       <tr>
                         <td class="text-truncate">{{ $ordered_item->item->name }} </td>
@@ -81,7 +93,7 @@
                 <ul class="list-inline ">
 
                   @if ( $order )
-                    <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out"" >CheckOut</a></li>
+                    <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out" >CheckOut</a></li>
                     <li><a class="btn box-shadow-1 round btn-outline-danger" href=" {{ URL::to('pos/index') }}" >Process</a></li>
                   @else
                     <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
@@ -98,3 +110,4 @@
     </div>
   </div>
 </section>
+
