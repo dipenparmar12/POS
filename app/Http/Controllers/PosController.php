@@ -38,7 +38,23 @@ class PosController extends Controller
         $variables['items'] = \App\Item::all();
         $variables['tables'] = \App\Table::all();
 
+        // return dd($this->get_order_details(Session::get('order_id')));
         $variables['order'] = $this->get_order_details(Session::get('order_id'));
+
+        // if (Session::get('order_id')) {
+        //     $variables['order'] = \App\Order::find(Session::get('order_id'))->order_details()
+        //                             ->groupBy('item_id')
+        //                             ->selectRaw('count(*) as qty, item_id');
+        //                             ;
+        // }
+        
+
+        //return $od->get();
+        // $od = \App\Order::find(Session::get('order_id'));
+        // $od = \App\OrderDetail::where('order_id',Session::get('order_id'))->groupBy('item_id')->count();
+        // return $od;
+        // $od = \App\Order::find(Session::get('order_id'));
+        // dd($od);
         // return $variables['order']->get();
 
         // echo '<html><head><script type="text/javascript">function submitForm(){document.form1.target = "myActionWin";window.open("","myActionWin","width=500,height=300,toolbar=0");document.form1.submit();}</script></head><body><form name="form1" action="demo_action.cfm" method="post">First name: <input type="text" name="fname" /><br />Last name: <input type="text" name="lname" /><br /><input type="button" name="btnSubmit" value="Submit" onclick="submitForm()" /></form></body></html>';
@@ -55,7 +71,6 @@ class PosController extends Controller
         // dd($request->id);
         
         if ($table->status == "empty") {
-            
             $order = \App\Order::create(['table_id'=>$table->id,'status'=>'hold']);
 
             $table->status = "hold";
@@ -120,8 +135,11 @@ class PosController extends Controller
 
 
     public function check_out(){
+        // return "Hello There check_out";
+
         $variables['order'] = $this->get_order_details(Session::get('order_id'));
         return view('pos.ajax_request.check_out')->with($variables);
+
         // return "Check_Out for Order_id: ".Session::get('order_id')." table_id :".Session::get('active_table');
         // return \App\Order::find(Session::get('order_id'));
     } // check_out()
@@ -154,8 +172,14 @@ class PosController extends Controller
 
 
     public function get_order_details($order_id){
-        $order = \App\Order::find($order_id);
-        return ($order) ? $order->order_details() : [];
+
+        if (Session::get('order_id')) {
+            return \App\Order::find(Session::get('order_id'))->order_details()
+                                    ->groupBy('item_id')
+                                    ->selectRaw('count(*) as qty, item_id');
+        }else{
+            return false;
+        }
     }
 
 

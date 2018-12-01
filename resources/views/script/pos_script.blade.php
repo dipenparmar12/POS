@@ -225,15 +225,17 @@ $(document).ready(function() {
 		// console.log(this);
 		// pos_fucntion.ajax.check_out_active_order_or_table();
 
-		// $.ajax({
-		// 	type:'POST',
-		// 	url:'/pos/check_out/',
-		// 	success:function(response){
-		// 		console.log('abort_order');
-		// 		// console.log(response);
-		// 		$('#test').append(response);
-		// 	}
-	   	//  });
+		$.ajax({
+			type:'POST',
+			url:'/pos/check_out/',
+			success:function(response){
+				console.log('check_out');
+				console.log(response);
+				window.open('/pos/check_out/', "Print_bill", "width=400,height=600").document.write(response)
+				// alert('check_out');
+				// $('#test').append(response);
+			}
+	   	 });
 
 	}); // CheckOut
 		
@@ -243,12 +245,17 @@ $(document).ready(function() {
 		event.preventDefault();
 		if (confirm("Clear table( Delete Data) : {{ Session::get('active_table') }} ")) { 
 			pos_fucntion.ajax.abort_order();	
+			$('#section_order_items section div card').empty();
 			pos_fucntion.ajax.get_section_order_cart();
 		}
 	}); // abort_order Click
 
 
-	// Search Sub_category 
+	$('body').on('click', '#process', function(event) {
+		event.preventDefault();
+		alert('process');
+
+	});
 	
 
 
@@ -265,7 +272,7 @@ $(document).ready(function() {
 
 	$(document).keydown(function(e) {	
 		var keyCode = e.keyCode || e.which;
-		console.log(keyCode);
+		console.log(keyCode+' key pressed');
 	    // if(e.key == "c" && e.ctrlKey) {
 	    //     console.log('ctrl+c was pressed');
 	    //     $('#search_item_from_subCategory').focus();

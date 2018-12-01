@@ -27,9 +27,15 @@
         <div class="card">
           <div class="card-header">
             <h4 class="card-title">
-                Active Table {{ Session::get('active_table') }}
+                @if (Session::get('active_table'))
+                  Active Table {{ Session::get('active_table') }}
+                @endif
                 <div class="heading-elements">
-                  <div class="badge border-left-primary badge-striped"> InvoiceNo-2018-{{Session::get('order_id') }}</div>
+                  <div class="badge border-left-primary badge-striped"> 
+                    @if (Session::get('active_table'))
+                      InvoiceNo-2018-{{Session::get('order_id') }}
+                    @endif
+                  </div>
                 </div>
             </h4>
 
@@ -42,49 +48,64 @@
               <table id="recent-orders" class="table table-hover">
                 <thead>
                   <tr>
-                    <th class="border-top-0 m-0 " style="" >Item</th>
+                    <th class="border-top-0 m-0 " style="" ># Item</th>
+
+                    {{-- <th class="border-top-0 m-0 w-50" style="width: 10%" > Dlvrd </th> --}}
+
                     <th class="border-top-0 m-0 w-50" style="" >Qty </th>
-                    <th class="border-top-0 m-0 w-50" style="width: 10%" > Dlvrd </th>
                     <th class="border-top-0 m-0 " style="" >Price</th>
+                    <th class="border-top-0 m-0 " style="" >Amt</th>
                     <th class="border-top-0 m-0 " style="" >Options</th>
                   </tr>
                 </thead>
                 
                 <tbody>
 
-                  @if ( count(@$order) > 0 )
+                  {{-- {{ dd($order) }} --}}
 
-                      
+                  @if ( @$order )
+                    
+                    @php $total = 0; @endphp
+
                     @forelse ( ($order->with('item'))->get() as $ordered_item)
-                      {{ $ordered_item }}
-                      <hr>
-
-                      {{-- {{ ($ordered_item)->item->name }} --}}
                       <tr>
-                        <td class="text-truncate">{{ $ordered_item->item->name }} </td>
-                        <td class="text-truncate">
-                          {{-- <input type="number" class="w-75" value="{{$loop->iteration}}"> --}}
-                          {{$loop->iteration}} 
-                        </td>
-                        <td>
+                        {{-- #Name --}}
+                        <td class="text-truncate">{{ $loop->iteration.'. '.$ordered_item->item->name }}</td>
+
+                        {{-- #Dlvrd --}}
+                        {{-- <td>
                           @if ( ( $loop->index )/2 == 0 )
                             <button type="button" class="btn btn-sm btn-outline-success round"> &check; </button>
                           @else
                             <button type="button" class="btn btn-sm btn-outline-light round"> &check; </button>
                           @endif
-                        </td>
-                        <td class="text-truncate"> <span> {{ $ordered_item->item->price }} </span></td>
-                        <td>
-                          <button type="button" class="btn btn-sm btn-outline-danger round "> &#10005; </button>
-                        </td>
+                        </td> --}}
+
+                        {{-- #Qty --}}
+                        <td class="text-truncate">{{$ordered_item->qty }}</td>
+
+                        {{-- #price  --}}
+                        <td class="text-truncate">{{$ordered_item->item->price }}</td>
+
+                        {{-- #Amount  --}}
+                        <td class="text-truncate">{{ $total += ($ordered_item->qty * $ordered_item->item->price) }}</td>
+
+                        {{-- #Remove  --}}
+                        <td><button type="button" class="btn btn-sm btn-outline-danger round "> &#10005; </button> </td>
                       </tr>
 
                     @empty
                         @php $order=null @endphp
                     @endforelse
-                    
-                  @endif
 
+                        {{-- Last Row, Order_detials Table --}}
+                        <td></td>
+                        <td></td>
+                        <td style=" font-weight: 800" >Total</td>
+                        <td style=" font-weight: 800" >{{ $total.'/-'}}</td>
+                        <td></td>
+
+                  @endif
                 </tbody>
               </table>
               
@@ -94,12 +115,15 @@
 
                   @if ( $order )
                     <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out" >CheckOut</a></li>
-                    <li><a class="btn box-shadow-1 round btn-outline-danger" href=" {{ URL::to('pos/index') }}" >Process</a></li>
+                    <li><a class="btn box-shadow-1 round btn-outline-danger" id="process" href="#"  >Process</a></li>
+                    <li><a class="btn box-shadow-1 round btn-outline-blue-grey" id="abort_order" >Abort</a></li>
                   @else
-                    <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
+                      @if (Session::get('active_table'))
+                        <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
+                      @endif
                   @endif
                   
-                    <li><a class="btn box-shadow-1 round btn-outline-blue-grey" id="abort_order" >Abort</a></li>
+                    
 
                 </ul>
               </div>

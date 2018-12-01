@@ -55,6 +55,52 @@
     @component('admin.layout.components.card',['title'=>'item'])
       <div id="menu_item_select_table">
           {{-- @include('pos.ajax_request.menu_sub_category_table') --}}
+          {{-- Temp Data --}}
+          <div class="">
+            <table id="menu_item_list_table" class="table table-hover table-xl ">
+              <thead>
+                <tr>
+                  <th class="border-top-0">#</th>
+                  <th class="border-top-0">Item</th>
+                  <th class="border-top-0">Price</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                        <tr class="item_select_list" data-item_id="142" data-order_id="15">
+                    <td class=""> 1 </td>
+                    <td class="">THAW ROTI</td>
+                    <td class=""> 10.00 </td>
+                  </tr>
+                        <tr class="item_select_list" data-item_id="143" data-order_id="15">
+                    <td class=""> 2 </td>
+                    <td class="">THAVA ROTI. BT</td>
+                    <td class=""> 15.00 </td>
+                  </tr>
+                        <tr class="item_select_list" data-item_id="144" data-order_id="15">
+                    <td class=""> 3 </td>
+                    <td class="">BT PARATA</td>
+                    <td class=""> 40.00 </td>
+                  </tr>
+                        <tr class="item_select_list" data-item_id="145" data-order_id="15">
+                    <td class=""> 4 </td>
+                    <td class="">PARATA</td>
+                    <td class=""> 35.00 </td>
+                  </tr>
+                        <tr class="item_select_list" data-item_id="149" data-order_id="15">
+                    <td class=""> 5 </td>
+                    <td class="">ALU PARATH</td>
+                    <td class=""> 40.00 </td>
+                  </tr>
+                        <tr class="item_select_list" data-item_id="150" data-order_id="15">
+                    <td class=""> 6 </td>
+                    <td class="">ALU PARATH BT</td>
+                    <td class=""> 45.00 </td>
+                  </tr>
+                    </tbody>
+            </table>
+          </div>
+
       </div>        
     @endcomponent
   

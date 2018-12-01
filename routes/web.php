@@ -31,11 +31,11 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
     Route::post('/pos/get_menu_sub_category_table/','PosController@get_menu_sub_category_table');
     Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
     Route::post('/pos/section_order_cart/','PosController@section_order_cart');
-    // Route::post('/pos/check_out/','PosController@check_out');
+    Route::any('/pos/check_out/','PosController@check_out');
     Route::post('/pos/abort_order/','PosController@abort_order');
 });
 
-Route::get('/pos/check_out/','PosController@check_out');
+// Route::get('/pos/check_out/','PosController@check_out');
 
 
 

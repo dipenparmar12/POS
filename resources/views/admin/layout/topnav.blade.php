@@ -5,7 +5,7 @@
       <li class="nav-item">
         <a class="navbar-brand" href="index.html">
           <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png">
-          <h3 class="brand-text"> FaaDu FOOD </h3>
+          <h3 class="brand-text"> {{ config('app.name','Restaurant_POS') }} </h3>
         </a>
       </li>
       <li class="nav-item d-md-none">
