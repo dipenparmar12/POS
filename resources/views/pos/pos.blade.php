@@ -6,12 +6,37 @@
   @include('script.pos_script') 
 @endsection
 
-@section('title'," Sale Point of Sale Index ")
+@section('title'," Point of Sale Index ")
 
 
   {{-- Sub_category Selection Menu --}}
     @section('section_order_cart')
      <section id="section_order_items">
+        
+        <script src="{{ asset('js_plugins/bootstrap-notify.js') }}"></script>
+        <script src="{{ asset('js_plugins/bootstrap-notify_by_tim.js') }}"></script>
+        <script src="{{ asset('js_function.js') }}"></script>
+        
+        <button> hello </button>
+
+        <script>
+          
+          var test = swal("Are you sure you want to do this?", {
+            buttons: ["No", "Yes"],
+          }).then((value) => {
+            switch (value) {
+              case "yes":
+                swal("Pikachu fainted! You gained 500 XP!");
+                break;
+
+              default:
+                alert(value);
+            }
+          });
+
+          
+        </script>
+  
         @include('pos.layout.section_order_cart',['order'=>@$order])
      </section>
     @endsection

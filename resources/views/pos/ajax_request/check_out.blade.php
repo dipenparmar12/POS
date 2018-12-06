@@ -1,10 +1,35 @@
-  <h1> {{ config('app.name','Restaurant_POS') }}</h1>
-  <h4 class="">
-      Table {{ Session::get('active_table') }}
-      InvoiceNo-2018-{{Session::get('order_id') }}
+<style>
+
+.check_out_bill{
+  /*background-color: green;*/
+}
+
+th{
+  padding: 8px;
+}
+
+tr {  
+  background-color: #f2f2f2;
+  text-align:left;
+}
+tr td{
+  text-align:left;
+  padding: 7px;
+  font-size: 15px;
+}
+
+</style>
+
+<div class="check_out_bill">
+
+  <h1>{{config('app.name','Restaurant_POS')}} </h1>
+  
+  <h4 style="float:both">
+    <span > Table {{ Session::get('active_table') }},</span>
+    <span > InvoiceNo-2018-{{Session::get('order_id') }} </span>
   </h4>
 
-  <table id="recent-orders" class="table table-hover">
+  <table id="recent-orders" class="table table-hover" >
     <thead>
       <tr>
         <th class="border-top-0 m-0 " style="" ># Item</th>
@@ -46,8 +71,7 @@
             <td></td>
             <td style=" font-weight: 800" >Total</td>
             <td style=" font-weight: 800" >{{ $total.'/-'}}</td>
-            <td></td>
-
+         
       @endif
     </tbody>
   </table>
@@ -56,8 +80,10 @@
   <ul class="list-inline ">
     @if ($order)
       <a href="#" onclick="window.print()" id="print_bill" > Print </a>
-      <a href="#" id="close_checkout_bill" > Close </a>
+      <a href="#" id="close_checkout_bill" onclick="window.close()" > Close </a>
     @else
       <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
     @endif
   </ul>
+  
+</div>

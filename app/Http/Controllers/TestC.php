@@ -12,11 +12,14 @@ use Schema;
 use App\Item;
 use App\SubCategory;
 
+use App\testTrait;
+
 // Temp Fucntion for testing Purose
 function s($str){ echo '<pre>';  print_r($str);  echo '</pre>'; }
 
 class TestC extends Controller
-{
+{   
+    
     public function href($fun=false,$p1=null,$p2=null){
 
         if ($p1 && $p2) {
@@ -34,7 +37,7 @@ class TestC extends Controller
     public function test($paramenter="Test"){
         echo 'Test@test'.'<br>';
         
-        $this->item_by_subCategory($paramenter);
+        // $this->item_by_subCategory($paramenter);
         // $this->drop_tables();
         // $this->get_controller_names();
         // $this->trim_table_name_from_class_name();
@@ -48,6 +51,7 @@ class TestC extends Controller
 
     } ## test() 
 
+    
 
     public function item_by_subCategory($id=3){
 

@@ -10,6 +10,7 @@ class Category extends Model
 {
 
     use SoftDeletes;
+
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
@@ -21,7 +22,6 @@ class Category extends Model
     ];
 
     
-
 
     public function subCategory(){
     	return $this->hasMany('App\SubCategory');

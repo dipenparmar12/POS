@@ -36,3 +36,6 @@
 
 {{-- AJAX CSRF TOKEN FORM AJAX REQ --}}
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+{{-- sweetalert CDN --}}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

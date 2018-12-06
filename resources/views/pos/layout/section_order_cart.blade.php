@@ -15,6 +15,7 @@
 
 <script>
     $('#check_out').on('click', function(event) {
+      alert('Hello ');
       document.form1.target = "myActionWin";
       window.open("{{ URL::to('pos/check_out') }}","myActionWin","width=350,height=350,toolbar=0");
     });
@@ -113,18 +114,17 @@
               <div class="heading-elements ">
                 <ul class="list-inline ">
 
-                  @if ( $order )
+                  @if (@$order)
                     <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out" >CheckOut</a></li>
                     <li><a class="btn box-shadow-1 round btn-outline-danger" id="process" href="#"  >Process</a></li>
                     <li><a class="btn box-shadow-1 round btn-outline-blue-grey" id="abort_order" >Abort</a></li>
                   @else
                       @if (Session::get('active_table'))
                         <h1 class="m-2"> Cart is <div class="badge badge-warning">Empty</div></h1>
+                        <li><a class="btn box-shadow-1 round btn-outline-blue-grey" id="abort_order" >Abort</a></li>
                       @endif
                   @endif
                   
-                    
-
                 </ul>
               </div>
             </div>

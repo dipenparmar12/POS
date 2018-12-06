@@ -130,11 +130,14 @@ pos_fucntion = {
 				type:'POST',
 				url:'/pos/check_out/',
 				success:function(response){
-					console.log('check_out_active_order_or_table');
+					console.log('check_out');
 					console.log(response);
-					alert(response);
+					window.open('/pos/check_out/', "Print_bill", "width=400,height=600").document.write(response)
+					// alert('check_out');
+					// $('#test').append(response);
 				}
-	      	});
+		   	 });
+
 		 }, // check_out_current_order()
 
 		abort_order:function(){
@@ -223,20 +226,9 @@ $(document).ready(function() {
 	// CheckOut Order_id & Table
 	$('body').on('click', '#check_out', function(event) {
 		// console.log(this);
-		// pos_fucntion.ajax.check_out_active_order_or_table();
+		pos_fucntion.ajax.check_out_active_order_or_table();
 
-		$.ajax({
-			type:'POST',
-			url:'/pos/check_out/',
-			success:function(response){
-				console.log('check_out');
-				console.log(response);
-				window.open('/pos/check_out/', "Print_bill", "width=400,height=600").document.write(response)
-				// alert('check_out');
-				// $('#test').append(response);
-			}
-	   	 });
-
+	
 	}); // CheckOut
 		
 	
