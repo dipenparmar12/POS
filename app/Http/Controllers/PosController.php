@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 
+use DB;
 // use Category;
 // use SubCategory;
 // use Item;
@@ -40,6 +41,11 @@ class PosController extends Controller
 
         // return dd($this->get_order_details(Session::get('order_id')));
         $variables['order'] = $this->get_order_details(Session::get('order_id'));
+
+        $query = DB::table('items')->where('id','=','1');
+
+
+        // return DB::table('items')->where('id','=','1')->tosql();
 
         // if (Session::get('order_id')) {
         //     $variables['order'] = \App\Order::find(Session::get('order_id'))->order_details()

@@ -38,4 +38,5 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 {{-- sweetalert CDN --}}
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+<script src="{{ asset('js_plugins/sweetalert.min.js') }}"></script>

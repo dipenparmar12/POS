@@ -21,19 +21,18 @@
 
         <script>
           
-          var test = swal("Are you sure you want to do this?", {
-            buttons: ["No", "Yes"],
-          }).then((value) => {
-            switch (value) {
-              case "yes":
-                swal("Pikachu fainted! You gained 500 XP!");
-                break;
+          // var test = swal("Are you sure you want to do this?", {
+          //   buttons: ["No", "Yes"],
+          // }).then((value) => {
+          //   switch (value) {
+          //     case "yes":
+          //       swal("Pikachu fainted! You gained 500 XP!");
+          //       break;
 
-              default:
-                alert(value);
-            }
-          });
-
+          //     default:
+          //       alert(value);
+          //   }
+          // });
           
         </script>
   

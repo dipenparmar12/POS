@@ -199,12 +199,16 @@ $(document).ready(function() {
 		event.preventDefault();
 		var table_id =  $(this).data('table_id');
 
-		if (confirm("Select Table:" + table_id)) { 
-			// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
-			pos_fucntion.ajax.select_dinner_table_by_id(table_id);
-			// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-			pos_fucntion.ajax.get_section_order_cart();
-		}
+		swal("Select Table : " + table_id, {
+            buttons: ["No", "Yes"],
+      	}).then((value) => {
+			if (value) {
+				// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
+				pos_fucntion.ajax.select_dinner_table_by_id(table_id);
+				// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+				pos_fucntion.ajax.get_section_order_cart();
+			}
+        });	
 
 	}); // Dinner Table Select
 
@@ -235,11 +239,23 @@ $(document).ready(function() {
 	// Abort Current Table/Order ( records deleted )
 	$('body').on('click', '#abort_order', function(event) {
 		event.preventDefault();
-		if (confirm("Clear table( Delete Data) : {{ Session::get('active_table') }} ")) { 
-			pos_fucntion.ajax.abort_order();	
-			$('#section_order_items section div card').empty();
-			pos_fucntion.ajax.get_section_order_cart();
-		}
+
+		// if (confirm("Clear table( Delete Data) : ")) { 
+		// 	pos_fucntion.ajax.abort_order();	
+		// 	$('#section_order_items section div card').empty();
+		// 	pos_fucntion.ajax.get_section_order_cart();
+		// }
+
+		swal("Are you sure you want to Abort/Cancel Order ? Table({{ Session::get('active_table') }} )", {
+            buttons: ["No", "Yes"],
+      	}).then((value) => {
+			if (value) {
+				pos_fucntion.ajax.abort_order();	
+				$('#section_order_items section div card').empty();
+				pos_fucntion.ajax.get_section_order_cart();                
+			}
+        });
+
 	}); // abort_order Click
 
 
@@ -284,13 +300,26 @@ $(document).ready(function() {
 	// Select table By SortCut KEY
 	$(document).bind('keydown', function(event) {
 		if( event.shiftKey && event.which === 84  ) {
-	        if ( table_id = parseInt(prompt("Select Table")) ) {
-	        	// alert('you pressed SHIFT+T '+ table_id);
-				// [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
-				pos_fucntion.ajax.select_dinner_table_by_id(table_id);
-				// Section OrderDetails Or  CurerntOrderItems Refresh Update table
-				pos_fucntion.ajax.get_section_order_cart();
-	        }
+
+			swal({
+			  content: {
+			    element: "input",
+			    attributes: {
+			      placeholder: "Select Table :"
+			    },
+			  },
+			}).then((value) => {
+				if (value) {
+					console.log(value);
+					// alert('you pressed SHIFT+T '+ table_id);
+					//  // [empty->hold->unpaid->empty] Select Dinner table or ,change Current active Dinner Table
+					pos_fucntion.ajax.select_dinner_table_by_id(value);
+					//	// Section OrderDetails Or  CurerntOrderItems Refresh Update table
+					pos_fucntion.ajax.get_section_order_cart();
+				}
+	        });
+	        
+
 	    }
 	});// Select Table By Shift+T Key
 
