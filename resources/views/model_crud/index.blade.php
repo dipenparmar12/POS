@@ -5,7 +5,7 @@
   
 
   {{-- Ajax Script for Append Modal Form into index Page --}}
-  @include('script.crud_script',[$crud_table])
+  @include('script.model_crud_script',[$crud_table])
   @include('script.my_jquery_functions')
 
   <p> {{ @$test }} </p>
@@ -19,7 +19,7 @@
           
           
   {{-- Repeatative Modal component For, Modal Configration  --}}
-  @component('layout.components.modal',['modal_id'=>$crud_table.'_modal'])
+  @component('layout.components.modal',['modal_id'=> $crud_table.'_modal'])
     <div id="ajax_modal">      
         <h3>Please Wait.....</h3>
     </div>

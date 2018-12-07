@@ -6,17 +6,14 @@ use Illuminate\Http\Request;
 
 class SubCategoryController extends ModelCrudController
 {
-    protected $model = 'user';
 
+	// protected $model = 'category';
+	
     public function index( $data = null ){
 
-    	$data['item'] = $this->get_model('item')->all();
-    	$data['test'] = $this->get_model('user')->all();
-
+    	// $data['item'] = $this->get_model('item')->all();
+    	// $data['test'] = $this->get_model('user')->all();
     	return ModelCrudController::index($data);
     }
 
-
-
 }
-

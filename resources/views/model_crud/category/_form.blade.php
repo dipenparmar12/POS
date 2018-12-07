@@ -6,7 +6,7 @@
       <div class="row">
 
         {{-- Compnay_id determinded by login  --}}
-        <input type="hidden" value="{{ Session::get('company_id') }}" name="company_id">
+        <input type="hidden" value="1{{ Session::get('company_id') }}" name="company_id">
       
         <div class="col-md-6">
           <div class="form-group">
