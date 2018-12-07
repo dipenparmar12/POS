@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class CategoryController extends ModelCrudController
-{
-	
-	// protected $model = 'Category';
+{	
+	protected $model = 'user';
 
 
 } // #end of Category Class

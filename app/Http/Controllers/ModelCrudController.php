@@ -10,11 +10,9 @@ class ModelCrudController extends Controller
 {
 
     protected $test = false;
-
-    // protected $table = false;
     protected $model = false;
+    protected $crud_table = false;
     protected $namespace = false;
-    protected $parent_class = false;
     protected $current_class = false;
 
     public function __construct(){
@@ -26,18 +24,20 @@ class ModelCrudController extends Controller
         $path = explode('\\', get_called_class());
         $this->current_class = array_pop($path);
 
+        $this->crud_table = explode('Controller', $this->current_class)[0];
+
         // Set Namespace if Model Class stored in some where else ( default is 'App\' )
         $this->namespace = (!$this->namespace)? "App\\" : $this->namespace;
 
         if (!$this->model) {
-            $class = $this->namespace.explode('Controller', $this->current_class)[0];
+            $class = $this->namespace.$this->crud_table;
             $this->model = new $class;
         }else{
             $class = $this->namespace.$this->model;
+            $this->crud_table = $this->model;
             $this->model = new $class;
         }
-
-        dd($this->model);
+        
 
     } // __construct()
 
@@ -45,30 +45,28 @@ class ModelCrudController extends Controller
     public function get_model($model_name, $namespace = "App\\" ){
 
         if (is_null($model_name) || ($model_name=="") || $model_name==false ) { return 0; }
-
-        $class = $namespace.$model_name;
-
-        if (class_exists($class)) {
-            return new $class();
-        }else{
-            return "Mentioned Class not exited";
-        }
         
-    }
+        $class_name = $namespace.$model_name;
+
+        if (class_exists($class_name)) {
+            return new $class_name();
+        }else{
+            return "Mentioned class not exited";
+        }   
+    } // get_model('m_name','nameSpace');
 
     // List out all Records ( model )
-    public function index() {
 
-        // $data['db_records'] = DB::table($this->table_name('plural'))->get();
-        // $data['crud_table'] = $this->table_name();
-        // return view('crud.index')->with($data);
-
+    public function index( $data=null ) {
+        $data['db_records'] = $this->model->all();
+        $data['crud_table'] = $this->crud_table;
+        return view('model_crud.index')->with($data);
     } ## index()
 
-
+    
 
     // Fetch Category Form by Ajax Call
-    public function create() {
+    public function create($data=null) {
         $data['crud_table'] = $this->table_name();
         return view('crud.'.$this->table_name().'._form')->with($data);
     } ## create()

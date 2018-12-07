@@ -129,5 +129,6 @@ Route::get('/template', function () {
 
 //  CRUD Oprations 
 Route::resource('/category', 'CategoryController');
+Route::resource('/subcategory', 'SubCategoryController');
 Route::resource('/company', 'companyController');
 Route::resource('/Customer', 'CustomerController');

@@ -8,19 +8,20 @@
   @include('script.crud_script',[$crud_table])
   @include('script.my_jquery_functions')
 
+  <p> {{ @$test }} </p>
 
   {{-- Card With Table ( Records index Lists ) --}}
-  @component('model_crud.components.window_card',['title'=>$crud_table])
+  @component('layout.components.window_card',['title'=>$crud_table])
     <div id="db_records">
-        This is Crud Table
+        @include("model_crud.{$crud_table}._table");
     </div>
   @endcomponent
           
           
   {{-- Repeatative Modal component For, Modal Configration  --}}
-  @component('model_crud.components..modal',['modal_id'=>$crud_table.'_modal'])
+  @component('layout.components.modal',['modal_id'=>$crud_table.'_modal'])
     <div id="ajax_modal">      
-        this is CSS Modal 
+        <h3>Please Wait.....</h3>
     </div>
   @endcomponent
 
