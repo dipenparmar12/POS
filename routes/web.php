@@ -19,14 +19,6 @@ Route::post('importExcel', 'ExcelController@importExcel');
 
 
 
-
-//  CRUD Oprations 
-Route::resource('/cat', 'CatController');
-
-
-
-
-
 // POS Oprations
 Route::get('/pos/', 'PosController@index');
 Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
@@ -49,13 +41,10 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
 
 
 
+Route::resource('/Category', 'CategoryController');
 
 
 Route::group(['middleware' => 'Session_Check'], function() {
-
-    // Route::get('/table/test', 'TableController@test');
-    // Route::get('/category/test', 'CategoryController@test');
-    // Route::get('/item/test', 'ItemController@test');
 
     Route::resource('/Category', 'CategoryController');
     Route::post('/Category/delete/{id}', 'CategoryController@delete_record')->where(['id'=>'[0-9]+']);
@@ -134,3 +123,11 @@ Route::get('/template', function () {
 // }
 
 
+
+
+
+
+//  CRUD Oprations 
+Route::resource('/category', 'CategoryController');
+Route::resource('/company', 'companyController');
+Route::resource('/Customer', 'CustomerController');

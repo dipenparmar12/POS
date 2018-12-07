@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class CompanyController extends ModelCrudController
 {
-    //
-    public function hello(){
-        echo "hello";
-    }
-    public function test()
-    {
-        echo "Compnay Test Controller";
-    }
+
+	protected $model = 'User';
+
+	public function index(){
+		 $item = $this->get_model("Item");
+		 return $item->all();
+	}
+
 }

@@ -1,12 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-use Session;
-use App\Category;
-use DB;
-
-class CategoryController extends AppController
+class CategoryController extends ModelCrudController
 {
 	
+	// protected $model = 'Category';
+
+
 } // #end of Category Class
