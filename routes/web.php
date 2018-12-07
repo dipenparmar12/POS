@@ -18,14 +18,22 @@ Route::post('importExcel', 'ExcelController@importExcel');
 
 
 
+
+
+//  CRUD Oprations 
+Route::resource('/cat', 'CatController');
+
+
+
+
+
 // POS Oprations
 Route::get('/pos/', 'PosController@index');
 Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
 
 
 // ----- Accept only Ajax_Request   --------
-Route::group(['middleware'=>['Ajax_check']] , function(){
-    
+Route::group(['middleware'=>['Ajax_check']] , function(){    
     Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
     Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
     Route::post('/pos/get_menu_sub_category_table/','PosController@get_menu_sub_category_table');
@@ -36,10 +44,6 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
 });
 
 // Route::get('/pos/check_out/','PosController@check_out');
-
-
-
-
 
 
 
@@ -128,16 +132,5 @@ Route::get('/template', function () {
 // if (!Session::get('user_loged_in')) {
 //     unset('all_sessions');
 // }
-
-
-
-
-
-
-
-
-
-
-
 
 

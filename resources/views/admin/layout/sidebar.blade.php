@@ -9,25 +9,50 @@
       
     </ul>
   </li>
-  <li class="nav-item has-sub"><a href="i class="la la-download">♀</i><span class="menu-title" data-i18n="nav.footers.main">CRUD</span></a>
-  <ul class="menu-content" style="">
-      <li class="{{ Request::is('Category') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Category/')}}" data-i18n="nav.dash.ecommerce">Category</a></li>
 
-      <li class="{{ Request::is('SubCategory') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('SubCategory/')}}" data-i18n="nav.dash.ecommerce">SubCategory</a></li>
-      
-      <li class="{{ Request::is('Table') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Table/')}}" data-i18n="nav.dash.ecommerce">Table</a></li>
-  </ul>
-</li>
 
-<li class="nav-item"><a href="{{ URL::to('import_table') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
-ImportData</span></a> </li>
+  <li class="nav-item has-sub"><a href=""><i class="la la-download">☺</i><span class="menu-title" data-i18n="nav.footers.main"> Opration </span></a>
+    <ul class="menu-content" style="">
 
-<li class="nav-item"><a href="{{ URL::to('drop_database/truncate') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
-TruncateTables</span></a> </li>
+      <li class="nav-item">
 
-<li class="nav-item"><a href="{{ URL::to('drop_database') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
-DropTables</span></a> </li>
+          <a href="{{ URL::to('cat') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">Categories</span></a> 
 
-<li class="nav-item"><a href="#"><i class="la la-repeat">♫</i><span class="menu-title" data-i18n="nav.form_repeater.main">Link 2</span></a> </li>
+          <a href="{{ URL::to('companies') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">Companies</span></a> 
+
+      </li>
+
+    </ul>
+  </li>
+
+
+  <li class="nav-item has-sub"><a href=""><i class="la la-download">♀</i><span class="menu-title" data-i18n="nav.footers.main">CRUD</span></a>
+    <ul class="menu-content" style="">
+        <li class="{{ Request::is('Category') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Category/')}}" data-i18n="nav.dash.ecommerce">Category</a></li>
+
+        <li class="{{ Request::is('SubCategory') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('SubCategory/')}}" data-i18n="nav.dash.ecommerce">SubCategory</a></li>
+        
+        <li class="{{ Request::is('Table') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Table/')}}" data-i18n="nav.dash.ecommerce">Table</a></li>
+    </ul>
+  </li>
+
+
+  <li class="nav-item has-sub"><a href=""><i class="la la-download">☺</i><span class="menu-title" data-i18n="nav.footers.main"> Deployment </span></a>
+    <ul class="menu-content" style="">
+      <li class="nav-item"><a href="{{ URL::to('import_table') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+      ImportData</span></a> </li>
+
+      <li class="nav-item"><a href="{{ URL::to('drop_database/truncate') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+      TruncateTables</span></a> </li>
+
+      <li class="nav-item"><a href="{{ URL::to('drop_database') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+      DropTables</span></a> </li>
+
+    </ul>
+  </li>
+
+
+  <li class="nav-item"><a href="#"><i class="la la-repeat">♫</i><span class="menu-title" data-i18n="nav.form_repeater.main">Link 2</span></a> </li>
+
 </ul>
 </div>
