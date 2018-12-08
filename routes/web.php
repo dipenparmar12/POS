@@ -126,5 +126,7 @@ Route::post('/Category/table_records', 'CategoryController@table_records');
 
 Route::resource('/SubCategory', 'SubCategoryController');
 Route::post('/SubCategory/table_records', 'SubCategoryController@table_records');
-// Route::resource('/company', 'companyController');
-// Route::resource('/Customer', 'CustomerController');
+
+Route::resource('/Item', 'ItemController');
+Route::post('/Item/table_records', 'ItemController@table_records');
+Route::any('/Item/get_data/', 'ItemController@get_data');

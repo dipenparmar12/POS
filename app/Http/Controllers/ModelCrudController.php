@@ -40,7 +40,7 @@ class ModelCrudController extends Controller
     } // __construct()
 
 
-    public function get_model($model_name, $namespace = "App\\" ){
+    public static function get_model($model_name, $namespace = "App\\" ){
 
         if (is_null($model_name) || ($model_name=="") || $model_name==false ) { return 0; }        
         $class_name = $namespace.$model_name;
@@ -103,5 +103,44 @@ class ModelCrudController extends Controller
         // // return $data['db_records'] = $this->model->all();
         // return view("model_crud.{$this->crud_table}._table")->with( $data );
     } //edit() method usring For Refresh table ( Get Table records and Fetch it by Ajax Call )
+    
+
+    public function get_data(Request $request){
+        return $this->get_model($request->table)->all();
+        // return $request->table;
+        // return ($request->all());
+    } // get_data(table) from Ajaz Request
 
 }
+
+
+
+// -----------------Example----------------------------
+// ---- How TO Make Object of Any Controller ---
+// ---------------------------- -----------------------
+    // public function index( $data = null ){
+        // $cat =  new CategoryController();
+        // return $cat->index();
+    // }
+
+
+
+// -----------------Example----------------------------
+// ---- How TO USE Controllers Method in Blade View ---
+// ---------------------------- -----------------------
+    // @php
+    //   $cat =  \App\Http\Controllers\ModelCrudController::get_model('SubCategory')->all();
+    //   dd($cat);
+    //   $data = \App\Http\Controllers\ModelCrudController::get_model('SubCategory')->where('category_id','=',2)->toArray();
+    // @endphp
+
+
+
+// -----------------TESTING --------------------------
+// -----------------JUST TESTING----------------------
+// -------------------------------------------
+    // function where($table,$where='id',$value=null){
+    //     return \App\Http\Controllers\ModelCrudController::get_model($table)->where($where,$value);
+    // }
+    // $cates = where('SubCategory', ['category_id'=>1] );
+    // dd( $cates->get() );

@@ -3,10 +3,12 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <select class="custom-select form-control" id="category_id" name="category_id">
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}"> {{ $category->name }}</option>
-                    @endforeach
+                <select class="custom-select form-control" id="category_id" name="category_id">                    
+                    @isset ($categories)
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                        @endforeach    
+                    @endisset
                 </select>
             </div>
         </div>

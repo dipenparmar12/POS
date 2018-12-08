@@ -127,7 +127,7 @@ $(document).ready(function(){
           $('form').prepend('<input type="hidden" value="'+form_data.id+'" name="id">');
           $(modal_id).modal('show'); // show or view Modal
           my_js_functions.populate_form(form_data); //fillupFORM,By Json_data (Cat_Controller.edit($id))
-
+          
           console.log(form_data);
 
 
@@ -142,10 +142,10 @@ $(document).ready(function(){
       var delete_record_id = $(this).data('delete_btn');
       var delete_url = crud_delete_url + delete_record_id;
       var deleting_record = $(this)[0].closest('tr');
-
-      console.log($(this).parent('td').parent('tr')[0]);  
+      var delete_row_text = $(this).closest('tr').find('td')[0].textContent;
+      console.log(  );  
       
-      swal(" Are you sure you want to Delete item.", {
+      swal(" Are you sure you want to Delete item:"+delete_row_text , {
             buttons: ["No", "Yes"],
       }).then((value) => {
         if (value) {
@@ -157,7 +157,7 @@ $(document).ready(function(){
           .done(function(response) {
             console.log("success "+response);
             deleting_record.remove()
-            swal(" Record deleted successfully");
+            swal("Record deleted successfully : " + delete_row_text );
           })
           .fail(function() {
             console.log("error");
