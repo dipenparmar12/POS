@@ -210,6 +210,10 @@ $(document).ready(function(){
         console.log(category);
       } // #test()
 
+      ,open_window:function(href="#" ){
+        window.open(href, 'POS','left=700,top=60,width=850,height=700,toolbar=1,resizable=0');
+      } // #test()
+
       ,populate_form: function (json_data){
         // console.log(json_data);
             $.each(json_data, function(table_field_name, value) {
@@ -295,9 +299,8 @@ $(document).ready(function(){
                 .replace(/\r/g, "\\r")
                 .replace(/\t/g, "\\t")
                 .replace(/\f/g, "\\f");
-        } // Helper Function for escaping json multi line errors 
-    
-
+        }, // Helper Function for escaping json multi line errors 
+        
     }
 
 </script>

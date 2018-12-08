@@ -1,30 +1,22 @@
 
-
-
-@php
-  
-@endphp
-
-
 <script>
   $(document).ready(function() {
     
     var table_data = "";
-
-
-
 
     // Dynamic Data Fecthing to FORM  
     $('body').on('change', '#category_id', function(event) {
       event.preventDefault();
         var category = $('select#category_id option:selected')[0];
         var category_id = $(category).data('category_id');
-        
+
           $.post('/Item/get_data', { table:'SubCategory'}, function(data, textStatus, xhr) {
             table_data = jQuery.extend(true, {}, data) ; // clone,copy Object
           }); // .post()
 
+
         $('[name="sub_category_id"]').empty();
+        
         $.each( table_data , function(index, val) {
           // console.log( val.category_id );
           if( val.category_id == category_id ){
@@ -34,8 +26,6 @@
         }); //each()
                 
     }); // body.category_id.click()
-
-
   });// JQ
 </script>
 
@@ -47,7 +37,9 @@
       <div class="col-md-6">
           <div class="form-group">
               <label for="location2"> Main Category:
-            {{-- <a href="#" data-toggle="modal" data-target="#add_main_category_modal"> <div class="badge badge-success"> +Add </div> </a> --}}
+              <a href="" target="_blank" onclick="my_js_functions.open_window('/Category');return false;"> 
+                <div class="badge badge-success"> +Add </div> 
+              </a>
           </label>
             <select class="custom-select form-control" id="category_id">
                   @foreach ($categories as $category)
@@ -59,12 +51,16 @@
       <div class="col-md-6">
           <div class="form-group">
               <label for="location2"> Sub Category :
-            {{-- <a href="#" data-toggle="modal" data-target="#add_sub_category_modal"> <div class="badge badge-success"> +Add </div> </a> --}}
+                <a href="" target="_blank" onclick="my_js_functions.open_window('/SubCategory');return false;"> 
+                  <div class="badge badge-success"> +Add </div> 
+                </a>
+
           </label>
               <select class="custom-select form-control" id="sub_category_id" name="sub_category_id">
                   <div>
+                      <option data-sub_category_id=" " value=" " > </option>
                       @foreach ($subCateogries as $subCateogry)
-                          <option data-category_id="{{ $subCateogry->id }}" value="{{ $subCateogry->id }}"> {{ $subCateogry->name }}</option>
+                          <option data-sub_category_id="{{ $subCateogry->id }}" value="{{ $subCateogry->id }}"> {{ $subCateogry->name }}</option>
                       @endforeach
                   </div>    
               </select>
