@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Session;
-use DB;
 
 
 class ModelCrudController extends Controller
@@ -75,7 +73,6 @@ class ModelCrudController extends Controller
     public function store(Request $request, $id=false) {
         // return dd($request->data['form_mode']);
         // return $request->data['form_mode'];
-
         // return dd($request->data);
 
         // echo "Store..Method..";

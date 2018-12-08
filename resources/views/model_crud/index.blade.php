@@ -6,7 +6,6 @@
 
   {{-- Ajax Script for Append Modal Form into index Page --}}
   @include('script.model_crud_script',[$crud_table])
-  @include('script.my_jquery_functions')
 
   <p> {{ @$test }} </p>
 
