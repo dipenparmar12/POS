@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 class SubCategoryController extends ModelCrudController
 {
 
-	// protected $model = 'category';
 
-    // public function index( $data = null ){
-    // 	// $data['item'] = $this->get_model('item')->all();
-    // 	// $data['test'] = $this->get_model('user')->all();
-    // 	return ModelCrudController::index($data);
-    // }
+    public function index( $data = null ){
+    	$cat =  new CategoryController();
+    	return $cat->index();
+    }
+		
+	// public function create( $data=null ) {
+	// 	$data['categories'] = $this->get_model('category')->all();
+ //    	return ModelCrudController::create($data);	
+	// }
 
 }

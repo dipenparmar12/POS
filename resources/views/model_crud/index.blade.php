@@ -19,7 +19,7 @@
           
   {{-- Repeatative Modal component For, Modal Configration  --}}
   @component('layout.components.modal',['modal_id'=> $crud_table.'_modal'])
-    <div id="ajax_modal">      
+    <div id="ajax_modal">
         <h3>Please Wait.....</h3>
     </div>
   @endcomponent

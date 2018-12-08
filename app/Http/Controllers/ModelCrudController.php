@@ -14,7 +14,7 @@ class ModelCrudController extends Controller
     protected $namespace = false;
     protected $current_class = false;
 
-    public function __construct(){
+    public function __construct( ){
 
         // Class Name without namespace (App\Http\Controllers\ModelCrudController) to ModelCrudController
         // $path = explode('\\', __CLASS__);

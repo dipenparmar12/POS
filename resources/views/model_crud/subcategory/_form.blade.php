@@ -4,13 +4,14 @@
         <div class="col">
             <div class="form-group">
                 <select class="custom-select form-control" id="category_id" name="category_id">
-                    <option value="1"> category 1</option>
-                    <option value="2"> category 2</option>
-                    <option value="3"> category 4</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
