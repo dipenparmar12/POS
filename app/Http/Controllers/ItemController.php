@@ -14,7 +14,7 @@ class ItemController extends ModelCrudController
 
 	public function create($data=null){
 		$data['categories'] = $this->get_model('category')->all();
-		$data['subCateogry'] = $this->get_model('SubCategory')->all();
+		$data['subCateogries'] = $this->get_model('SubCategory')->all();
 		return ModelCrudController::create($data);
 	}
 

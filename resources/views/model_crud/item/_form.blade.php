@@ -12,15 +12,6 @@
     var table_data = "";
 
 
-    $.post('/Item/get_data', { table:'SubCategory'}, function(data, textStatus, xhr) {
-      // console.log( data );
-        table_data = jQuery.extend(true, {}, data) ; // clone,copy Object 
-
-        $.each(table_data, function(index, val) {
-           $('[name="sub_category_id"]').append("<option value="+ val.category_id+">"+ val.name+"</option>"); 
-        });
-
-    }); // .post()
 
 
     // Dynamic Data Fecthing to FORM  
@@ -28,6 +19,10 @@
       event.preventDefault();
         var category = $('select#category_id option:selected')[0];
         var category_id = $(category).data('category_id');
+        
+          $.post('/Item/get_data', { table:'SubCategory'}, function(data, textStatus, xhr) {
+            table_data = jQuery.extend(true, {}, data) ; // clone,copy Object
+          }); // .post()
 
         $('[name="sub_category_id"]').empty();
         $.each( table_data , function(index, val) {
@@ -68,7 +63,9 @@
           </label>
               <select class="custom-select form-control" id="sub_category_id" name="sub_category_id">
                   <div>
-                      
+                      @foreach ($subCateogries as $subCateogry)
+                          <option data-category_id="{{ $subCateogry->id }}" value="{{ $subCateogry->id }}"> {{ $subCateogry->name }}</option>
+                      @endforeach
                   </div>    
               </select>
           </div>
