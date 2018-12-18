@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class ItemController extends ModelCrudController
 {
 
+	// protected $model = 'Item';
+	
 	// public function index($data=null){
 	// 	return $data['subCateogry'] = $this->get_model('SubCategory');
 	// }

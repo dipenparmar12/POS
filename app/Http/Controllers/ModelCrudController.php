@@ -9,10 +9,10 @@ use Session;
 class ModelCrudController extends Controller
 {
 
-    protected $model = false;
-    protected $crud_table = false;
-    protected $namespace = false;
-    protected $current_class = false;
+    protected $model = false;  // User, Item, Category
+    protected $crud_table = false; // if Table name is diffrent in DB; the set it menualy
+    protected $namespace = false; // if Model File/Class stored in different direcotry set namespace
+    protected $current_class = false; // Get Called Class (Child Class Name) // ItemContorller,UserController
 
     public function __construct( ){
 
@@ -20,10 +20,14 @@ class ModelCrudController extends Controller
         // $path = explode('\\', __CLASS__);
         // $this->parent_class = array_pop($path);
 
+        // App\Http\Controllers To [0=>"App", 1 =>"Http", 2=>"Controllers"];
         $path = explode('\\', get_called_class());
-        $this->current_class = array_pop($path);
 
-        $this->crud_table = explode('Controller', $this->current_class)[0];
+        // TableController,ItemController
+        $this->current_class = array_pop($path); 
+        
+        // ItemController to Item
+        $this->crud_table = explode('Controller', $this->current_class)[0];  
 
         // Set Namespace if Model Class stored in some where else ( default is 'App\' )
         $this->namespace = (!$this->namespace)? "App\\" : $this->namespace;
@@ -75,18 +79,23 @@ class ModelCrudController extends Controller
         // return $request->data['form_mode'];
         // return dd($request->data);
 
-        // echo "Store..Method..";
-        if ( ( $request->data['form_mode'] == 'edit' ) && (Session::get('update/'.$request->data['id']) ==  $request->data['id'])  )  {
-            $this->model->find($request->data['id'])->update($request->data);
-            Session::forget('update/'.$request->data['id']);
+        // echo "Store..Method.."; // Check Session are Created [in Show()method] after Update Data 
+        if ( ( $request->data['form_mode'] == 'edit' ) )  {
+
+            // Check Session are Created [in Show()method] after Update Data 
+            // if ( (Session::get('update/'.$request->data['id']) ==  $request->data['id'])  ) {
+                $this->model->find($request->data['id'])->update($request->data);
+                Session::forget('update/'.$request->data['id']);    
+            // }
+
         }else{
             $this->model->create($request->data);
         }
 
-    } ## store()
+    } ## store() // if you put return then throw error,while Saving data 
     
     public function show($id) {
-        echo Session::put( 'update/'.$id , $this->model->find($id)->id );
+        // echo Session::put( 'update/'.$id , $this->model->find($id)->id );
         return json_encode($this->model->findOrFail($id));
     } ## show()
 
@@ -111,6 +120,7 @@ class ModelCrudController extends Controller
         // return ($request->all());
     } // get_data(table) from Ajaz Request
 
+    
 }
 
 

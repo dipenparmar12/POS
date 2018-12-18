@@ -8,6 +8,7 @@
             Active Table
             {{ Session::get('active_table') }}
           </a>
+
         </li>
       </ul>
     </div>
@@ -29,8 +30,10 @@
           <div class="card-header">
             <h4 class="card-title">
                 @if (Session::get('active_table'))
-                  Active Table {{ Session::get('active_table') }}
+                  Active Table {{ Session::get('active_table') }} 
+                  <a href="{{ URL::to('Table') }}" class="badge badge-success" target="_blank">+Remark</a>
                 @endif
+
                 <div class="heading-elements">
                   <div class="badge border-left-primary badge-striped"> 
                     @if (Session::get('active_table'))

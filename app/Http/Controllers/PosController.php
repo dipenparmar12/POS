@@ -18,17 +18,8 @@ use DB;
 class PosController extends Controller
 {
 
-    public function href($fun=false,$p1=null,$p2=null){
-
-        if ($p1 && $p2) {
-            return $this->$fun($p1);
-            // echo "P1 , p2 Test";
-        }elseif ($p1) {
-            return $this->$fun($p1,$p2);
-            // echo "P1 Test";
-        }
-
-        return $this->$fun();
+    public function href(Request $req){
+        return $this->$req->fun();
     }// #dynamic method Call ( We Dont need to Make New Route for Every Method )
 
 

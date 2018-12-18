@@ -4,7 +4,6 @@ Session::put('company_id' , 1 );
 
 // ----- Drop All Tables From DB --------
 Route::get('drop_database/{truncate?}','TestC@drop_tables');
-
 // ----- Excel Import Export --------
 // // Mash Data Seeder (DUMP Data)
 Route::get('import_table', 'AppFunController@upload_seeder');
@@ -17,25 +16,27 @@ Route::post('importExcel', 'ExcelController@importExcel');
 
 
 
-
-
 // // POS Oprations
-// Route::get('/pos/', 'PosController@index');
-// Route::get('/pos/fun/{fun?}/{p1?}/{p2?}/', 'PosController@href');
+Route::get('/', 'PosController@index');
+Route::get('/pos/', 'PosController@index');
+Route::get('/pos/fun/', 'PosController@href');
 
-// // ----- Accept only Ajax_Request   --------
-// Route::group(['middleware'=>['Ajax_check']] , function(){    
-//     Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
-//     Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
-//     Route::post('/pos/get_menu_sub_category_table/','PosController@get_menu_sub_category_table');
-//     Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
-//     Route::post('/pos/section_order_cart/','PosController@section_order_cart');
-//     Route::any('/pos/check_out/','PosController@check_out');
-//     Route::post('/pos/abort_order/','PosController@abort_order');
-// });
 
-// // Route::get('/pos/check_out/','PosController@check_out');
 
+// ----- Accept only Ajax_Request   --------
+Route::group(['middleware'=>['Ajax_check']] , function(){    
+    Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
+    Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
+    Route::post('/pos/get_menu_sub_category_table/','PosController@get_menu_sub_category_table');
+    Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
+    Route::post('/pos/section_order_cart/','PosController@section_order_cart');
+    Route::any('/pos/check_out/','PosController@check_out');
+    Route::post('/pos/abort_order/','PosController@abort_order');
+});
+
+
+//  Blank/Empty Page Template
+Route::get('/template', function () { return view('admin.main'); });
 
 
 // Route::group(['middleware' => 'Session_Check'], function() {
@@ -77,8 +78,6 @@ Route::post('importExcel', 'ExcelController@importExcel');
 
 
 
-
-
 // // Test Controller Methods 
 // Route::get('/test', 'TestC@index');
 // Route::get('/test/fun/{fun?}/{p1?}/{p2?}/', 'TestC@href');
@@ -86,7 +85,6 @@ Route::post('importExcel', 'ExcelController@importExcel');
 // Route::get('/test/tables','TestC@tables');
 // Route::get('/test/table_data','TestC@table_data');
 // Route::get('/test/get_table_data/{table?}','TestC@get_table_data');
-
 
 
 
@@ -101,21 +99,10 @@ Route::post('importExcel', 'ExcelController@importExcel');
 
 
 
-// Route::get('/', function () {
-//     echo " R-POS ";
-//     // return view('welcome');
-// });
-
-// Route::get('/template', function () {
-//     return view('admin.main');
-// });
-
 // // echo "<script> alert('{$msg}') </script>";
 // // if (!Session::get('user_loged_in')) {
 // //     unset('all_sessions');
 // // }
-
-
 
 
 
@@ -128,5 +115,8 @@ Route::resource('/SubCategory', 'SubCategoryController');
 Route::post('/SubCategory/table_records', 'SubCategoryController@table_records');
 
 Route::resource('/Item', 'ItemController');
-Route::post('/Item/table_records', 'ItemController@table_records');
-Route::any('/Item/get_data/', 'ItemController@get_data');
+Route::any('/Item/table_records', 'ItemController@table_records');
+Route::post('/Item/get_data', 'ItemController@get_data');
+
+Route::resource('/Table', 'TableController');
+Route::post('/Table/table_records', 'TableController@table_records');

@@ -110,6 +110,7 @@ $(document).ready(function(){
 
         // Get json Record that going to be edited or updated
         $.get(crud_url+record_id, function(response) {
+            // console.log(response);
             form_data = $.parseJSON(response);
             // console.log(form_data);
             // Old Method That Working With DB ELEQUNT
@@ -208,11 +209,11 @@ $(document).ready(function(){
       test:function(category1="Cat tetst"){
         alert('invocked from my_js_functions');
         console.log(category);
-      } // #test()
+       } // #test()
 
       ,open_window:function(href="#" ){
         window.open(href, 'POS','left=700,top=60,width=850,height=700,toolbar=1,resizable=0');
-      } // #test()
+       } // #test()
 
       ,populate_form: function (json_data){
         // console.log(json_data);
@@ -302,5 +303,6 @@ $(document).ready(function(){
         }, // Helper Function for escaping json multi line errors 
         
     }
+    
 
 </script>

@@ -288,7 +288,7 @@ $(document).ready(function() {
 	});
 
 
-	// Search Item within SubCategory 
+	// Search Item within SubCategory  (Shift+ctrl key)
 	$(document).bind('keydown', function(event) {
 		if( event.shiftKey && event.ctrlKey  ) {
 	        // alert('Search item by SubCateogry');
@@ -346,7 +346,6 @@ $(document).ready(function() {
 
 
 	
-
 
 
  }

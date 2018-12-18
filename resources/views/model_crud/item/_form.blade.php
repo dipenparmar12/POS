@@ -4,6 +4,10 @@
     
     var table_data = "";
 
+    $.post('/Item/get_data', { table:'SubCategory'}, function(data, textStatus, xhr) {
+      table_data = jQuery.extend(true, {}, data) ; // clone,copy Object
+    }); // .post()
+
     // Dynamic Data Fecthing to FORM  
     $('body').on('change', '#category_id', function(event) {
       event.preventDefault();
@@ -16,7 +20,7 @@
 
 
         $('[name="sub_category_id"]').empty();
-        
+
         $.each( table_data , function(index, val) {
           // console.log( val.category_id );
           if( val.category_id == category_id ){
@@ -58,7 +62,7 @@
           </label>
               <select class="custom-select form-control" id="sub_category_id" name="sub_category_id">
                   <div>
-                      <option data-sub_category_id=" " value=" " > </option>
+                      <option data-sub_category_id="" value="" > </option>
                       @foreach ($subCateogries as $subCateogry)
                           <option data-sub_category_id="{{ $subCateogry->id }}" value="{{ $subCateogry->id }}"> {{ $subCateogry->name }}</option>
                       @endforeach
