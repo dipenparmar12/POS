@@ -148,7 +148,7 @@ $(document).ready(function(){
       
       swal(" Are you sure you want to Delete item:"+delete_row_text , {
             buttons: ["No", "Yes"],
-      }).then((value) => {
+       }).then((value) => {
         if (value) {
           $.ajax({
             url: crud_url + delete_record_id,

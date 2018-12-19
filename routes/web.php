@@ -35,6 +35,7 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
 });
 
 
+
 //  Blank/Empty Page Template
 Route::get('/template', function () { return view('admin.main'); });
 
