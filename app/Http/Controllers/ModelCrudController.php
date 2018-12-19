@@ -120,6 +120,14 @@ class ModelCrudController extends Controller
         // return ($request->all());
     } // get_data(table) from Ajaz Request
 
+
+    // public function validation(Request $request){
+    //     $request->validate([
+    //         'title' => 'required',
+    //         'body' => 'required'
+    //     ]);
+    // }
+    
     
 }
 
