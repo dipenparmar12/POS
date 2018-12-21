@@ -46,14 +46,12 @@ foreach ($directories as $dir) {
 		continue;
 	}
 
-
 	// echo 'Route::resource("/'.$table.'", "'.$table.'Controller");';
 	// echo "<br>";
 	// echo 'Route::post("/'.$table.'/table_records", "'.$table.'Controller@table_records");';
 	// echo "<br>";
 
 } // End forEach();
-
 // dd("");
 
 // Extra Route for Dynamic forms ( needed when one Field Depened on other ) ex. Dynamic DropDown List
@@ -81,10 +79,6 @@ Route::post('importExcel', 'ExcelController@importExcel');
 
 //  Blank/Empty Page Template
 Route::get('/template', function () { return view('admin.main'); });
-
-
-
-
 
 
 // // Test Controller Methods 
@@ -127,7 +121,6 @@ Route::get('/template', function () { return view('admin.main'); });
 
 // Route::resource("/Table", "TableController");
 // Route::post("/Table/table_records", "TableController@table_records");
-
 
 
 
