@@ -16,7 +16,8 @@ class AlterUserTableAddNewCal extends Migration
          Schema::table('users', function($table) {
             // 1. Create new column
             // You probably want to make the new column nullable
-            $table->string('new_col')->nullable()->after('email');;
+            $table->string('new_col')->nullable()->after('email');
+            $table->string('verification_code')->default("987654")->after('new_col');
         });
     }
 

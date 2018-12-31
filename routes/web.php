@@ -81,6 +81,8 @@ Route::post('importExcel', 'ExcelController@importExcel');
 Route::get('/template', function () { return view('admin.main'); });
 
 
+
+
 // // Test Controller Methods 
 // Route::get('/test', 'TestC@index');
 // Route::get('/test/fun/{fun?}/{p1?}/{p2?}/', 'TestC@href');
@@ -160,3 +162,7 @@ Route::get('/template', function () { return view('admin.main'); });
 // });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

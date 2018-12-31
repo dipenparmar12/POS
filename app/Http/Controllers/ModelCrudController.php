@@ -95,7 +95,7 @@ class ModelCrudController extends Controller
     } ## store() // if you put return then throw error,while Saving data 
     
     public function show($id) {
-        // echo Session::put( 'update/'.$id , $this->model->find($id)->id );
+        echo Session::put( 'update/'.$id , $this->model->find($id)->id );
         return json_encode($this->model->findOrFail($id));
     } ## show()
 

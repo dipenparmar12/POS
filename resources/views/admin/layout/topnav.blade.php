@@ -25,22 +25,45 @@
                         <input class="input" type="text" placeholder="Explore Modern...">
                     </div>
                 </li>
+
+
             </ul>
+
             <ul class="nav navbar-nav float-right">
                 <li class="dropdown dropdown-user nav-item">
                     <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-          <span class="mr-1">Hello,
-            <span class="user-name text-bold-700">Dipen Parmar</span>. Whats your plan for today ?
-          </span>
-          <span class="avatar avatar-online">
-          <img src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
-        </a>
+                      <span class="mr-1">Hello,
+                        <span class="user-name text-bold-700">Dipen Parmar</span>. Whats your plan for today ?
+                      </span>
+                      <span class="avatar avatar-online">
+                      <img src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
+                    </a>
+
                     <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
                         <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
                         <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
                         <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
+                        {{-- <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a> --}}
                     </div>
+
+                    <li class="nav-item dropdown dropdown-user">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>  
+
                 </li>
 
                 {{--
