@@ -25,11 +25,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row  d-none" >
                             <label for="verification_code" class="col-sm-4 col-form-label text-md-right">{{ __('Verification_code') }}</label>
 
                             <div class="col-md-6">
-                                <input id="verification_code" type="verification_code" class="form-control{{ $errors->has('verification_code') ? ' is-invalid' : '' }}" name="verification_code" value="{{ old('verification_code') }}" required autofocus>
+                                <input id="verification_code" type="text" value="123456" class="form-control{{ $errors->has('verification_code') ? ' is-invalid' : '' }}" name="verification_code" value="{{ old('verification_code') }}" required autofocus>
 
                                 @if ($errors->has('verification_code'))
                                     <span class="invalid-feedback" role="alert">
