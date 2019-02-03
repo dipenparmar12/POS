@@ -4,9 +4,9 @@
     
     var table_data = "";
 
-    $.post('/Item/get_data', { table:'SubCategory'}, function(data, textStatus, xhr) {
-      table_data = jQuery.extend(true, {}, data) ; // clone,copy Object
-    }); // .post()
+    // $.post('/Item/get_data', { table:'SubCategory'}, function(data, textStatus, xhr) {
+    //   table_data = jQuery.extend(true, {}, data) ; // clone,copy Object
+    // }); // .post()
 
     // Dynamic Data Fecthing to FORM  
     $('body').on('change', '#category_id', function(event) {

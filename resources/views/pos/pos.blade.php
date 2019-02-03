@@ -48,8 +48,25 @@
         <div class="modal animated bounceIn text-left " id="add_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel46" style="display: none;" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
+
+              <div class="modal-header">
+                <h4 class="modal-title">Add Items </h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
+              </div>              
+
               <div class="modal-body">
-                 <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                 <ul class="list-group">
+                    <li class="list-group-item">
+                      <a href="/Category" class="d-block">Add Category</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="/SubCategory" class="d-block">Add SubCategory</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="/Item" class="d-block">Add Item</a>
+                    </li>
+                 </ul>
               </div>
             </div>
           </div>

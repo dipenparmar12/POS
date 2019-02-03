@@ -186,7 +186,7 @@ $(document).ready(function() {
 		// Subcategory_item_menu bootsrap Card/table Title Set as per Sub_Category_name
 		$('#category_menu_navbar .card-header h4.card-title').text($(this)[0].text);
 		// set PlaceHolder value as per Subcateogry Name in search field
-		$("#search_item_from_subCategory").attr('placeholder','Search in '+$.trim($(this)[0].text) +' [alt+f2]');
+		$("#search_item_from_subCategory").attr('placeholder','[ctrl+Shift] to Search '+$.trim($(this)[0].text));
 			
 		pos_fucntion.ajax.get_section_menu_item_table_by_subcateogry_id(subCategory_id)
 
