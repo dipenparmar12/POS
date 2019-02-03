@@ -16,29 +16,30 @@
     
     <div class="navbar-container content">
         <div class="collapse navbar-collapse" id="navbar-mobile">
+
             <ul class="nav navbar-nav mr-auto float-left">
                 <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs " id="side_menu_collapse_btn" href="#"><i class="ft-menu"></i></a></li>
-                <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
-
+                
+                {{-- <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li> --}}
+                
+                {{-- 
                 <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
                     <div class="search-input">
                         <input class="input" type="text" placeholder="Explore Modern...">
                     </div>
-                </li>
+                </li> --}}
             </ul>
             <ul class="nav navbar-nav float-right">
                 <li class="dropdown dropdown-user nav-item">
                     <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-          <span class="mr-1">Hello,
-            <span class="user-name text-bold-700">Dipen Parmar</span>. Whats your plan for today ?
-          </span>
+          
           <span class="avatar avatar-online">
           <img src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
         </a>
                     <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
-                        <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
-                        <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
-                        <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                        {{-- <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a> --}}
+                        {{-- <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a> --}}
+                        {{-- <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a> --}}
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
                     </div>
                 </li>
@@ -128,7 +129,15 @@
                 </li>
                 --}}
 
-                <li class="dropdown dropdown-notification nav-item">
+
+
+
+
+
+
+
+            {{-- LIST ITEM OBJECT  --}}
+             {{--    <li class="dropdown dropdown-notification nav-item">
                     <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
                     <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                         <li class="dropdown-menu-header">
@@ -201,7 +210,7 @@
                         </li>
                         <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

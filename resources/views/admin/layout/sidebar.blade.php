@@ -24,13 +24,16 @@
   </li> --}}
 
 
-<li class=""><a class="menu-item" data-i18n="nav.dash.ecommerce"></a></li>
+<br>
 
 <li class="{{ Request::is('pos') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('pos/')}}" data-i18n="nav.dash.ecommerce">Sales POS </a></li>
 
 
+<li class="nav-item {{ Request::is('cook') ? 'active' : '' }}"><a href="/cook"><span class="menu-title" data-i18n="nav.form_repeater.main"> Open Orders</span></a> </li>
 
-  <li class="nav-item has-sub"><a href=""><i class="la la-download">♀</i><span class="menu-title" data-i18n="nav.footers.main">CRUD</span></a>
+
+
+  <li class="nav-item has-sub"><a href=""><i class="la "></i><span class="menu-title" data-i18n="nav.footers.main">Data Opration</span></a>
 
     <ul class="menu-content" style="">
       
@@ -48,30 +51,23 @@
 
 
 
-  <li class="nav-item"><a href="#"><i class="la la-repeat"></i><span class="menu-title" data-i18n="nav.form_repeater.main">Reprot 1</span></a> </li>
-
-  <li class="nav-item"><a href="#"><i class="la la-repeat"></i><span class="menu-title" data-i18n="nav.form_repeater.main">Reprot 3</span></a> </li>
-
-  <li class="nav-item"><a href="#"><i class="la la-repeat"></i><span class="menu-title" data-i18n="nav.form_repeater.main">Reprot 4</span></a> </li>
+  <li class="nav-item"><a href="#"></i><span class="menu-title" data-i18n="nav.form_repeater.main">Reprot 3</span></a> </li>
 
 
 
-  <li class="nav-item has-sub"><a href=""><i class="la la-download">☺</i><span class="menu-title" data-i18n="nav.footers.main"> Deployment </span></a>
+  <li class="nav-item has-sub"><a href=""><i class="la la-download"></i><span class="menu-title" data-i18n="nav.footers.main"> Deployment </span></a>
     <ul class="menu-content" style="">
-      <li class="nav-item"><a href="{{ URL::to('import_table') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+      <li class="nav-item"><a href="{{ URL::to('import_table') }}"><i class="la la-repeat"></i><span class="menu-title" data-i18n="nav.form_repeater.main">
       ImportData</span></a> </li>
 
-      <li class="nav-item"><a href="{{ URL::to('drop_database/truncate') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+      <li class="nav-item"><a href="{{ URL::to('drop_database/truncate') }}"><i class="la la-repeat"></i><span class="menu-title" data-i18n="nav.form_repeater.main">
       TruncateTables</span></a> </li>
 
-      <li class="nav-item"><a href="{{ URL::to('drop_database') }}"><i class="la la-repeat">♛</i><span class="menu-title" data-i18n="nav.form_repeater.main">
+      <li class="nav-item"><a href="{{ URL::to('drop_database') }}"><i class="la la-repeat"></i><span class="menu-title" data-i18n="nav.form_repeater.main">
       DropTables</span></a> </li>
 
     </ul>
   </li>
-
-
-  <li class="nav-item"><a href="#"><i class="la la-repeat">♫</i><span class="menu-title" data-i18n="nav.form_repeater.main">Link 2</span></a> </li>
 
 </ul>
 </div>

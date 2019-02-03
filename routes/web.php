@@ -6,6 +6,8 @@ Route::get("/blank",function(){return view('index');});
 
 // Cook User Routes 
 Route::get("/cook",'UserCookController@index');
+Route::get("/cook/update_not_available_item_id/{id}",'UserCookController@update_not_available_item_id');
+// Route::post("/cook/update_not_available_item_id/{id}",'UserCookController@update_not_available_item_id');
 
 
 
@@ -21,7 +23,9 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
     Route::post('/pos/get_menu_sub_category_table/','PosController@get_menu_sub_category_table');
     Route::post('/pos/add_item_to_section_order_card_table/{item_id}','PosController@add_item_to_section_order_card_table');
     Route::post('/pos/section_order_cart/','PosController@section_order_cart');
+
     Route::any('/pos/check_out/','PosController@check_out');
+
     Route::post('/pos/abort_order/','PosController@abort_order');
 
 	// Add Customer Info. Account Ledger and all other process's like this
@@ -58,6 +62,7 @@ foreach ($directories as $dir) {
 
 } // End forEach();
 // dd("");
+
 
 // Extra Route for Dynamic forms ( needed when one Field Depened on other ) ex. Dynamic DropDown List
 Route::post('/Item/get_data', 'ItemController@get_data');
@@ -165,3 +170,25 @@ Route::get('/template', function () { return view('admin.main'); });
 // });
 
 
+
+
+
+
+
+// model/ModelCrudScript.php
+// ---- TODO Task one and half day
+
+// == DONE JOBS ===
+// card_table_For listing records 
+// index Listout_ all Records by controller
+// set table btn add new Record btn and Edit btn ( and delete,clear,save general btns )
+// Record_Delete
+// Update/Delete Conformation
+
+
+// == Pending JOBS ===
+
+// Jquery && laravel Validation
+// Notification
+// SoftDelete()
+// Code Orgnazation, DRY, cleanUp and Optimization

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\UserCook;
 use Illuminate\Http\Request;
 use DB;
-
 use App\OrderDetail;
 
 
@@ -25,9 +24,23 @@ class UserCookController extends Controller
     }
 
     public function index()
-    {
-        $test = $data['openOrders'] = OrderDetail::all()->toArray();
+    {   
+        // Get pending Orders From OrderDetails ( those are, Status==Null )
+        $test = $data['openOrders'] = OrderDetail::where('status','pending')->get();
         return view("user.cook.index")->with($data);
+    }
+
+    /**
+     * Cancel one Specific Item form OrderDetails ( May this item not available at present )
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update_not_available_item_id($id)
+    {     
+
+        (OrderDetail::find($id)->update(['status'=>"na"]));
+        OrderDetail::find($id)->delete();
+         return $id;
     }
 
     /**

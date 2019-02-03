@@ -98,7 +98,6 @@ class PosController extends Controller
 
     } // select_dinner_table_by_id()
 
-
     
 
     public function section_order_cart(){
@@ -114,7 +113,8 @@ class PosController extends Controller
             $insert_data = [
                 'table_id'=>Session::get('active_table'),
                 'order_id'=>Session::get('order_id'),
-                'item_id'=>$request->item_id
+                'item_id'=>$request->item_id,
+                'status'=>'pending',
             ];
             try {
                 $order_details = \App\OrderDetail::create( $insert_data );
@@ -134,7 +134,9 @@ class PosController extends Controller
     public function check_out(){
         // return "Hello There check_out";
 
+
         $variables['order'] = $this->get_order_details(Session::get('order_id'));
+
         return view('pos.ajax_request.check_out')->with($variables);
 
         // return "Check_Out for Order_id: ".Session::get('order_id')." table_id :".Session::get('active_table');
@@ -169,7 +171,7 @@ class PosController extends Controller
 
 
     public function get_order_details($order_id){
-
+        
         if (Session::get('order_id')) {
             return \App\Order::find(Session::get('order_id'))->order_details()
                                     ->groupBy('item_id')

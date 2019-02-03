@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class OrderDetail extends Model
 {
+
+	use SoftDeletes;
+
 	protected $table = 'OrderDetails';
 
 	protected $fillable = [
@@ -13,7 +17,8 @@ class OrderDetail extends Model
 		'order_id',
 		'table_id',
 		'item_qty',
-		'remark'
+		'remark',
+		'status'
 	];
     
     public function order(){
@@ -23,7 +28,6 @@ class OrderDetail extends Model
     public function item(){
     	return $this->belongsTo('App\Item');
     }
-
 
     // public function table(){
     // 	return $this->belongsTo('App\Item');

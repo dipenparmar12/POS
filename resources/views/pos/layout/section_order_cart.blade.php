@@ -59,7 +59,7 @@
                     <th class="border-top-0 m-0 w-50" style="" >Qty </th>
                     <th class="border-top-0 m-0 " style="" >Price</th>
                     <th class="border-top-0 m-0 " style="" >Amt</th>
-                    <th class="border-top-0 m-0 " style="" >Options</th>
+                    <th class="border-top-0 m-0 " style="" ></th>
                   </tr>
                 </thead>
                 
@@ -95,7 +95,7 @@
                         <td class="text-truncate">{{ $total += ($ordered_item->qty * $ordered_item->item->price) }}</td>
 
                         {{-- #Remove  --}}
-                        <td><button type="button" class="btn btn-sm btn-outline-danger round "> &#10005; </button> </td>
+                        <td></td>
                       </tr>
 
                     @empty
@@ -119,7 +119,9 @@
 
                   @if (@$order)
                     <li><a class="btn box-shadow-1 round btn-outline-success" id="check_out" >CheckOut</a></li>
-                    <li><a class="btn box-shadow-1 round btn-outline-danger" id="process" href="#"  >Process</a></li>
+
+                    {{-- <li><a class="btn box-shadow-1 round btn-outline-danger" id="process" href="#"  >Process</a></li> --}}
+                    
                     <li><a class="btn box-shadow-1 round btn-outline-blue-grey" id="abort_order" >Abort</a></li>
                   @else
                       @if (Session::get('active_table'))

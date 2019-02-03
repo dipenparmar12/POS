@@ -115,8 +115,6 @@ class ModelCrudController extends Controller
 
     public function get_data(Request $request){
         return $this->get_model($request->table)->all();
-        // return $request->table;
-        // return ($request->all());
     } // get_data(table) from Ajaz Request
 
 
@@ -126,8 +124,7 @@ class ModelCrudController extends Controller
     //         'body' => 'required'
     //     ]);
     // }
-    
-    
+      
 }
 
 
