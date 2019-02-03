@@ -156,6 +156,11 @@ class PosController extends Controller
         $order->save();
 
 
+        $order_details = \App\OrderDetail::where('order_id',Session::get('order_id'));
+        $order_details->update(['status'=>'aborted']);
+        $order_details->delete();
+
+
         // 
         // =-----------------------Pending Soft Delete Record
         // 
