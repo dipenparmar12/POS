@@ -34,13 +34,13 @@
 
     <ul class="menu-content" style="">
       
-        <li class="{{ Request::is('Category') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Category/')}}" data-i18n="nav.dash.ecommerce">Category</a></li>
+        <li class="{{ Request::is('category') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('category/')}}" data-i18n="nav.dash.ecommerce">Category</a></li>
 
-        <li class="{{ Request::is('SubCategory') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('SubCategory/')}}" data-i18n="nav.dash.ecommerce">SubCategory</a></li>
+        <li class="{{ Request::is('subcategory') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('subcategory/')}}" data-i18n="nav.dash.ecommerce">SubCategory</a></li>
         
-        <li class="{{ Request::is('Item') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Item/')}}" data-i18n="nav.dash.ecommerce">Item</a></li>
+        <li class="{{ Request::is('item') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('item/')}}" data-i18n="nav.dash.ecommerce">Item</a></li>
 
-        <li class="{{ Request::is('Table') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('Table/')}}" data-i18n="nav.dash.ecommerce">Table</a></li>
+        <li class="{{ Request::is('table') ? 'active' : '' }}"><a class="menu-item" href="{{ URL::to('table/')}}" data-i18n="nav.dash.ecommerce">Table</a></li>
 
 
     </ul>

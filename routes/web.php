@@ -3,6 +3,9 @@ Session::put('company_id' , 1 );
 
 
 
+Route::get('/blank', function(){echo "Blank page";});
+
+
 // // POS Oprations
 Route::get('/', 'PosController@index');
 Route::get('/pos/', 'PosController@index');

@@ -64,18 +64,18 @@ class TestC extends Controller
 
     public function drop_tables($truncate=null){
         $tables = DB::select('SHOW TABLES');
-
-        foreach($tables as $table){
-            if ( $truncate == 'truncate') {
-                DB::table($table->Tables_in_pos)->truncate();
-                echo 'Now Table '.$table->Tables_in_pos.' is Empty. <br>';
-            }else{
-                Schema::drop($table->Tables_in_pos);
-                echo 'Table '.$table->Tables_in_pos.' Droped. <br>';    
+        $dbName = DB::getdatabaseName();
+        foreach($tables as $DBtables){
+            foreach ($DBtables as $key => $tableName) {
+                if ( $truncate == 'truncate') {
+                    DB::table($tableName)->truncate();
+                    echo 'Now Table '.$tableName.' is Empty. <br>';
+                }else{
+                    Schema::drop($tableName);
+                    echo 'Table '.$tableName.' Droped. <br>';    
+                }
             }
-            
-        } 
-
+        }
     }
 
     public function get_controller_names(){

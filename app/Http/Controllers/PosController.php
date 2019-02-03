@@ -170,8 +170,8 @@ class PosController extends Controller
 
     public function get_order_details($order_id){
 
-        if (Session::get('order_id')) {
-            return \App\Order::find(Session::get('order_id'))->order_details()
+        if (Session::has(Session::get('order_id'))) {
+            return \App\Order::find(Session::has(Session::get('order_id')))->order_details()
                                     ->groupBy('item_id')
                                     ->selectRaw('count(*) as qty, item_id');
         }else{
