@@ -34,12 +34,11 @@ class ModelCrudController extends Controller
 
         if (!$this->model) {
             $class = $this->namespace.$this->crud_table;
-            $this->model = new $class;
         }else{
             $class = $this->namespace.$this->model;
             $this->crud_table = $this->model;
-            $this->model = new $class;
         }
+            $this->model = new $class;
 
     } // __construct()
 

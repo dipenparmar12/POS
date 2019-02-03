@@ -24,6 +24,7 @@ class OrderDetail extends Model
     	return $this->belongsTo('App\Item');
     }
 
+
     // public function table(){
     // 	return $this->belongsTo('App\Item');
     // }

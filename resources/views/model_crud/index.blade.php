@@ -7,7 +7,7 @@
   {{-- Ajax Script for Append Modal Form into index Page --}}
   @include('script.model_crud_script',[$crud_table])
 
-  <p> {{ @$test }} </p>
+  {{-- <p> {{ @$test }} </p> --}}
 
   {{-- Card With Table ( Records index Lists ) --}}
   @component('layout.components.window_card',['title'=>$crud_table])
@@ -20,8 +20,16 @@
   {{-- Repeatative Modal component For, Modal Configration  --}}
   @component('layout.components.modal',['modal_id'=> $crud_table.'_modal'])
     <div id="ajax_modal">
-        <h3>Please Wait.....</h3>
+        <h3>Please Wait....(Model_crud>index{component})</h3>
     </div>
   @endcomponent
 
+  <footer>
+    <div class="border-info p-1">
+      <p class="pull-right"> Devloped by : <a href="https://stackoverflow.com/users/8592918/dipen-parmar">Dipen Parmar</a> </p>
+      <br>
+    </div>
+  </footer>
+
 @endsection {{-- #content --}}
+

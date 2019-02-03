@@ -19,7 +19,7 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('order_id');
             $table->integer('table_id');
             // $table->unsignedInteger('item_qty')->nullable(true); // pizza 2qty,20rs = 40rs || dosha 10qty 3rs = 30rs
-            $table->string('remark',190)->nullable(true);
+            $table->string('status',190)->nullable(true); // Cooked,Not_Available
             $table->boolean('aborted')->default(0);
             $table->timestamps();
             $table->softDeletes();

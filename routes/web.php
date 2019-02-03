@@ -1,6 +1,12 @@
 <?php
 Session::put('company_id' , 1 );
 
+// EmptyPage
+Route::get("/blank",function(){return view('index');});
+
+// Cook User Routes 
+Route::get("/cook",'UserCookController@index');
+
 
 
 // // POS Oprations
@@ -8,7 +14,7 @@ Route::get('/', 'PosController@index');
 Route::get('/pos/', 'PosController@index');
 Route::get('/pos/fun/', 'PosController@href');
 
-// ----- Accept only Ajax_Request   --------
+// ----- Accept only Ajax_Request  --------
 Route::group(['middleware'=>['Ajax_check']] , function(){    
     Route::post('/pos/select_dinner_table_by_id/{table_id}','PosController@select_dinner_table_by_id');
     Route::post('/pos/get_section_menu_item_table/{subCategory_id}','PosController@get_section_menu_item_table');
@@ -17,6 +23,10 @@ Route::group(['middleware'=>['Ajax_check']] , function(){
     Route::post('/pos/section_order_cart/','PosController@section_order_cart');
     Route::any('/pos/check_out/','PosController@check_out');
     Route::post('/pos/abort_order/','PosController@abort_order');
+
+	// Add Customer Info. Account Ledger and all other process's like this
+    Route::any('/pos/process/','PosController@check_out'); 
+
 });
 
 
@@ -45,11 +55,6 @@ foreach ($directories as $dir) {
 	} catch (Exception $e) {
 		continue;
 	}
-
-	// echo 'Route::resource("/'.$table.'", "'.$table.'Controller");';
-	// echo "<br>";
-	// echo 'Route::post("/'.$table.'/table_records", "'.$table.'Controller@table_records");';
-	// echo "<br>";
 
 } // End forEach();
 // dd("");
