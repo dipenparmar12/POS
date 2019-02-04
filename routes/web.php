@@ -1,12 +1,6 @@
 <?php
 Session::put('company_id' , 1 );
 
-
-
-// Reports
-Route::get('/report', 'reportController@index');
-
-
 // EmptyPage
 Route::get("/blank",function(){return view('index');});
 
@@ -179,3 +173,22 @@ Route::get('/template', function () { return view('admin.main'); });
 
 
 
+
+
+// model/ModelCrudScript.php
+// ---- TODO Task one and half day
+
+// == DONE JOBS ===
+// card_table_For listing records 
+// index Listout_ all Records by controller
+// set table btn add new Record btn and Edit btn ( and delete,clear,save general btns )
+// Record_Delete
+// Update/Delete Conformation
+
+
+// == Pending JOBS ===
+
+// Jquery && laravel Validation
+// Notification
+// SoftDelete()
+// Code Orgnazation, DRY, cleanUp and Optimization
