@@ -60,22 +60,31 @@
     <script src="{{ asset('js_plugins/bootstrap-notify.min.js') }}"></script>
     
   
-    @php
-      $data = \App\Notification::find(1);
-    @endphp
-    
-      <h1>{{$data}}</h1>
-
     <script>
-  
-    @foreach (\App\Notification::all() as $element)
-      $.notify({
-        message: "{{$element->name}}",
-        url: "/noti/remove/1"
-      });
-    @endforeach
-      
 
+    var d = [];
+
+  
+    @php
+      foreach (\App\Notification::all() as $key => $noti){
+          $notifications[] = \App\Order::find($noti->order_id);
+      }
+    @endphp
+
+
+    @foreach ($notifications as $element)
+      $.notify({
+        title: 'Order Cancled :',
+        message: ('Order no:{{$element->id}}, Table no:{{$element->table_id}}')
+        
+      },{
+        type: 'danger'
+      });     
+    @endforeach
+
+      
+    console.log(d);
+    
     
 
     // $.notify({

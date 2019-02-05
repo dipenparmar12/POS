@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Notification;
 
 class notificationController extends Controller
 {
@@ -13,7 +14,10 @@ class notificationController extends Controller
      */
     public function index()
     {
-        //
+         foreach (Notification::all() as $noti) {
+            $notifications[] =  $noti->name;
+        }      
+        return $notifications;
     }
 
     /**

@@ -160,7 +160,12 @@ class PosController extends Controller
         $order_details->delete();
 
         try {
-            \App\Notification::insert(['name'=>"$order"]);
+            \App\Notification::insert(
+                [
+                'order_id'=>"$order->id",
+                'table_id'=>"$order->table_id"
+                ]
+            );
         } catch (Exception $e) {
             
         }

@@ -2,7 +2,8 @@
 Session::put('company_id' , 1 );
 
 // Reports 
-Route::get('/noti', 'TestC@noti');
+Route::resource('/noti', 'notificationController');
+
 
 // Reports 
 Route::get('/report', 'reportController@index');

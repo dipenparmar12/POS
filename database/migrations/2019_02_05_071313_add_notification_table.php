@@ -15,7 +15,10 @@ class AddNotificationTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name'); // Json Data For Notification
+            $table->string('order_id',100)->nullable(); // Json Data For Notification
+            $table->string('item_id',100)->nullable(); // Json Data For Notification
+            $table->string('table_id',100)->nullable(); // Json Data For Notification
+            $table->string('status',100)->nullable(); // Json Data For Notification
             $table->timestamps();
             $table->softDeletes();
         });
