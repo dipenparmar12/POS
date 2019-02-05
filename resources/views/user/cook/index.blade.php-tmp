@@ -39,7 +39,7 @@
               <th class="border-top-0 m-0"> Action</th>
           </tr>
       </thead>
-      
+
       <tbody>
 
         @forelse (@$openOrders as $order)
@@ -72,7 +72,7 @@
 </div>
 
 <script type="text/javascript">
-  
+
 
 $(document).ready(function() {
 
@@ -83,11 +83,11 @@ $(document).ready(function() {
       $.ajax({
         url: '/cook/update_not_available_item_id/'+id,
         type: 'get',
-        
+
         success:function(response){
           $("#update_not_available_item").closest('tr').remove();
           swal("Item Cancled successfully ");
-        }          
+        }
       });
 
     }, // get_section_menu_item_table_by_subcateogry_id(SubCategory_id)
