@@ -62,28 +62,22 @@
 
     <script>
 
-    var d = [];
-
-
     @php
+      $notifications=[];
       foreach (\App\Notification::all() as $key => $noti){
           $notifications[] = \App\Order::find($noti->order_id);
       }
     @endphp
 
-
     @foreach ($notifications as $element)
       $.notify({
         title: 'Order Cancled :',
-        message: ('Order no:{{$element->id}}, Table no:{{$element->table_id}}')
-
+        message: ('Order no:{{$element->id}}, Table no:{{$element->table_id}}'),
+        url: '/noti/delete/{{$element->id}}',
       },{
         type: 'danger'
       });
     @endforeach
-
-
-    console.log(d);
 
 
 

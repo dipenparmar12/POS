@@ -14,10 +14,12 @@ class notificationController extends Controller
      */
     public function index()
     {
-         foreach (Notification::all() as $noti) {
-            $notifications[] =  $noti->name;
-        }      
-        return $notifications;
+        echo Notification::find(1);
+
+        //  foreach (Notification::all() as $noti) {
+        //     $notifications[] =  $noti->name;
+        // }      
+        // return $notifications;
     }
 
     /**
@@ -25,9 +27,12 @@ class notificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function deleteNoti($id)
     {
-        //
+        // echo "hhelo";
+        // echo Notification::find($id);
+        Notification::where('order_id',$id)->delete();
+        return redirect('/pos');
     }
 
     /**

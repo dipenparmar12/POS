@@ -4,6 +4,8 @@ Session::put('company_id', 1);
 // Reports
 Route::resource('/noti', 'notificationController');
 
+Route::any('/noti/delete/{id}', 'notificationController@deleteNoti');
+
 // Reports
 Route::get('/report', 'reportController@index');
 
