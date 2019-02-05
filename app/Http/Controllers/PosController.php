@@ -155,11 +155,15 @@ class PosController extends Controller
         $order->status = 'aborted';
         $order->save();
 
-
         $order_details = \App\OrderDetail::where('order_id',Session::get('order_id'));
         $order_details->update(['status'=>'aborted']);
         $order_details->delete();
 
+        try {
+            \App\Notification::insert(['name'=>"$order"]);
+        } catch (Exception $e) {
+            
+        }
 
         // 
         // =-----------------------Pending Soft Delete Record
@@ -168,6 +172,7 @@ class PosController extends Controller
 
         Session::forget('active_table');
         Session::forget('order_id');
+
 
         $variables['tables'] = \App\Table::all();
         return view('pos.layout.section_table_palette')->with($variables);

@@ -6,23 +6,23 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   </head>
-  
+
   <body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
-    
+
     <!-- fixed-top-->
     <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow">
       @include('admin.layout.topnav')
     </nav>
-    
+
     <!-- SideBar (menu) -->
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow " data-scroll-to-active="true">
       @include('admin.layout.sidebar')
     </div>
-    
+
     <!-- Content -->
     <div class="app-content content">
       <br>
-      <div class="container-fluid">   
+      <div class="container-fluid">
           @yield('content')
           <div class="row no-gutters" >
             <div class="col-5">@yield('section_order_cart')</div>
@@ -39,44 +39,44 @@
       </div>
 
     </div>
-    
+
     <!--  MAIN FOOTER -->
     {{-- <footer class="footer footer-static footer-light navbar-border navbar-shadow">
       @include('admin.layout.footer')
     </footer> --}}
-    
+
     {{--  Js_script_optional ( Each-Page )  --}}
-    
+
     @include('admin.layout.scripts')
     @yield('js_script')
     @yield('js_bottom')
-    
 
-    
+
+
     {{-- BootStrap Notify Online CDN --}}
     {{-- <script type="" src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.5/bootstrap-notify.min.js"></script> --}}
 
     {{-- BootStrap Notify Offline  --}}
     <script src="{{ asset('js_plugins/bootstrap-notify.min.js') }}"></script>
-    
-  
+
+
     @php
       $data = \App\Notification::find(1);
     @endphp
-    
+
       <h1>{{$data}}</h1>
 
     <script>
-  
+
     @foreach (\App\Notification::all() as $element)
       $.notify({
         message: "{{$element->name}}",
         url: "/noti/remove/1"
       });
     @endforeach
-      
 
-    
+
+
 
     // $.notify({
     //   title: '<strong>Heads up!</strong>',
@@ -86,7 +86,7 @@
     // });
 
     </script>
-    
+
  </body>
 
 </html>

@@ -2,6 +2,9 @@
 Session::put('company_id' , 1 );
 
 // Reports 
+Route::get('/noti', 'TestC@noti');
+
+// Reports 
 Route::get('/report', 'reportController@index');
 
 // EmptyPage

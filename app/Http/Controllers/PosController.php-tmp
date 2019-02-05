@@ -143,6 +143,12 @@ class PosController extends Controller {
 		$order_details->update(['status' => 'aborted']);
 		$order_details->delete();
 
+		try {
+			\App\Notification::insert(['name' => "$order"]);
+		} catch (Exception $e) {
+
+		}
+
 		//
 		// =-----------------------Pending Soft Delete Record
 		//

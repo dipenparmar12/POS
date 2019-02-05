@@ -10,7 +10,10 @@ use URL;
 use Route;
 use Schema;
 use App\Item;
+
 use App\SubCategory;
+
+use App\Notification;
 
 use App\testTrait;
 
@@ -20,6 +23,15 @@ function s($str){ echo '<pre>';  print_r($str);  echo '</pre>'; }
 class TestC extends Controller
 {   
     
+    public function noti(){
+
+        foreach (Notification::all() as $noti) {
+            echo $noti->name;
+            echo "<br>";
+        }
+
+    }
+
     public function href($fun=false,$p1=null,$p2=null){
 
         if ($p1 && $p2) {
