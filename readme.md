@@ -1,5 +1,5 @@
 
-# Please note, This Project is no longer maintained.
+# Please note, This Project is no longer maintained by auther.
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
